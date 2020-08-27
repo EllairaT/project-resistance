@@ -58,3 +58,413 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Resistance/Assets/Character_Selector.unity
+Resistance/Assets/Character_Selector.unity
+Resistance/Assets/Models/Character3/character3obj.fbm.meta
+Resistance/Assets/Models/Character3/character3obj.fbm/character3obj_packed0_diffuse.png
+Resistance/Assets/Models/Character3/character3obj.fbm/character3obj_packed0_diffuse.png.meta
+Resistance/Assets/Models/Character3/character3obj.fbm/character3obj_packed0_gloss.png
+Resistance/Assets/Models/Character3/character3obj.fbm/character3obj_packed0_gloss.png.meta
+Resistance/Assets/Models/Character3/character3obj.fbm/character3obj_packed0_normal.png
+Resistance/Assets/Models/Character3/character3obj.fbm/character3obj_packed0_normal.png.meta
+Resistance/Assets/Models/Character3/character3obj.fbm/character3obj_packed0_specular.png
+Resistance/Assets/Models/Character3/character3obj.fbm/character3obj_packed0_specular.png.meta
+Resistance/Assets/Models/Character3/Materials/character3obj.fbm.meta
+Resistance/Assets/Models/Character3/Materials/character3obj.fbm/character3obj_packed0_diffuse.png
+Resistance/Assets/Models/Character3/Materials/character3obj.fbm/character3obj_packed0_diffuse.png.meta
+Resistance/Assets/Models/Character3/Materials/character3obj.fbm/character3obj_packed0_gloss.png
+Resistance/Assets/Models/Character3/Materials/character3obj.fbm/character3obj_packed0_gloss.png.meta
+Resistance/Assets/Models/Character3/Materials/character3obj.fbm/character3obj_packed0_normal.png
+Resistance/Assets/Models/Character3/Materials/character3obj.fbm/character3obj_packed0_normal.png.meta
+Resistance/Assets/Models/Character3/Materials/character3obj.fbm/character3obj_packed0_specular.png
+Resistance/Assets/Models/Character3/Materials/character3obj.fbm/character3obj_packed0_specular.png.meta
+Resistance/Assets/Models/Character4/character4obj.fbm.meta
+Resistance/Assets/Models/Character4/character4obj.fbm/character4obj_packed0_diffuse.png
+Resistance/Assets/Models/Character4/character4obj.fbm/character4obj_packed0_diffuse.png.meta
+Resistance/Assets/Models/Character4/character4obj.fbm/character4obj_packed0_gloss.png
+Resistance/Assets/Models/Character4/character4obj.fbm/character4obj_packed0_gloss.png.meta
+Resistance/Assets/Models/Character4/character4obj.fbm/character4obj_packed0_normal.png
+Resistance/Assets/Models/Character4/character4obj.fbm/character4obj_packed0_normal.png.meta
+Resistance/Assets/Models/Character4/character4obj.fbm/character4obj_packed0_specular.png
+Resistance/Assets/Models/Character4/character4obj.fbm/character4obj_packed0_specular.png.meta
+Resistance/Assets/Models/CharacterManager.cs.meta
+Resistance/Assets/player.meta
+Resistance/Assets/player/Character1.meta
+Resistance/Assets/player/Character1/anim.meta
+Resistance/Assets/player/Character1/anim/character1obj Variant.controller
+Resistance/Assets/player/Character1/anim/character1obj Variant.controller.meta
+Resistance/Assets/player/Character1/anim/character1obj@Pistol Idle.fbx
+Resistance/Assets/player/Character1/anim/character1obj@Pistol Idle.fbx.meta
+Resistance/Assets/player/Character1/anim/character1obj@Pistol Jump.fbx
+Resistance/Assets/player/Character1/anim/character1obj@Pistol Jump.fbx.meta
+Resistance/Assets/player/Character1/anim/character1obj@Pistol Walk.fbx
+Resistance/Assets/player/Character1/anim/character1obj@Pistol Walk.fbx.meta
+Resistance/Assets/player/Character1/character1obj Variant.prefab
+Resistance/Assets/player/Character1/character1obj Variant.prefab.meta
+Resistance/Assets/player/Character1/character1obj.fbx
+Resistance/Assets/player/Character1/character1obj.fbx.meta
+Resistance/Assets/player/Character1/Defender1.cs
+Resistance/Assets/player/Character1/Defender1.cs.meta
+Resistance/Assets/player/Character1/Materials.meta
+Resistance/Assets/player/Character1/Materials/BodyMat.mat
+Resistance/Assets/player/Character1/Materials/BodyMat.mat.meta
+Resistance/Assets/player/Character1/Materials/BottomsMat.mat
+Resistance/Assets/player/Character1/Materials/BottomsMat.mat.meta
+Resistance/Assets/player/Character1/Materials/character1_Body_diffuse.png
+Resistance/Assets/player/Character1/Materials/character1_Body_diffuse.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Body_gloss.png
+Resistance/Assets/player/Character1/Materials/character1_Body_gloss.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Body_normal.png
+Resistance/Assets/player/Character1/Materials/character1_Body_normal.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Body_specular.png
+Resistance/Assets/player/Character1/Materials/character1_Body_specular.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Bottom_diffuse.png
+Resistance/Assets/player/Character1/Materials/character1_Bottom_diffuse.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Bottom_gloss.png
+Resistance/Assets/player/Character1/Materials/character1_Bottom_gloss.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Bottom_normal.png
+Resistance/Assets/player/Character1/Materials/character1_Bottom_normal.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Bottom_specular.png
+Resistance/Assets/player/Character1/Materials/character1_Bottom_specular.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Hair_diffuse.png
+Resistance/Assets/player/Character1/Materials/character1_Hair_diffuse.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Hair_gloss.png
+Resistance/Assets/player/Character1/Materials/character1_Hair_gloss.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Hair_normal.png
+Resistance/Assets/player/Character1/Materials/character1_Hair_normal.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Hair_specular.png
+Resistance/Assets/player/Character1/Materials/character1_Hair_specular.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Shoes_diffuse.png
+Resistance/Assets/player/Character1/Materials/character1_Shoes_diffuse.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Shoes_gloss.png
+Resistance/Assets/player/Character1/Materials/character1_Shoes_gloss.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Shoes_normal.png
+Resistance/Assets/player/Character1/Materials/character1_Shoes_normal.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Shoes_specular.png
+Resistance/Assets/player/Character1/Materials/character1_Shoes_specular.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Top_diffuse.png
+Resistance/Assets/player/Character1/Materials/character1_Top_diffuse.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Top_gloss.png
+Resistance/Assets/player/Character1/Materials/character1_Top_gloss.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Top_normal.png
+Resistance/Assets/player/Character1/Materials/character1_Top_normal.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Top_specular 1.png
+Resistance/Assets/player/Character1/Materials/character1_Top_specular 1.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Top_specular.png
+Resistance/Assets/player/Character1/Materials/character1_Top_specular.png.meta
+Resistance/Assets/player/Character1/Materials/EyelashesMat.mat
+Resistance/Assets/player/Character1/Materials/EyelashesMat.mat.meta
+Resistance/Assets/player/Character1/Materials/EyesMat.mat
+Resistance/Assets/player/Character1/Materials/EyesMat.mat.meta
+Resistance/Assets/player/Character1/Materials/HairMat.mat
+Resistance/Assets/player/Character1/Materials/HairMat.mat.meta
+Resistance/Assets/player/Character1/Materials/New Material.mat
+Resistance/Assets/player/Character1/Materials/New Material.mat.meta
+Resistance/Assets/player/Character1/Materials/ShoesMat.mat
+Resistance/Assets/player/Character1/Materials/ShoesMat.mat.meta
+Resistance/Assets/player/Character1/Materials/TopsMat.mat
+Resistance/Assets/player/Character1/Materials/TopsMat.mat.meta
+Resistance/Assets/player/Character2.meta
+Resistance/Assets/player/Character2/anim.meta
+Resistance/Assets/player/Character2/anim/character2obj Variant.controller
+Resistance/Assets/player/Character2/anim/character2obj Variant.controller.meta
+Resistance/Assets/player/Character2/anim/character2obj@Idle.fbx
+Resistance/Assets/player/Character2/anim/character2obj@Idle.fbx.meta
+Resistance/Assets/player/Character2/anim/character2obj@Pistol Jump.fbx
+Resistance/Assets/player/Character2/anim/character2obj@Pistol Jump.fbx.meta
+Resistance/Assets/player/Character2/anim/character2obj@Pistol Walk.fbx
+Resistance/Assets/player/Character2/anim/character2obj@Pistol Walk.fbx.meta
+Resistance/Assets/player/Character2/character2obj (1).fbx
+Resistance/Assets/player/Character2/character2obj (1).fbx.meta
+Resistance/Assets/player/Character2/character2obj Variant.prefab
+Resistance/Assets/player/Character2/character2obj Variant.prefab.meta
+Resistance/Assets/player/Character2/character2obj_packed0_diffuse.png
+Resistance/Assets/player/Character2/character2obj_packed0_diffuse.png.meta
+Resistance/Assets/player/Character2/character2obj_packed0_gloss.png
+Resistance/Assets/player/Character2/character2obj_packed0_gloss.png.meta
+Resistance/Assets/player/Character2/character2obj_packed0_normal.png
+Resistance/Assets/player/Character2/character2obj_packed0_normal.png.meta
+Resistance/Assets/player/Character2/character2obj_packed0_specular.png
+Resistance/Assets/player/Character2/character2obj_packed0_specular.png.meta
+Resistance/Assets/player/Character3.meta
+Resistance/Assets/player/Character3/anim.meta
+Resistance/Assets/player/Character3/anim/character3obj Variant.controller
+Resistance/Assets/player/Character3/anim/character3obj Variant.controller.meta
+Resistance/Assets/player/Character3/anim/character3obj@Idle.fbx
+Resistance/Assets/player/Character3/anim/character3obj@Idle.fbx.meta
+Resistance/Assets/player/Character3/anim/character3obj@Pistol Jump.fbx
+Resistance/Assets/player/Character3/anim/character3obj@Pistol Jump.fbx.meta
+Resistance/Assets/player/Character3/anim/character3obj@Pistol Walk.fbx
+Resistance/Assets/player/Character3/anim/character3obj@Pistol Walk.fbx.meta
+Resistance/Assets/player/Character3/character3obj Variant.prefab
+Resistance/Assets/player/Character3/character3obj Variant.prefab.meta
+Resistance/Assets/player/Character3/character3obj.fbm.meta
+Resistance/Assets/player/Character3/character3obj.fbm/character3obj_packed0_diffuse.png
+Resistance/Assets/player/Character3/character3obj.fbm/character3obj_packed0_diffuse.png.meta
+Resistance/Assets/player/Character3/character3obj.fbm/character3obj_packed0_gloss.png
+Resistance/Assets/player/Character3/character3obj.fbm/character3obj_packed0_gloss.png.meta
+Resistance/Assets/player/Character3/character3obj.fbm/character3obj_packed0_normal.png
+Resistance/Assets/player/Character3/character3obj.fbm/character3obj_packed0_normal.png.meta
+Resistance/Assets/player/Character3/character3obj.fbm/character3obj_packed0_specular.png
+Resistance/Assets/player/Character3/character3obj.fbm/character3obj_packed0_specular.png.meta
+Resistance/Assets/player/Character3/character3obj.fbx
+Resistance/Assets/player/Character3/character3obj.fbx.meta
+Resistance/Assets/player/Character3/character3obj_packed0_diffuse.png
+Resistance/Assets/player/Character3/character3obj_packed0_diffuse.png.meta
+Resistance/Assets/player/Character3/character3obj_packed0_gloss.png
+Resistance/Assets/player/Character3/character3obj_packed0_gloss.png.meta
+Resistance/Assets/player/Character3/character3obj_packed0_normal.png
+Resistance/Assets/player/Character3/character3obj_packed0_normal.png.meta
+Resistance/Assets/player/Character3/character3obj_packed0_specular.png
+Resistance/Assets/player/Character3/character3obj_packed0_specular.png.meta
+Resistance/Assets/player/Character3/EllairaIdle.overrideController
+Resistance/Assets/player/Character3/EllairaIdle.overrideController.meta
+Resistance/Assets/player/Character3/Materials.meta
+Resistance/Assets/player/Character3/Materials/character3obj-PackedMaterial0mat.mat
+Resistance/Assets/player/Character3/Materials/character3obj-PackedMaterial0mat.mat.meta
+Resistance/Assets/player/Character4.meta
+Resistance/Assets/player/Character4/anim.meta
+Resistance/Assets/player/Character4/anim/character4obj Variant.controller
+Resistance/Assets/player/Character4/anim/character4obj Variant.controller.meta
+Resistance/Assets/player/Character4/anim/character4obj@Idle.fbx
+Resistance/Assets/player/Character4/anim/character4obj@Idle.fbx.meta
+Resistance/Assets/player/Character4/anim/character4obj@Pistol Jump.fbx
+Resistance/Assets/player/Character4/anim/character4obj@Pistol Jump.fbx.meta
+Resistance/Assets/player/Character4/anim/character4obj@Pistol Walk.fbx
+Resistance/Assets/player/Character4/anim/character4obj@Pistol Walk.fbx.meta
+Resistance/Assets/player/Character4/character4obj Variant.prefab
+Resistance/Assets/player/Character4/character4obj Variant.prefab.meta
+Resistance/Assets/player/Character4/character4obj.fbm.meta
+Resistance/Assets/player/Character4/character4obj.fbm/character4obj_packed0_diffuse.png
+Resistance/Assets/player/Character4/character4obj.fbm/character4obj_packed0_diffuse.png.meta
+Resistance/Assets/player/Character4/character4obj.fbm/character4obj_packed0_gloss.png
+Resistance/Assets/player/Character4/character4obj.fbm/character4obj_packed0_gloss.png.meta
+Resistance/Assets/player/Character4/character4obj.fbm/character4obj_packed0_normal.png
+Resistance/Assets/player/Character4/character4obj.fbm/character4obj_packed0_normal.png.meta
+Resistance/Assets/player/Character4/character4obj.fbm/character4obj_packed0_specular.png
+Resistance/Assets/player/Character4/character4obj.fbm/character4obj_packed0_specular.png.meta
+Resistance/Assets/player/Character4/character4obj.fbx
+Resistance/Assets/player/Character4/character4obj.fbx.meta
+Resistance/Assets/player/Character4/Materials.meta
+Resistance/Assets/player/Character4/Materials/character4obj.fbm.meta
+Resistance/Assets/player/Character4/Materials/character4obj.fbm/character4obj_packed0_diffuse.png
+Resistance/Assets/player/Character4/Materials/character4obj.fbm/character4obj_packed0_diffuse.png.meta
+Resistance/Assets/player/Character4/Materials/character4obj.fbm/character4obj_packed0_gloss.png
+Resistance/Assets/player/Character4/Materials/character4obj.fbm/character4obj_packed0_gloss.png.meta
+Resistance/Assets/player/Character4/Materials/character4obj.fbm/character4obj_packed0_normal.png
+Resistance/Assets/player/Character4/Materials/character4obj.fbm/character4obj_packed0_normal.png.meta
+Resistance/Assets/player/Character4/Materials/character4obj.fbm/character4obj_packed0_specular.png
+Resistance/Assets/player/Character4/Materials/character4obj.fbm/character4obj_packed0_specular.png.meta
+Resistance/Assets/player/Character4/Materials/character4obj_packed0_diffuse.mat
+Resistance/Assets/player/Character4/Materials/character4obj_packed0_diffuse.mat.meta
+Resistance/Assets/player/Character4/MatthewIdle.overrideController
+Resistance/Assets/player/Character4/MatthewIdle.overrideController.meta
+Resistance/Assets/player/SpawnManager.cs
+Resistance/Assets/player/SpawnManager.cs.meta
+Resistance/Assets/player.meta
+Resistance/Assets/player/Character1.meta
+Resistance/Assets/player/Character1/anim.meta
+Resistance/Assets/player/Character1/anim/character1obj Variant.controller
+Resistance/Assets/player/Character1/anim/character1obj Variant.controller.meta
+Resistance/Assets/player/Character1/anim/character1obj@Pistol Idle.fbx
+Resistance/Assets/player/Character1/anim/character1obj@Pistol Idle.fbx.meta
+Resistance/Assets/player/Character1/anim/character1obj@Pistol Jump.fbx
+Resistance/Assets/player/Character1/anim/character1obj@Pistol Jump.fbx.meta
+Resistance/Assets/player/Character1/anim/character1obj@Pistol Walk.fbx
+Resistance/Assets/player/Character1/anim/character1obj@Pistol Walk.fbx.meta
+Resistance/Assets/player/Character1/character1obj Variant.prefab
+Resistance/Assets/player/Character1/character1obj Variant.prefab.meta
+Resistance/Assets/player/Character1/character1obj.fbx
+Resistance/Assets/player/Character1/character1obj.fbx.meta
+Resistance/Assets/player/Character1/Defender1.cs
+Resistance/Assets/player/Character1/Defender1.cs.meta
+Resistance/Assets/player/Character1/Materials.meta
+Resistance/Assets/player/Character1/Materials/BodyMat.mat
+Resistance/Assets/player/Character1/Materials/BodyMat.mat.meta
+Resistance/Assets/player/Character1/Materials/BottomsMat.mat
+Resistance/Assets/player/Character1/Materials/BottomsMat.mat.meta
+Resistance/Assets/player/Character1/Materials/character1_Body_diffuse.png
+Resistance/Assets/player/Character1/Materials/character1_Body_diffuse.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Body_gloss.png
+Resistance/Assets/player/Character1/Materials/character1_Body_gloss.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Body_normal.png
+Resistance/Assets/player/Character1/Materials/character1_Body_normal.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Body_specular.png
+Resistance/Assets/player/Character1/Materials/character1_Body_specular.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Bottom_diffuse.png
+Resistance/Assets/player/Character1/Materials/character1_Bottom_diffuse.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Bottom_gloss.png
+Resistance/Assets/player/Character1/Materials/character1_Bottom_gloss.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Bottom_normal.png
+Resistance/Assets/player/Character1/Materials/character1_Bottom_normal.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Bottom_specular.png
+Resistance/Assets/player/Character1/Materials/character1_Bottom_specular.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Hair_diffuse.png
+Resistance/Assets/player/Character1/Materials/character1_Hair_diffuse.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Hair_gloss.png
+Resistance/Assets/player/Character1/Materials/character1_Hair_gloss.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Hair_normal.png
+Resistance/Assets/player/Character1/Materials/character1_Hair_normal.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Hair_specular.png
+Resistance/Assets/player/Character1/Materials/character1_Hair_specular.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Shoes_diffuse.png
+Resistance/Assets/player/Character1/Materials/character1_Shoes_diffuse.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Shoes_gloss.png
+Resistance/Assets/player/Character1/Materials/character1_Shoes_gloss.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Shoes_normal.png
+Resistance/Assets/player/Character1/Materials/character1_Shoes_normal.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Shoes_specular.png
+Resistance/Assets/player/Character1/Materials/character1_Shoes_specular.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Top_diffuse.png
+Resistance/Assets/player/Character1/Materials/character1_Top_diffuse.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Top_gloss.png
+Resistance/Assets/player/Character1/Materials/character1_Top_gloss.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Top_normal.png
+Resistance/Assets/player/Character1/Materials/character1_Top_normal.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Top_specular 1.png
+Resistance/Assets/player/Character1/Materials/character1_Top_specular 1.png.meta
+Resistance/Assets/player/Character1/Materials/character1_Top_specular.png
+Resistance/Assets/player/Character1/Materials/character1_Top_specular.png.meta
+Resistance/Assets/player/Character1/Materials/EyelashesMat.mat
+Resistance/Assets/player/Character1/Materials/EyelashesMat.mat.meta
+Resistance/Assets/player/Character1/Materials/EyesMat.mat
+Resistance/Assets/player/Character1/Materials/EyesMat.mat.meta
+Resistance/Assets/player/Character1/Materials/HairMat.mat
+Resistance/Assets/player/Character1/Materials/HairMat.mat.meta
+Resistance/Assets/player/Character1/Materials/New Material.mat
+Resistance/Assets/player/Character1/Materials/New Material.mat.meta
+Resistance/Assets/player/Character1/Materials/ShoesMat.mat
+Resistance/Assets/player/Character1/Materials/ShoesMat.mat.meta
+Resistance/Assets/player/Character1/Materials/TopsMat.mat
+Resistance/Assets/player/Character1/Materials/TopsMat.mat.meta
+Resistance/Assets/player/Character2.meta
+Resistance/Assets/player/Character2/anim.meta
+Resistance/Assets/player/Character2/anim/character2obj Variant.controller
+Resistance/Assets/player/Character2/anim/character2obj Variant.controller.meta
+Resistance/Assets/player/Character2/anim/character2obj@Idle.fbx
+Resistance/Assets/player/Character2/anim/character2obj@Idle.fbx.meta
+Resistance/Assets/player/Character2/anim/character2obj@Pistol Jump.fbx
+Resistance/Assets/player/Character2/anim/character2obj@Pistol Jump.fbx.meta
+Resistance/Assets/player/Character2/anim/character2obj@Pistol Walk.fbx
+Resistance/Assets/player/Character2/anim/character2obj@Pistol Walk.fbx.meta
+Resistance/Assets/player/Character2/character2obj (1).fbx
+Resistance/Assets/player/Character2/character2obj (1).fbx.meta
+Resistance/Assets/player/Character2/character2obj Variant.prefab
+Resistance/Assets/player/Character2/character2obj Variant.prefab.meta
+Resistance/Assets/player/Character2/character2obj_packed0_diffuse.png
+Resistance/Assets/player/Character2/character2obj_packed0_diffuse.png.meta
+Resistance/Assets/player/Character2/character2obj_packed0_gloss.png
+Resistance/Assets/player/Character2/character2obj_packed0_gloss.png.meta
+Resistance/Assets/player/Character2/character2obj_packed0_normal.png
+Resistance/Assets/player/Character2/character2obj_packed0_normal.png.meta
+Resistance/Assets/player/Character2/character2obj_packed0_specular.png
+Resistance/Assets/player/Character2/character2obj_packed0_specular.png.meta
+Resistance/Assets/player/Character3.meta
+Resistance/Assets/player/Character3/anim.meta
+Resistance/Assets/player/Character3/anim/character3obj Variant.controller
+Resistance/Assets/player/Character3/anim/character3obj Variant.controller.meta
+Resistance/Assets/player/Character3/anim/character3obj@Idle.fbx
+Resistance/Assets/player/Character3/anim/character3obj@Idle.fbx.meta
+Resistance/Assets/player/Character3/anim/character3obj@Pistol Jump.fbx
+Resistance/Assets/player/Character3/anim/character3obj@Pistol Jump.fbx.meta
+Resistance/Assets/player/Character3/anim/character3obj@Pistol Walk.fbx
+Resistance/Assets/player/Character3/anim/character3obj@Pistol Walk.fbx.meta
+Resistance/Assets/player/Character3/character3obj Variant.prefab
+Resistance/Assets/player/Character3/character3obj Variant.prefab.meta
+Resistance/Assets/player/Character3/character3obj.fbm.meta
+Resistance/Assets/player/Character3/character3obj.fbm/character3obj_packed0_diffuse.png
+Resistance/Assets/player/Character3/character3obj.fbm/character3obj_packed0_diffuse.png.meta
+Resistance/Assets/player/Character3/character3obj.fbm/character3obj_packed0_gloss.png
+Resistance/Assets/player/Character3/character3obj.fbm/character3obj_packed0_gloss.png.meta
+Resistance/Assets/player/Character3/character3obj.fbm/character3obj_packed0_normal.png
+Resistance/Assets/player/Character3/character3obj.fbm/character3obj_packed0_normal.png.meta
+Resistance/Assets/player/Character3/character3obj.fbm/character3obj_packed0_specular.png
+Resistance/Assets/player/Character3/character3obj.fbm/character3obj_packed0_specular.png.meta
+Resistance/Assets/player/Character3/character3obj.fbx
+Resistance/Assets/player/Character3/character3obj.fbx.meta
+Resistance/Assets/player/Character3/character3obj_packed0_diffuse.png
+Resistance/Assets/player/Character3/character3obj_packed0_diffuse.png.meta
+Resistance/Assets/player/Character3/character3obj_packed0_gloss.png
+Resistance/Assets/player/Character3/character3obj_packed0_gloss.png.meta
+Resistance/Assets/player/Character3/character3obj_packed0_normal.png
+Resistance/Assets/player/Character3/character3obj_packed0_normal.png.meta
+Resistance/Assets/player/Character3/character3obj_packed0_specular.png
+Resistance/Assets/player/Character3/character3obj_packed0_specular.png.meta
+Resistance/Assets/player/Character3/EllairaIdle.overrideController
+Resistance/Assets/player/Character3/EllairaIdle.overrideController.meta
+Resistance/Assets/player/Character3/Materials.meta
+Resistance/Assets/player/Character3/Materials/character3obj-PackedMaterial0mat.mat
+Resistance/Assets/player/Character3/Materials/character3obj-PackedMaterial0mat.mat.meta
+Resistance/Assets/player/Character4.meta
+Resistance/Assets/player/Character4/anim.meta
+Resistance/Assets/player/Character4/anim/character4obj Variant.controller
+Resistance/Assets/player/Character4/anim/character4obj Variant.controller.meta
+Resistance/Assets/player/Character4/anim/character4obj@Idle.fbx
+Resistance/Assets/player/Character4/anim/character4obj@Idle.fbx.meta
+Resistance/Assets/player/Character4/anim/character4obj@Pistol Jump.fbx
+Resistance/Assets/player/Character4/anim/character4obj@Pistol Jump.fbx.meta
+Resistance/Assets/player/Character4/anim/character4obj@Pistol Walk.fbx
+Resistance/Assets/player/Character4/anim/character4obj@Pistol Walk.fbx.meta
+Resistance/Assets/player/Character4/character4obj Variant.prefab
+Resistance/Assets/player/Character4/character4obj Variant.prefab.meta
+Resistance/Assets/player/Character4/character4obj.fbm.meta
+Resistance/Assets/player/Character4/character4obj.fbm/character4obj_packed0_diffuse.png
+Resistance/Assets/player/Character4/character4obj.fbm/character4obj_packed0_diffuse.png.meta
+Resistance/Assets/player/Character4/character4obj.fbm/character4obj_packed0_gloss.png
+Resistance/Assets/player/Character4/character4obj.fbm/character4obj_packed0_gloss.png.meta
+Resistance/Assets/player/Character4/character4obj.fbm/character4obj_packed0_normal.png
+Resistance/Assets/player/Character4/character4obj.fbm/character4obj_packed0_normal.png.meta
+Resistance/Assets/player/Character4/character4obj.fbm/character4obj_packed0_specular.png
+Resistance/Assets/player/Character4/character4obj.fbm/character4obj_packed0_specular.png.meta
+Resistance/Assets/player/Character4/character4obj.fbx
+Resistance/Assets/player/Character4/character4obj.fbx.meta
+Resistance/Assets/player/Character4/Materials.meta
+Resistance/Assets/player/Character4/Materials/character4obj.fbm.meta
+Resistance/Assets/player/Character4/Materials/character4obj.fbm/character4obj_packed0_diffuse.png
+Resistance/Assets/player/Character4/Materials/character4obj.fbm/character4obj_packed0_diffuse.png.meta
+Resistance/Assets/player/Character4/Materials/character4obj.fbm/character4obj_packed0_gloss.png
+Resistance/Assets/player/Character4/Materials/character4obj.fbm/character4obj_packed0_gloss.png.meta
+Resistance/Assets/player/Character4/Materials/character4obj.fbm/character4obj_packed0_normal.png
+Resistance/Assets/player/Character4/Materials/character4obj.fbm/character4obj_packed0_normal.png.meta
+Resistance/Assets/player/Character4/Materials/character4obj.fbm/character4obj_packed0_specular.png
+Resistance/Assets/player/Character4/Materials/character4obj.fbm/character4obj_packed0_specular.png.meta
+Resistance/Assets/player/Character4/Materials/character4obj_packed0_diffuse.mat
+Resistance/Assets/player/Character4/Materials/character4obj_packed0_diffuse.mat.meta
+Resistance/Assets/player/Character4/MatthewIdle.overrideController
+Resistance/Assets/player/Character4/MatthewIdle.overrideController.meta
+Resistance/Assets/player/SpawnManager.cs
+Resistance/Assets/player/SpawnManager.cs.meta
+Resistance/Assets/Models/Character3/character3obj.fbm.meta
+Resistance/Assets/Models/Character3/character3obj.fbm/character3obj_packed0_diffuse.png
+Resistance/Assets/Models/Character3/character3obj.fbm/character3obj_packed0_diffuse.png.meta
+Resistance/Assets/Models/Character3/character3obj.fbm/character3obj_packed0_gloss.png
+Resistance/Assets/Models/Character3/character3obj.fbm/character3obj_packed0_gloss.png.meta
+Resistance/Assets/Models/Character3/character3obj.fbm/character3obj_packed0_normal.png
+Resistance/Assets/Models/Character3/character3obj.fbm/character3obj_packed0_normal.png.meta
+Resistance/Assets/Models/Character3/character3obj.fbm/character3obj_packed0_specular.png
+Resistance/Assets/Models/Character3/character3obj.fbm/character3obj_packed0_specular.png.meta
+Resistance/Assets/Models/Character3/Materials/character3obj.fbm.meta
+Resistance/Assets/Models/Character3/Materials/character3obj.fbm/character3obj_packed0_diffuse.png
+Resistance/Assets/Models/Character3/Materials/character3obj.fbm/character3obj_packed0_diffuse.png.meta
+Resistance/Assets/Models/Character3/Materials/character3obj.fbm/character3obj_packed0_gloss.png
+Resistance/Assets/Models/Character3/Materials/character3obj.fbm/character3obj_packed0_gloss.png.meta
+Resistance/Assets/Models/Character3/Materials/character3obj.fbm/character3obj_packed0_normal.png
+Resistance/Assets/Models/Character3/Materials/character3obj.fbm/character3obj_packed0_normal.png.meta
+Resistance/Assets/Models/Character3/Materials/character3obj.fbm/character3obj_packed0_specular.png
+Resistance/Assets/Models/Character3/Materials/character3obj.fbm/character3obj_packed0_specular.png.meta
+Resistance/Assets/Models/Character4/character4obj.fbm.meta
+Resistance/Assets/Models/Character4/character4obj.fbm/character4obj_packed0_diffuse.png
+Resistance/Assets/Models/Character4/character4obj.fbm/character4obj_packed0_diffuse.png.meta
+Resistance/Assets/Models/Character4/character4obj.fbm/character4obj_packed0_gloss.png
+Resistance/Assets/Models/Character4/character4obj.fbm/character4obj_packed0_gloss.png.meta
+Resistance/Assets/Models/Character4/character4obj.fbm/character4obj_packed0_normal.png
+Resistance/Assets/Models/Character4/character4obj.fbm/character4obj_packed0_normal.png.meta
+Resistance/Assets/Models/Character4/character4obj.fbm/character4obj_packed0_specular.png
+Resistance/Assets/Models/Character4/character4obj.fbm/character4obj_packed0_specular.png.meta
+Resistance/Assets/Models/CharacterManager.cs.meta
+Resistance/Assets/Animations/character2 controller.controller
+Resistance/Assets/Animations/character2 controller.controller.meta
+Resistance/Assets/Animations/Idle.controller.meta
+Resistance/Assets/Character_Selector.unity
+Resistance/Assets/Images/PlayerIcons/Blake.jpg.meta
+Resistance/Assets/Level1.unity
