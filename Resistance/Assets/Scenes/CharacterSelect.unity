@@ -673,10 +673,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characters:
-  - {fileID: -6397407740407477107, guid: e080fe9edf6e05e4d8701622c01124f5, type: 3}
-  - {fileID: 6958688765240555658, guid: a3b7dcbd46ea3744d9855a4097804d36, type: 3}
-  - {fileID: -21410273539642337, guid: cd4d5dbe46e7a5c40bf3309937ebc54c, type: 3}
-  - {fileID: 215898900032020724, guid: eabb26e0f70713744984e2a3ba4fb83a, type: 3}
+  - {fileID: 4901764638912819904, guid: e080fe9edf6e05e4d8701622c01124f5, type: 3}
+  - {fileID: -8824533932494788734, guid: a3b7dcbd46ea3744d9855a4097804d36, type: 3}
+  - {fileID: 7250685770480239748, guid: cd4d5dbe46e7a5c40bf3309937ebc54c, type: 3}
+  - {fileID: 7966433134139680448, guid: eabb26e0f70713744984e2a3ba4fb83a, type: 3}
   spawnPoint: {fileID: 936980374}
 --- !u!1 &1163629866
 GameObject:
