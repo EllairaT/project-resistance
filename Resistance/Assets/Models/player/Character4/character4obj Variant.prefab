@@ -28,8 +28,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fbfdac228e464245aeff05a719da3f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  userName: 
   userIP: 
-  userId: 
   name: Matthew
   role: Defender
   icon: {fileID: 21300000, guid: 00a7c3b743467064d8a363cedfba4832, type: 3}
@@ -120,6 +120,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: f218345ee25da66418eb0df8080e134a, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 4af543a1b7b27a54d8ffd6511db01a6b,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4af543a1b7b27a54d8ffd6511db01a6b, type: 3}
 --- !u!1 &1187547256878175617 stripped
