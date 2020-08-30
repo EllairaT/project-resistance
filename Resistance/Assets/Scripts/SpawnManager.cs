@@ -23,7 +23,6 @@ public class SpawnManager : SceneManager<SpawnManager>
     
     public void SetCurrentCharacterType(int index)
     {
-
         if (_currentCharacterType != null)
         {
             Destroy(_currentCharacterType.gameObject);
@@ -32,7 +31,6 @@ public class SpawnManager : SceneManager<SpawnManager>
         Player p = characters[index];
         _currentCharacterType = Instantiate<Player>(p, spawnPoint.transform.position, Quaternion.identity);       
         _currentIndex = index;
-     
     }
 
     public void SetCurrentCharacterType(string n)
