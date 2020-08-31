@@ -859,10 +859,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characters:
-  - {fileID: -3236924599565661018, guid: 5d9db4d6296eeb34885715d0efa2ac45, type: 3}
-  - {fileID: -8025364828941666855, guid: eae713d404cb01a40bb4c9b5b7c8ea0d, type: 3}
-  - {fileID: -4506434693275719725, guid: ba33f18acc589b4409b65cffd1a0e2a5, type: 3}
-  - {fileID: 9200547958820466112, guid: fb0ea76e6d4c3fa4e96de75eb90103b6, type: 3}
+  - {fileID: 2505472556321679383, guid: 5d9db4d6296eeb34885715d0efa2ac45, type: 3}
+  - {fileID: -8654166683745958812, guid: eae713d404cb01a40bb4c9b5b7c8ea0d, type: 3}
+  - {fileID: 7891856334220192665, guid: ba33f18acc589b4409b65cffd1a0e2a5, type: 3}
+  - {fileID: -3549162560105936005, guid: fb0ea76e6d4c3fa4e96de75eb90103b6, type: 3}
   spawnPoint: {fileID: 936980374}
 --- !u!1 &1163629866
 GameObject:
