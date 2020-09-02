@@ -1055,7 +1055,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.00012207, y: 54.99984}
-  m_SizeDelta: {x: 520, y: 100}
+  m_SizeDelta: {x: 520, y: 69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &95102404
 GameObject:
@@ -4172,8 +4172,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00012207, y: 54.99984}
-  m_SizeDelta: {x: 520, y: 100}
+  m_AnchoredPosition: {x: 0.00012207, y: 39.3}
+  m_SizeDelta: {x: 520, y: 69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1445554149
 GameObject:
@@ -6490,17 +6490,19 @@ MonoBehaviour:
   onlineScene: Assets/Scenes/MainMenuScene.unity
   transport: {fileID: 2139000166}
   networkAddress: localhost
-  maxConnections: 5
+  maxConnections: 4
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 0}
+  playerPrefab: {fileID: 4791749537898070696, guid: 97bfb1765d787094ca92cf82ef674330,
+    type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
   spawnPrefabs: []
   minPlayers: 2
-  menuScene: 
-  roomPlayerPrefab: {fileID: 0}
+  menuScene: Assets/Scenes/MainMenuScene.unity
+  roomPlayerPrefab: {fileID: 6409843946461743749, guid: efeafbf3b457bed4986aa2730d5973f6,
+    type: 3}
   gamePlayerPrefab: {fileID: 0}
   playerSpawnSystem: {fileID: 0}
 --- !u!4 &2139000168
