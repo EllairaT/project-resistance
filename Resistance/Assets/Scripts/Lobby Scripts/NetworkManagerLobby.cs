@@ -135,14 +135,7 @@ public class NetworkManagerLobby : NetworkManager
         {
             if (!IsReadyToStart()) { return; }
 
-            ServerChangeScene("Scene_Map_01");
-            //mapHandler = new MapHandler(mapSet, numberOfRounds);
-            //ServerChangeScene(SceneManager.GetActiveScene().name);
-
-           // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            //Scene nextScene = SceneManager.GetSceneAt(SceneManager.GetActiveScene().buildIndex + 1);
-            //ServerChangeScene(nextScene.name);
-            //ServerChangeScene(mapHandler.NextMap);
+            ServerChangeScene("MainScene");
         }
     }
 
