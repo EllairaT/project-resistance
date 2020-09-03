@@ -21,12 +21,6 @@ public class PlayerSpawnSystem : NetworkBehaviour
 
     public override void OnStartServer() => NetworkManagerLobby.OnServerReadied += SpawnPlayer;
 
-    //public override void OnStartClient()
-    //{
-    //    InputManager.Add(ActionMapNames.Player);
-    //    InputManager.Controls.Player.Look.Enable();
-    //}
-
     [ServerCallback]
     private void OnDestroy() => NetworkManagerLobby.OnServerReadied -= SpawnPlayer;
 
@@ -34,13 +28,13 @@ public class PlayerSpawnSystem : NetworkBehaviour
     public void SpawnPlayer(NetworkConnection conn)
     {
         Transform spawnPoint = spawnPoints.ElementAtOrDefault(nextIndex);
-
+        Debug.Log("Attemping Spawn");
         if (spawnPoint == null)
         {
             Debug.LogError($"Missing spawn point for player {nextIndex}");
             return;
         }
-
+        Debug.Log("Spawning Player!");
         GameObject playerInstance = Instantiate(playerPrefab, spawnPoints[nextIndex].position, spawnPoints[nextIndex].rotation);
         NetworkServer.Spawn(playerInstance, conn);
 
