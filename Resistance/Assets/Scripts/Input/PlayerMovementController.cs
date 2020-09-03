@@ -11,7 +11,8 @@ public class PlayerMovementController : NetworkBehaviour
     [SerializeField] private float groundDistance = 5f;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private bool isGrounded;
-
+    
+    private float jumpHeight = 1f;
     private Vector3 playerVelocity;
     private Vector2 previousInput;
 
@@ -72,31 +73,17 @@ public class PlayerMovementController : NetworkBehaviour
             playerVelocity.y = -2f;
         }
 
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
+        //Vector3 move = transform.right * x + transform.forward * z;
+        Vector3 move = controller.transform.right.normalized * previousInput.x + controller.transform.forward.normalized * previousInput.y;
         controller.Move(move * movementSpeed * Time.deltaTime);
 
         playerVelocity.y += gravity * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            anim.SetTrigger("Jump");
+        }
     }
 }
-
-//float x = Input.GetAxis("Horizontal");
-// float z = Input.GetAxis("Vertical");
-
-// Vector3 move = controller.transform.right.normalized * previousInput.x + controller.transform.forward.normalized * previousInput.y;
-//controller.Move(move * movementSpeed * Time.deltaTime);
-
-//playerVelocity.y += gravity* Time.deltaTime;
-//controller.Move(playerVelocity* Time.deltaTime);
-
-        //Vector3 right = controller.transform.right;
-        // Vector3 forward = controller.transform.forward;
-        //right.y = 0f;
-        //forward.y = 0f;
-
-       // Vector3 movement = right.normalized * previousInput.x + forward.normalized * previousInput.y;
-
-        //controller.Move(movement * movementSpeed * Time.deltaTime);
