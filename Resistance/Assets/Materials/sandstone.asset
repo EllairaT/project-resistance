@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: sandstone
   m_EditorClassIdentifier: 
   name: Sandstone
-  cost: 0
-  hardness: 0
+  cost: 70
+  hardness: 3
   mat: {fileID: 2100000, guid: b870701f038ffef42a23c4e6426363c0, type: 2}

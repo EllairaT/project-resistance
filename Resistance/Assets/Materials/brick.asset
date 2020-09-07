@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: brick
   m_EditorClassIdentifier: 
   name: Bricks
-  cost: 0
-  hardness: 0
+  cost: 20
+  hardness: 1.6
   mat: {fileID: 2100000, guid: 4fb9574bbae68a74aaec7979ff1af2d8, type: 2}

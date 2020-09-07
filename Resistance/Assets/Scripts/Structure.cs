@@ -26,12 +26,12 @@ public class Structure : ScriptableObject
     void Awake()
     {
 
-        Debug.Log(this.name + " is awake");
+        //Debug.Log(this.name + " is awake");
     }
 
     void OnEnable() 
     {
-        Debug.Log(this.name);
+       // Debug.Log(this.name);
     }
 
     public float CalculateDamage(float dmg)

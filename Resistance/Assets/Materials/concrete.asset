@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: concrete
   m_EditorClassIdentifier: 
   name: Concrete
-  cost: 0
-  hardness: 0
+  cost: 50
+  hardness: 2.6
   mat: {fileID: 2100000, guid: 32fe6d9b8f5923a4fb204a3e90b1894d, type: 2}

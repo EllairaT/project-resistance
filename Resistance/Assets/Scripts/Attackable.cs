@@ -24,6 +24,7 @@ public class Attackable : MonoBehaviour
 
         health -= amount;
         Debug.Log("ouch");
+
         if (health <= 0f)
         {
             Die();

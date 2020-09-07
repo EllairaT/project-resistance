@@ -14,4 +14,10 @@ public class Materials : ScriptableObject
     {
         return Resources.Load<Material>("Materials/" + mat.name);
     }
+
+    public void Print()
+    {
+        Debug.Log(name + ": " + cost);
+    }
 }
+    
