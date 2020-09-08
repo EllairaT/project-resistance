@@ -13,22 +13,16 @@ public class GunScript : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
 
-    [SerializeField] Transform hand;
-
-    void Awake()
-    {
-        transform.SetParent(hand);
-    }
+    // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
-        {      
+        {
            Shoot();
         }
     }
     void Shoot()
     {
-        Debug.Log("pew");
         muzzleFlash.Play();
 
         RaycastHit hit;
@@ -40,6 +34,7 @@ public class GunScript : MonoBehaviour
             if (target != null)
             {
                 target.TakeDamage(damage);
+
             }
 
             
