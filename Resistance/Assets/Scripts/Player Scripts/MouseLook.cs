@@ -21,7 +21,7 @@ public class MouseLook : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         xRot -= mouseY;
-        xRot = Mathf.Clamp(xRot, -90f, 90f);
+        xRot = Mathf.Clamp(xRot, -90f, 40f);
 
         //quaternions are responsible for rotations in unity
         transform.localRotation = Quaternion.Euler(xRot, 0, 0); 
