@@ -99,16 +99,6 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 27643d26a058a2d41be78d3004664e55, type: 2}
-    - target: {fileID: -6057140222963153312, guid: 958d4315cf9f88047b385cdc3fe7af5a,
-        type: 3}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 9000000, guid: 958d4315cf9f88047b385cdc3fe7af5a, type: 3}
-    - target: {fileID: -6057140222963153312, guid: 958d4315cf9f88047b385cdc3fe7af5a,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 958d4315cf9f88047b385cdc3fe7af5a,
         type: 3}
       propertyPath: m_LocalScale.x
