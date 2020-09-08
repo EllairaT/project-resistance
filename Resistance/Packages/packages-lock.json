@@ -1,12 +1,5 @@
 {
   "dependencies": {
-
-    "com.unity.cinemachine": {
-      "version": "2.6.1",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-
     "com.unity.animation.rigging": {
       "version": "0.2.7-preview",
       "depth": 0,
@@ -24,7 +17,13 @@
       "dependencies": {
         "com.unity.mathematics": "1.1.0"
       },
-
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.cinemachine": {
+      "version": "2.6.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
@@ -57,15 +56,16 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-
     "com.unity.inputsystem": {
       "version": "1.0.0",
       "depth": 0,
-
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.mathematics": {
       "version": "1.1.0",
       "depth": 2,
-
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
