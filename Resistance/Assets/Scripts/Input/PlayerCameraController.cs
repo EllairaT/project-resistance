@@ -5,48 +5,66 @@ using UnityEngine;
 public class PlayerCameraController : NetworkBehaviour
 {
     [Header("Camera")]
-    [SerializeField] private Vector2 maxFollowOffset = new Vector2(-1f, 6f);
-    [SerializeField] private Vector2 cameraVelocity = new Vector2(4f, 0.25f);
-    [SerializeField] private Transform playerTransform = null;
-    [SerializeField] private CinemachineVirtualCamera virtualCamera = null;
+    public Camera playerCam = null;
+    //[SerializeField] private Vector2 maxFollowOffset = new Vector2(-1f, 6f);
+    //[SerializeField] private Vector2 cameraVelocity = new Vector2(4f, 0.25f);
+    //[SerializeField] private Transform playerTransform = null;
+    //[SerializeField] private CinemachineVirtualCamera virtualCamera = null;
 
-    private Controls controls;
-    private Controls Controls
-    {
-        get
-        {
-            if (controls != null) { return controls; }
-            return controls = new Controls();
-        }
-    }
+    //private controls controls;
+    //private controls controls
+    //{
+    //    get
+    //    {
+    //        if (controls != null) { return controls; }
+    //        return controls = new controls();
+    //    }
+    //}
 
-    private CinemachineTransposer transposer;
+    //private CinemachineTransposer transposer;
 
+    //public void Start()
+    //{
+    //    //Debug.Log("change camera");
+    //    //virtualCamera.gameObject.SetActive(true);
+    //   // Camera.main.gameObject.SetActive(false);
+    //   // Camera.main.enabled = false;
+
+    //   // playerCam.enabled = true;
+    //   // playerCam.gameObject.SetActive(true);
+
+    //}
     public override void OnStartAuthority()
     {
-        transposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
+        //    // transposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
+        //    Debug.Log("change camera");
+        //    //virtualCamera.gameObject.SetActive(true);
+        //    Camera.main.gameObject.SetActive(false);
+        //    Camera.main.enabled = false;
+         playerCam.enabled = true;
+         playerCam.gameObject.SetActive(true);
 
-        virtualCamera.gameObject.SetActive(true);
 
-        enabled = true;
+        //    //enabled = true;
 
-        Controls.Player.Look.performed += ctx => Look(ctx.ReadValue<Vector2>());
+        //    //Controls.Player.Look.performed += ctx => Look(ctx.ReadValue<Vector2>());
     }
 
-    [ClientCallback]
-    private void OnEnable() => Controls.Enable();
-    [ClientCallback]
-    private void OnDisable() => Controls.Disable();
+    //[ClientCallback]
+    //private void OnEnable() => Controls.Enable();
 
-    private void Look(Vector2 lookAxis)
-    {
-        float deltaTime = Time.deltaTime;
+    //[ClientCallback]
+    //private void OnDisable() => Controls.Disable();
 
-        transposer.m_FollowOffset.y = Mathf.Clamp(
-            transposer.m_FollowOffset.y - (lookAxis.y * cameraVelocity.y * deltaTime),
-            maxFollowOffset.x,
-            maxFollowOffset.y);
+    //private void Look(Vector2 lookAxis)
+    //{
+    //    float deltaTime = Time.deltaTime;
 
-        playerTransform.Rotate(0f, lookAxis.x * cameraVelocity.x * deltaTime, 0f);
-    }
+    //    transposer.m_FollowOffset.y = Mathf.Clamp(
+    //        transposer.m_FollowOffset.y - (lookAxis.y * cameraVelocity.y * deltaTime),
+    //        maxFollowOffset.x,
+    //        maxFollowOffset.y);
+
+    //    playerTransform.Rotate(0f, lookAxis.x * cameraVelocity.x * deltaTime, 0f);
+    //}
 }
