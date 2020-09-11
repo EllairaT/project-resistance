@@ -1,168 +1,454 @@
 fileFormatVersion: 2
 guid: 5888edb55eb3bba4383222f3cd5dfbb5
-timeCreated: 1509287696
-licenseType: Store
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: B201_00_low
-    100004: Belly
-    100006: Belly L
-    100008: Belly R
-    100010: Bip001
-    100012: Bip001 Footsteps
-    100014: Bip001 Head
-    100016: Bip001 L Calf
-    100018: Bip001 L Clavicle
-    100020: Bip001 L Finger0
-    100022: Bip001 L Finger01
-    100024: Bip001 L Finger1
-    100026: Bip001 L Finger11
-    100028: Bip001 L Finger2
-    100030: Bip001 L Finger21
-    100032: Bip001 L Finger3
-    100034: Bip001 L Finger31
-    100036: Bip001 L Foot
-    100038: Bip001 L Forearm
-    100040: Bip001 L Hand
-    100042: Bip001 L Thigh
-    100044: Bip001 L Toe0
-    100046: Bip001 L Toe01
-    100048: Bip001 L UpperArm
-    100050: Bip001 Neck
-    100052: Bip001 Pelvis
-    100054: Bip001 R Calf
-    100056: Bip001 R Clavicle
-    100058: Bip001 R Finger0
-    100060: Bip001 R Finger01
-    100062: Bip001 R Finger1
-    100064: Bip001 R Finger11
-    100066: Bip001 R Finger2
-    100068: Bip001 R Finger21
-    100070: Bip001 R Finger3
-    100072: Bip001 R Finger31
-    100074: Bip001 R Foot
-    100076: Bip001 R Forearm
-    100078: Bip001 R Hand
-    100080: Bip001 R Thigh
-    100082: Bip001 R Toe0
-    100084: Bip001 R Toe01
-    100086: Bip001 R UpperArm
-    100088: Bip001 Spine
-    100090: Bip001 Spine1
-    100092: Ear L
-    100094: Ear R
-    100096: Mouth down L
-    100098: Mouth down R
-    100100: Mouth down01
-    100102: Mouth down02
-    100104: Mouth up
-    100106: Nose
-    100108: Nose L
-    100110: Nose R
-    100112: Tongue01
-    100114: Tongue02
-    100116: Tongue03
-    100118: Upper eyelid L
-    100120: Upper eyelid R
-    100122: B201@1
-    100124: Tongue00
-    100126: WA L Point
-    100128: WA R Point
-    400000: //RootNode
-    400002: B201_00_low
-    400004: Belly
-    400006: Belly L
-    400008: Belly R
-    400010: Bip001
-    400012: Bip001 Footsteps
-    400014: Bip001 Head
-    400016: Bip001 L Calf
-    400018: Bip001 L Clavicle
-    400020: Bip001 L Finger0
-    400022: Bip001 L Finger01
-    400024: Bip001 L Finger1
-    400026: Bip001 L Finger11
-    400028: Bip001 L Finger2
-    400030: Bip001 L Finger21
-    400032: Bip001 L Finger3
-    400034: Bip001 L Finger31
-    400036: Bip001 L Foot
-    400038: Bip001 L Forearm
-    400040: Bip001 L Hand
-    400042: Bip001 L Thigh
-    400044: Bip001 L Toe0
-    400046: Bip001 L Toe01
-    400048: Bip001 L UpperArm
-    400050: Bip001 Neck
-    400052: Bip001 Pelvis
-    400054: Bip001 R Calf
-    400056: Bip001 R Clavicle
-    400058: Bip001 R Finger0
-    400060: Bip001 R Finger01
-    400062: Bip001 R Finger1
-    400064: Bip001 R Finger11
-    400066: Bip001 R Finger2
-    400068: Bip001 R Finger21
-    400070: Bip001 R Finger3
-    400072: Bip001 R Finger31
-    400074: Bip001 R Foot
-    400076: Bip001 R Forearm
-    400078: Bip001 R Hand
-    400080: Bip001 R Thigh
-    400082: Bip001 R Toe0
-    400084: Bip001 R Toe01
-    400086: Bip001 R UpperArm
-    400088: Bip001 Spine
-    400090: Bip001 Spine1
-    400092: Ear L
-    400094: Ear R
-    400096: Mouth down L
-    400098: Mouth down R
-    400100: Mouth down01
-    400102: Mouth down02
-    400104: Mouth up
-    400106: Nose
-    400108: Nose L
-    400110: Nose R
-    400112: Tongue01
-    400114: Tongue02
-    400116: Tongue03
-    400118: Upper eyelid L
-    400120: Upper eyelid R
-    400122: B201@1
-    400124: Tongue00
-    400126: WA L Point
-    400128: WA R Point
-    2300000: B201@1
-    3300000: B201@1
-    4300000: B201_00_low
-    4300002: B201@1
-    9500000: //RootNode
-    11100000: //RootNode
-    13700000: B201_00_low
-    13700002: B201@1
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: B201_00_low
+  - first:
+      1: 100004
+    second: Belly
+  - first:
+      1: 100006
+    second: Belly L
+  - first:
+      1: 100008
+    second: Belly R
+  - first:
+      1: 100010
+    second: Bip001
+  - first:
+      1: 100012
+    second: Bip001 Footsteps
+  - first:
+      1: 100014
+    second: Bip001 Head
+  - first:
+      1: 100016
+    second: Bip001 L Calf
+  - first:
+      1: 100018
+    second: Bip001 L Clavicle
+  - first:
+      1: 100020
+    second: Bip001 L Finger0
+  - first:
+      1: 100022
+    second: Bip001 L Finger01
+  - first:
+      1: 100024
+    second: Bip001 L Finger1
+  - first:
+      1: 100026
+    second: Bip001 L Finger11
+  - first:
+      1: 100028
+    second: Bip001 L Finger2
+  - first:
+      1: 100030
+    second: Bip001 L Finger21
+  - first:
+      1: 100032
+    second: Bip001 L Finger3
+  - first:
+      1: 100034
+    second: Bip001 L Finger31
+  - first:
+      1: 100036
+    second: Bip001 L Foot
+  - first:
+      1: 100038
+    second: Bip001 L Forearm
+  - first:
+      1: 100040
+    second: Bip001 L Hand
+  - first:
+      1: 100042
+    second: Bip001 L Thigh
+  - first:
+      1: 100044
+    second: Bip001 L Toe0
+  - first:
+      1: 100046
+    second: Bip001 L Toe01
+  - first:
+      1: 100048
+    second: Bip001 L UpperArm
+  - first:
+      1: 100050
+    second: Bip001 Neck
+  - first:
+      1: 100052
+    second: Bip001 Pelvis
+  - first:
+      1: 100054
+    second: Bip001 R Calf
+  - first:
+      1: 100056
+    second: Bip001 R Clavicle
+  - first:
+      1: 100058
+    second: Bip001 R Finger0
+  - first:
+      1: 100060
+    second: Bip001 R Finger01
+  - first:
+      1: 100062
+    second: Bip001 R Finger1
+  - first:
+      1: 100064
+    second: Bip001 R Finger11
+  - first:
+      1: 100066
+    second: Bip001 R Finger2
+  - first:
+      1: 100068
+    second: Bip001 R Finger21
+  - first:
+      1: 100070
+    second: Bip001 R Finger3
+  - first:
+      1: 100072
+    second: Bip001 R Finger31
+  - first:
+      1: 100074
+    second: Bip001 R Foot
+  - first:
+      1: 100076
+    second: Bip001 R Forearm
+  - first:
+      1: 100078
+    second: Bip001 R Hand
+  - first:
+      1: 100080
+    second: Bip001 R Thigh
+  - first:
+      1: 100082
+    second: Bip001 R Toe0
+  - first:
+      1: 100084
+    second: Bip001 R Toe01
+  - first:
+      1: 100086
+    second: Bip001 R UpperArm
+  - first:
+      1: 100088
+    second: Bip001 Spine
+  - first:
+      1: 100090
+    second: Bip001 Spine1
+  - first:
+      1: 100092
+    second: Ear L
+  - first:
+      1: 100094
+    second: Ear R
+  - first:
+      1: 100096
+    second: Mouth down L
+  - first:
+      1: 100098
+    second: Mouth down R
+  - first:
+      1: 100100
+    second: Mouth down01
+  - first:
+      1: 100102
+    second: Mouth down02
+  - first:
+      1: 100104
+    second: Mouth up
+  - first:
+      1: 100106
+    second: Nose
+  - first:
+      1: 100108
+    second: Nose L
+  - first:
+      1: 100110
+    second: Nose R
+  - first:
+      1: 100112
+    second: Tongue01
+  - first:
+      1: 100114
+    second: Tongue02
+  - first:
+      1: 100116
+    second: Tongue03
+  - first:
+      1: 100118
+    second: Upper eyelid L
+  - first:
+      1: 100120
+    second: Upper eyelid R
+  - first:
+      1: 100122
+    second: B201@1
+  - first:
+      1: 100124
+    second: Tongue00
+  - first:
+      1: 100126
+    second: WA L Point
+  - first:
+      1: 100128
+    second: WA R Point
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: B201_00_low
+  - first:
+      4: 400004
+    second: Belly
+  - first:
+      4: 400006
+    second: Belly L
+  - first:
+      4: 400008
+    second: Belly R
+  - first:
+      4: 400010
+    second: Bip001
+  - first:
+      4: 400012
+    second: Bip001 Footsteps
+  - first:
+      4: 400014
+    second: Bip001 Head
+  - first:
+      4: 400016
+    second: Bip001 L Calf
+  - first:
+      4: 400018
+    second: Bip001 L Clavicle
+  - first:
+      4: 400020
+    second: Bip001 L Finger0
+  - first:
+      4: 400022
+    second: Bip001 L Finger01
+  - first:
+      4: 400024
+    second: Bip001 L Finger1
+  - first:
+      4: 400026
+    second: Bip001 L Finger11
+  - first:
+      4: 400028
+    second: Bip001 L Finger2
+  - first:
+      4: 400030
+    second: Bip001 L Finger21
+  - first:
+      4: 400032
+    second: Bip001 L Finger3
+  - first:
+      4: 400034
+    second: Bip001 L Finger31
+  - first:
+      4: 400036
+    second: Bip001 L Foot
+  - first:
+      4: 400038
+    second: Bip001 L Forearm
+  - first:
+      4: 400040
+    second: Bip001 L Hand
+  - first:
+      4: 400042
+    second: Bip001 L Thigh
+  - first:
+      4: 400044
+    second: Bip001 L Toe0
+  - first:
+      4: 400046
+    second: Bip001 L Toe01
+  - first:
+      4: 400048
+    second: Bip001 L UpperArm
+  - first:
+      4: 400050
+    second: Bip001 Neck
+  - first:
+      4: 400052
+    second: Bip001 Pelvis
+  - first:
+      4: 400054
+    second: Bip001 R Calf
+  - first:
+      4: 400056
+    second: Bip001 R Clavicle
+  - first:
+      4: 400058
+    second: Bip001 R Finger0
+  - first:
+      4: 400060
+    second: Bip001 R Finger01
+  - first:
+      4: 400062
+    second: Bip001 R Finger1
+  - first:
+      4: 400064
+    second: Bip001 R Finger11
+  - first:
+      4: 400066
+    second: Bip001 R Finger2
+  - first:
+      4: 400068
+    second: Bip001 R Finger21
+  - first:
+      4: 400070
+    second: Bip001 R Finger3
+  - first:
+      4: 400072
+    second: Bip001 R Finger31
+  - first:
+      4: 400074
+    second: Bip001 R Foot
+  - first:
+      4: 400076
+    second: Bip001 R Forearm
+  - first:
+      4: 400078
+    second: Bip001 R Hand
+  - first:
+      4: 400080
+    second: Bip001 R Thigh
+  - first:
+      4: 400082
+    second: Bip001 R Toe0
+  - first:
+      4: 400084
+    second: Bip001 R Toe01
+  - first:
+      4: 400086
+    second: Bip001 R UpperArm
+  - first:
+      4: 400088
+    second: Bip001 Spine
+  - first:
+      4: 400090
+    second: Bip001 Spine1
+  - first:
+      4: 400092
+    second: Ear L
+  - first:
+      4: 400094
+    second: Ear R
+  - first:
+      4: 400096
+    second: Mouth down L
+  - first:
+      4: 400098
+    second: Mouth down R
+  - first:
+      4: 400100
+    second: Mouth down01
+  - first:
+      4: 400102
+    second: Mouth down02
+  - first:
+      4: 400104
+    second: Mouth up
+  - first:
+      4: 400106
+    second: Nose
+  - first:
+      4: 400108
+    second: Nose L
+  - first:
+      4: 400110
+    second: Nose R
+  - first:
+      4: 400112
+    second: Tongue01
+  - first:
+      4: 400114
+    second: Tongue02
+  - first:
+      4: 400116
+    second: Tongue03
+  - first:
+      4: 400118
+    second: Upper eyelid L
+  - first:
+      4: 400120
+    second: Upper eyelid R
+  - first:
+      4: 400122
+    second: B201@1
+  - first:
+      4: 400124
+    second: Tongue00
+  - first:
+      4: 400126
+    second: WA L Point
+  - first:
+      4: 400128
+    second: WA R Point
+  - first:
+      23: 2300000
+    second: B201@1
+  - first:
+      33: 3300000
+    second: B201@1
+  - first:
+      43: 4300000
+    second: B201_00_low
+  - first:
+      43: 4300002
+    second: B201@1
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      111: 11100000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: B201_00_low
+  - first:
+      137: 13700002
+    second: B201@1
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: B0201@1
+    second: {fileID: 2100000, guid: 21b6121aba08e404fa639ff8e5b0029c, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleRotations: 1
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -170,13 +456,24 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -186,9 +483,14 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -198,11 +500,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
