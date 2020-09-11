@@ -811,6 +811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0761e9c9debdfd34fa20f5859c6f08ff, type: 3}
+
 --- !u!1 &573651752
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,6 +855,155 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61419759585c89541acff34531f104df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+=======
+--- !u!1001 &590931659
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8405222830309774229, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: d13e9bd81a495ba498ccf6b9a3b5ed76,
+        type: 2}
+    - target: {fileID: 1326878424768042965, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1836532544305436623, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525963215895010301, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525963215895010301, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1398
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525963215895010301, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525963215895010301, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.73097384
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525963215895010301, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6824056
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525963215895010301, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -93.936005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525963215895010301, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525963215895010301, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 485.022
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525963215895010301, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 718
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525963215895010301, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525963215895010301, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525963215895010301, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8607696720513240502, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_Name
+      value: ShivPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953013274279728908, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1402.7211
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953013274279728908, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 484.616
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953013274279728908, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 704.90826
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953013274279728908, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953013274279728908, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953013274279728908, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953013274279728908, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953013274279728908, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953013274279728908, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953013274279728908, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953013274279728908, guid: e080fe9edf6e05e4d8701622c01124f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e080fe9edf6e05e4d8701622c01124f5, type: 3}
+
+>>>>>>> parent of 9820f36... Revert "Merge branch 'master' into lobby-system-branch"
 --- !u!1001 &601642866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1108,7 +1258,13 @@ RectTransform:
   m_Children:
   - {fileID: 1190280433}
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 4
+=======
+
+  m_RootOrder: 9
+
+>>>>>>> parent of 9820f36... Revert "Merge branch 'master' into lobby-system-branch"
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1163,7 +1319,11 @@ Canvas:
   m_GameObject: {fileID: 964066671}
   m_Enabled: 1
   serializedVersion: 3
+<<<<<<< HEAD
   m_RenderMode: 1
+=======
+  m_RenderMode: 0
+>>>>>>> parent of 9820f36... Revert "Merge branch 'master' into lobby-system-branch"
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1174,7 +1334,13 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
+--- !u!4 &1012596236 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 906556992482989193, guid: cd4d5dbe46e7a5c40bf3309937ebc54c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1477768180}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1028245601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1287,7 +1453,13 @@ PrefabInstance:
     - target: {fileID: 1279437348525638701, guid: e2e682b966e3f644392ffbfab511e0e2,
         type: 3}
       propertyPath: m_RootOrder
+<<<<<<< HEAD
       value: 14
+=======
+
+      value: 14
+
+>>>>>>> parent of 9820f36... Revert "Merge branch 'master' into lobby-system-branch"
       objectReference: {fileID: 0}
     - target: {fileID: 1279437348525638701, guid: e2e682b966e3f644392ffbfab511e0e2,
         type: 3}
@@ -1495,7 +1667,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 18
+=======
+  m_RootOrder: 17
+>>>>>>> parent of 9820f36... Revert "Merge branch 'master' into lobby-system-branch"
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1274120331
 MonoBehaviour:
@@ -1510,6 +1686,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  isStructure: 0
+  structure: {fileID: 0}
 --- !u!1001 &1438008334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1567,6 +1745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27ce25370e5628e4097b7cb95b3a151d, type: 3}
+<<<<<<< HEAD
 --- !u!1 &1603939157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,13 +1892,13 @@ AudioListener:
   m_Enabled: 0
 --- !u!20 &1612841832
 Camera:
+=======
+--- !u!1001 &1477768180
+PrefabInstance:
+>>>>>>> parent of 9820f36... Revert "Merge branch 'master' into lobby-system-branch"
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1612841830}
-  m_Enabled: 1
   serializedVersion: 2
+<<<<<<< HEAD
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
@@ -1768,6 +1947,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 51.100002, y: -41.817, z: -13.016001}
+=======
+
+>>>>>>> parent of 9820f36... Revert "Merge branch 'master' into lobby-system-branch"
 --- !u!1 &1639600950 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1279437348525479949, guid: e2e682b966e3f644392ffbfab511e0e2,
@@ -1791,7 +1973,7 @@ TerrainCollider:
   m_Enabled: 1
   m_TerrainData: {fileID: 0}
   m_EnableTreeColliders: 1
---- !u!1 &1708899062
+--- !u!1 &1785026750
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1799,31 +1981,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1708899065}
-  - component: {fileID: 1708899064}
-  - component: {fileID: 1708899063}
+  - component: {fileID: 1785026751}
+  - component: {fileID: 1785026753}
+  - component: {fileID: 1785026752}
   m_Layer: 0
-  m_Name: Camera (2)
+  m_Name: Camera (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1708899063
+--- !u!4 &1785026751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785026750}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 101.9, z: -206.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1012596236}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1785026752
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708899062}
-  m_Enabled: 0
---- !u!20 &1708899064
+  m_GameObject: {fileID: 1785026750}
+  m_Enabled: 1
+--- !u!20 &1785026753
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708899062}
+  m_GameObject: {fileID: 1785026750}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -1851,7 +2047,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 3
+  m_TargetDisplay: 2
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -1860,6 +2056,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+<<<<<<< HEAD
 --- !u!4 &1708899065
 Transform:
   m_ObjectHideFlags: 0
@@ -1874,6 +2071,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 198.19199, z: 0}
+=======
+>>>>>>> parent of 9820f36... Revert "Merge branch 'master' into lobby-system-branch"
 --- !u!1 &1829064083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,7 +2163,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 13
+=======
+
+  m_RootOrder: 16
+
+>>>>>>> parent of 9820f36... Revert "Merge branch 'master' into lobby-system-branch"
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1936201901
 PrefabInstance:
@@ -2063,6 +2268,7 @@ TerrainCollider:
   m_Enabled: 1
   m_TerrainData: {fileID: 0}
   m_EnableTreeColliders: 1
+<<<<<<< HEAD
 --- !u!1 &2001418715
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,6 +2312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61419759585c89541acff34531f104df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+
+>>>>>>> parent of 9820f36... Revert "Merge branch 'master' into lobby-system-branch"
 --- !u!1001 &2128672274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2162,6 +2371,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 15
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 9820f36... Revert "Merge branch 'master' into lobby-system-branch"
       objectReference: {fileID: 0}
     - target: {fileID: 1279437348525638701, guid: e2e682b966e3f644392ffbfab511e0e2,
         type: 3}
