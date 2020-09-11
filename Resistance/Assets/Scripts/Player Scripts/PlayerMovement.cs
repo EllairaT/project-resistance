@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 playerVelocity;
 
     public Transform GroundCheck;
-    public float groundDistance = 0.4f;
+    public float groundDistance = 0.2f;
     public LayerMask groundMask;
     bool isGrounded;
 
@@ -30,17 +30,19 @@ public class PlayerMovement : MonoBehaviour
         {
             //this condition might be true before model is completely on the ground
             //so set this to -2 to force the model on the ground. 
-            playerVelocity.y = -2f;
+            playerVelocity.y = -4f;
         }
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
+       
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
 
         Vector3 horizontalVelocity = new Vector3(controller.velocity.x, 0, controller.velocity.z);
         float horizontalSpeed = horizontalVelocity.magnitude;
+
 
         playerVelocity.y += gravity * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
@@ -61,6 +63,10 @@ public class PlayerMovement : MonoBehaviour
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             anim.SetTrigger("Jump");
         }
-        
+        else if(Input.GetButton("Crouching")&& isGrounded)
+        {
+            anim.SetBool("isCrouching", true);
+            anim.SetTrigger("Crouch");
+        }
     }
 }
