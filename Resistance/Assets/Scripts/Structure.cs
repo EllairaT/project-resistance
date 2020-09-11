@@ -46,18 +46,22 @@ public class Structure : ScriptableObject
         hardness = material.hardness; //set the hardness multiplier
     }
 
-    public int CalculateCost(int structureCost)
+    public int CalculateCost(int matCost)
     {
-        return structureCost + cost;
+        return matCost + cost;
     }
 
-    public void GetStructure(GameObject spawnPoint)
+    public void InstantiateStructure(GameObject spawnPoint)
     {
         sp = spawnPoint;
-        GameObject 
-        clone = Instantiate<GameObject>(structurePrefab, sp.transform.position, Quaternion.identity);
+        GameObject gridObject = new GameObject("Grid Object: " + name);
+        gridObject.AddComponent<Transform>();
+
         GameObject target = new GameObject("_target");
-        target.transform.parent = clone.transform;
+        target.transform.parent = gridObject.transform;
+
+        GameObject clone = Instantiate<GameObject>(structurePrefab, sp.transform.position, Quaternion.identity);
+        clone.transform.parent = target.transform;
 
         MeshRenderer meshRenderer = clone.GetComponent<MeshRenderer>();
         meshRenderer.material = mat;

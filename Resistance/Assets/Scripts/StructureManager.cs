@@ -5,8 +5,10 @@ public class StructureManager : MonoBehaviour
 {
 
     public Structure s;
+    public Materials m;
     public void CreateStructure(GameObject spawnPoint)
     {
-        s.GetStructure(spawnPoint);
+        s.AssignMaterial(m);
+        s.InstantiateStructure(spawnPoint);
     }
 }
