@@ -1,7 +1,8 @@
 ﻿using JetBrains.Annotations;
 using UnityEngine;
-
-public class Attackable : MonoBehaviour
+using Mirror;
+//public class Attackable : MonoBehaviour
+public class Attackable : NetworkBehaviour
 {
     public float health = 50f;
     public bool isStructure;
@@ -19,7 +20,7 @@ public class Attackable : MonoBehaviour
     {
         if (isStructure)
         {
-            amount = structure. CalculateDamage(amount);
+            amount = structure.CalculateDamage(amount);
         }
 
         health -= amount;
@@ -33,6 +34,7 @@ public class Attackable : MonoBehaviour
 
     void Die ()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        NetworkServer.Destroy(gameObject);
     }
 }
