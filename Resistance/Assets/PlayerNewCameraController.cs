@@ -27,7 +27,8 @@ public class PlayerNewCameraController : NetworkBehaviour
     {
         transposer = virtualCamera.GetCinemachineComponent<CinemachineTransposer>();
 
-        virtualCamera.gameObject.SetActive(true);
+        Debug.Log("ENABLE CAMERA");
+        //virtualCamera.gameObject.SetActive(true);
         playerCam.enabled = true;
         playerCam.gameObject.SetActive(true);
 

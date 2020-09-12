@@ -5,17 +5,19 @@ public class PlayerMovementController : NetworkBehaviour
 {
     [SerializeField] private float movementSpeed = 5f;
     [SerializeField] private CharacterController controller = null;
-    //[SerializeField] private float gravity = -9.81f;
     [SerializeField] private NetworkAnimator networkAnim;
-   // [SerializeField] private Animator anim;
 
-    //[SerializeField] private Transform GroundCheck;
-    //[SerializeField] private float groundDistance = 5f;
-    //[SerializeField] private LayerMask groundMask;
-    //[SerializeField] private bool isGrounded;
-    
-    //private float jumpHeight = 1f;
-    //private Vector3 playerVelocity;
+    //-----------------------
+    [SerializeField] private float gravity = -9.81f;
+    [SerializeField] private Transform GroundCheck;
+    [SerializeField] private float groundDistance = 5f;
+    [SerializeField] private LayerMask groundMask;
+    private bool isGrounded;
+
+    private float jumpHeight = 1f;
+    private Vector3 playerVelocity;
+    //---------------------------------
+
     private Vector2 previousInput;
 
 
@@ -32,13 +34,9 @@ public class PlayerMovementController : NetworkBehaviour
     public override void OnStartAuthority()
     {
         networkAnim = GetComponent<NetworkAnimator>();
-        //networkAnim.enabled = true;
-        //networkAnim.animator.enabled = true;
         
         enabled = true;
         
-       // anim = GetComponent<Animator>();
-
         Controls.Player.Move.performed += ctx => SetMovement(ctx.ReadValue<Vector2>());
         Controls.Player.Move.canceled += ctx => ResetMovement();
     }
@@ -78,29 +76,40 @@ public class PlayerMovementController : NetworkBehaviour
     [Client]
     private void Move()
     {
-        Vector3 right = controller.transform.right;
-        Vector3 forward = controller.transform.forward;
-        right.y = 0f;
-        forward.y = 0f;
+        //---------------------------------------
+        //Vector3 right = controller.transform.right;
+        //Vector3 forward = controller.transform.forward;
+        //right.y = 0f;
+        //forward.y = 0f;
 
-        Vector3 movement = right.normalized * previousInput.x + forward.normalized * previousInput.y;
+        //Vector3 movement = right.normalized * previousInput.x + forward.normalized * previousInput.y;
 
-        controller.Move(movement * movementSpeed * Time.deltaTime);
+        //controller.Move(movement * movementSpeed * Time.deltaTime);
+        //--------------------------------------------
 
-        //isGrounded = Physics.CheckSphere(GroundCheck.position, groundDistance, groundMask);
-        //if (isGrounded && playerVelocity.y < 0)
-        //{
-        //    //this condition might be true before model is completely on the ground
-        //    //so set this to -2 to force the model on the ground. 
-        //    playerVelocity.y = -2f;
-        //}
+        isGrounded = Physics.CheckSphere(GroundCheck.position, groundDistance, groundMask);
+        if (isGrounded && playerVelocity.y < 0)
+        {
+            //this condition might be true before model is completely on the ground
+            //so set this to -2 to force the model on the ground. 
+            playerVelocity.y = -2f;
+        }
 
-        ////Vector3 move = transform.right * x + transform.forward * z;
-        //Vector3 move = controller.transform.right.normalized * previousInput.x + controller.transform.forward.normalized * previousInput.y;
-        //controller.Move(move * movementSpeed * Time.deltaTime);
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
 
-        //playerVelocity.y += gravity * Time.deltaTime;
-        //controller.Move(playerVelocity * Time.deltaTime);
+        Vector3 move = transform.right * x + transform.forward * z;
+        controller.Move(move * movementSpeed * Time.deltaTime);
+
+        playerVelocity.y += gravity * Time.deltaTime;
+        controller.Move(playerVelocity * Time.deltaTime);
+
+        //Vector3 move = transform.right * x + transform.forward * z;
+        // Vector3 move = controller.transform.right.normalized * previousInput.x + controller.transform.forward.normalized * previousInput.y;
+        //  controller.Move(move * movementSpeed * Time.deltaTime);
+
+        // playerVelocity.y += gravity * Time.deltaTime;
+        //  controller.Move(playerVelocity * Time.deltaTime);
 
         //if (Input.GetButtonDown("Jump") && isGrounded)
         //{
