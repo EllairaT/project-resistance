@@ -1,8 +1,6 @@
-﻿using JetBrains.Annotations;
-using UnityEngine;
+﻿using UnityEngine;
 using Mirror;
 
-//public class Attackable : MonoBehaviour
 [RequireComponent(typeof(UsableIdAssigner))]
 public class Attackable : NetworkBehaviour, INetworkUsable
 {
@@ -25,28 +23,12 @@ public class Attackable : NetworkBehaviour, INetworkUsable
     public NetworkIdentity GetNetworkIdentity() { return base.netIdentity; }
     public void Use(float healthDeduct)
     {
-        Debug.Log("Attempting to Reduce Health");
-        Debug.Log(base.isServer + " base is server? ");
-        Debug.Log(isServer + " is server?");
         if(base.isServer)
         {
             RpcTakeDmg(healthDeduct);
         }
     }
     #endregion
-
-    //[Command]
-    //public void CmdTakeDamage(float amount)
-    //{
-    //    //Debug.Log(transform.root.gameObject.GetComponent<NetworkIdentity>().hasAuthority);
-
-    //    if (isStructure)
-    //    {
-    //        amount = structure.CalculateDamage(amount);
-    //    }
-
-    //    RpcTakeDmg(amount);
-    //}
 
     [ClientRpc]
     public void RpcTakeDmg(float amount)
@@ -56,15 +38,12 @@ public class Attackable : NetworkBehaviour, INetworkUsable
 
         if (health <= 0f)
         {
-            //RpcDie();
             Die();
         }
     }
 
-   // [ClientRpc]
     private void Die ()
     {
-        //Destroy(gameObject);
         NetworkServer.Destroy(gameObject);
     }
 }
