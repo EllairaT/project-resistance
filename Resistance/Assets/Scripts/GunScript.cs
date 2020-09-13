@@ -5,6 +5,10 @@ public class GunScript : NetworkBehaviour
 {
     public float damage = 10f;
     public float range = 100f;
+    public float impactForce = 30f;
+    public float fireRate = 15f;
+
+    private float nextTimeToFire = 0f;
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
@@ -36,10 +40,11 @@ public class GunScript : NetworkBehaviour
             return;
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1") && Time.time > nextTimeToFire)
         {      
             if (currentClipAmmo > 0)
             {
+                nextTimeToFire = Time.time + 1f / fireRate;
                 Shoot();
                 currentClipAmmo -= 1;
                 ammoScript.SetClipAmmo(currentClipAmmo);
@@ -94,6 +99,12 @@ public class GunScript : NetworkBehaviour
             if (target != null)
             {
                 CmdUse(target.GetNetworkIdentity(), target.GetId());
+            }
+
+            if(hit.rigidbody != null)
+            {
+                Debug.Log("Add Impact!");
+                hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
 
             //GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
