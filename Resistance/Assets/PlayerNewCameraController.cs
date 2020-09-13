@@ -10,6 +10,7 @@ public class PlayerNewCameraController : NetworkBehaviour
     [SerializeField] private Transform playerTransform = null;
     [SerializeField] private CinemachineVirtualCamera virtualCamera = null;
     [SerializeField] private Camera playerCam = null;
+    [SerializeField] private Canvas playerCanvas = null;
 
     private Controls controls;
     private Controls Controls
@@ -31,6 +32,8 @@ public class PlayerNewCameraController : NetworkBehaviour
         //virtualCamera.gameObject.SetActive(true);
         playerCam.enabled = true;
         playerCam.gameObject.SetActive(true);
+        playerCanvas.enabled = true;
+        playerCanvas.gameObject.SetActive(true);
 
         enabled = true;
 

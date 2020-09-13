@@ -11,10 +11,22 @@ public class GunScript : NetworkBehaviour
     public GameObject impactEffect;
 
     [SerializeField] Transform hand;
+    
+    [SerializeField] AmmoScript ammoScript;
+    [SerializeField] private int maxClipAmmo = 20;
+    [SerializeField] private int currentClipAmmo;
+    [SerializeField] private int maxTotalAmmo = 100;
+    [SerializeField] private int currentTotalAmmo;
 
     void Awake()
     {
         transform.SetParent(hand);
+
+        currentClipAmmo = maxClipAmmo;
+        ammoScript.SetClipAmmo(currentClipAmmo);
+
+        currentTotalAmmo = maxTotalAmmo;
+        ammoScript.SetTotalAmmo(currentTotalAmmo);
     }
 
     void Update()
@@ -26,10 +38,47 @@ public class GunScript : NetworkBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {      
-           Shoot();
+            if (currentClipAmmo > 0)
+            {
+                Shoot();
+                currentClipAmmo -= 1;
+                ammoScript.SetClipAmmo(currentClipAmmo);
+            }
+            else
+            {
+                Debug.Log("Out of Ammo!");
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload();
         }
     }
- 
+
+    private void Reload()
+    {
+        if (currentTotalAmmo > 0)
+        {
+            int requiredAmmo = maxClipAmmo - currentClipAmmo;
+            if (currentTotalAmmo >= requiredAmmo)
+            {
+                currentTotalAmmo -= requiredAmmo;
+                currentClipAmmo += requiredAmmo;
+            }
+            else
+            {
+                currentClipAmmo += currentTotalAmmo;
+                currentTotalAmmo = 0;
+            }
+            ammoScript.SetClipAmmo(currentClipAmmo);
+            ammoScript.SetTotalAmmo(currentTotalAmmo);
+        }
+        else
+        {
+            Debug.Log("Purchase More Ammo!!");
+        }
+    }
+
     public void Shoot()
     {
         Debug.Log("pew");
