@@ -215,6 +215,7 @@ MonoBehaviour:
   sceneId: 0
   serverOnly: 0
   m_AssetId: 
+  _allowChildrenBehaviours: 1
   hasSpawned: 0
 --- !u!114 &-675595669992894654
 MonoBehaviour:
@@ -2247,6 +2248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8718995f9a0cb42ba519aa095b2b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   damage: 10
   range: 100
   fpsCam: {fileID: 4849555315491805204}

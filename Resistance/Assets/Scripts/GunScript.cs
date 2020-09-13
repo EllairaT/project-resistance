@@ -9,35 +9,12 @@ public class GunScript : NetworkBehaviour
 {
     public float damage = 10f;
     public float range = 100f;
-    private NetworkIdentity ni = null;
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
 
     [SerializeField] Transform hand;
-
-    private void Start()
-    {
-        ni = transform.root.gameObject.GetComponent<NetworkIdentity>();
-        if(ni == null)
-        {
-            Debug.Log("NUL");
-        }
-        else
-        {
-            Debug.Log("NOT NUL)");
-        }
-
-        if(ni.isServer)
-        {
-            Debug.Log("NI IS SERVER");
-        }
-        else
-        {
-            Debug.Log("Not server");
-        }
-    }
 
     void Awake()
     {
@@ -46,44 +23,69 @@ public class GunScript : NetworkBehaviour
 
     void Update()
     {
-        if(!transform.root.gameObject.GetComponent<NetworkIdentity>().hasAuthority)
+        // Debug.Log("Local A: " + hasAuthority);
+        // Debug.Log("Base A: " + base.hasAuthority);
+
+        if(!base.hasAuthority)
         {
             return;
         }
 
         if (Input.GetButtonDown("Fire1"))
         {      
-           CmdShoot();
+           Shoot();
         }
     }
  
     //new
-    public void CmdShoot()
+    public void Shoot()
     {
-        Debug.Log("pew");
+        //Debug.Log(isServer + " IS SERVER?");
+        //Debug.Log("pew");
         muzzleFlash.Play();
 
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
+            //Debug.Log(hit.transform.name);
 
             Attackable target = hit.transform.GetComponent<Attackable>();
-            if (target != null)
-            {
-                if (!isServer)
-                {
-                    target.CmdTakeDamage(damage);
-                }
-                else
-                {
-                    Debug.Log("Am Server");
-                    target.RpcTakeDmg(damage);
-                }
-            }
+            //---Mirror
+            Debug.Log("Going to Use");
+           // target.Use(damage); //PUT IN NULL STATEMENT
+            CmdUse(target.GetNetworkIdentity(), target.GetId());
             
-            GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impactGO, 2f);
+            //---
+            //if (target != null)
+            //{
+            //    if (!isServer)
+            //    {
+            //        Debug.Log("Am Client");
+            //        target.CmdTakeDamage(damage);
+            //    }
+            //    else
+            //    {
+            //        Debug.Log("Am Server");
+            //        target.RpcTakeDmg(damage);
+            //    }
+            //}
+            
+            //GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+            //Destroy(impactGO, 2f);
+        }
+    }
+
+    [Command]
+    private void CmdUse(NetworkIdentity netIdent, int id)
+    {
+        INetworkUsable[] usables = netIdent.gameObject.GetComponents<INetworkUsable>();
+        for (int i = 0; i < usables.Length; i++)
+        {
+            if (usables[i].GetId() == id)
+            {
+                Debug.Log("Found the ID! Calling Use");
+                usables[i].Use(damage);
+            }
         }
     }
 }
