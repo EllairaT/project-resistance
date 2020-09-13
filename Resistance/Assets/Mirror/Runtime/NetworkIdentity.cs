@@ -159,7 +159,15 @@ namespace Mirror
 
         void CreateNetworkBehavioursCache()
         {
-            networkBehavioursCache = GetComponents<NetworkBehaviour>();
+            if(_allowChildrenBehaviours)
+            {
+                networkBehavioursCache = GetComponentsInChildren<NetworkBehaviour>(true);
+            }
+            else
+            {
+                networkBehavioursCache = GetComponents<NetworkBehaviour>();
+            }
+
             if (NetworkBehaviours.Length > 64)
             {
                 logger.LogError($"Only 64 NetworkBehaviour components are allowed for NetworkIdentity: {name} because of the dirtyComponentMask", this);
@@ -242,6 +250,10 @@ namespace Mirror
             }
         }
 
+        [Tooltip("True to allow children NetworkBehaviours")]
+        [SerializeField]
+        private bool _allowChildrenBehaviours = false;
+
         // keep track of all sceneIds to detect scene duplicates
         static readonly Dictionary<ulong, NetworkIdentity> sceneIds = new Dictionary<ulong, NetworkIdentity>();
 
@@ -320,6 +332,17 @@ namespace Mirror
 
 #if UNITY_EDITOR
             SetupIDs();
+            if(_allowChildrenBehaviours)
+            {
+                NetworkIdentity[] netIds = GetComponentsInChildren<NetworkIdentity>(true);
+                foreach (NetworkIdentity ni in netIds)
+                {
+                    if(ni.gameObject != gameObject)
+                    {
+                        Debug.LogError("Child object " + ni.gameObject.name + " cannot have child NetworkIdentities when using AllowChildrenBehaviours.");
+                    }
+                }
+            }
 #endif
         }
 

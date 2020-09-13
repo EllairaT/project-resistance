@@ -83,10 +83,8 @@ public class PlayerMovementController : NetworkBehaviour
         //forward.y = 0f;
 
         //Vector3 movement = right.normalized * previousInput.x + forward.normalized * previousInput.y;
-
         //controller.Move(movement * movementSpeed * Time.deltaTime);
         //--------------------------------------------
-
         isGrounded = Physics.CheckSphere(GroundCheck.position, groundDistance, groundMask);
         if (isGrounded && playerVelocity.y < 0)
         {

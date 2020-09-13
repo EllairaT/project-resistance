@@ -97,7 +97,7 @@ public class NetworkManagerLobby : NetworkManager
 
             NotifyPlayersOfReadyState();
         }
-
+        
         base.OnServerDisconnect(conn);
     }
 
