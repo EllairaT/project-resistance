@@ -1052,6 +1052,7 @@ MonoBehaviour:
   syncInterval: 0.1
   health: 50
   isStructure: 0
+  goldValuePerHit: 10
   structure: {fileID: 0}
 --- !u!114 &1274120332
 MonoBehaviour:

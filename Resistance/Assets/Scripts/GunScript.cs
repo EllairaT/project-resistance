@@ -16,15 +16,24 @@ public class GunScript : NetworkBehaviour
 
     [SerializeField] Transform hand;
     
+    //ammo
     [SerializeField] AmmoScript ammoScript;
     [SerializeField] private int maxClipAmmo = 20;
     [SerializeField] private int currentClipAmmo;
     [SerializeField] private int maxTotalAmmo = 100;
     [SerializeField] private int currentTotalAmmo;
 
+    //gold
+    [SerializeField] GoldScript goldScript;
+    [SerializeField] private int startingGold = 1000;
+    [SerializeField] private int currentGold;
+
     void Awake()
     {
         transform.SetParent(hand);
+
+        currentGold = startingGold;
+        goldScript.SetGold(currentGold);
 
         currentClipAmmo = maxClipAmmo;
         ammoScript.SetClipAmmo(currentClipAmmo);
@@ -99,11 +108,11 @@ public class GunScript : NetworkBehaviour
             if (target != null)
             {
                 CmdUse(target.GetNetworkIdentity(), target.GetId());
+                EarnGold(target);
             }
 
             if(hit.rigidbody != null)
             {
-                Debug.Log("Add Impact!");
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
 
@@ -111,6 +120,17 @@ public class GunScript : NetworkBehaviour
             //Destroy(impactGO, 2f);
         }
     }
+
+    private void EarnGold(Attackable targetHit)
+    {
+        Debug.Log("Inside Earn Gold");
+        int goldIncrease = targetHit.goldValuePerHit;
+        Debug.Log("GI: " + goldIncrease);
+        currentGold += goldIncrease;
+        Debug.Log("CG: " + currentGold);
+        goldScript.SetGold(currentGold);
+    }
+
 
     [Command]
     private void CmdUse(NetworkIdentity netIdent, int id)

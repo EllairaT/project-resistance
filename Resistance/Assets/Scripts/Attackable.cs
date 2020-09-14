@@ -7,6 +7,7 @@ public class Attackable : NetworkBehaviour, INetworkUsable
     [SyncVar] private int id;
     [SyncVar] public float health = 50f;
     public bool isStructure;
+    [SerializeField] public int goldValuePerHit = 10;
     public Structure structure;
 
     void Start()
