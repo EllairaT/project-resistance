@@ -1,10 +1,13 @@
-﻿using JetBrains.Annotations;
-using UnityEngine;
+﻿using UnityEngine;
+using Mirror;
 
-public class Attackable : MonoBehaviour
+[RequireComponent(typeof(UsableIdAssigner))]
+public class Attackable : NetworkBehaviour, INetworkUsable
 {
-    public float health = 50f;
+    [SyncVar] private int id;
+    [SyncVar] public float health = 50f;
     public bool isStructure;
+    [SerializeField] public int goldValuePerHit = 10;
     public Structure structure;
 
     void Start()
@@ -15,13 +18,22 @@ public class Attackable : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float amount)
+    #region INetworkUsable
+    public void SetId(int value) { id = value; }
+    public int GetId() { return id; }
+    public NetworkIdentity GetNetworkIdentity() { return base.netIdentity; }
+    public void Use(float healthDeduct)
     {
-        if (isStructure)
+        if(base.isServer)
         {
-            amount = structure. CalculateDamage(amount);
+            RpcTakeDmg(healthDeduct);
         }
+    }
+    #endregion
 
+    [ClientRpc]
+    public void RpcTakeDmg(float amount)
+    {
         health -= amount;
         Debug.Log("ouch");
 
@@ -31,8 +43,8 @@ public class Attackable : MonoBehaviour
         }
     }
 
-    void Die ()
+    private void Die ()
     {
-        Destroy(gameObject);
+        NetworkServer.Destroy(gameObject);
     }
 }

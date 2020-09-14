@@ -20,7 +20,7 @@ namespace Mirror
     /// <para>Some of the built-in components of the networking system are derived from NetworkBehaviour, including NetworkTransport, NetworkAnimator and NetworkProximityChecker.</para>
     /// </remarks>
     [AddComponentMenu("")]
-    [RequireComponent(typeof(NetworkIdentity))]
+    //[RequireComponent(typeof(NetworkIdentity))]
     [HelpURL("https://mirror-networking.com/docs/Guides/NetworkBehaviour.html")]
     public abstract class NetworkBehaviour : MonoBehaviour
     {
@@ -127,7 +127,7 @@ namespace Mirror
             {
                 if (netIdentityCache == null)
                 {
-                    netIdentityCache = GetComponent<NetworkIdentity>();
+                    netIdentityCache = GetComponentInParent<NetworkIdentity>();
                 }
                 if (netIdentityCache == null)
                 {
@@ -165,6 +165,14 @@ namespace Mirror
         protected void InitSyncObject(SyncObject syncObject)
         {
             syncObjects.Add(syncObject);
+        }
+
+        protected virtual void Reset()
+        {
+            if(transform.root.GetComponent<NetworkIdentity>() == null)
+            {
+                transform.root.gameObject.AddComponent<NetworkIdentity>();
+            }
         }
 
         #region Commands

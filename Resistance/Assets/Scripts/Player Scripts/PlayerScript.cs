@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Collections;
 
-public class Player : MonoBehaviour
+public class PlayerScript : MonoBehaviour
 {
     public string userName;
     public string userIP;

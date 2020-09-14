@@ -1264,6 +1264,7 @@ MonoBehaviour:
   sceneId: 0
   serverOnly: 0
   m_AssetId: 
+  _allowChildrenBehaviours: 0
   hasSpawned: 0
 --- !u!114 &6409843946461743749
 MonoBehaviour:

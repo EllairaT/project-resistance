@@ -11,8 +11,8 @@ public class Structure : ScriptableObject
     public new string name = "structure " + structNum++;
     private Material mat;
 
-    [SerializeField]
-    private MonoScript script;
+   // [SerializeField]
+    //private MonoScript script;
 
     private float hardness;
 
