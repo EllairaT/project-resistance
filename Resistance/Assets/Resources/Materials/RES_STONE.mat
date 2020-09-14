@@ -33,8 +33,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Scale: {x: 2.39, y: 1.6}
+        m_Offset: {x: 1.61, y: 1}
     - _DetailMask:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -45,12 +45,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 5.79}
+        m_Scale: {x: 0.79, y: 1.91}
+        m_Offset: {x: 3.02, y: 2.12}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 602324604f953ce40870a6fe92b47f28, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 5.79}
+        m_Scale: {x: 0.79, y: 1.91}
+        m_Offset: {x: 3.02, y: 2.12}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -85,7 +85,7 @@ Material:
     - _DoubleSided: 0
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.374
+    - _Glossiness: 1
     - _Glossiness2: 0.5
     - _GlossyReflections: 0
     - _Lighting: 0
@@ -95,7 +95,7 @@ Material:
     - _Lux_FlowNormalTiling: 2
     - _Lux_FlowRefraction: 0.02
     - _Lux_FlowSpeed: 0.05
-    - _Metallic: 0
+    - _Metallic: 0.289
     - _MixMappingControl: 0
     - _Mode: 0
     - _OcclusionStrength: 1

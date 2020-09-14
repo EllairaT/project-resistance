@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 23014807733231022}
   - component: {fileID: 65406839562691984}
   - component: {fileID: -6042284503774136033}
+  - component: {fileID: 7796273708749128202}
+  - component: {fileID: 5748694331637659726}
+  - component: {fileID: 411033898246995665}
   m_Layer: 0
   m_Name: Castle Wall 20
   m_TagString: Untagged
@@ -108,3 +111,46 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 3c62408f6a787f642a2fb7e36992addd, type: 3}
+--- !u!65 &7796273708749128202
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480408438263872}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5000005, y: 6.0000024, z: 0.75002056}
+  m_Center: {x: -0.00000023841858, y: 3.0000002, z: -0.000010758638}
+--- !u!54 &5748694331637659726
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480408438263872}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &411033898246995665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480408438263872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2d54c89a3a9874b8bb6cc1cd1a607b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: d4e7f5c84ed7a614ea98a08dd1a98503, type: 2}
+  mesh: {fileID: 23014807733231022}

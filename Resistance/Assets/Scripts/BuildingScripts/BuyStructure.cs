@@ -20,7 +20,7 @@ public class BuyStructure : MonoBehaviour
     {
         foreach (Structure s in structureArray)
         {
-            Debug.Log(s.structurePrefab.name);
+            //Debug.Log(s.structurePrefab.name);
         }
     }
 }

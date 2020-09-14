@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 23880695528093376}
   - component: {fileID: 65323126391293984}
   - component: {fileID: 2801969690340712175}
+  - component: {fileID: -2295724309665610625}
+  - component: {fileID: 2505946915202155488}
   m_Layer: 0
   m_Name: Castle Fence 1
   m_TagString: Untagged
@@ -108,3 +110,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 699d27c71c7e4214480217a5abaa54d6, type: 3}
+--- !u!54 &-2295724309665610625
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826725851850794}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2505946915202155488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826725851850794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2d54c89a3a9874b8bb6cc1cd1a607b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 4bcf56a4836c1344b849e8599cac59c8, type: 2}
+  mesh: {fileID: 23880695528093376}
