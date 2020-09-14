@@ -28,9 +28,17 @@ public class GunScript : NetworkBehaviour
     [SerializeField] private int startingGold = 1000;
     [SerializeField] private int currentGold;
 
+    //health
+    [SerializeField] HealthBarScript healthScript;
+    [SerializeField] private int maxHealth = 100;
+    [SerializeField] private int currentHealth;
+    
     void Awake()
     {
         transform.SetParent(hand);
+
+        currentHealth = maxHealth;
+        healthScript.SetMaxHealth(currentHealth);
 
         currentGold = startingGold;
         goldScript.SetGold(currentGold);
@@ -97,6 +105,7 @@ public class GunScript : NetworkBehaviour
     {
         Debug.Log("pew");
         muzzleFlash.Play();
+        //TestHealthBar(); //method simply for testing healthing bar reducing
 
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
@@ -108,7 +117,7 @@ public class GunScript : NetworkBehaviour
             if (target != null)
             {
                 CmdUse(target.GetNetworkIdentity(), target.GetId());
-                EarnGold(target);
+                EarnGold(target);       
             }
 
             if(hit.rigidbody != null)
@@ -121,13 +130,17 @@ public class GunScript : NetworkBehaviour
         }
     }
 
+    //Method to simply test health bar reduction
+    private void TestHealthBar()
+    {
+        currentHealth -= 10;
+        healthScript.SetHealth(currentHealth);
+    }
+
     private void EarnGold(Attackable targetHit)
     {
-        Debug.Log("Inside Earn Gold");
         int goldIncrease = targetHit.goldValuePerHit;
-        Debug.Log("GI: " + goldIncrease);
         currentGold += goldIncrease;
-        Debug.Log("CG: " + currentGold);
         goldScript.SetGold(currentGold);
     }
 
