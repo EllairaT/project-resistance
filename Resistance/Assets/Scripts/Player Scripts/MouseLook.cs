@@ -7,7 +7,7 @@ public class MouseLook : MonoBehaviour
 {
     public Transform playerBody;
     public float xRot = 0f;
-    public float mouseSensitivity = 100f;
+    [SerializeField] public float mouseSensitivity = 20f;
 
     void Start()
     {

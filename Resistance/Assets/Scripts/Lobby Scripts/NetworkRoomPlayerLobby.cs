@@ -11,6 +11,13 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
     [SerializeField] private TMP_Text[] playerReadyTexts = new TMP_Text[4];
     [SerializeField] private Button startGameButton = null;
 
+    [Header("Character Select")]
+    [SerializeField] public CharacterSelection characterSelectionPrefab = null;
+
+    private CharacterSelection characterSelection;
+    private GameObject mainMenuCanvas;
+    private int selectedCharacter = 0;
+
     [SyncVar(hook = nameof(HandleDisplayNameChanged))]
     public string DisplayName = "Loading...";
     [SyncVar(hook = nameof(HandleReadyStatusChanged))]
@@ -39,15 +46,49 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
     public override void OnStartAuthority()
     {
         CmdSetDisplayName(PlayerNameInput.DisplayName);
-
         lobbyUI.SetActive(true);
+        mainMenuCanvas = GameObject.FindGameObjectWithTag("Canvas");
+    }
+
+    public void EnableCharacterSelect()
+    {
+        characterSelection.gameObject.SetActive(true);
+        lobbyUI.SetActive(false);
+        mainMenuCanvas.SetActive(false);
+    }
+
+    public void DisableCharacterSelect()
+    {
+        characterSelection.gameObject.SetActive(false);
+        mainMenuCanvas.SetActive(true);
+        lobbyUI.SetActive(true);
+    }
+
+    [Command]
+    public void CmdSetCharacterIndex(int character)
+    {
+        selectedCharacter = character;
+    }
+
+    public int GetCharacterIndex()
+    {
+        return selectedCharacter;
     }
 
     public override void OnStartClient()
     {
         Room.RoomPlayers.Add(this);
-
+        SetUpCharacterSelect();
         UpdateDisplay();
+    }
+
+    public void SetUpCharacterSelect()
+    {
+        Debug.Log("Instantiate CS");
+        characterSelection = Instantiate(characterSelectionPrefab);
+
+        characterSelection.gameObject.SetActive(false);
+        characterSelection.SetRoomLobby(this);
     }
 
     public override void OnStopClient()
@@ -108,7 +149,6 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
     public void CmdReadyUp()
     {
         IsReady = !IsReady;
-
         Room.NotifyPlayersOfReadyState();
     }
 

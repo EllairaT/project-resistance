@@ -58,7 +58,7 @@ public class GunScript : NetworkBehaviour
         }
 
         if (Input.GetButton("Fire1") && Time.time > nextTimeToFire)
-        {      
+        {
             if (currentClipAmmo > 0)
             {
                 nextTimeToFire = Time.time + 1f / fireRate;
