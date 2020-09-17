@@ -13,6 +13,7 @@ public class MouseLook : MonoBehaviour
     {
         //lock cursor to center of screen
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void Update() //calculated every frame
