@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private NetworkManagerLobby networkManager = null;
@@ -7,6 +6,7 @@ public class MainMenu : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject landingPagePanel = null;
 
+    //Instantiate a lobby
     public void HostLobby()
     {
         networkManager.StartHost();

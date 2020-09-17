@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class JoinLobbyMenu : MonoBehaviour
 {
+    //Variables
     [SerializeField] private NetworkManagerLobby networkManager = null;
 
     [Header("UI")]
@@ -23,6 +24,7 @@ public class JoinLobbyMenu : MonoBehaviour
         NetworkManagerLobby.OnClientDisconnected -= HandleClientDisconnected;
     }
 
+    //Get client to join the lobby
     public void JoinLobby()
     {
         string ipAddress = ipAddressInputField.text;
@@ -33,6 +35,7 @@ public class JoinLobbyMenu : MonoBehaviour
         joinButton.interactable = false;
     }
 
+    //When client connects
     private void HandleClientConnected()
     {
         joinButton.interactable = true;
@@ -41,6 +44,7 @@ public class JoinLobbyMenu : MonoBehaviour
         landingPagePanel.SetActive(false);
     }
 
+    //When client disconnects
     private void HandleClientDisconnected()
     {
         joinButton.interactable = true;

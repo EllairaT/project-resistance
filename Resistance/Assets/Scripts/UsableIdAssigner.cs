@@ -8,6 +8,8 @@ public class UsableIdAssigner : NetworkBehaviour
 
         INetworkUsable[] usables = GetComponents<INetworkUsable>();
 
+        //Assign unique ID's to all components that player's don't have authority over
+        //e.g. Target object
         for (int i = 0; i < usables.Length; i++)
         {
             usables[i].SetId(i);
