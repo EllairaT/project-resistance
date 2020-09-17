@@ -1,9 +1,12 @@
 ﻿using Mirror;
+using UnityEngine;
 
 public class NetworkGamePlayerLobby : NetworkBehaviour
 {
     [SyncVar]
     private string displayName = "Loading...";
+
+    private int selectedCharacter = 0;
 
     private NetworkManagerLobby room;
     private NetworkManagerLobby Room
@@ -13,6 +16,16 @@ public class NetworkGamePlayerLobby : NetworkBehaviour
             if (room != null) { return room; }
             return room = NetworkManager.singleton as NetworkManagerLobby;
         }
+    }
+
+    public void SetCharacterIndex(int character)
+    {
+        selectedCharacter = character;
+    }
+
+    public int GetCharacterIndex()
+    {
+        return selectedCharacter;
     }
 
     public override void OnStartClient()

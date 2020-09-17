@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerSpawnSystem : NetworkBehaviour
 {
-    [SerializeField] private GameObject playerPrefab = null;
+    [SerializeField] private GameObject[] playerPrefab = null;
 
     private static List<Transform> spawnPoints = new List<Transform>();
 
@@ -25,17 +25,15 @@ public class PlayerSpawnSystem : NetworkBehaviour
     private void OnDestroy() => NetworkManagerLobby.OnServerReadied -= SpawnPlayer;
 
     [Server]
-    public void SpawnPlayer(NetworkConnection conn)
+    public void SpawnPlayer(NetworkConnection conn, int ch)
     {
         Transform spawnPoint = spawnPoints.ElementAtOrDefault(nextIndex);
-        Debug.Log("Attemping Spawn");
         if (spawnPoint == null)
         {
             Debug.LogError($"Missing spawn point for player {nextIndex}");
             return;
         }
-        Debug.Log("Spawning Player!");
-        GameObject playerInstance = Instantiate(playerPrefab, spawnPoints[nextIndex].position, spawnPoints[nextIndex].rotation);
+        GameObject playerInstance = Instantiate(playerPrefab[ch], spawnPoints[nextIndex].position, spawnPoints[nextIndex].rotation);
         NetworkServer.Spawn(playerInstance, conn);
 
         nextIndex++;
