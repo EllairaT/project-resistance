@@ -8,14 +8,11 @@ public class Attackable : NetworkBehaviour, INetworkUsable
     [SyncVar] public float health = 50f;
     public bool isStructure;
     [SerializeField] public int goldValuePerHit = 10;
-    public Structure structure;
+    //public GameObject attackableObject;
 
     void Start()
     {
-        if (isStructure)
-        {
-            health = structure.baseHealth;
-        }
+        //attackableObject = GetComponent<PlaceableStructure>().GetMesh();
     }
 
     #region INetworkUsable

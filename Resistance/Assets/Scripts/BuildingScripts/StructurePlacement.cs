@@ -5,33 +5,30 @@ using UnityEngine;
 public class StructurePlacement : MonoBehaviour
 {
     private GameObject currentStructure;
-    Vector3 mousePos;
-    Vector3 persp;
     private GameObject Target;
     private int gridSize = 1;
     private Vector3 truePos;
     private Materials material;
-    private Structure structure;
+    private int structureNumber = 0;
+    private PlaceableStructure placeableBuilding;
+    bool hasPlaced;
+    Vector3 mousePos;
+    Vector3 persp;
 
-    void Start()
-    {
-       
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (currentStructure != null)
         {
+            placeableBuilding = currentStructure.GetComponent<PlaceableStructure>();
             Cursor.lockState = CursorLockMode.Confined;
             mousePos = Input.mousePosition;
-            
+
             //-- mouseposition & perspective
             mousePos = new Vector3(mousePos.x, mousePos.y, transform.position.y);
             persp = GetComponent<Camera>().ScreenToWorldPoint(mousePos);
             Target.transform.position = new Vector3(persp.x, persp.y, persp.z);
 
-            //--true position
+            //-- true position
             truePos = new Vector3(persp.x, persp.y, persp.z)
             {
                 x = Mathf.Floor(Target.transform.position.x / gridSize) * gridSize,
@@ -39,42 +36,68 @@ public class StructurePlacement : MonoBehaviour
                 z = Mathf.Floor(Target.transform.position.z / gridSize) * gridSize
             };
 
-            if(truePos.y < 0)
+            if (truePos.y < 0)
             {
                 truePos.y = 0;
             }
 
             currentStructure.transform.position = truePos;
 
+
             if (Input.GetKeyDown("space"))
             {
-                this.PlaceItem(structure, material);
+                if (IsLegalPosition())
+                {
+                    hasPlaced = true;
+                    this.PlaceItem(currentStructure, material);
+                }
             }
         }
     }
 
     //--set preview
-    public void SetItem(Structure s, Materials pm, Materials m)
+    public void SetItem(GameObject s, Materials m, Materials pm)
     {
-        Target = new GameObject("_target");
- 
-        structure = s;
         material = m;
+        hasPlaced = false;
+        Target = new GameObject("_target " + structureNumber++);
+       
+        currentStructure = s.GetComponent<PlaceableStructure>().GetMesh();
 
-        s.AssignMaterial(pm);
-
-        //currentStructure = Instantiate(s.InstantiateStructure(persp));
+        
+        currentStructure.GetComponent<PlaceableStructure>().AssignMaterial(pm);
+        currentStructure = Instantiate(currentStructure);
+        currentStructure.GetComponent<Rigidbody>().detectCollisions = false;
         currentStructure.transform.parent = Target.transform;
     }
 
-    public void PlaceItem(Structure s, Materials m)
+    public void PlaceItem(GameObject s, Materials m)
     {
-        s.AssignMaterial(m);
-        //GameObject go = Instantiate<GameObject>(s.InstantiateStructure(persp), currentStructure.transform.position, Quaternion.identity);
-        //go.transform.parent = Target.transform;
-
+        GameObject instance = s.GetComponent<PlaceableStructure>().GetMesh();
+        instance.GetComponent<PlaceableStructure>().AssignMaterial(m);
+        instance = Instantiate<GameObject>(instance, currentStructure.transform.position, Quaternion.identity);
+        instance.transform.parent = Target.transform;
+        instance.GetComponent<Rigidbody>().useGravity = true;
+        
+        instance.GetComponent<PlaceableStructure>().SetMoveable(false);
         Destroy(currentStructure);
-        s = null;
-        m = null;
+    }
+
+    bool IsLegalPosition()
+    {
+        //colliding with something
+        if(placeableBuilding.colliders.Count > 0)
+        {
+            Debug.Log("no");        
+            currentStructure.GetComponent<PlaceableStructure>().GetMesh().GetComponent<MeshRenderer>().material.SetColor("_Color", Color.red);
+            Destroy(placeableBuilding); 
+            return false;
+        }
+        return true;
+    }
+
+    private void LateUpdate()
+    {
+        
     }
 }

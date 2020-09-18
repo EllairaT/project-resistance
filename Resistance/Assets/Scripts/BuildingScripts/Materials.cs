@@ -20,4 +20,3 @@ public class Materials : ScriptableObject
         Debug.Log(name + ": " + cost);
     }
 }
-    
