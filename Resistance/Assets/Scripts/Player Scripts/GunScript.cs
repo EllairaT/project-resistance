@@ -18,20 +18,20 @@ public class GunScript : NetworkBehaviour
     [SerializeField] Transform hand;
     
     [Header("Ammo")]
-    [SerializeField] AmmoScript ammoScript;
-    [SerializeField] private int maxClipAmmo = 20;
+    [SerializeField] public AmmoScript ammoScript;
+    [SerializeField] public int maxClipAmmo = 20;
     [SerializeField] private int currentClipAmmo;
-    [SerializeField] private int maxTotalAmmo = 100;
+    [SerializeField] public int maxTotalAmmo = 100;
     [SerializeField] private int currentTotalAmmo;
 
     [Header("Gold")]
-    [SerializeField] GoldScript goldScript;
-    [SerializeField] private int startingGold = 1000;
+    [SerializeField] public GoldScript goldScript;
+    [SerializeField] public int startingGold = 1000;
     [SerializeField] private int currentGold;
 
     [Header("Health")]
-    [SerializeField] HealthBarScript healthScript;
-    [SerializeField] private int maxHealth = 100;
+    [SerializeField] public HealthBarScript healthScript;
+    [SerializeField] public int maxHealth = 100;
     [SerializeField] private int currentHealth;
     
     //Set the starting values for each components
@@ -50,6 +50,12 @@ public class GunScript : NetworkBehaviour
 
         currentTotalAmmo = maxTotalAmmo;
         ammoScript.SetTotalAmmo(currentTotalAmmo);
+    }
+
+    //Method for Unit Testing
+    public int TestShoot(int currentAmmo)
+    {
+        return currentAmmo -= 1;
     }
 
     void Update() //called every frame checking for user input
@@ -147,6 +153,11 @@ public class GunScript : NetworkBehaviour
         int goldIncrease = targetHit.goldValuePerHit;
         currentGold += goldIncrease;
         goldScript.SetGold(currentGold);
+    }
+
+    public int TestEarnGold(int currentGold, int goldIncrease) //Unit Test method
+    {
+        return currentGold += goldIncrease;
     }
 
     //Method to call for an in-game object when they've been "shot"
