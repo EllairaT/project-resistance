@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class MainMenuScript : MonoBehaviour
 {
+    //When user quits game, close application
     public void QuitGame()
     {
         Application.Quit();

@@ -11,6 +11,13 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
     [SerializeField] private TMP_Text[] playerReadyTexts = new TMP_Text[4];
     [SerializeField] private Button startGameButton = null;
 
+    [Header("Character Select")]
+    [SerializeField] public CharacterSelection characterSelectionPrefab = null;
+
+    private CharacterSelection characterSelection;
+    private GameObject mainMenuCanvas;
+    private int selectedCharacter = 0;
+
     [SyncVar(hook = nameof(HandleDisplayNameChanged))]
     public string DisplayName = "Loading...";
     [SyncVar(hook = nameof(HandleReadyStatusChanged))]
@@ -36,20 +43,61 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
         }
     }
 
+    //When the initial room player lobby is instantiated
     public override void OnStartAuthority()
     {
         CmdSetDisplayName(PlayerNameInput.DisplayName);
+        lobbyUI.SetActive(true);
+        mainMenuCanvas = GameObject.FindGameObjectWithTag("Canvas");
+    }
 
+    //Allows player to select their character by bringing the Character Select
+    public void EnableCharacterSelect()
+    {
+        characterSelection.gameObject.SetActive(true);
+        lobbyUI.SetActive(false);
+        mainMenuCanvas.SetActive(false);
+    }
+    
+    //Goes back into lobby, removing the Character Select
+    public void DisableCharacterSelect()
+    {
+        characterSelection.gameObject.SetActive(false);
+        mainMenuCanvas.SetActive(true);
         lobbyUI.SetActive(true);
     }
 
+    [Command]
+    public void CmdSetCharacterIndex(int character) //Sets the index of the selected character
+    {
+        selectedCharacter = character;
+    }
+
+    //Return's the selected index
+    public int GetCharacterIndex()
+    {
+        return selectedCharacter;
+    }
+
+    //When a client joins the host
     public override void OnStartClient()
     {
         Room.RoomPlayers.Add(this);
-
+        SetUpCharacterSelect();
         UpdateDisplay();
     }
 
+    //Instantiates the character select
+    public void SetUpCharacterSelect()
+    {
+        Debug.Log("Instantiate CS");
+        characterSelection = Instantiate(characterSelectionPrefab);
+
+        characterSelection.gameObject.SetActive(false);
+        characterSelection.SetRoomLobby(this);
+    }
+
+    //When a client leave the lobby
     public override void OnStopClient()
     {
         Room.RoomPlayers.Remove(this);
@@ -60,6 +108,7 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
     public void HandleReadyStatusChanged(bool oldValue, bool newValue) => UpdateDisplay();
     public void HandleDisplayNameChanged(string oldValue, string newValue) => UpdateDisplay();
 
+    //Updating the UI for all player's when a player joins/leaves/ready's up/unready's
     private void UpdateDisplay()
     {
         if (!hasAuthority)
@@ -91,6 +140,7 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
         }
     }
 
+    //Start button that is only available to the host
     public void HandleReadyToStart(bool readyToStart)
     {
         if (!isLeader) { return; }
@@ -99,21 +149,20 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
     }
 
     [Command]
-    private void CmdSetDisplayName(string displayName)
+    private void CmdSetDisplayName(string displayName) //Sets the display name of all players
     {
         DisplayName = displayName;
     }
 
     [Command]
-    public void CmdReadyUp()
+    public void CmdReadyUp() //When a player ready's/unready's, this method is called
     {
         IsReady = !IsReady;
-
         Room.NotifyPlayersOfReadyState();
     }
 
     [Command]
-    public void CmdStartGame()
+    public void CmdStartGame() //Start game button pressed
     {
         if (Room.RoomPlayers[0].connectionToClient != connectionToClient) { return; }
         Room.StartGame();

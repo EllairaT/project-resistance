@@ -2,9 +2,13 @@
 
 public class PlayerSpawnPoint : MonoBehaviour
 {
+    //Add spawn point
     private void Awake() => PlayerSpawnSystem.AddSpawnPoint(transform);
+
+    //Remove spawn point
     private void OnDestroy() => PlayerSpawnSystem.RemoveSpawnPoint(transform);
 
+    //Draw spawn points in scene view
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;

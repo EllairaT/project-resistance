@@ -3,23 +3,20 @@ using UnityEngine;
 
 public class PlayerMovementController : NetworkBehaviour
 {
+    //Variables
     [SerializeField] private float movementSpeed = 5f;
     [SerializeField] private CharacterController controller = null;
     [SerializeField] private NetworkAnimator networkAnim;
 
-    //-----------------------
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private Transform GroundCheck;
     [SerializeField] private float groundDistance = 5f;
     [SerializeField] private LayerMask groundMask;
     private bool isGrounded;
 
-    private float jumpHeight = 1f;
+    private float jumpHeight = 1f; //needs to be implemented
     private Vector3 playerVelocity;
-    //---------------------------------
-
     private Vector2 previousInput;
-
 
     private Controls controls;
     private Controls Controls
@@ -31,6 +28,7 @@ public class PlayerMovementController : NetworkBehaviour
         }
     }
 
+    //When instantiated...
     public override void OnStartAuthority()
     {
         networkAnim = GetComponent<NetworkAnimator>();
@@ -51,40 +49,24 @@ public class PlayerMovementController : NetworkBehaviour
     private void Update() => Move();
 
     [Client]
-    //private void SetMovement(Vector2 movement) => previousInput = movement;
-    private void SetMovement(Vector2 movement)
+    private void SetMovement(Vector2 movement) //player is moving, set input and set animation to moving
     {
         previousInput = movement;
         networkAnim.ResetTrigger("isIdle");
-        networkAnim.SetTrigger("isWalking");
-        
-        //networkAnim.animator.SetBool("isWalking", true);
-        //networkAnim.animator.SetBool("isIdle", false);    
+        networkAnim.SetTrigger("isWalking");   
     }
 
     [Client]
-    //private void ResetMovement() => previousInput = Vector2.zero;
-    private void ResetMovement()
+    private void ResetMovement() //player has stopped moving, set input to 0 and set animation to idle
     {
         previousInput = Vector2.zero;
-        //networkAnim.animator.SetBool("isWalking", false);
-        //networkAnim.animator.SetBool("isIdle", true);
         networkAnim.ResetTrigger("isWalking");
         networkAnim.SetTrigger("isIdle");
     }
 
     [Client]
-    private void Move()
+    private void Move() //Method used to move the actual player and ensure the stay on the ground (gravity)
     {
-        //---------------------------------------
-        //Vector3 right = controller.transform.right;
-        //Vector3 forward = controller.transform.forward;
-        //right.y = 0f;
-        //forward.y = 0f;
-
-        //Vector3 movement = right.normalized * previousInput.x + forward.normalized * previousInput.y;
-        //controller.Move(movement * movementSpeed * Time.deltaTime);
-        //--------------------------------------------
         isGrounded = Physics.CheckSphere(GroundCheck.position, groundDistance, groundMask);
         if (isGrounded && playerVelocity.y < 0)
         {
@@ -101,18 +83,5 @@ public class PlayerMovementController : NetworkBehaviour
 
         playerVelocity.y += gravity * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
-
-        //Vector3 move = transform.right * x + transform.forward * z;
-        // Vector3 move = controller.transform.right.normalized * previousInput.x + controller.transform.forward.normalized * previousInput.y;
-        //  controller.Move(move * movementSpeed * Time.deltaTime);
-
-        // playerVelocity.y += gravity * Time.deltaTime;
-        //  controller.Move(playerVelocity * Time.deltaTime);
-
-        //if (Input.GetButtonDown("Jump") && isGrounded)
-        //{
-        //    playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        //    anim.SetTrigger("Jump");
-        //}
     }
 }
