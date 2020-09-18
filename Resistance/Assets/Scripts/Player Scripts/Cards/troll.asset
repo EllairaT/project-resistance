@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a748bcbdfe0a12f4286c9ce8de4c26dd, type: 3}
+  m_Name: troll
+  m_EditorClassIdentifier: 
+  _name: Troll
+  _icon: {fileID: 21300000, guid: ae260e9ce9d970b48a12369052e3c927, type: 3}
+  _description: 
+  _cost: 150
+  monsterPrefab: {fileID: 632586129705069703, guid: 961d99e3e68b42c43981806b8b0461a8,
+    type: 3}
+  type: 1
+  _health: 1000
+  _damage: 50
+  _heal: 0
+  SetNumber: 0
