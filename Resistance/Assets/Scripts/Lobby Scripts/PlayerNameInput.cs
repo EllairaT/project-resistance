@@ -14,6 +14,7 @@ public class PlayerNameInput : MonoBehaviour
 
     private void Start() => SetUpInputField();
 
+    //Set up player name input
     private void SetUpInputField()
     {
         if (!PlayerPrefs.HasKey(PlayerPrefsNameKey)) { return; }
@@ -25,11 +26,13 @@ public class PlayerNameInput : MonoBehaviour
         SetPlayerName(defaultName);
     }
 
+    //Sets the player name
     public void SetPlayerName(string name)
     {
         continueButton.interactable = !string.IsNullOrEmpty(name);
     }
 
+    //Saves the player name
     public void SavePlayerName()
     {
         DisplayName = nameInputField.text;

@@ -3,6 +3,7 @@ using Mirror;
 
 public class GunScript : NetworkBehaviour
 {
+    //Variables
     public float damage = 10f;
     public float range = 100f;
     public float impactForce = 30f;
@@ -16,23 +17,24 @@ public class GunScript : NetworkBehaviour
 
     [SerializeField] Transform hand;
     
-    //ammo
+    [Header("Ammo")]
     [SerializeField] AmmoScript ammoScript;
     [SerializeField] private int maxClipAmmo = 20;
     [SerializeField] private int currentClipAmmo;
     [SerializeField] private int maxTotalAmmo = 100;
     [SerializeField] private int currentTotalAmmo;
 
-    //gold
+    [Header("Gold")]
     [SerializeField] GoldScript goldScript;
     [SerializeField] private int startingGold = 1000;
     [SerializeField] private int currentGold;
 
-    //health
+    [Header("Health")]
     [SerializeField] HealthBarScript healthScript;
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private int currentHealth;
     
+    //Set the starting values for each components
     void Awake()
     {
         transform.SetParent(hand);
@@ -50,7 +52,7 @@ public class GunScript : NetworkBehaviour
         ammoScript.SetTotalAmmo(currentTotalAmmo);
     }
 
-    void Update()
+    void Update() //called every frame checking for user input
     {
         if(!base.hasAuthority)
         {
@@ -58,7 +60,7 @@ public class GunScript : NetworkBehaviour
         }
 
         if (Input.GetButton("Fire1") && Time.time > nextTimeToFire)
-        {      
+        {
             if (currentClipAmmo > 0)
             {
                 nextTimeToFire = Time.time + 1f / fireRate;
@@ -77,6 +79,7 @@ public class GunScript : NetworkBehaviour
         }
     }
 
+    //Reload's the player's gun
     private void Reload()
     {
         if (currentTotalAmmo > 0)
@@ -101,6 +104,7 @@ public class GunScript : NetworkBehaviour
         }
     }
 
+    //Method call to get the player to shoot a bullet
     public void Shoot()
     {
         Debug.Log("pew");
@@ -137,6 +141,7 @@ public class GunScript : NetworkBehaviour
         healthScript.SetHealth(currentHealth);
     }
 
+    //Increase the player's gold based on the target hit's gold value
     private void EarnGold(Attackable targetHit)
     {
         int goldIncrease = targetHit.goldValuePerHit;
@@ -144,7 +149,9 @@ public class GunScript : NetworkBehaviour
         goldScript.SetGold(currentGold);
     }
 
-
+    //Method to call for an in-game object when they've been "shot"
+    //This will call their use method, which is the "active" method when an object has been interacted with
+    //It will reduce the object's health
     [Command]
     private void CmdUse(NetworkIdentity netIdent, int id)
     {

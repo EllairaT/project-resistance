@@ -4,6 +4,7 @@ using Mirror;
 [RequireComponent(typeof(UsableIdAssigner))]
 public class Attackable : NetworkBehaviour, INetworkUsable
 {
+    //Variables
     [SyncVar] private int id;
     [SyncVar] public float health = 50f;
     public bool isStructure;
@@ -15,6 +16,7 @@ public class Attackable : NetworkBehaviour, INetworkUsable
         //attackableObject = GetComponent<PlaceableStructure>().GetMesh();
     }
 
+    //Interface for all in game objects
     #region INetworkUsable
     public void SetId(int value) { id = value; }
     public int GetId() { return id; }
@@ -29,17 +31,18 @@ public class Attackable : NetworkBehaviour, INetworkUsable
     #endregion
 
     [ClientRpc]
-    public void RpcTakeDmg(float amount)
+    public void RpcTakeDmg(float amount) //Calls to reduce the object's health for all players in the game
     {
         health -= amount;
         Debug.Log("ouch");
 
-        if (health <= 0f)
+        if (health <= 0f) //Is it dead? If so, it dies
         {
             Die();
         }
     }
 
+    //In-game object's health has been set to <= 0, destroy the object in the server
     private void Die ()
     {
         NetworkServer.Destroy(gameObject);
