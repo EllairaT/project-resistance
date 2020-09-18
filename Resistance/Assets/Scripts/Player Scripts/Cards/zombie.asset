@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a748bcbdfe0a12f4286c9ce8de4c26dd, type: 3}
+  m_Name: zombie
+  m_EditorClassIdentifier: 
+  _name: Zombie
+  _icon: {fileID: 21300000, guid: 526406741b7d51b4f925403beed70118, type: 3}
+  _description: 
+  _cost: 20
+  monsterPrefab: {fileID: 4803014352389650695, guid: 06cb2b131fe009c47a523671a8fa9ed8,
+    type: 3}
+  type: 0
+  _health: 300
+  _damage: 20
+  _heal: 0
+  SetNumber: 0
