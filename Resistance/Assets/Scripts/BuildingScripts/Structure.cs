@@ -7,7 +7,6 @@ using UnityEngine;
 public class Structure : ScriptableObject
 {
     public float hardness;
-    public bool moveable = true;
     public float baseHealth;
     public int cost;
 

@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using Mono.CecilX;
+using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class PlaceableStructure : MonoBehaviour
@@ -8,26 +10,46 @@ public class PlaceableStructure : MonoBehaviour
     public Structure stats;
     public MeshRenderer mesh;
     private Material mat;
+    private Material illegal;
+    private Material preview;
+    public bool isMoveable;
+    public List<Collider> colliders = new List<Collider>();
+    public bool isPreview = true;
+    Renderer r;
 
-    [HideInInspector] public List<Collider> colliders = new List<Collider>();
     void Start()
     {
+        r = mesh.GetComponent<Renderer>();
+        illegal = Resources.Load("Materials/IllegalPreview") as Material;
+        preview = Resources.Load("Materials/Preview") as Material;
+       //.material = preview;
     }
-    void Update()
-    {
 
+    private void Update()
+    {
+        if (isPreview)
+        {
+            r.material = preview;         
+        }
+        else
+        {
+            isPreview = !isPreview;
+        }
     }
 
     void PrintStats()
     {
-        Debug.Log(mesh.name + " " + stats.cost);
+        Debug.Log(mesh.name + " " + mat.name + "" +stats.cost);
     }
+
 
     public void AssignMaterial(Materials material)
     {
-        mesh.material = material.GetMaterial();
-        stats.CalculateCost(material.cost);
-        stats.hardness = material.hardness;
+            mat = material.GetMaterial();
+            r.material = mat;
+            stats.CalculateCost(material.cost);
+            stats.hardness = material.hardness;
+        
     }
 
     public GameObject GetMesh()
@@ -35,35 +57,28 @@ public class PlaceableStructure : MonoBehaviour
         return mesh.gameObject;
     }
 
-    //once structure has been placed on the map, the player will no longer be able to move the structure
-    public void SetMoveable(bool b)
+     void OnTriggerEnter(Collider other)
     {
-        stats.moveable = b;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Building"))
+        if (isPreview)
         {
-            colliders.Add(other);
-            Debug.Log("added collider");
+            if (other.CompareTag("Building"))
+            {
+                Debug.Log("colliding");
+                colliders.Add(other);       
+                r.material = illegal;
+            }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Building"))
+        if (isPreview)
         {
-            Debug.Log("removed collider");
-            colliders.Remove(other);
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (stats.moveable)
-        {
-
+            if (other.CompareTag("Building"))
+            {
+                colliders.Remove(other);
+               // r.material = preview;
+            }
         }
     }
 }

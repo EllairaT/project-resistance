@@ -7,6 +7,7 @@ public class PlayerSpawnSystem : NetworkBehaviour
 {
     //Prefabs that can be spawned
     [SerializeField] private GameObject[] playerPrefab = null;
+    [SerializeField] private GameObject targetPrefab = null;
 
     private static List<Transform> spawnPoints = new List<Transform>();
 
@@ -38,8 +39,12 @@ public class PlayerSpawnSystem : NetworkBehaviour
             return;
         }
         GameObject playerInstance = Instantiate(playerPrefab[character], spawnPoints[nextIndex].position, spawnPoints[nextIndex].rotation);
+
         NetworkServer.Spawn(playerInstance, conn);
+        GameObject targetInstance = Instantiate(targetPrefab, spawnPoints[nextIndex].position, spawnPoints[nextIndex].rotation);
+        NetworkServer.Spawn(targetInstance, connectionToServer);
 
         nextIndex++; //next spawn point
+
     }
 }

@@ -1288,7 +1288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 7111496590438026112}
   anim: {fileID: 9220433742409080750}
-  speed: 5
+  speed: 10
   gravity: -9.81
   jumpHeight: 1
   GroundCheck: {fileID: 6699365770523846422}
@@ -2863,12 +2863,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8718995f9a0cb42ba519aa095b2b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   damage: 10
   range: 100
+  impactForce: 30
+  fireRate: 15
   fpsCam: {fileID: 8830492555459317543}
   muzzleFlash: {fileID: 7356978847953475587}
   impactEffect: {fileID: 0}
   hand: {fileID: 1918859443597382634}
+  ammoScript: {fileID: 0}
+  maxClipAmmo: 20
+  currentClipAmmo: 0
+  maxTotalAmmo: 100
+  currentTotalAmmo: 0
+  goldScript: {fileID: 0}
+  startingGold: 1000
+  currentGold: 0
+  healthScript: {fileID: 0}
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1 &8895666476547153724
 GameObject:
   m_ObjectHideFlags: 0

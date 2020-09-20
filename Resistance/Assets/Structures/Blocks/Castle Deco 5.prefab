@@ -12,12 +12,9 @@ GameObject:
   - component: {fileID: 33978724202590652}
   - component: {fileID: 23570605859870668}
   - component: {fileID: 64046363830639490}
-  - component: {fileID: -1960417265930361355}
   - component: {fileID: 1270485472481602092}
   - component: {fileID: 6787261427199813768}
-  - component: {fileID: -1377738259864770079}
-  - component: {fileID: -2148948367634696569}
-  - component: {fileID: -9157248349472241214}
+  - component: {fileID: 4034743182990412984}
   m_Layer: 9
   m_Name: Castle Deco 5
   m_TagString: Building
@@ -33,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210271070373966}
   m_LocalRotation: {x: 0.0000018099951, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 170, y: 6, z: -14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -65,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1fd3b2258b30f7949bcb3491005c85eb, type: 2}
+  - {fileID: 2100000, guid: b870701f038ffef42a23c4e6426363c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,26 +90,13 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210271070373966}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: eae771a639f8e6a40b34e4ce01366af5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: ea23628bf44d217428f1874689894e2f, type: 3}
---- !u!65 &-1960417265930361355
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210271070373966}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 2.2500026, z: 0.75000834}
-  m_Center: {x: 0.000000059604645, y: 1.1249989, z: -0.37500405}
 --- !u!54 &1270485472481602092
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,7 +112,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!114 &6787261427199813768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,52 +127,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: e6e923b4d7ea94c41a83ad20e3e26710, type: 2}
   mesh: {fileID: 23570605859870668}
+  isMoveable: 0
   colliders: []
---- !u!114 &-1377738259864770079
-MonoBehaviour:
+  isPreview: 1
+--- !u!65 &4034743182990412984
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210271070373966}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f24a44cb7056647a7c911851ef7202, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
---- !u!114 &-2148948367634696569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210271070373966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  serverOnly: 1
-  m_AssetId: 
-  _allowChildrenBehaviours: 1
-  hasSpawned: 0
---- !u!114 &-9157248349472241214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210271070373966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea4584c492bd93143b1ceabbf5aff80f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  health: 50
-  isStructure: 0
-  goldValuePerHit: 10
+  serializedVersion: 2
+  m_Size: {x: 3, y: 2.2500026, z: 0.75000834}
+  m_Center: {x: 0.000000059604645, y: 1.1249989, z: -0.37500405}

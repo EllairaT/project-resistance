@@ -7,7 +7,8 @@ public class StructureManager : MonoBehaviour
     private StructurePlacement structurePlacement;
     public Materials material;
     public Materials previewMaterial;
-    private PlaceableStructure ps;
+    private PlaceableStructure ps;    
+    private bool isInBuildMode = false;
 
     void Start()
     {
@@ -15,19 +16,37 @@ public class StructureManager : MonoBehaviour
         {
             Display.displays[1].Activate();
         }
-
+        
         structurePlacement = GetComponent<StructurePlacement>();
+        
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown("b"))
+        {
+            isInBuildMode = !isInBuildMode;
+        }
+        structurePlacement.isBuilding = isInBuildMode;
     }
 
     void OnGUI()
     {
-        for (int i = 0; i < structures.Length; i++)
+    
+        if (isInBuildMode)
         {
-            if (GUI.Button(new Rect(Screen.width / 20, Screen.height / 15 + Screen.height / 12 * i, 100, 30), structures[i].name))
-            {
-                structurePlacement.SetItem(structures[i], material, previewMaterial);
-
+            for (int i = 0; i < structures.Length; i++)
+            {               
+                if (GUI.Button(new Rect(Screen.width / 20, Screen.height / 15 + Screen.height / 12 * i, 100, 30), structures[i].name))
+                {
+                    Cursor.lockState = CursorLockMode.Confined;
+                    structurePlacement.SetItem(structures[i], material);             
+                }
             }
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;   
         }
     }
 }

@@ -12,7 +12,7 @@ public class Materials : ScriptableObject
 
     public Material GetMaterial()
     {
-        return Resources.Load<Material>("Materials/" + mat.name);
+        return Resources.Load("Materials/" + mat.name) as Material;
     }
 
     public void Print()

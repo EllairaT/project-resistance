@@ -12,12 +12,9 @@ GameObject:
   - component: {fileID: 33058067959595352}
   - component: {fileID: 23321073047117170}
   - component: {fileID: 64731101408584342}
-  - component: {fileID: -8155020383840710862}
   - component: {fileID: -6693768046100174578}
   - component: {fileID: 6322766890057305012}
-  - component: {fileID: 4627147984293620626}
-  - component: {fileID: 7246537154330710813}
-  - component: {fileID: 7380823811153713580}
+  - component: {fileID: 4801793725752735103}
   m_Layer: 9
   m_Name: Castle Deco 7
   m_TagString: Building
@@ -93,26 +90,13 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1996434508066854}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: eae771a639f8e6a40b34e4ce01366af5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 492e037a8769142498081659f94a6f30, type: 3}
---- !u!65 &-8155020383840710862
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1996434508066854}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.7500002, y: 3.7500024, z: 0.7500138}
-  m_Center: {x: -0.00000011920929, y: 1.8749983, z: -0.3750065}
 --- !u!54 &-6693768046100174578
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,7 +112,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!114 &6322766890057305012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,52 +127,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: f38f8baab2928774188249027ea65328, type: 2}
   mesh: {fileID: 23321073047117170}
+  isMoveable: 0
   colliders: []
---- !u!114 &4627147984293620626
-MonoBehaviour:
+  isPreview: 0
+--- !u!65 &4801793725752735103
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1996434508066854}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f24a44cb7056647a7c911851ef7202, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
---- !u!114 &7246537154330710813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1996434508066854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  serverOnly: 1
-  m_AssetId: 
-  _allowChildrenBehaviours: 1
-  hasSpawned: 0
---- !u!114 &7380823811153713580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1996434508066854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea4584c492bd93143b1ceabbf5aff80f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  health: 50
-  isStructure: 0
-  goldValuePerHit: 10
+  serializedVersion: 2
+  m_Size: {x: 3.7500002, y: 3.7500024, z: 0.7500138}
+  m_Center: {x: -0.00000011920929, y: 1.8749983, z: -0.3750065}
