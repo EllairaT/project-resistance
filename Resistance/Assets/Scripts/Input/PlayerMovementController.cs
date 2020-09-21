@@ -84,4 +84,13 @@ public class PlayerMovementController : NetworkBehaviour
         playerVelocity.y += gravity * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
+
+    //Method for Unit Testing
+    public Vector3 CalculateMovement(float xAxis, float zAxis, float deltaTime)
+    {
+        var x = xAxis * movementSpeed * deltaTime;
+        var z = zAxis * movementSpeed * deltaTime;
+
+        return new Vector3(0, 0, 0);
+    }
 }

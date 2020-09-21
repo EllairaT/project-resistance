@@ -24,8 +24,24 @@ public class MouseLook : MonoBehaviour
         xRot = Mathf.Clamp(xRot, -90f, 40f); //clamp mouse rotation
 
         //quaternions are responsible for rotations in unity
-        transform.localRotation = Quaternion.Euler(xRot, 0, 0); 
+        transform.localRotation = Quaternion.Euler(xRot, 0, 0);
         playerBody.Rotate(Vector3.up * mouseX);
+    }
 
+    //Method for Unit Testing
+    public float TestMouseLookX(float axis, float mouseSensitibity, float deltaTime)
+    {
+        float xRot = 0f;
+        float mouseY = axis * mouseSensitibity * deltaTime;
+        return xRot -= mouseY;
+    }
+
+    //Method for Unit Testing
+    public float TestMouseLookY(float axis, float mouseSensitibity, float deltaTime)
+    {
+        float mouseX = axis * mouseSensitibity * deltaTime;
+        Vector3 v3 = new Vector3(1, 1, 1);
+        float playerBodyRotate = v3.y * mouseX;
+        return playerBodyRotate;
     }
 }
