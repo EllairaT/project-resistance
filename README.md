@@ -12,9 +12,12 @@ and turrets to help the team defend their nexus. Game ends when attacker kills a
 defenders or kill the nexus, or if the defenders reach defend successfully for 15
 rounds (15 because → RES15TANCE).
 
-##Team Members:<br> 
-  Ellaira Torio [Product Owner]<br>
-  Shivneel Singh [Scrum Master]<br>
-  <strike>Blake O'Reilly</strike>
+## Team Members
+* ### Product Owner
+  * #### Ellaira Torio
+* ### Scrum Master 
+  * #### Shivneel Singh
+  * #### ~~Blake O'Reilly~~ [formerly]
+ 
 
           
