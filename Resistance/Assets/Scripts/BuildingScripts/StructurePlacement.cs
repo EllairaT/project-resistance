@@ -26,10 +26,12 @@ public class StructurePlacement : MonoBehaviour
 
     void Update()
     {
+        int placedObjCount = 0;
         if (currentStructure != null)
         {
             mousePos = Input.mousePosition;
-
+            placeableBuilding = currentStructure.GetComponent<PlaceableStructure>();
+            placeableBuilding.isPreview = true; 
             //-- mouseposition & perspective
             mousePos = new Vector3(mousePos.x, mousePos.y, transform.position.y);
             persp = GetComponent<Camera>().ScreenToWorldPoint(mousePos);
@@ -52,30 +54,35 @@ public class StructurePlacement : MonoBehaviour
 
             if (Input.GetKeyDown("space"))
             {
+                for (int i = 0; i < currentStructure.GetComponent<PlaceableStructure>().colliders.Count; i++)
+                {
+                    Debug.Log(i.ToString());
+                }
+
                 if (IsLegalPosition())
                 {
-                    Debug.Log("placed");
-                  
+                    Debug.Log("placed");                  
                     PlaceItem();
+                   
+                    placeableBuilding.isPreview = false;
+                    placeableBuilding = null;
                 }
                 else
                 {
                     Debug.Log("nope");
                 }
-
+                placeableBuilding = null;
             }
 
             if (isBuilding == false)
             {
+                Destroy(placeableBuilding);
+                Destroy(Target.gameObject);
                 Destroy(currentStructure.gameObject);
             }
         }
     }
 
-    private void FixedUpdate()
-    {
-
-    }
 
     //--set preview
     public void SetItem(GameObject s, Materials m)
@@ -83,75 +90,47 @@ public class StructurePlacement : MonoBehaviour
         material = m;
         Target = new GameObject("_target " + structureNumber++);
 
-        placeableBuilding = s.GetComponent<PlaceableStructure>();
-        //placeableBuilding.isMoveable = true;
-        //placeableBuilding.isPreview = true;
-
-        currentStructure = Instantiate(placeableBuilding.gameObject);
-        currentStructure.GetComponent<Rigidbody>().detectCollisions = false;
+        currentStructure = Instantiate(s.gameObject);
+        currentStructure.GetComponent<Rigidbody>().isKinematic = false;
+        currentStructure.GetComponent<PlaceableStructure>().isPreview = true;
         currentStructure.transform.parent = Target.transform;
-       // currentStructure.GetComponent<MeshCollider>().enabled = false;
-        //ToggleCollision();
     }
 
     public void PlaceItem()
     {
-        placeableBuilding.isMoveable = false;
-        //placeableBuilding.isPreview = false;
-
-        instance = currentStructure.GetComponent<PlaceableStructure>().GetMesh();
+        instance = placeableBuilding.GetMesh();
         instance.GetComponent<PlaceableStructure>().AssignMaterial(material);
+        
+        instance.GetComponent<Rigidbody>().useGravity = true;
+
         instance = Instantiate<GameObject>(instance, currentStructure.transform.position, Quaternion.identity);
 
         instance.transform.parent = Target.transform;
-        instance.GetComponent<Rigidbody>().useGravity = true;
-       
+     
         BoxCollider bx = instance.GetComponent<BoxCollider>();
-        bx.size = new Vector3((bx.size.x + 0.0003f), (bx.size.y + 0.0003f), (bx.size.z + 0.0003f));
+        bx.size = new Vector3((bx.size.x - 0.0003f), (bx.size.y - 0.0003f), (bx.size.z - 0.0003f));
+        placedObjects.Add(instance);
+        
+        Destroy(currentStructure.gameObject);   
 
-        GameObject temp = instance;
-        placedObjects.Add(temp);
-        Destroy(currentStructure.gameObject);
-
-        ShowAll();
+ 
     }
 
     bool IsLegalPosition()
     {
-        //colliding with something
-        bool isLegal = false;
-        if(placeableBuilding.colliders.Count > 0)
+        bool isLegal;
+        if (placeableBuilding.isIllegal)
         {
-            Debug.Log("no");        
-            
+            Debug.Log("no");                  
             Destroy(Target);
             Destroy(currentStructure);
-
             isLegal = false;
         }
         else
         {
             isLegal = true;
         }
-
-        foreach (Collider item in placeableBuilding.colliders)
-        {
-            Debug.Log("found");
-        }
         return isLegal;
     }
 
-    private void ToggleCollision()
-    {
-        instance.GetComponent<MeshCollider>().enabled = !instance.GetComponent<MeshCollider>().enabled;     
-    }
-    
-    public void ShowAll()
-    {
-        int count = 0;
-        foreach (var item in placedObjects)
-        {
-            Debug.Log(count++ + ": " + item.name);
-        }
-    }
 }

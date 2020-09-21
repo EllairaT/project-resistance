@@ -12,9 +12,11 @@ public class PlaceableStructure : MonoBehaviour
     private Material mat;
     private Material illegal;
     private Material preview;
-    public bool isMoveable;
     public List<Collider> colliders = new List<Collider>();
-    public bool isPreview = true;
+    public bool isMoveable;
+    public bool isPreview;
+    public bool isIllegal = false;
+    public bool isPlaceable = false;
     Renderer r;
 
     void Start()
@@ -22,34 +24,35 @@ public class PlaceableStructure : MonoBehaviour
         r = mesh.GetComponent<Renderer>();
         illegal = Resources.Load("Materials/IllegalPreview") as Material;
         preview = Resources.Load("Materials/Preview") as Material;
-       //.material = preview;
     }
 
     private void Update()
     {
-        if (isPreview)
+        r.material = isPreview ? (isIllegal ? illegal : preview) : mesh.material;
+        mesh.GetComponent<MeshCollider>().enabled = !isPreview;
+        Debug.Log("current velocity: " + GetComponent<Rigidbody>().velocity.y);
+
+        if ((!isPreview) && (GetComponent<Rigidbody>().velocity.y <= 0f))
         {
-            r.material = preview;         
-        }
-        else
-        {
-            isPreview = !isPreview;
+            Debug.Log("ITS ZERO!~");
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotation;
         }
     }
 
     void PrintStats()
     {
-        Debug.Log(mesh.name + " " + mat.name + "" +stats.cost);
+        Debug.Log(mesh.name + " " + mat.name + "" + stats.cost);
     }
 
 
     public void AssignMaterial(Materials material)
     {
-            mat = material.GetMaterial();
-            r.material = mat;
-            stats.CalculateCost(material.cost);
-            stats.hardness = material.hardness;
-        
+        mat = material.GetMaterial();
+        r.material = mat;
+        stats.CalculateCost(material.cost);
+        stats.hardness = material.hardness;
+        isPreview = false;
+        PrintStats();
     }
 
     public GameObject GetMesh()
@@ -57,27 +60,55 @@ public class PlaceableStructure : MonoBehaviour
         return mesh.gameObject;
     }
 
-     void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if (isPreview)
+        if(other.CompareTag("Building"))
         {
-            if (other.CompareTag("Building"))
+            if(other is MeshCollider)
             {
-                Debug.Log("colliding");
-                colliders.Add(other);       
-                r.material = illegal;
+                isIllegal = false;
+            } 
+            else if(other is BoxCollider)
+            {
+                isIllegal = true;
             }
         }
     }
-
+ 
     void OnTriggerExit(Collider other)
     {
+        Debug.Log("not colliding");
         if (isPreview)
         {
             if (other.CompareTag("Building"))
             {
                 colliders.Remove(other);
-               // r.material = preview;
+                r.material = mat;
+                isPlaceable = true;
+                isIllegal = false;
+            }
+        }
+    }
+
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.collider.CompareTag("Building"))
+        {
+            if (collision.collider is BoxCollider)
+            {
+                isIllegal = true;
+            }
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.CompareTag("Building"))
+        {
+            if (collision.collider is BoxCollider)
+            {
+                //Physics.IgnoreCollision(GetComponent<MeshCollider>(), collision.collider.GetComponent<MeshCollider>(), true);
+                isIllegal = false;
             }
         }
     }
