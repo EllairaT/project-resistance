@@ -1,4 +1,6 @@
-# project-resistance
+![Logo Image](https://github.com/EllairaT/project-resistance/blob/lobby-system-branch/Resistance/Assets/Images/Resistance%20logo%201.png)
+
+
 
 First person tower defence game that has four defenders and one attacker (card
 master). Card master can place monsters on the ground in attempt to attack the
@@ -10,7 +12,7 @@ and turrets to help the team defend their nexus. Game ends when attacker kills a
 defenders or kill the nexus, or if the defenders reach defend successfully for 15
 rounds (15 because → RES15TANCE).
 
-Team Members:<br> 
+##Team Members:<br> 
   Ellaira Torio [Product Owner]<br>
   Shivneel Singh [Scrum Master]<br>
   <strike>Blake O'Reilly</strike>
