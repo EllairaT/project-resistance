@@ -1,5 +1,55 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!111 &-6515307301118971490
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8319437786079628646}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: e9d80ff262fbc75448d4c9dc6acc4524, type: 3}
+  - {fileID: 7400000, guid: d12bbabd4cee30045b99f6d88c6b80fb, type: 3}
+  - {fileID: 7400000, guid: 7c9e58415bf352843b2a5493cc2a4754, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &418557884438977644
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8319437786079628646}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 5888edb55eb3bba4383222f3cd5dfbb5, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &3909093605056632381
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8319437786079628646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &8319437786079595462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,7 +59,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 5888edb55eb3bba4383222f3cd5dfbb5, type: 3}
       propertyPath: m_Name
-      value: B0201@1
+      value: PigOrc
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5888edb55eb3bba4383222f3cd5dfbb5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -55,5 +105,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: 5888edb55eb3bba4383222f3cd5dfbb5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5888edb55eb3bba4383222f3cd5dfbb5, type: 3}
+--- !u!1 &8319437786079628646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 5888edb55eb3bba4383222f3cd5dfbb5,
+    type: 3}
+  m_PrefabInstance: {fileID: 8319437786079595462}
+  m_PrefabAsset: {fileID: 0}

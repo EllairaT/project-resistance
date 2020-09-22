@@ -14,12 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Golem
   _icon: {fileID: 21300000, guid: b2c91e7e19914a64f83a852599f5ca70, type: 3}
-  _description: 
+  _description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae
+    sagittis lacus. Aenean ac urna ut justo varius vestibulum eget fringilla orci.
+    Praesent erat mi, convallis et nisl dapibus, commodo scelerisque ex. '
   _cost: 500
-  monsterPrefab: {fileID: 5272952721456128466, guid: 9af73ae244971cf4ea2c172d879e9b94,
-    type: 3}
   type: 1
   _health: 1000
   _damage: 40
   _heal: 0
+  goldPerHit: 0
+  goldPerDmg: 0
+  maxNumber: 0
+  minNumber: 0
+  numberToSpawn: 0
   SetNumber: 0

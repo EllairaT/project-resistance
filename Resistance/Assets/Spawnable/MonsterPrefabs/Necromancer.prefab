@@ -16691,9 +16691,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000011578242470}
-  - component: {fileID: 95000012058624550}
+  - component: {fileID: 7144648084183110739}
+  - component: {fileID: -8480376384114284684}
   m_Layer: 0
-  m_Name: wizard_weapon_macanim DEMO
+  m_Name: Necromancer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16719,25 +16720,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &95000012058624550
-Animator:
-  serializedVersion: 3
+--- !u!111 &7144648084183110739
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000013586557078}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: be5995a9158bda9459c22d48acd79a3f, type: 3}
-  m_Controller: {fileID: 9100000, guid: 700d9bf6b23d6c7478ef89bf23dd2558, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: a0016d834d72ae140aa299091633552d, type: 2}
+  - {fileID: 7400000, guid: 5895499d6a682984bb36237508239506, type: 2}
+  - {fileID: 7400000, guid: 74b88567bc7f97840a72037d8ee1006d, type: 2}
+  - {fileID: 7400000, guid: 7db0132be203fce498646df097a9cf1a, type: 2}
+  - {fileID: 7400000, guid: 1fb649262a889de42981a170fd26c2e6, type: 2}
+  - {fileID: 7400000, guid: d6bace9ab356c9a46bdf8b19608544d2, type: 2}
+  - {fileID: 7400000, guid: edee5610b76b3ec40a4a97d33e8bbd53, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!65 &-8480376384114284684
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013586557078}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1000013699516860
 GameObject:
   m_ObjectHideFlags: 0

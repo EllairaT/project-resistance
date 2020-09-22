@@ -18,7 +18,5 @@ public class Structure : ScriptableObject
     public int CalculateCost(int matCost)
     {
         return matCost + cost;
-    }
-
-    
+    }   
 }

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CardMaster : MonoBehaviour
 {
+
+    [SerializeField] private Loadout loadout;
+
+
     // Start is called before the first frame update
     void Start()
     {

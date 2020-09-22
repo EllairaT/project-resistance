@@ -8,6 +8,7 @@ public class Attackable : NetworkBehaviour, INetworkUsable
     [SyncVar] private int id;
     [SyncVar] public float health = 50f;
     public bool isStructure;
+    public bool isMonster;
     [SerializeField] public int goldValuePerHit = 10;
     //public GameObject attackableObject;
 
@@ -35,6 +36,15 @@ public class Attackable : NetworkBehaviour, INetworkUsable
     {
         health -= amount;
         Debug.Log("ouch");
+
+        if (isStructure)
+        {
+            amount = GetComponent<PlaceableStructure>().stats.CalculateDamageTaken(amount);
+        } 
+        else if (isMonster)
+        {
+            amount = GetComponent<LoadStats>().TakeDamage(amount);
+        }
 
         if (health <= 0f) //Is it dead? If so, it dies
         {
