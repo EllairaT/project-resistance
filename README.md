@@ -19,5 +19,5 @@ rounds (15 because → RES15TANCE).
   * #### Shivneel Singh
   * #### ~~Blake O'Reilly~~ [formerly]
  
-
+##### * Graphics such as logos, button images, and procedural textures are all done by Ellaira. 3D assets in the game and custom shaders are all from Unity Asset Store.
           
