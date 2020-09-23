@@ -1415,6 +1415,7 @@ GameObject:
   - component: {fileID: 483298}
   - component: {fileID: 9566128}
   - component: {fileID: 5612271865575801555}
+  - component: {fileID: -6785011686058952774}
   m_Layer: 0
   m_Name: Rhinoceros
   m_TagString: Untagged
@@ -1476,6 +1477,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!111 &-6785011686058952774
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171952}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: a3de2e13c00800d41b0ce515c6371891, type: 3}
+  - {fileID: 7400000, guid: 97017bf854066494b9786f2fccc5439f, type: 3}
+  - {fileID: 7400000, guid: 4e2cbf06182df994cb1d01e3e27459d0, type: 3}
+  - {fileID: 7400000, guid: 143b66bbc511fe6448e38d4c8f02edc3, type: 3}
+  - {fileID: 7400000, guid: fbf1b9ef33e50d846b20adc1df3c3c18, type: 3}
+  - {fileID: 7400000, guid: 09a791f12a3e3164eb8a142f2b705b2d, type: 3}
+  - {fileID: 7400000, guid: 199aa5adab8c2494193d2b2e4a48a827, type: 3}
+  - {fileID: 7400000, guid: 092bad524280df14caa3e954c9ad9269, type: 3}
+  - {fileID: 7400000, guid: c64d83874c211824bb8f7fd6e34e2384, type: 3}
+  - {fileID: 7400000, guid: 717c91a9082103447b664402acebc603, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &174182
 GameObject:
   m_ObjectHideFlags: 0

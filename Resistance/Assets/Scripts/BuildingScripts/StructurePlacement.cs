@@ -11,7 +11,6 @@ public class StructurePlacement : MonoBehaviour
 
     private int gridSize = 1;
     private int structureNumber = 0;
-    private float startingHeight;
     private Materials material;
     private PlaceableStructure placeableBuilding;
 
@@ -120,8 +119,7 @@ public class StructurePlacement : MonoBehaviour
     {
         bool isLegal;
         if (placeableBuilding.isIllegal)
-        {
-            Debug.Log("no");                  
+        {                     
             Destroy(Target);
             Destroy(currentStructure);
             isLegal = false;

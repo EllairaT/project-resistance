@@ -23,17 +23,6 @@ public class Monster : ScriptableObject
     public int minNumber;
     public int numberToSpawn;
 
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public int TotalCost()
     {
         return cost * numberToSpawn;

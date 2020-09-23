@@ -29,12 +29,12 @@ public class PlaceableStructure : MonoBehaviour
     private void Update()
     {
         r.material = isPreview ? (isIllegal ? illegal : preview) : mesh.material;
+
         mesh.GetComponent<MeshCollider>().enabled = !isPreview;
         Debug.Log("current velocity: " + GetComponent<Rigidbody>().velocity.y);
 
         if ((!isPreview) && (GetComponent<Rigidbody>().velocity.y <= 0f))
         {
-            Debug.Log("ITS ZERO!~");
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotation;
         }
     }
@@ -107,7 +107,6 @@ public class PlaceableStructure : MonoBehaviour
         {
             if (collision.collider is BoxCollider)
             {
-                //Physics.IgnoreCollision(GetComponent<MeshCollider>(), collision.collider.GetComponent<MeshCollider>(), true);
                 isIllegal = false;
             }
         }
