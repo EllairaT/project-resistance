@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a748bcbdfe0a12f4286c9ce8de4c26dd, type: 3}
+  m_Name: New Card
+  m_EditorClassIdentifier: 
+  _name: 
+  _icon: {fileID: 0}
+  _description: 
+  _cost: 0
+  type: 0
+  _health: 0
+  _damage: 0
+  _heal: 0
+  goldPerHit: 0
+  goldPerDmg: 0
+  maxNumber: 0
+  minNumber: 0
+  numberToSpawn: 0
+  SetNumber: 0

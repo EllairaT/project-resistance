@@ -14,12 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Skeleton Warrior
   _icon: {fileID: 21300000, guid: 396fd54bf976ac44994d77af9210d830, type: 3}
-  _description: 
+  _description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae
+    sagittis lacus. Aenean ac urna ut justo varius vestibulum eget fringilla orci.
+    Praesent erat mi, convallis et nisl dapibus, commodo scelerisque ex. '
   _cost: 10
-  monsterPrefab: {fileID: 8022762030534985760, guid: ead079d7f0618754f9e071f257c07889,
-    type: 3}
   type: 0
   _health: 100
   _damage: 10
   _heal: 0
+  goldPerHit: 0
+  goldPerDmg: 0
+  maxNumber: 0
+  minNumber: 0
+  numberToSpawn: 0
   SetNumber: 0

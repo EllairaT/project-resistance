@@ -6,8 +6,7 @@ public class StructureManager : MonoBehaviour
     public GameObject[] structures;
     private StructurePlacement structurePlacement;
     public Materials material;
-    public Materials previewMaterial;
-    private PlaceableStructure ps;    
+    public Materials previewMaterial;  
     private bool isInBuildMode = false;
 
     void Start()
@@ -31,8 +30,7 @@ public class StructureManager : MonoBehaviour
     }
 
     void OnGUI()
-    {
-    
+    {   
         if (isInBuildMode)
         {
             for (int i = 0; i < structures.Length; i++)

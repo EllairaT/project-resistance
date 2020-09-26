@@ -14,12 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Demon
   _icon: {fileID: 21300000, guid: 0f8a9c4157861b341a465e45b210309b, type: 3}
-  _description: 
+  _description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae
+    sagittis lacus. Aenean ac urna ut justo varius vestibulum eget fringilla orci.
+    Praesent erat mi, convallis et nisl dapibus, commodo scelerisque ex. '
   _cost: 100
-  monsterPrefab: {fileID: 4127681285919499867, guid: 84c19bb7386ef534ba5ac42cc17a4f47,
-    type: 3}
   type: 0
   _health: 500
   _damage: 50
   _heal: 0
+  goldPerHit: 0
+  goldPerDmg: 0
+  maxNumber: 0
+  minNumber: 0
+  numberToSpawn: 0
   SetNumber: 0

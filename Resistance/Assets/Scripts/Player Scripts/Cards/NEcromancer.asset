@@ -14,12 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Necromancer
   _icon: {fileID: 21300000, guid: d2d53d6d364f5cc448cbeb4e23fc9680, type: 3}
-  _description: 
+  _description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae
+    sagittis lacus. Aenean ac urna ut justo varius vestibulum eget fringilla orci.
+    Praesent erat mi, convallis et nisl dapibus, commodo scelerisque ex. '
   _cost: 200
-  monsterPrefab: {fileID: 7445434587981112661, guid: 69db5b380d3cf7d499193aefbf865097,
-    type: 3}
   type: 2
   _health: 250
   _damage: 20
   _heal: 7
+  goldPerHit: 0
+  goldPerDmg: 0
+  maxNumber: 0
+  minNumber: 0
+  numberToSpawn: 0
   SetNumber: 0

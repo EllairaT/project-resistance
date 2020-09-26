@@ -14,12 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Plague Doctor
   _icon: {fileID: 21300000, guid: fcb915265b0a8cc4dac51332801c52ee, type: 3}
-  _description: 
+  _description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae
+    sagittis lacus. Aenean ac urna ut justo varius vestibulum eget fringilla orci.
+    Praesent erat mi, convallis et nisl dapibus, commodo scelerisque ex. '
   _cost: 200
-  monsterPrefab: {fileID: 1543216753092369487, guid: ca014879105e38940824f2aeca60623c,
-    type: 3}
   type: 2
   _health: 250
   _damage: 10
   _heal: 5
+  goldPerHit: 0
+  goldPerDmg: 0
+  maxNumber: 0
+  minNumber: 0
+  numberToSpawn: 0
   SetNumber: 0
