@@ -8025,7 +8025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  movementSpeed: 5
+  movementSpeed: 20
   controller: {fileID: 9142735679918157270}
   networkAnim: {fileID: 2756534765361855941}
   gravity: -9.81
