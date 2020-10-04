@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &-6633597323732500562
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671108315022830819}
+  m_Material: {fileID: 13400000, guid: eae771a639f8e6a40b34e4ce01366af5, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5250001, y: 0.9692737, z: 2.2500007}
+  m_Center: {x: 0, y: 0.48468643, z: -0.0000030994415}
 --- !u!114 &4951331061126785616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16,7 +29,6 @@ MonoBehaviour:
   hardness: 0
   baseHealth: 0
   cost: 50
-  thumbnail: {fileID: 21300000, guid: 857a57072c36d2b4e84369b125018f7a, type: 3}
 --- !u!1001 &672991401011765775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29,15 +41,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnapPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 2112017445608275412, guid: 5a965ebae2f131440abf4462cf10ea49,
+        type: 3}
+      propertyPath: m_TagString
+      value: SP_WALL
+      objectReference: {fileID: 0}
     - target: {fileID: 6888810451307005860, guid: 5a965ebae2f131440abf4462cf10ea49,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.258
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6888810451307005860, guid: 5a965ebae2f131440abf4462cf10ea49,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.859
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6888810451307005860, guid: 5a965ebae2f131440abf4462cf10ea49,
         type: 3}
@@ -141,7 +158,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2707271455954667859, guid: c2488ed6d725f534e85017afe2ac9eb4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c2488ed6d725f534e85017afe2ac9eb4, type: 3}
 --- !u!1 &671108315022830819 stripped
 GameObject:
@@ -167,20 +185,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnapPoint (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2112017445608275412, guid: 5a965ebae2f131440abf4462cf10ea49,
+        type: 3}
+      propertyPath: m_TagString
+      value: SP_WALL
+      objectReference: {fileID: 0}
     - target: {fileID: 6888810451307005860, guid: 5a965ebae2f131440abf4462cf10ea49,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.016
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6888810451307005860, guid: 5a965ebae2f131440abf4462cf10ea49,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.859
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6888810451307005860, guid: 5a965ebae2f131440abf4462cf10ea49,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.138
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 6888810451307005860, guid: 5a965ebae2f131440abf4462cf10ea49,
         type: 3}
@@ -236,20 +259,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnapPoint (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2112017445608275412, guid: 5a965ebae2f131440abf4462cf10ea49,
+        type: 3}
+      propertyPath: m_TagString
+      value: SP_WALL
+      objectReference: {fileID: 0}
     - target: {fileID: 6888810451307005860, guid: 5a965ebae2f131440abf4462cf10ea49,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.016
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6888810451307005860, guid: 5a965ebae2f131440abf4462cf10ea49,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.859
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6888810451307005860, guid: 5a965ebae2f131440abf4462cf10ea49,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.128
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6888810451307005860, guid: 5a965ebae2f131440abf4462cf10ea49,
         type: 3}
@@ -305,15 +333,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnapPoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2112017445608275412, guid: 5a965ebae2f131440abf4462cf10ea49,
+        type: 3}
+      propertyPath: m_TagString
+      value: SP_WALL
+      objectReference: {fileID: 0}
     - target: {fileID: 6888810451307005860, guid: 5a965ebae2f131440abf4462cf10ea49,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.258
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6888810451307005860, guid: 5a965ebae2f131440abf4462cf10ea49,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.859
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6888810451307005860, guid: 5a965ebae2f131440abf4462cf10ea49,
         type: 3}

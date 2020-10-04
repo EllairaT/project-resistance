@@ -6,7 +6,9 @@ TagManager:
   tags:
   - Canvas
   - Building
-  - foundation_sp
+  - SP_Foundation
+  - SP_WALL
+  - primitive
   layers:
   - Default
   - TransparentFX

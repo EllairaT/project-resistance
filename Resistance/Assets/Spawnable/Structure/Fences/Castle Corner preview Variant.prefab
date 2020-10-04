@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &688877241589689630
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6933047207738091075}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3875003, y: 0.97991455, z: 1.3875009}
+  m_Center: {x: -0.43125013, y: 0.49000686, z: -0.4312529}
 --- !u!114 &6176693566111597301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16,7 +29,8 @@ MonoBehaviour:
   legalMat: {fileID: 0}
   illegalMat: {fileID: 0}
   isFoundation: 0
-  tagsSnappedTo: []
+  tagsSnappedTo:
+  - SP_WALL
 --- !u!1001 &6932371756281292563
 PrefabInstance:
   m_ObjectHideFlags: 0

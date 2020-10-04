@@ -48,6 +48,21 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (currentList != null && currentlyActive != null)
+        {
+            lastIndex = currentList.Count - 1;
+
+            if (lastIndex < 0)
+            {
+                lastIndex = 0;
+            }
+            previewItem = currentList[0];
+           // Debug.Log("currently active: " + currentlyActive.transform.parent.name);
+        }
+    }
+
     public void ResetAll()
     {
         CurrentList = null;
@@ -59,7 +74,6 @@ public class Inventory : MonoBehaviour
 
     public void ListenForInput()
     {
-
         if (Input.GetKeyDown(KeyCode.B)) //user disables build mode
         {
             isInBuildMode = false;
@@ -103,19 +117,6 @@ public class Inventory : MonoBehaviour
                 CurrentlyActive = foundation;
             }
 
-            if (currentList != null)
-            {
-                lastIndex = currentList.Count - 1;
-
-                if (lastIndex < 0)
-                {
-                    lastIndex = 0;
-                }
-            }
-
-            Debug.Log(currentIndex + ";" + lastIndex);
-            previewItem = currentList[0];
-
             // Debug.Log(currentlyActive.name + ": , currently at index: " + currentIndex + ", last index: " + lastIndex) ;
             isInBuildMode = true;
         }
@@ -152,7 +153,7 @@ public class Inventory : MonoBehaviour
                 ShowInSlot(CurrentlyActive, _current[currentIndex]);
             }
         }
-        catch (System.Exception)
+        catch (System.ArgumentOutOfRangeException)
         {
             currentIndex = 0;
         }

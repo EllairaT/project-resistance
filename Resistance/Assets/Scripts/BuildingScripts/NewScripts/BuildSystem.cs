@@ -6,7 +6,7 @@ public class BuildSystem : MonoBehaviour
 {
     //--referencing camera and layermask for the raycast
     public Camera playerCam;
-    public LayerMask layer;
+    public LayerMask layer; //layer to ignore
 
     public GameObject previewgameObject = null;
     private Preview previewScript = null;
@@ -20,11 +20,6 @@ public class BuildSystem : MonoBehaviour
 
     public Preview PreviewScript { get => previewScript; set => previewScript = value; }
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R)) //rotate
@@ -36,8 +31,12 @@ public class BuildSystem : MonoBehaviour
         {
             if (isBuildingPaused) //whenever the preview is snapped, the buildsystem is paused
             {
-                //need to unpause
-                if (Input.GetKeyDown(KeyCode.C)) //press C to cancel current build 
+                //to resume buildsystem, we need to "un-snap" 
+                //unsnapping will occur when the mouse moves away a certain amount.
+                float mX = Input.GetAxis("Mouse X");
+                float mY = Input.GetAxis("Mouse Y");
+
+                if (Mathf.Abs(mX) >= stickTolerance || Mathf.Abs(mY) >= stickTolerance)
                 {
                     isBuildingPaused = false;
                 }
@@ -51,7 +50,7 @@ public class BuildSystem : MonoBehaviour
 
     public void BuildNow()
     {
-        if (isBuilding) 
+        if (isBuilding)
         {
             if (PreviewScript.GetIsSnapped())
             {
@@ -83,7 +82,6 @@ public class BuildSystem : MonoBehaviour
 
     public void NewBuild(GameObject _go)
     {
-        Debug.Log("new build");
         previewgameObject = Instantiate(_go, Vector3.zero, Quaternion.identity);
         PreviewScript = previewgameObject.GetComponent<Preview>();
         PreviewScript.legalMat = legalMaterial;
@@ -106,11 +104,23 @@ public class BuildSystem : MonoBehaviour
         //100f should be a set distance in front of the player
         //layer is included because the buildlayer will be ignored by raycast; if not set, glitching will happen       
 
-        if(previewgameObject != null)
+        if (previewgameObject != null)
         {
-            if(Physics.Raycast(ray, out hit, 100f, layer))
+            if (Physics.Raycast(ray, out hit, 100f, layer))
             {
-                previewgameObject.transform.position = hit.point;
+                //some objects are unity primitive objects rather than imported from blender 
+                //so point 0,0,0 is at the center, instead of at the bottom (which is considered the correct 0,0,0 position)
+                //this part is to take that into account.
+                if (previewgameObject.CompareTag("primitive"))
+                {
+                    float y = hit.point.y + (previewgameObject.transform.localScale.y / 2f); //take the y value of the raycast and add it to half the height of obj
+                    Vector3 pos = new Vector3(hit.point.x, y, hit.point.z);
+                    previewgameObject.transform.position = pos;
+                }
+                else
+                {
+                    previewgameObject.transform.position = hit.point;
+                }
             }
         }
     }

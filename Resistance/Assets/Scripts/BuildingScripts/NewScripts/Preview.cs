@@ -26,11 +26,6 @@ public class Preview : MonoBehaviour
         ChangeMaterial();
     }
 
-    void Update()
-    {
-        
-    }
-
     public void Place()
     {
         Instantiate(prefab, transform.position, transform.rotation);
@@ -57,11 +52,12 @@ public class Preview : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("triggered");
         for (int i = 0; i < tagsSnappedTo.Count; i++)
         {
             string currentTag = tagsSnappedTo[i]; //get current tag 
 
-            if(other.tag == currentTag) //if tag that was bumped into is equal to 
+            if(other.CompareTag(currentTag)) //if tag that was bumped into is equal to 
             {
                 bs.PauseBuild(true); //snap! the build system must be paused when a snappoint is hit
                 transform.position = other.transform.position;
@@ -77,7 +73,7 @@ public class Preview : MonoBehaviour
         {
             string currentTag = tagsSnappedTo[i];
 
-            if(other.tag == currentTag)
+            if(other.CompareTag(currentTag))
             {
                 isSnapped = false;
                 ChangeMaterial();
