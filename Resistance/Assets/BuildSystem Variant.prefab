@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!20 &410376727
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5402623801431448609}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!1001 &1640198454791028510
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6645868793854878512, guid: f8f4e34d78fea6847afedeba75ca08bf,
+        type: 3}
+      propertyPath: material
+      value: 
+      objectReference: {fileID: 11400000, guid: 558251758fbd66f4b99a7ab5ff4ba979,
+        type: 2}
+    - target: {fileID: 6645868793854878514, guid: f8f4e34d78fea6847afedeba75ca08bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 182.35303
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645868793854878514, guid: f8f4e34d78fea6847afedeba75ca08bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645868793854878514, guid: f8f4e34d78fea6847afedeba75ca08bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -20.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645868793854878514, guid: f8f4e34d78fea6847afedeba75ca08bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.04537446
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645868793854878514, guid: f8f4e34d78fea6847afedeba75ca08bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645868793854878514, guid: f8f4e34d78fea6847afedeba75ca08bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645868793854878514, guid: f8f4e34d78fea6847afedeba75ca08bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99897003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645868793854878514, guid: f8f4e34d78fea6847afedeba75ca08bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645868793854878514, guid: f8f4e34d78fea6847afedeba75ca08bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 5.201
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645868793854878514, guid: f8f4e34d78fea6847afedeba75ca08bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645868793854878514, guid: f8f4e34d78fea6847afedeba75ca08bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645868793854878527, guid: f8f4e34d78fea6847afedeba75ca08bf,
+        type: 3}
+      propertyPath: m_Name
+      value: BuildSystem
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f8f4e34d78fea6847afedeba75ca08bf, type: 3}
+--- !u!1 &5402623801431448609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6645868793854878527, guid: f8f4e34d78fea6847afedeba75ca08bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1640198454791028510}
+  m_PrefabAsset: {fileID: 0}

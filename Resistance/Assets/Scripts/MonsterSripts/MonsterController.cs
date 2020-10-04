@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -40,7 +40,11 @@ public class MonsterController : MonoBehaviour
         //true if any of these are met
         isInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsStructure) |
                          Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-                         
+
+        while (isInSightRange)
+        {
+            agent.gameObject.GetComponent<Animator>().SetBool("isInRange", true);
+        }
 
         isInAttackRange = Physics.CheckSphere(transform.position, sightRange, whatIsStructure) |
                           Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
@@ -50,6 +54,5 @@ public class MonsterController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, sightRange);
-
     }
 }

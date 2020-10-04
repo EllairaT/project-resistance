@@ -18,26 +18,37 @@ public class StructurePlacement : MonoBehaviour
     private Vector3 mousePos;
     private Vector3 persp;
 
+    private Camera playerCam;
+
     public bool isBuilding = false;
     
-
     private List<GameObject> placedObjects = new List<GameObject>();
 
-    void Update()
+    private void Start()
     {
-        int placedObjCount = 0;
+        playerCam = transform.parent.GetComponent<Camera>();
+    }
+
+    void Update()
+    {       
         if (currentStructure != null)
         {
             mousePos = Input.mousePosition;
             placeableBuilding = currentStructure.GetComponent<PlaceableStructure>();
             placeableBuilding.isPreview = true; 
+
             //-- mouseposition & perspective
-            mousePos = new Vector3(mousePos.x, mousePos.y, transform.position.y);
-            persp = GetComponent<Camera>().ScreenToWorldPoint(mousePos);
-            Target.transform.position = new Vector3(persp.x, persp.y, persp.z);
+            mousePos = new Vector3(mousePos.x, mousePos.y, playerCam.nearClipPlane);
+           
+            persp = playerCam.ScreenToWorldPoint(mousePos);
+
+            float playerZpos = transform.parent.parent.transform.forward.z;
+            //position z should be right in front of player, otherwise the structure will spawn too far from the player 
+
+            Target.transform.position = new Vector3(persp.x, persp.y, playerZpos);
 
             //-- true position
-            truePos = new Vector3(Mathf.Round(persp.x), Mathf.Round(persp.y), Mathf.Round(persp.z))
+            truePos = new Vector3(Mathf.Round(persp.x), Mathf.Round(persp.y), Mathf.Round(playerCam.nearClipPlane))
             {
                 x = Mathf.Floor(Target.transform.position.x / gridSize) * gridSize,
                 y = Mathf.Floor(Target.transform.position.y / gridSize) * gridSize,
@@ -60,15 +71,11 @@ public class StructurePlacement : MonoBehaviour
 
                 if (IsLegalPosition())
                 {
-                    Debug.Log("placed");                  
+                    //Debug.Log("placed");                  
                     PlaceItem();
                    
                     placeableBuilding.isPreview = false;
                     placeableBuilding = null;
-                }
-                else
-                {
-                    Debug.Log("nope");
                 }
                 placeableBuilding = null;
             }
@@ -111,8 +118,6 @@ public class StructurePlacement : MonoBehaviour
         placedObjects.Add(instance);
         
         Destroy(currentStructure.gameObject);   
-
- 
     }
 
     bool IsLegalPosition()
@@ -130,5 +135,4 @@ public class StructurePlacement : MonoBehaviour
         }
         return isLegal;
     }
-
 }

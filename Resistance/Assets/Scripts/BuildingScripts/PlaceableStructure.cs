@@ -1,4 +1,4 @@
-﻿using Mono.CecilX;
+﻿//using Mono.CecilX;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -9,7 +9,7 @@ public class PlaceableStructure : MonoBehaviour
     //reference the scriptable obj
     public Structure stats;
     public MeshRenderer mesh;
-    private Material mat;
+    public Material mat;
     private Material illegal;
     private Material preview;
     public List<Collider> colliders = new List<Collider>();
@@ -17,11 +17,11 @@ public class PlaceableStructure : MonoBehaviour
     public bool isPreview;
     public bool isIllegal = false;
     public bool isPlaceable = false;
-    Renderer r;
+    public MeshRenderer r;
 
     void Start()
     {
-        r = mesh.GetComponent<Renderer>();
+        r = mesh.GetComponent<MeshRenderer>();
         illegal = Resources.Load("Materials/IllegalPreview") as Material;
         preview = Resources.Load("Materials/Preview") as Material;
     }
@@ -30,8 +30,7 @@ public class PlaceableStructure : MonoBehaviour
     {
         r.material = isPreview ? (isIllegal ? illegal : preview) : mesh.material;
 
-        mesh.GetComponent<MeshCollider>().enabled = !isPreview;
-        Debug.Log("current velocity: " + GetComponent<Rigidbody>().velocity.y);
+        mesh.GetComponent<MeshCollider>().enabled = !isPreview;  
 
         if ((!isPreview) && (GetComponent<Rigidbody>().velocity.y <= 0f))
         {
@@ -43,7 +42,6 @@ public class PlaceableStructure : MonoBehaviour
     {
         Debug.Log(mesh.name + " " + mat.name + "" + stats.cost);
     }
-
 
     public void AssignMaterial(Materials material)
     {
@@ -77,7 +75,7 @@ public class PlaceableStructure : MonoBehaviour
  
     void OnTriggerExit(Collider other)
     {
-        Debug.Log("not colliding");
+       // Debug.Log("not colliding");
         if (isPreview)
         {
             if (other.CompareTag("Building"))

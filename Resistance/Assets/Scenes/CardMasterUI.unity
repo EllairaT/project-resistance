@@ -1167,6 +1167,7 @@ MonoBehaviour:
   userIP: 
   characterName: Card Master
   role: Card Master
+  gold: 0
   icon: {fileID: 0}
 --- !u!1 &647539675
 GameObject:
@@ -3244,7 +3245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4792971915389728, guid: 5682857c8ba071948964acb8c814e21b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.93
+      value: -0.83
       objectReference: {fileID: 0}
     - target: {fileID: 4792971915389728, guid: 5682857c8ba071948964acb8c814e21b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3287,6 +3288,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8e9805b54e27b6c45830797e18bed9ce, type: 2}
+    - target: {fileID: 7681241400403890995, guid: 5682857c8ba071948964acb8c814e21b,
+        type: 3}
+      propertyPath: isPreview
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5682857c8ba071948964acb8c814e21b, type: 3}
 --- !u!1 &1750182325
@@ -3954,7 +3960,7 @@ PrefabInstance:
     - target: {fileID: 4334572638293598838, guid: 6ce6d81b1b8db174f8609df012bf804a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.65
       objectReference: {fileID: 0}
     - target: {fileID: 4334572638293598838, guid: 6ce6d81b1b8db174f8609df012bf804a,
         type: 3}

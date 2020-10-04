@@ -35,14 +35,12 @@ public class PlayerMovement : MonoBehaviour
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-
        
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
 
         Vector3 horizontalVelocity = new Vector3(controller.velocity.x, 0, controller.velocity.z);
         float horizontalSpeed = horizontalVelocity.magnitude;
-
 
         playerVelocity.y += gravity * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
