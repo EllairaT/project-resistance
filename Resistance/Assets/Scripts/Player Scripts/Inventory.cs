@@ -26,7 +26,7 @@ public class Inventory : MonoBehaviour
     private GameObject itemToBuild = null;
     private GameObject currentlyActive = null;
     private int currentIndex = 0;
-    private int lastIndex;
+    private int lastIndex = 0;
 
     public GameObject ItemToBuild { get => itemToBuild; set => itemToBuild = value; }
     public List<GameObject> CurrentList { get => currentList; set => currentList = value; }
@@ -48,21 +48,18 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-
-    }
-
     public void ResetAll()
     {
         CurrentList = null;
         CurrentlyActive = null;
         currentIndex = 0;
+        lastIndex = 0;
         previewItem = null;
     }
 
     public void ListenForInput()
     {
+
         if (Input.GetKeyDown(KeyCode.B)) //user disables build mode
         {
             isInBuildMode = false;
@@ -116,6 +113,9 @@ public class Inventory : MonoBehaviour
                 }
             }
 
+            Debug.Log(currentIndex + ";" + lastIndex);
+            previewItem = currentList[0];
+
             // Debug.Log(currentlyActive.name + ": , currently at index: " + currentIndex + ", last index: " + lastIndex) ;
             isInBuildMode = true;
         }
@@ -129,42 +129,33 @@ public class Inventory : MonoBehaviour
 
     public void ScrollThroughInventory(List<GameObject> _current)
     {
-        if (isInBuildMode)
+        try
         {
-
-            // Raw will only return 1, -1 or 0
-            if (Input.GetAxisRaw("Mouse ScrollWheel") > 0 || Input.GetAxisRaw("Mouse ScrollWheel") < 0)
+            if (isInBuildMode)
             {
-                // If currentindex is at the last index
-                if (currentIndex == CurrentList.Count - 1)
+                // Raw will only return 1, -1 or 0
+                if (Input.GetAxisRaw("Mouse ScrollWheel") > 0 || Input.GetAxisRaw("Mouse ScrollWheel") < 0)
                 {
-                    // Set back to start
-                    currentIndex = 0;
-                }
-                else
-                {
-                    // Increment it
-                    if (!(currentList.Count == 1))
+                    // If currentindex is at the last index
+                    if (currentIndex == CurrentList.Count - 1)
                     {
+                        // Set back to start
+                        currentIndex = 0;
+                    }
+                    else
+                    {
+                        // Increment it
                         currentIndex++;
                     }
                 }
-
+                // Show
+                ShowInSlot(CurrentlyActive, _current[currentIndex]);
             }
-            // Show
-            ShowInSlot(CurrentlyActive, _current[currentIndex]);
         }
-    }
-
-    public void SetItemToBuild()
-    {
-        itemToBuild = CurrentList[currentIndex];
-        ResetAll();
-    }
-
-    public void FinishBuild()
-    {
-        //get stuff from Buildsystem
+        catch (System.Exception)
+        {
+            currentIndex = 0;
+        }
     }
 }
 

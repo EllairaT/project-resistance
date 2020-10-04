@@ -32,18 +32,6 @@ public class BuildSystem : MonoBehaviour
             previewgameObject.transform.Rotate(0, 90f, 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isBuilding) //build
-        {
-            if (PreviewScript.GetIsSnapped())
-            {
-                Build();
-            }
-            else
-            {
-                Debug.Log("nothing happened");
-            }
-        }
-
         if (isBuilding)
         {
             if (isBuildingPaused) //whenever the preview is snapped, the buildsystem is paused
@@ -61,6 +49,21 @@ public class BuildSystem : MonoBehaviour
         }
     }
 
+    public void BuildNow()
+    {
+        if (isBuilding) 
+        {
+            if (PreviewScript.GetIsSnapped())
+            {
+                Build();
+            }
+            else
+            {
+                CancelBuild();
+            }
+        }
+    }
+
     public void PauseBuild(bool _isPaused)
     {
         isBuildingPaused = _isPaused;
@@ -72,7 +75,7 @@ public class BuildSystem : MonoBehaviour
         ResetAll();
     }
 
-    public void Build()
+    private void Build()
     {
         PreviewScript.Place();
         ResetAll();

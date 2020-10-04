@@ -9,7 +9,6 @@ public class BuildManager : MonoBehaviour
     public BuildSystem bs;
     private Inventory i;
 
-    private GameObject currentPreview;
     private bool hasPreviewSpawned = false;
     GameObject oldPreview = null;
 
@@ -41,8 +40,15 @@ public class BuildManager : MonoBehaviour
             {
                 if(oldPreview != null)
                 {
-                    Destroy(bs.previewgameObject);
+                    bs.CancelBuild();
                 }
+                hasPreviewSpawned = false;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space)) //TODO check if position was valid
+            {
+                bs.BuildNow();
+                i.ResetAll();
                 hasPreviewSpawned = false;
             }
         }
