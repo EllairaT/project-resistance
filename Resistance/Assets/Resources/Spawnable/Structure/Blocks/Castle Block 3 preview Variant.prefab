@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!65 &6382722467458251447
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354584091539520103}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.75, y: 2.2500029, z: 0.7500086}
+  m_Center: {x: 0, y: 1.1249988, z: -0.37500393}
+--- !u!114 &3874492667220340509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354584091539520103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a2e59b53ebfe64c94f2e836e246f2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4343632509359953346, guid: 2b407d63e23a3ce418dd06fa431678d5, type: 3}
+  legalMat: {fileID: 0}
+  illegalMat: {fileID: 0}
+  isFoundation: 0
+  tagsSnappedTo:
+  - SP_WALL
+--- !u!1001 &3353364989612474995
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1244397139589140, guid: 7b114dc92418402488e83a8d8094db4d, type: 3}
+      propertyPath: m_Name
+      value: Castle Block 3 preview Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244397139589140, guid: 7b114dc92418402488e83a8d8094db4d, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000,
+        type: 0}
+    - target: {fileID: 4437307419683862, guid: 7b114dc92418402488e83a8d8094db4d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 165.49377
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437307419683862, guid: 7b114dc92418402488e83a8d8094db4d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.49999976
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437307419683862, guid: 7b114dc92418402488e83a8d8094db4d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.722723
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437307419683862, guid: 7b114dc92418402488e83a8d8094db4d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0000018099951
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437307419683862, guid: 7b114dc92418402488e83a8d8094db4d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437307419683862, guid: 7b114dc92418402488e83a8d8094db4d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437307419683862, guid: 7b114dc92418402488e83a8d8094db4d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437307419683862, guid: 7b114dc92418402488e83a8d8094db4d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437307419683862, guid: 7b114dc92418402488e83a8d8094db4d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437307419683862, guid: 7b114dc92418402488e83a8d8094db4d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437307419683862, guid: 7b114dc92418402488e83a8d8094db4d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23012747962957108, guid: 7b114dc92418402488e83a8d8094db4d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eaa7c745d9d560f4daa228207d5c3cfb, type: 2}
+    - target: {fileID: 8948629310190047042, guid: 7b114dc92418402488e83a8d8094db4d,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8948629310190047042, guid: 7b114dc92418402488e83a8d8094db4d,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7b114dc92418402488e83a8d8094db4d, type: 3}
+--- !u!1 &3354584091539520103 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244397139589140, guid: 7b114dc92418402488e83a8d8094db4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3353364989612474995}
+  m_PrefabAsset: {fileID: 0}

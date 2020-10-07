@@ -22,7 +22,7 @@ public class BuildManager : MonoBehaviour
     {
         i.ListenForInput();
 
-        //-----------INVENTORY------------------------------------------
+        //Scroll through inventory and update preview-------------
 
         if (i.CurrentlyActive != null && i.isInBuildMode)
         {
@@ -30,22 +30,10 @@ public class BuildManager : MonoBehaviour
 
             if (i.previewItem != null)
             {
-                if (hasPreviewSpawned == false)
-                {
-                    ShowItemPreview(i.previewItem);
-                }
+                UpdatePreview(i.previewItem);
             }
 
-            if (Input.GetAxis("Mouse ScrollWheel") != 0f)
-            {
-                if(oldPreview != null)
-                {
-                    bs.CancelBuild();
-                }
-                hasPreviewSpawned = false;
-            }
-
-            if (Input.GetKeyDown(KeyCode.Space)) //TODO check if position was valid
+            if (Input.GetKeyDown(KeyCode.Mouse0)) //TODO check if position was valid
             {
                 bs.BuildNow();
                 i.ResetAll();
@@ -57,8 +45,8 @@ public class BuildManager : MonoBehaviour
         {
             i.ResetAll();
         }
-        //---BUILD SYSTEM----------------------------------------------------------
 
+        //Stop building------------------------------------------
         if (Input.GetKeyDown(KeyCode.B))
         {
             ToggleInventory();
@@ -69,6 +57,32 @@ public class BuildManager : MonoBehaviour
     void ToggleInventory()
     {
         playerInventory.SetActive(!playerInventory.activeSelf);
+    }
+
+    void UpdatePreview(GameObject _o)
+    {
+        if (oldPreview != null) //does a previous preview exist?
+        {
+            if (_o != oldPreview) //check if the user pressed 1,2,3,4,5, f
+            {
+                if (hasPreviewSpawned) 
+                {
+                    bs.CancelBuild(); //remove other preview
+                    hasPreviewSpawned = false;
+                }
+                ShowItemPreview(_o); //then show the new one
+            }
+        }
+        else
+        {
+            if (hasPreviewSpawned)
+            {
+                Debug.Log("here?");
+                bs.CancelBuild();
+                hasPreviewSpawned = false;
+            }
+                ShowItemPreview(_o);
+        }
     }
 
     void ShowItemPreview(GameObject _o)

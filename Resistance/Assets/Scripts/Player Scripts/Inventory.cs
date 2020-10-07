@@ -48,6 +48,21 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (currentList != null && currentlyActive != null)
+        {
+            lastIndex = currentList.Count - 1;
+
+            if (lastIndex < 0)
+            {
+                lastIndex = 0;
+            }
+            previewItem = currentList[0];
+           // Debug.Log("currently active: " + currentlyActive.transform.parent.name);
+        }
+    }
+
     public void ResetAll()
     {
         CurrentList = null;
@@ -59,7 +74,6 @@ public class Inventory : MonoBehaviour
 
     public void ListenForInput()
     {
-
         if (Input.GetKeyDown(KeyCode.B)) //user disables build mode
         {
             isInBuildMode = false;
@@ -68,53 +82,34 @@ public class Inventory : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                Debug.Log("blocks enabled");
                 CurrentList = purchases.BlockArr;
                 CurrentlyActive = blocks;
             }
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                Debug.Log("fences enabled");
                 CurrentList = purchases.FenceArr;
                 CurrentlyActive = fences;
             }
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                Debug.Log("gates enabled");
                 CurrentList = purchases.GatesArr;
                 CurrentlyActive = gates;
             }
             if (Input.GetKeyDown(KeyCode.Alpha4))
             {
-                Debug.Log("stairs enabled");
                 CurrentList = purchases.StairsArr;
                 CurrentlyActive = stairs;
             }
             if (Input.GetKeyDown(KeyCode.Alpha5))
             {
-                Debug.Log("walls enabled");
                 CurrentList = purchases.WallsArr;
                 CurrentlyActive = walls;
             }
             if (Input.GetKeyDown(KeyCode.F))
             {
-                Debug.Log("foundation enabled");
                 CurrentList = purchases.FoundationArr;
                 CurrentlyActive = foundation;
             }
-
-            if (currentList != null)
-            {
-                lastIndex = currentList.Count - 1;
-
-                if (lastIndex < 0)
-                {
-                    lastIndex = 0;
-                }
-            }
-
-            Debug.Log(currentIndex + ";" + lastIndex);
-            previewItem = currentList[0];
 
             // Debug.Log(currentlyActive.name + ": , currently at index: " + currentIndex + ", last index: " + lastIndex) ;
             isInBuildMode = true;
@@ -152,7 +147,7 @@ public class Inventory : MonoBehaviour
                 ShowInSlot(CurrentlyActive, _current[currentIndex]);
             }
         }
-        catch (System.Exception)
+        catch (System.ArgumentOutOfRangeException)
         {
             currentIndex = 0;
         }

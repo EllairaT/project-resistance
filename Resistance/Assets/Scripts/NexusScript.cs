@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class NexusScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private bool isPlayerInRange = false;
+    [SerializeField] private GameObject buyGUI;
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("entered  nexus buy range");
+        if (other.CompareTag("Player"))
+        {
+            isPlayerInRange = true;
+            GetPlayerCamera(other.gameObject);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("pog");
+        isPlayerInRange = false;
+    }
+
+    private void GetPlayerCamera(GameObject _player)
+    {
+
     }
 }
