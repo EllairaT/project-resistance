@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!65 &-5670661107722821092
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2690805022914838452}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.75, y: 3.7500005, z: 0.75001}
+  m_Center: {x: 0, y: 1.8749993, z: -0.000005155802}
+--- !u!114 &1381641901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2690805022914838452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a2e59b53ebfe64c94f2e836e246f2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1158137545470618, guid: c475041efe3f8ec468f4c34797299bb7, type: 3}
+  legalMat: {fileID: 0}
+  illegalMat: {fileID: 0}
+  isFoundation: 0
+  tagsSnappedTo:
+  - SP_WALL
+--- !u!1001 &2689693206602534190
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1158137545470618, guid: c475041efe3f8ec468f4c34797299bb7, type: 3}
+      propertyPath: m_Name
+      value: Castle Wall 8 preview Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158137545470618, guid: c475041efe3f8ec468f4c34797299bb7, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000,
+        type: 0}
+    - target: {fileID: 4825281728660796, guid: c475041efe3f8ec468f4c34797299bb7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 153.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825281728660796, guid: c475041efe3f8ec468f4c34797299bb7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.629475
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825281728660796, guid: c475041efe3f8ec468f4c34797299bb7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.7293987
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825281728660796, guid: c475041efe3f8ec468f4c34797299bb7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0000018099951
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825281728660796, guid: c475041efe3f8ec468f4c34797299bb7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825281728660796, guid: c475041efe3f8ec468f4c34797299bb7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825281728660796, guid: c475041efe3f8ec468f4c34797299bb7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825281728660796, guid: c475041efe3f8ec468f4c34797299bb7, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825281728660796, guid: c475041efe3f8ec468f4c34797299bb7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825281728660796, guid: c475041efe3f8ec468f4c34797299bb7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825281728660796, guid: c475041efe3f8ec468f4c34797299bb7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23563233481958642, guid: c475041efe3f8ec468f4c34797299bb7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eaa7c745d9d560f4daa228207d5c3cfb, type: 2}
+    - target: {fileID: 8455223794978877093, guid: c475041efe3f8ec468f4c34797299bb7,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455223794978877093, guid: c475041efe3f8ec468f4c34797299bb7,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -4456861586601304636, guid: c475041efe3f8ec468f4c34797299bb7, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: c475041efe3f8ec468f4c34797299bb7, type: 3}
+--- !u!1 &2690805022914838452 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1158137545470618, guid: c475041efe3f8ec468f4c34797299bb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2689693206602534190}
+  m_PrefabAsset: {fileID: 0}

@@ -11,12 +11,13 @@ public class Preview : MonoBehaviour
     [HideInInspector] public Material legalMat;
     [HideInInspector] public Material illegalMat;
 
-    private BuildSystem bs; //reference to the building system
+    private BuildSystem bs; 
 
     private bool isSnapped = false;
     public bool isFoundation = false;
 
     public List<string> tagsSnappedTo = new List<string>();
+    private List<string> tagsToDisable = new List<string>();
 
     void Start()
     {
@@ -50,19 +51,25 @@ public class Preview : MonoBehaviour
         }
     }
 
+
+
     void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("triggered");
+    {   
         for (int i = 0; i < tagsSnappedTo.Count; i++)
         {
             string currentTag = tagsSnappedTo[i]; //get current tag 
 
-            if(other.CompareTag(currentTag)) //if tag that was bumped into is equal to 
+            if(other.CompareTag(currentTag)) //if tag that was bumped into 
             {
                 bs.PauseBuild(true); //snap! the build system must be paused when a snappoint is hit
                 transform.position = other.transform.position;
                 isSnapped = true;
                 ChangeMaterial();
+            }
+            else if (other.CompareTag("illegal"))
+            {
+                isSnapped = false;
+                prefabRend.material = illegalMat;
             }
         }
     }
@@ -77,6 +84,11 @@ public class Preview : MonoBehaviour
             {
                 isSnapped = false;
                 ChangeMaterial();
+            }
+            else if (other.CompareTag("illegal"))
+            {
+                isSnapped = true;
+                prefabRend.material = legalMat;
             }
         }
     }

@@ -9,6 +9,8 @@ TagManager:
   - SP_Foundation
   - SP_WALL
   - primitive
+  - SP_STAIRS
+  - illegal
   layers:
   - Default
   - TransparentFX

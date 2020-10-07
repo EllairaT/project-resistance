@@ -33,7 +33,7 @@ public class BuildManager : MonoBehaviour
                 UpdatePreview(i.previewItem);
             }
 
-            if (Input.GetKeyDown(KeyCode.Space)) //TODO check if position was valid
+            if (Input.GetKeyDown(KeyCode.Mouse0)) //TODO check if position was valid
             {
                 bs.BuildNow();
                 i.ResetAll();
@@ -63,18 +63,25 @@ public class BuildManager : MonoBehaviour
     {
         if (oldPreview != null) //does a previous preview exist?
         {
-            if (_o != oldPreview) //check if the user pressed 1,2,3,4,5
+            if (_o != oldPreview) //check if the user pressed 1,2,3,4,5, f
             {
-                if (hasPreviewSpawned) //is it active right now?
+                if (hasPreviewSpawned) 
                 {
                     bs.CancelBuild(); //remove other preview
+                    hasPreviewSpawned = false;
                 }
                 ShowItemPreview(_o); //then show the new one
             }
         }
         else
         {
-            ShowItemPreview(_o);
+            if (hasPreviewSpawned)
+            {
+                Debug.Log("here?");
+                bs.CancelBuild();
+                hasPreviewSpawned = false;
+            }
+                ShowItemPreview(_o);
         }
     }
 
