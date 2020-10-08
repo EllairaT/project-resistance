@@ -12,14 +12,28 @@ public class Card : AddOns
     [SerializeField] private float _damage;
     [SerializeField] private float _heal;
 
-    public float Health => _health;
-    public float Damage => _damage; //damage dealt per second
-    public float Heal => _heal;
+    public float Health
+    {
+        get => _health;
+        set => _health = value;
+    }
+
+    public float Damage
+    {
+        get =>_damage; //damage dealt per second
+        set => _damage = value;
+    }
+
+    public float Heal
+    {
+        get => _heal;
+        set => _heal = value;
+    }
 
     //gold awarded to defenders when hitting the monster
     public int goldPerHit;
 
-    //gold awarded to attacker when the monster attacks structure
+    //gold awarded to attacker when the monster attacks structure or player
     public int goldPerDmg;
 
     public int maxNumber;
@@ -70,5 +84,10 @@ public class Card : AddOns
     public int TotalCost()
     {
         return Cost * numberToSpawn;
+    }
+
+    public void AwardGold(PlayerScript cardmaster)
+    {
+        cardmaster.gold += goldPerDmg;
     }
 }

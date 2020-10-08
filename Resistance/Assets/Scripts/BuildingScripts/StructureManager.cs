@@ -13,6 +13,7 @@ public class StructureManager : MonoBehaviour
     {
         if (Display.displays.Length > 1)
         {
+            Debug.Log(Display.displays);
             Display.displays[1].Activate();
         }
         
@@ -33,18 +34,25 @@ public class StructureManager : MonoBehaviour
     {   
         if (isInBuildMode)
         {
+            gameObject.GetComponentInParent<MouseLook>().enabled = false;
+            transform.parent.parent.GetComponentInParent<PlayerNewCameraController>().enabled = false;
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+
             for (int i = 0; i < structures.Length; i++)
             {               
                 if (GUI.Button(new Rect(Screen.width / 20, Screen.height / 15 + Screen.height / 12 * i, 100, 30), structures[i].name))
-                {
-                    Cursor.lockState = CursorLockMode.Confined;
+                {                                     
                     structurePlacement.SetItem(structures[i], material);             
                 }
             }
         }
         else
         {
-            Cursor.lockState = CursorLockMode.None;   
+            gameObject.GetComponentInParent<MouseLook>().enabled = true;
+            transform.parent.parent.GetComponentInParent<PlayerNewCameraController>().enabled = false;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;   
         }
     }
 }

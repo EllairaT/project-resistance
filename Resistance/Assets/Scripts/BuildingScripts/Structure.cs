@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Structure", menuName = "New Structure")]
-public class Structure : ScriptableObject
+
+public class Structure : MonoBehaviour
 {
+    public string type;
     public float hardness;
     public float baseHealth;
     public int cost;

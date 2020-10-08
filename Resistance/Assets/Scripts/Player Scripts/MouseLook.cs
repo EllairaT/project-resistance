@@ -5,7 +5,7 @@ public class MouseLook : MonoBehaviour
     //Variables
     public Transform playerBody;
     public float xRot = 0f;
-    [SerializeField] public float mouseSensitivity = 15f;
+    public float mouseSensitivity = 15f;
 
     void Start()
     {
@@ -17,6 +17,11 @@ public class MouseLook : MonoBehaviour
 
     void Update() //calculated every frame
     {
+        Look();
+    }
+
+    void Look()
+    {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
@@ -27,6 +32,7 @@ public class MouseLook : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRot, 0, 0);
         playerBody.Rotate(Vector3.up * mouseX);
     }
+
 
     //Method for Unit Testing
     public float TestMouseLookX(float axis, float mouseSensitibity, float deltaTime)
