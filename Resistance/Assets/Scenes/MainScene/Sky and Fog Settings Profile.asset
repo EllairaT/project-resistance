@@ -180,14 +180,14 @@ MonoBehaviour:
     min: 0
     max: 360
   skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 2
   exposure:
-    m_OverrideState: 0
-    m_Value: 1.95
+    m_OverrideState: 1
+    m_Value: 0.001
   multiplier:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 0.1
     min: 0
   upperHemisphereLuxValue:
     m_OverrideState: 0
@@ -207,8 +207,8 @@ MonoBehaviour:
     m_Value: 0
     min: 0
   includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   earthPreset:
     m_OverrideState: 0
     m_Value: 1
@@ -299,11 +299,11 @@ MonoBehaviour:
     m_Value: {fileID: 8900000, guid: fa41734a337674542975482c8fe96ea1, type: 3}
   spaceEmissionMultiplier:
     m_OverrideState: 1
-    m_Value: 0.01
+    m_Value: 0.62
     min: 0
   spaceRotation:
     m_OverrideState: 1
-    m_Value: {x: 183.03, y: 7.03, z: 156.4}
+    m_Value: {x: 183.03, y: 47.76, z: 156.4}
   colorSaturation:
     m_OverrideState: 0
     m_Value: 1
