@@ -102,8 +102,7 @@ public class BuildSystem : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         Ray ray = playerCam.ScreenPointToRay(mousePos);
         RaycastHit hit;
-        Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
-
+      
         if (previewgameObject != null)
         {
             if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, 70f, layer))
@@ -118,7 +117,7 @@ public class BuildSystem : MonoBehaviour
                     //take the y value of the raycast and add it to half the height of the obj
                     float y = hit.point.y + (previewgameObject.transform.localScale.y / 2f);
 
-                    previewgameObject.transform.position = SetGridPosition(hit, previewgameObject, y);
+                    previewgameObject.transform.position = SetGridPosition(hit, y);
                 }
                 else
                 {
@@ -128,7 +127,7 @@ public class BuildSystem : MonoBehaviour
         }
     }
 
-    private Vector3 SetGridPosition(RaycastHit hit, GameObject _o, float _y)
+    private Vector3 SetGridPosition(RaycastHit hit, float _y)
     {
         float gridSize = 1;
 

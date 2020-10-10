@@ -22,6 +22,7 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
     public string DisplayName = "Loading...";
     [SyncVar(hook = nameof(HandleReadyStatusChanged))]
     public bool IsReady = false;
+    public GameObject mainCamera = null;
 
     private bool isLeader;
     public bool IsLeader
@@ -49,6 +50,7 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
         CmdSetDisplayName(PlayerNameInput.DisplayName);
         lobbyUI.SetActive(true);
         mainMenuCanvas = GameObject.FindGameObjectWithTag("Canvas");
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     //Allows player to select their character by bringing the Character Select
@@ -57,6 +59,7 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
         characterSelection.gameObject.SetActive(true);
         lobbyUI.SetActive(false);
         mainMenuCanvas.SetActive(false);
+        mainCamera.SetActive(false);
     }
     
     //Goes back into lobby, removing the Character Select
@@ -65,6 +68,7 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
         characterSelection.gameObject.SetActive(false);
         mainMenuCanvas.SetActive(true);
         lobbyUI.SetActive(true);
+        mainCamera.SetActive(true);
     }
 
     [Command]

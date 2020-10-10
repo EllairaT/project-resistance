@@ -91,7 +91,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _EdgeWidth: 0
-    - _FresnelPower: 4.19
+    - _FresnelPower: 4.34
     - _GlossMapScale: 0.25
     - _Glossiness: 0.368
     - _GlossyReflections: 1
@@ -117,7 +117,7 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _BoxDims: {r: 5, g: 5, b: 5, a: 1}
-    - _Color: {r: 0, g: 0.101481915, b: 1, a: 1}
+    - _Color: {r: 0.504717, g: 0.5552166, b: 1, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _Emission1: {r: 2.56, g: 0, b: 0, a: 1}
     - _Emission2: {r: 0, g: 1.95, b: 2.52, a: 1}

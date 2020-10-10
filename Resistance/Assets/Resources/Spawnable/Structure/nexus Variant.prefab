@@ -80,6 +80,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: nexus Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7202271454713460447, guid: 0bcb3ab6040b148428b1723a23ec21db,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 32fe6d9b8f5923a4fb204a3e90b1894d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bcb3ab6040b148428b1723a23ec21db, type: 3}
 --- !u!1 &1074624289992570691 stripped

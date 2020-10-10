@@ -16,6 +16,7 @@ MonoBehaviour:
   userIP: 
   characterName: 
   role: 
+  gold: 0
   icon: {fileID: 0}
 --- !u!1001 &2787263888271586437
 PrefabInstance:
@@ -113,6 +114,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 727c6fa4d67cd174eac2219cc6a9e12d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 727c6fa4d67cd174eac2219cc6a9e12d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 727c6fa4d67cd174eac2219cc6a9e12d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 727c6fa4d67cd174eac2219cc6a9e12d,
         type: 3}
