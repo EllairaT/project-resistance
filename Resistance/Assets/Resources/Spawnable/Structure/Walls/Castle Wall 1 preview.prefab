@@ -32,7 +32,7 @@ MonoBehaviour:
   legalMat: {fileID: 0}
   illegalMat: {fileID: 0}
   isFoundation: 0
-  tagsSnappedTo:
+  tagsToSnapTo:
   - SP_WALL
 --- !u!1001 &6977210245441998408
 PrefabInstance:

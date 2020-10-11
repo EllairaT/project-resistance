@@ -5,90 +5,51 @@ using UnityEngine;
 
 public class BuildManager : MonoBehaviour
 {
-    public GameObject playerInventory;
-    public BuildSystem bs;
-    private Inventory i;
 
-    private bool hasPreviewSpawned = false;
-    GameObject oldPreview = null;
+    public GameObject foundationPreview;//make sure that you include the preview of the gameobject you want to build
+    public GameObject wallPreview;//make sure that you include the preview of the gameobject you want to build
+    
+    public BuildSystem buildSystem;
 
-    void Start()
+    private void Update()
     {
-        playerInventory.SetActive(false);
-        i = playerInventory.GetComponent<Inventory>();
-    }
-
-    void Update()
-    {
-        i.ListenForInput();
-
-        //Scroll through inventory and update preview-------------
-
-        if (i.CurrentlyActive != null && i.isInBuildMode)
-        {
-            i.ScrollThroughInventory(i.CurrentList);
-
-            if (i.previewItem != null)
-            {
-                UpdatePreview(i.previewItem);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Mouse0)) //TODO check if position was valid
-            {
-                bs.BuildNow();
-                i.ResetAll();
-                hasPreviewSpawned = false;
-            }
-        }
-
-        if (!i.isInBuildMode)
-        {
-            i.ResetAll();
-        }
-
-        //Stop building------------------------------------------
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            ToggleInventory();
-            bs.CancelBuild();
-        }
-    }
-
-    void ToggleInventory()
-    {
-        playerInventory.SetActive(!playerInventory.activeSelf);
-    }
-
-    void UpdatePreview(GameObject _o)
-    {
-        if (oldPreview != null) //does a previous preview exist?
-        {
-            if (_o != oldPreview) //check if the user pressed 1,2,3,4,5, f
-            {
-                if (hasPreviewSpawned) 
-                {
-                    bs.CancelBuild(); //remove other preview
-                    hasPreviewSpawned = false;
-                }
-                ShowItemPreview(_o); //then show the new one
-            }
-        }
-        else
-        {
-            if (hasPreviewSpawned)
-            {
-                Debug.Log("here?");
-                bs.CancelBuild();
-                hasPreviewSpawned = false;
-            }
-                ShowItemPreview(_o);
-        }
-    }
-
-    void ShowItemPreview(GameObject _o)
-    {
-        bs.NewBuild(_o);
-        oldPreview = _o;
-        hasPreviewSpawned = true; //prevent preview from infinitely spawning
+    //    if (Input.GetKeyDown(KeyCode.B)) //user disables build mode
+    //    {
+    //        isInBuildMode = false;
+    //    }
+    //    else
+    //    {
+    //        if (Input.GetKeyDown(KeyCode.Alpha1))
+    //        {
+    //            CurrentList = purchases.BlockArr;
+    //            CurrentlyActive = blocks;
+    //        }
+    //        if (Input.GetKeyDown(KeyCode.Alpha2))
+    //        {
+    //            CurrentList = purchases.FenceArr;
+    //            CurrentlyActive = fences;
+    //        }
+    //        if (Input.GetKeyDown(KeyCode.Alpha3))
+    //        {
+    //            CurrentList = purchases.GatesArr;
+    //            CurrentlyActive = gates;
+    //        }
+    //        if (Input.GetKeyDown(KeyCode.Alpha4))
+    //        {
+    //            CurrentList = purchases.StairsArr;
+    //            CurrentlyActive = stairs;
+    //        }
+    //        if (Input.GetKeyDown(KeyCode.Alpha5))
+    //        {
+    //            CurrentList = purchases.WallsArr;
+    //            CurrentlyActive = walls;
+    //        }
+    //        if (Input.GetKeyDown(KeyCode.F))
+    //        {
+    //            CurrentList = purchases.FoundationArr;
+    //            CurrentlyActive = foundation;
+    //        }
+    //        isInBuildMode = true;
+    //    }
     }
 }

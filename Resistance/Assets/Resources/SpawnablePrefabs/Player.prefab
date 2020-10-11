@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: df70deb49fa02714b9293ed8fac16d03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -132,6 +132,7 @@ MonoBehaviour:
   sceneId: 0
   serverOnly: 0
   m_AssetId: 
+  _allowChildrenBehaviours: 0
   hasSpawned: 0
 --- !u!114 &192118282715986396
 MonoBehaviour:
@@ -187,6 +188,8 @@ MonoBehaviour:
   cameraVelocity: {x: 4, y: 0.25}
   playerTransform: {fileID: 1174675625494191710}
   virtualCamera: {fileID: 6204727597608896350}
+  playerCam: {fileID: 0}
+  playerCanvas: {fileID: 0}
 --- !u!114 &5373421084384735132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +206,13 @@ MonoBehaviour:
   syncInterval: 0.1
   movementSpeed: 5
   controller: {fileID: 1174675625494191711}
+  networkAnim: {fileID: 0}
+  gravity: -9.81
+  GroundCheck: {fileID: 0}
+  groundDistance: 5
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1937105672313704383
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +272,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 6097780381503636151, guid: a8a6b50c90e810a4b9cdc2d81465ad26, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -450,6 +460,13 @@ MonoBehaviour:
     FarClipPlane: 5000
     Dutch: 0
     LensShift: {x: 0, y: 0}
+    Iso: 200
+    ShutterSpeed: 0.005
+    Aperture: 16
+    BladeCount: 5
+    Curvature: {x: 2, y: 11}
+    BarrelClipping: 0.25
+    Anamorphism: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

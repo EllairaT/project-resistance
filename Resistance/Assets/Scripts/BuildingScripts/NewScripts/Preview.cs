@@ -5,26 +5,25 @@ using UnityEngine;
 public class Preview : MonoBehaviour
 {
     public GameObject prefab;
-
-    private MeshRenderer prefabRend;
+    public BuildSystem buildSystem;
+    private MeshRenderer rend;
 
     [HideInInspector] public Material legalMat;
     [HideInInspector] public Material illegalMat;
+    
+    public bool hasCustomAnchor = false;
+    public GameObject customAnchor;
+    private bool isSnapped = false;//only this script should change this value
 
-    private BuildSystem bs; 
-
-    private bool isSnapped = false;
     public bool isFoundation = false;
 
-    public List<string> tagsSnappedTo = new List<string>();
-    private List<string> tagsToDisable = new List<string>();
-
-    void Start()
+    public List<string> tagsToSnapTo = new List<string>();
+ 
+    private void Start()
     {
-        //TODO: get parent's build system component
-        bs = GameObject.FindObjectOfType<BuildSystem>(); 
-        prefabRend = GetComponent<MeshRenderer>();
-        ChangeMaterial();
+        buildSystem = FindObjectOfType<BuildSystem>();
+        rend = GetComponent<MeshRenderer>();
+        ChangeMat();
     }
 
     public void Place()
@@ -33,67 +32,60 @@ public class Preview : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void ChangeMaterial()
+    private void ChangeMat()
     {
         if (isSnapped)
         {
-            prefabRend.material = legalMat;
+            rend.material = legalMat;
         }
         else
         {
-            prefabRend.material = illegalMat;
+            rend.material = illegalMat;
         }
 
         if (isFoundation)
         {
-            prefabRend.material = legalMat;
-            isSnapped = true;
+            rend.material = legalMat;
+            isSnapped = true; //forced true value for at least one of the foundations so that we can start building
         }
     }
 
-
-
-    void OnTriggerEnter(Collider other)
-    {   
-        for (int i = 0; i < tagsSnappedTo.Count; i++)
+    //enable snap
+    private void OnTriggerEnter(Collider other)//this is what dertermins if you are snapped to a snap point
+    {
+        for (int i = 0; i < tagsToSnapTo.Count; i++)
         {
-            string currentTag = tagsSnappedTo[i]; //get current tag 
+            string currentTag = tagsToSnapTo[i];
 
-            if(other.CompareTag(currentTag)) //if tag that was bumped into 
+            if (other.CompareTag(currentTag))
             {
-                bs.PauseBuild(true); //snap! the build system must be paused when a snappoint is hit
+                //need to "pause" raycast otherwise the position will be overridden in the next frame
+                //which makes it look like it never snapped
+                buildSystem.PauseBuild(true);
                 transform.position = other.transform.position;
                 isSnapped = true;
-                ChangeMaterial();
+                ChangeMat();
             }
-            else if (other.CompareTag("illegal"))
-            {
-                isSnapped = false;
-                prefabRend.material = illegalMat;
-            }
+
         }
     }
 
+    //disable snap
     private void OnTriggerExit(Collider other)
     {
-        for (int i = 0; i < tagsSnappedTo.Count; i++)
+        for (int i = 0; i < tagsToSnapTo.Count; i++)
         {
-            string currentTag = tagsSnappedTo[i];
+            string currentTag = tagsToSnapTo[i];
 
-            if(other.CompareTag(currentTag))
+            if (other.CompareTag(currentTag))
             {
                 isSnapped = false;
-                ChangeMaterial();
-            }
-            else if (other.CompareTag("illegal"))
-            {
-                isSnapped = true;
-                prefabRend.material = legalMat;
+                ChangeMat();
             }
         }
     }
 
-    public bool GetIsSnapped()
+    public bool IsSnapped()
     {
         return isSnapped;
     }
