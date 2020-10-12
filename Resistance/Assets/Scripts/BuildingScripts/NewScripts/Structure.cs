@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 //using UnityEditor;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class Structure : MonoBehaviour
     public float hardness;
     public float baseHealth;
     public int cost;
+    public List<GameObject> snapPoints;
 
     public float CalculateDamageTaken(float dmg)
     {
@@ -20,4 +22,9 @@ public class Structure : MonoBehaviour
     {
         return matCost + cost;
     }   
+
+    public void DisableSnapPoints()
+    {
+        
+    }
 }

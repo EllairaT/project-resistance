@@ -117,7 +117,7 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _BoxDims: {r: 5, g: 5, b: 5, a: 1}
-    - _Color: {r: 0.504717, g: 0.5552166, b: 1, a: 1}
+    - _Color: {r: 0.378613, g: 0.119084775, b: 0.8705506, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _Emission1: {r: 2.56, g: 0, b: 0, a: 1}
     - _Emission2: {r: 0, g: 1.95, b: 2.52, a: 1}

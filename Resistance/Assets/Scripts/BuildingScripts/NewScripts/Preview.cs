@@ -10,9 +10,7 @@ public class Preview : MonoBehaviour
 
     [HideInInspector] public Material legalMat;
     [HideInInspector] public Material illegalMat;
-    
-    public bool hasCustomAnchor = false;
-    public GameObject customAnchor;
+
     private bool isSnapped = false;//only this script should change this value
 
     public bool isFoundation = false;
@@ -66,7 +64,6 @@ public class Preview : MonoBehaviour
                 isSnapped = true;
                 ChangeMat();
             }
-
         }
     }
 

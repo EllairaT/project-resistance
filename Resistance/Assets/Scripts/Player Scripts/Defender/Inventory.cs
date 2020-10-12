@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using RotaryHeart.Lib.SerializableDictionary;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -6,24 +7,13 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable] public class DefaultKeyBinds : SerializableDictionaryBase<KeyCode, GameObject> { }
+
 public class Inventory : MonoBehaviour
 {
     //structures
     [Header("Structure Images")]
-    public GameObject blocks;
-    public GameObject fences;
-    public GameObject gates;
-    public GameObject stairs;
-    public GameObject walls;
-    public GameObject foundation;
-    public GameObject previewItem = null;
-
-    [Header("Materials Image")]
-    public GameObject mat;
-
-    [Header("Reference to other scripts")]
-    public BuildSystem buildSystem;
-    public PlayerPurchase purchases;
+    public DefaultKeyBinds keybinds;
 
     private List<GameObject> currentList;
     private GameObject itemToBuild = null;
@@ -36,26 +26,16 @@ public class Inventory : MonoBehaviour
     public GameObject CurrentlyActive { get => currentlyActive; set => currentlyActive = value; }
     public int LastIndex { get => lastIndex; set => lastIndex = value; }
 
-    void Start()
+    public void ListenForInput()
     {
-        List<GameObject> allThumbnails = new List<GameObject> { blocks, fences, gates, stairs, walls, foundation };
-
-        //foreach (Dictionary<GameObject, int> item in purchases.GetAllPurchases())
-        //{
-        //    ////only show first item from each list
-        //    //if (purchases.GetAllPurchases()[i].Count != 0)
-        //    //{
-        //    //    Texture2D t = RuntimePreviewGenerator.GenerateModelPreview(purchases.GetAllPurchases()[i][0].transform);
-        //    //    allThumbnails[i].GetComponent<Image>().sprite = ConvertTextureToSprite.Convert(t);
-        //    //}
-        //    //for each dictionary...
-        //    //{block1, 5} {block2, 1}...
-
-        //    foreach(var i in item.Values)
-        //    {
-        //        Debug.Log("I got printed!");
-        //    }
-        //}
+        foreach (KeyCode k in keybinds.Keys)
+        {
+            if (Input.GetKey(k))
+            {
+                currentlyActive = keybinds[k];
+                break;
+            }
+        }
     }
 
     private void Update()
@@ -68,7 +48,7 @@ public class Inventory : MonoBehaviour
             {
                 lastIndex = 0;
             }
-            previewItem = currentList[0];
+            //previewItem = currentList[0];
             // Debug.Log("currently active: " + currentlyActive.transform.parent.name);
         }
     }
@@ -79,13 +59,13 @@ public class Inventory : MonoBehaviour
         CurrentlyActive = null;
         currentIndex = 0;
         lastIndex = 0;
-        previewItem = null;
+        //previewItem = null;
     }
 
     private void ShowInSlot(GameObject _img, GameObject _o)
     {
         _img.GetComponent<Image>().sprite = ConvertTextureToSprite.Convert(RuntimePreviewGenerator.GenerateModelPreview(_o.transform));
-        previewItem = _o;
+       // previewItem = _o;
     }
 
     public void ScrollThroughInventory(List<GameObject> _current)

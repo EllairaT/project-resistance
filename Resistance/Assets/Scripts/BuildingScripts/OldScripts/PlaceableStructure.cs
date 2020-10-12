@@ -45,12 +45,12 @@ public class PlaceableStructure : MonoBehaviour
 
     public void AssignMaterial(Materials material)
     {
-        mat = material.GetMaterial();
-        r.material = mat;
-        stats.CalculateCost(material.cost);
-        stats.hardness = material.hardness;
-        isPreview = false;
-        PrintStats();
+        //mat = material.GetMaterial();
+        //r.material = mat;
+        //stats.CalculateCost(material.Cost);
+        //stats.hardness = material.Hardness;
+        //isPreview = false;
+        //PrintStats();
     }
 
     public GameObject GetMesh()

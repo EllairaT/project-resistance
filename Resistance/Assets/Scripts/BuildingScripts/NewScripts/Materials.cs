@@ -9,14 +9,4 @@ public class Materials : ScriptableObject
     public int cost;
     public float hardness;
     public Material mat;
-
-    public Material GetMaterial()
-    {
-        return Resources.Load("Materials/" + mat.name) as Material;
-    }
-
-    public void Print()
-    {
-        Debug.Log(name + ": " + cost);
-    }
 }
