@@ -28,14 +28,15 @@ public class Inventory : MonoBehaviour
 
     public void ListenForInput()
     {
-        //foreach (KeyCode k in keybinds.Keys)
-        //{
-        //    if (Input.GetKey(k))
-        //    {
-        //        currentlyActive = keybinds[k];
-        //        break;
-        //    }
-        //}
+        foreach (KeyCode k in keybinds.Keys)
+        {
+            if (Input.GetKey(k))
+            {
+                Debug.Log(k);
+                currentlyActive = keybinds[k];
+                break;
+            }
+        }
     }
 
     private void Update()
