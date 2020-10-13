@@ -224,7 +224,7 @@ MonoBehaviour:
     min: 0
   planetCenterPosition:
     m_OverrideState: 0
-    m_Value: {x: 0, y: -6378100, z: 0}
+    m_Value: {x: -7287, y: 116950, z: 0}
   airDensityR:
     m_OverrideState: 0
     m_Value: 0.04534
@@ -283,7 +283,7 @@ MonoBehaviour:
     showEyeDropper: 0
   groundColorTexture:
     m_OverrideState: 0
-    m_Value: {fileID: 0}
+    m_Value: {fileID: 8900000, guid: beb1457d375110e468b8d8e1f29fccea, type: 3}
   groundEmissionTexture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -303,7 +303,7 @@ MonoBehaviour:
     min: 0
   spaceRotation:
     m_OverrideState: 1
-    m_Value: {x: 183.03, y: 47.76, z: 156.4}
+    m_Value: {x: 379, y: 47.76, z: 52.2}
   colorSaturation:
     m_OverrideState: 0
     m_Value: 1

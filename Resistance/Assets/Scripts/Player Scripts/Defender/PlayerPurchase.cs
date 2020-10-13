@@ -1,9 +1,4 @@
-﻿
-using RotaryHeart.Lib.SerializableDictionary;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Specialized;
+﻿using RotaryHeart.Lib.SerializableDictionary;
 using UnityEngine;
 
 [System.Serializable] public class StructurePurchases : SerializableDictionaryBase<GameObject, int> { }
