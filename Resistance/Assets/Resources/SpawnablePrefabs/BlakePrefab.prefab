@@ -7346,7 +7346,7 @@ MonoBehaviour:
   characterName: Blake
   role: Defender
   gold: 0
-  icon: {fileID: 21300000, guid: ed307ee2dc1911f4e97cfb7f59d17123, type: 3}
+  icon: {fileID: 21300000, guid: 9ec147b1c9222e14693a2e75d69277d4, type: 3}
   playerHUD: {fileID: 0}
 --- !u!1 &6243899113625758679
 GameObject:
