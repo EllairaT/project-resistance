@@ -30,16 +30,6 @@ public class BuildManager : MonoBehaviour
         }
 
 
-        //playerInventory.ListenForInput();
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            buildSystem.NewBuild(foundationPreview);
-        }
-        else if (Input.GetKeyDown(KeyCode.H))
-        {
-            buildSystem.NewBuild(wallPreview);
-        }
-
     }
 
     void ToggleInventory()

@@ -8,4 +8,5 @@ public class Materials : MonoBehaviour
     public int cost;
     public float hardness;
     public Material mat;
+    public Texture2D texture;
 }

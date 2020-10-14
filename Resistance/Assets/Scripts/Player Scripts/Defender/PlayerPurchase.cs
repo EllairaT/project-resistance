@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [System.Serializable] public class StructurePurchases : SerializableDictionaryBase<GameObject, int> { }
-[System.Serializable] public class MaterialPurchases : SerializableDictionaryBase<Materials, int> { }
+[System.Serializable] public class MaterialPurchases : SerializableDictionaryBase<GameObject, int> { }
 
 public class PlayerPurchase : MonoBehaviour
 {
@@ -22,7 +22,7 @@ public class PlayerPurchase : MonoBehaviour
         }
     }  
 
-    public void AddToMaterialPurchases(Materials _m)
+    public void AddToMaterialPurchases(GameObject _m)
     {
         if (!materialPurchase.ContainsKey(_m))
         {
