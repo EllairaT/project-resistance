@@ -1254,13 +1254,13 @@ namespace Mirror
 
         void OnClientDisconnectInternal(NetworkConnection conn, DisconnectMessage msg)
         {
-            logger.Log("NetworkManager.OnClientDisconnectInternal");
+            //logger.Log("NetworkManager.OnClientDisconnectInternal");
             OnClientDisconnect(conn);
         }
 
         void OnClientNotReadyMessageInternal(NetworkConnection conn, NotReadyMessage msg)
         {
-            logger.Log("NetworkManager.OnClientNotReadyMessageInternal");
+            //logger.Log("NetworkManager.OnClientNotReadyMessageInternal");
 
             ClientScene.ready = false;
             OnClientNotReady(conn);
