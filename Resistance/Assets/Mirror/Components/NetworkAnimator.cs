@@ -468,7 +468,7 @@ namespace Mirror
             if (!clientAuthority)
                 return;
 
-            if (logger.LogEnabled()) logger.Log("OnAnimationMessage for netId=" + netId);
+            //if (logger.LogEnabled()) logger.Log("OnAnimationMessage for netId=" + netId);
 
             // handle and broadcast
             using (PooledNetworkReader networkReader = NetworkReaderPool.GetReader(parameters))

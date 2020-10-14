@@ -16,7 +16,9 @@ public class GunScript : NetworkBehaviour
     public GameObject impactEffect;
 
     [SerializeField] Transform hand;
-    
+    [SerializeField] public GameObject playerPrefab;
+    public GameObject spectatorCamera;
+
     [Header("Ammo")]
     [SerializeField] public AmmoScript ammoScript;
     [SerializeField] public int maxClipAmmo = 20;
@@ -32,7 +34,7 @@ public class GunScript : NetworkBehaviour
     [Header("Health")]
     [SerializeField] public HealthBarScript healthScript;
     [SerializeField] public int maxHealth = 100;
-    [SerializeField] private int currentHealth;
+    [SerializeField] private int currentHealth = 100;
     
     //Set the starting values for each components
     void Awake()
@@ -82,6 +84,10 @@ public class GunScript : NetworkBehaviour
         else if (Input.GetKeyDown(KeyCode.R))
         {
             Reload();
+        }
+        else if (Input.GetKeyDown(KeyCode.T))
+        {
+            TestHealthBar();
         }
     }
 
@@ -145,6 +151,22 @@ public class GunScript : NetworkBehaviour
     {
         currentHealth -= 10;
         healthScript.SetHealth(currentHealth);
+
+        if(currentHealth <= 0)
+        {
+            spectatorCamera = GameObject.FindGameObjectWithTag("SpectatorCamera");
+            if(spectatorCamera == null)
+            {
+                Debug.Log("NOT FOUND CAMERA");
+            }
+            else
+            {
+                Debug.Log("FOUND CAMERA");
+            }
+            spectatorCamera.gameObject.SetActive(true);
+            spectatorCamera.SetActive(true);
+            NetworkServer.Destroy(playerPrefab);
+        }
     }
 
     //Increase the player's gold based on the target hit's gold value
