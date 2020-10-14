@@ -7368,12 +7368,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9acf92acb208c494987a395d0ed0a215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   userName: 
   userIP: 
   characterName: Matthew
   role: Defender
   gold: 0
   icon: {fileID: 21300000, guid: 00a7c3b743467064d8a363cedfba4832, type: 3}
+  playerHUD: {fileID: 0}
 --- !u!1 &6803168515995176786
 GameObject:
   m_ObjectHideFlags: 0
@@ -7909,6 +7912,8 @@ MonoBehaviour:
   muzzleFlash: {fileID: 8073067826407476985}
   impactEffect: {fileID: 0}
   hand: {fileID: 9096934865803316807}
+  playerPrefab: {fileID: 6795935684895619895}
+  spectatorCamera: {fileID: 0}
   ammoScript: {fileID: 6206023580615453237}
   maxClipAmmo: 5
   currentClipAmmo: 0
@@ -8364,12 +8369,12 @@ PrefabInstance:
     - target: {fileID: 2926607270350308974, guid: 9e2633a3b96f1a14c88eea547995b541,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2926607270350308974, guid: 9e2633a3b96f1a14c88eea547995b541,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3093073547435887917, guid: 9e2633a3b96f1a14c88eea547995b541,
         type: 3}
@@ -8480,6 +8485,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: updatedHUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 3588121399882993962, guid: 9e2633a3b96f1a14c88eea547995b541,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5010460179035884051, guid: 9e2633a3b96f1a14c88eea547995b541,
         type: 3}
