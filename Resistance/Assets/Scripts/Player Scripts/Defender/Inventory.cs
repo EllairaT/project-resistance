@@ -37,7 +37,7 @@ public class Inventory : BaseMonobehaviour
         {
 
         }
-        if(MatPurchases != null)
+        if (MatPurchases != null)
         {
 
         }
@@ -54,7 +54,6 @@ public class Inventory : BaseMonobehaviour
                 break;
             }
         }
-        ScrollThroughInventory(CurrentlyActive, CurrentList);
     }
 
     private void EnableSlot(GameObject _s)
@@ -93,7 +92,7 @@ public class Inventory : BaseMonobehaviour
                 if (_o.GetComponent<Preview>().type.Equals(CurrentlyActive.GetComponent<InventorySlot>().type))
                 {
                     if (!CurrentList.Contains(_o))
-                    {                     
+                    {
                         CurrentList.Add(_o);
                     }
                 }
@@ -142,9 +141,9 @@ public class Inventory : BaseMonobehaviour
                 {
                     currentIndex = _currentList.Count - 1;
                 }
-                
 
-                if (_currentlyActive.GetComponent<InventorySlot>().type == StructureType.MATERIAL) 
+
+                if (_currentlyActive.GetComponent<InventorySlot>().type == StructureType.MATERIAL)
                 {
                     ShowTextureInSlot(_currentlyActive, _currentList[currentIndex].GetComponent<Materials>());
                 }

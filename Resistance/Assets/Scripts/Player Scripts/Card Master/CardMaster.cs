@@ -5,18 +5,60 @@ using UnityEngine;
 public class CardMaster : MonoBehaviour
 {
 
-    [SerializeField] private Loadout loadout;
+    public GameObject CardMenu;
+    public CMCamera CameraMove;
 
+    private bool isMenuActive = false;
+    private bool isCursorActive = true;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        CardMenu.SetActive(false);
+        ToggleCursor();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            ToggleCursor();
+        } 
+        else if (Input.GetKeyDown(KeyCode.B))
+        {
+            ToggleMenu();
+        }
     }
+
+    void ToggleCursor()
+    {
+        if (isCursorActive)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+        isCursorActive = !isCursorActive;
+    }
+
+    void ToggleMenu()
+    {
+        if (isMenuActive)
+        {
+            CardMenu.SetActive(false);
+            CameraMove.canMove = true;
+        }
+        else
+        {
+            CardMenu.SetActive(true);
+            CameraMove.canMove = false;
+        }
+
+        isMenuActive = !isMenuActive;
+    }
+
 }

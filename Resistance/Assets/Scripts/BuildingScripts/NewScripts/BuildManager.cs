@@ -42,6 +42,11 @@ public class BuildManager : BaseMonobehaviour
         {
             playerInventory.ListenForInput();
         }
+
+        if(playerInventory.CurrentlyActive != null && playerInventory.CurrentList != null)
+        {
+            playerInventory.ScrollThroughInventory(playerInventory.CurrentlyActive, playerInventory.CurrentList);
+        }
     }
 
     void ToggleInventory()
