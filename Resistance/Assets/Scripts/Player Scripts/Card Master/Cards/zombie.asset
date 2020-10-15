@@ -14,9 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Zombie
   _icon: {fileID: 21300000, guid: 526406741b7d51b4f925403beed70118, type: 3}
-  _description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae
-    sagittis lacus. Aenean ac urna ut justo varius vestibulum eget fringilla orci.
-    Praesent erat mi, convallis et nisl dapibus, commodo scelerisque ex. '
+  _description: Slow, dumb, but determined. Summon the undead to fight for your army.
   _cost: 20
   type: 0
   _health: 300
@@ -27,4 +25,4 @@ MonoBehaviour:
   maxNumber: 0
   minNumber: 0
   numberToSpawn: 0
-  SetNumber: 0
+  prefab: {fileID: 4803014352389650695, guid: 06cb2b131fe009c47a523671a8fa9ed8, type: 3}

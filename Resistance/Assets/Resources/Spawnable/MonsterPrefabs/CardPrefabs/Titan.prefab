@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8789887841316460621}
   - component: {fileID: 1883315061013809790}
   - component: {fileID: 1866956552967577040}
+  - component: {fileID: -7523577115931303577}
   m_Layer: 5
   m_Name: Titan
   m_TagString: Untagged
@@ -100,6 +101,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eedf60abb28682b4dab58f1ed12b5854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
   originalPosition: {x: 0, y: 0, z: 0}
   isDroppedInSlot: 0
+  description: {fileID: 508250288222972920, guid: d192f14013a563443bbb8dce4b8d4e86,
+    type: 3}
+  card: {fileID: 11400000, guid: 1870e2fb05588d64c8cc436dbe72d4c0, type: 2}
+--- !u!114 &-7523577115931303577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395363255211382477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.6320754, g: 0, b: 0, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 8789887841316460621}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []

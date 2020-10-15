@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Titan
   _icon: {fileID: 21300000, guid: f067f0443aacd4e4881fabda3c6f6293, type: 3}
-  _description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae
-    sagittis lacus. Aenean ac urna ut justo varius vestibulum eget fringilla orci.
-    Praesent erat mi, convallis et nisl dapibus, commodo scelerisque ex. '
+  _description: Summon this giant to move across the battlefield, acting as a bullet
+    sponge for your army.
   _cost: 500
   type: 1
   _health: 5000
@@ -27,4 +26,4 @@ MonoBehaviour:
   maxNumber: 0
   minNumber: 0
   numberToSpawn: 0
-  SetNumber: 0
+  prefab: {fileID: 6512886743254991671, guid: 62bb48fb93a4332449a46b0ac6c7eb27, type: 3}

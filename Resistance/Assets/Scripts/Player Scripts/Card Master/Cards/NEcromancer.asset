@@ -14,9 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Necromancer
   _icon: {fileID: 21300000, guid: d2d53d6d364f5cc448cbeb4e23fc9680, type: 3}
-  _description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae
-    sagittis lacus. Aenean ac urna ut justo varius vestibulum eget fringilla orci.
-    Praesent erat mi, convallis et nisl dapibus, commodo scelerisque ex. '
+  _description: Summon this being to support allies, particularly the undead ones.
   _cost: 200
   type: 2
   _health: 250
@@ -27,4 +25,4 @@ MonoBehaviour:
   maxNumber: 0
   minNumber: 0
   numberToSpawn: 0
-  SetNumber: 0
+  prefab: {fileID: 1000013586557078, guid: 3c9c8a8bf50e6b5439ab9db67bc82586, type: 3}

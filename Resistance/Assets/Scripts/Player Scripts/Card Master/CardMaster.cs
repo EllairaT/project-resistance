@@ -56,6 +56,8 @@ public class CardMaster : MonoBehaviour
         {
             CardMenu.SetActive(true);
             CameraMove.canMove = false;
+            isCursorActive = false;
+            ToggleCursor();
         }
 
         isMenuActive = !isMenuActive;
