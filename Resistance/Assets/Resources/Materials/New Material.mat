@@ -367,7 +367,7 @@ Material:
     - _AORemapMin3: 0
     - _ATDistance: 1
     - _AddPrecomputedVelocity: 0
-    - _AlbedoAffectEmissive: 0
+    - _AlbedoAffectEmissive: 1
     - _AlbedoMode: 1
     - _AlphaCutoff: 0.5
     - _AlphaCutoffEnable: 0
@@ -440,7 +440,7 @@ Material:
     - _DstBlend: 0
     - _Emissive: 0
     - _EmissiveColorMode: 1
-    - _EmissiveExposureWeight: 1
+    - _EmissiveExposureWeight: 0.104
     - _EmissiveIntensity: 0.15
     - _EmissiveIntensityUnit: 0
     - _EnableBlendModePreserveSpecularLighting: 1
@@ -526,7 +526,7 @@ Material:
     - _MaskmapMetal: 0
     - _MaskmapSmoothness: 1
     - _MaterialID: 1
-    - _Metallic: 0.409
+    - _Metallic: 0.955
     - _Metallic0: 0
     - _Metallic1: 0
     - _Metallic2: 0
@@ -539,7 +539,7 @@ Material:
     - _NormalMapSpace1: 0
     - _NormalMapSpace2: 0
     - _NormalMapSpace3: 0
-    - _NormalScale: 1
+    - _NormalScale: 2.1
     - _NormalScale0: 1
     - _NormalScale1: 1
     - _NormalScale2: 1
@@ -565,7 +565,7 @@ Material:
     - _Rotation: 0
     - _SSRefractionProjectionModel: 0
     - _Shininess: 0.078125
-    - _Smoothness: 1
+    - _Smoothness: 0.571
     - _Smoothness0: 0.5
     - _Smoothness1: 0.5
     - _Smoothness2: 0.5
@@ -657,14 +657,14 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.03307867, g: 0, b: 1, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 0.8352941}
     - _BaseColor0: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor1: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor2: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor3: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap0_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.03307867, g: 0, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 0.8352941}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DiffusionProfileAsset0: {r: 0, g: 0, b: 0, a: 0}
     - _DiffusionProfileAsset1: {r: 0, g: 0, b: 0, a: 0}
@@ -672,7 +672,7 @@ Material:
     - _DiffusionProfileAsset3: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissiveColor: {r: 0.08164043, g: 0, b: 0.15, a: 0}
+    - _EmissiveColor: {r: 0.07510632, g: 0, b: 1.7411011, a: 0.77254903}
     - _EmissiveColorHDR: {r: 0, g: 0, b: 0, a: 1}
     - _EmissiveColorLDR: {r: 0.54426956, g: 0, b: 1, a: 1}
     - _FlowDirection: {r: 1, g: 0, b: 0, a: 0}

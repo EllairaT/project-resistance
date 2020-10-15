@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildSystem : MonoBehaviour
+public class BuildSystem : BaseMonobehaviour
 {
     
     public LayerMask layer;
@@ -19,7 +19,6 @@ public class BuildSystem : MonoBehaviour
     public float stickTolerance = 1.5f;
     private bool isBuilding = false;
     private bool isBuildingPaused = false;
-
 
     public Preview PreviewScript { get => previewScript; set => previewScript = value; }
 

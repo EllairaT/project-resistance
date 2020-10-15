@@ -29,6 +29,7 @@ MonoBehaviour:
   hardness: 0
   baseHealth: 0
   cost: 100
+  snapPoints: []
 --- !u!1001 &3310435453683042894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -172,8 +173,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9e56f6c85eb7f0e46966b2316b2c0067, type: 2}
+    - target: {fileID: 5222816362231977763, guid: 8eafcc918e340be40bc7b04cc52d4740,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -563723424005673902, guid: 8eafcc918e340be40bc7b04cc52d4740, type: 3}
+    - {fileID: -1918076781854887908, guid: 8eafcc918e340be40bc7b04cc52d4740, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8eafcc918e340be40bc7b04cc52d4740, type: 3}
 --- !u!1 &4698117439587122536 stripped
 GameObject:

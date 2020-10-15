@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Preview : MonoBehaviour
+
+public class Preview : BaseMonobehaviour
 {
     public GameObject prefab;
     public BuildSystem buildSystem;
+    public StructureType type;
     private MeshRenderer rend;
 
     [HideInInspector] public Material legalMat;

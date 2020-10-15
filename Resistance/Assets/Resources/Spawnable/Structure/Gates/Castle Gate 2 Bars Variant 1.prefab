@@ -192,6 +192,7 @@ MonoBehaviour:
   hardness: 0
   baseHealth: 0
   cost: 200
+  snapPoints: []
 --- !u!114 &4875526090077983257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,11 +206,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2344163916641767769, guid: ba2f01aee4de74740ac06fcf4de2720a, type: 3}
+  buildSystem: {fileID: 0}
+  type: 3
   legalMat: {fileID: 0}
   illegalMat: {fileID: 0}
   isFoundation: 0
-  tagsSnappedTo:
-  - SP_WALL
+  tagsToSnapTo: []
 --- !u!54 &2731344945353322865
 Rigidbody:
   m_ObjectHideFlags: 0

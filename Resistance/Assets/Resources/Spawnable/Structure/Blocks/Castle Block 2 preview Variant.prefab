@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: customAnchor
       value: 
       objectReference: {fileID: 6839695159871359265}
+    - target: {fileID: -1918076781854887908, guid: 8eafcc918e340be40bc7b04cc52d4740,
+        type: 3}
+      propertyPath: type
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1576893346908294, guid: 8eafcc918e340be40bc7b04cc52d4740, type: 3}
       propertyPath: m_Name
       value: Castle Block 2 preview Variant
