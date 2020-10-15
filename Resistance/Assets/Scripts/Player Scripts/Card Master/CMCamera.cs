@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CMCamera : MonoBehaviour
 {
-    public float scrollSpeed = 10f;
+    public float scrollSpeed = 30f;
     public float xRot = 0f;
     public float yRot = 90f;
 
@@ -29,14 +29,16 @@ public class CMCamera : MonoBehaviour
         {
             Look();
 
-            if (Input.GetKey(KeyCode.Mouse0))
+            float scroll = Input.GetAxisRaw("Mouse ScrollWheel");
+
+            if (scroll < 0 || Input.GetKey(KeyCode.Q))
             {
                 if (playerCam.fieldOfView > maxZoomIn)
                 {
                     ZoomIn();
                 }
             }
-            else if (Input.GetKey(KeyCode.Mouse1))
+            else if(scroll > 0 || Input.GetKey(KeyCode.E))
             {
                 if (playerCam.fieldOfView < maxZoomOut)
                 {

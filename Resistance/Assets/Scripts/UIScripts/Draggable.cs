@@ -3,45 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
+public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    [SerializeField] private Canvas canvas;
-    private RectTransform rectTransform;
+    public Vector3 originalPosition;
+    public bool isDroppedInSlot;
+    public Transform startingParent;
+
+    public static GameObject itemBeingDragged; //will ensure the user will only be able to drag one item at a time
+
+
     private CanvasGroup canvasGroup;
 
     private void Awake()
     {
-        rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("begin drag");
+        itemBeingDragged = gameObject;
+        originalPosition = transform.position;
+        startingParent = transform.parent;  //its parent is the current slot
+
         canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
+        isDroppedInSlot = false;
     }
-
+    
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("dragging!");
-        rectTransform.anchoredPosition += eventData.delta/canvas.scaleFactor;
+        transform.position = Input.mousePosition;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("end drag");
+        itemBeingDragged = null;
+
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
+
+        if (!isDroppedInSlot && transform.parent == startingParent)
+        {
+            transform.position = originalPosition;
+        }
     }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        Debug.Log("test");
-    }
-
-    public void OnDrop(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
+    public void OnPointerDown(PointerEventData eventData) {}
 }

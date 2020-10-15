@@ -18,7 +18,7 @@ MonoBehaviour:
     sagittis lacus. Aenean ac urna ut justo varius vestibulum eget fringilla orci.
     Praesent erat mi, convallis et nisl dapibus, commodo scelerisque ex. '
   _cost: 150
-  type: 1
+  type: 0
   _health: 1000
   _damage: 50
   _heal: 0
