@@ -18,7 +18,7 @@ rounds.
 *Recommended Unity Version: Version 2019.4.5f1*
 
 ## Dependencies
-* tba
+* Mirror
 
 ## Usage 
 * Download this project and extract using a file archiver such as 7zip (as Windows has issues with the file path names being too long).
