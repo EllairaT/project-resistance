@@ -11,6 +11,7 @@ public class Description : BaseMonobehaviour
     public TextMeshProUGUI cost;
     public TextMeshProUGUI desc; 
 
+
     public void ShowDescription()
     {
         Name.SetText(card.Name);
@@ -18,4 +19,6 @@ public class Description : BaseMonobehaviour
         desc.SetText(card.Description);
         type.SetText(card.type.ToString());
     }
+
+
 }

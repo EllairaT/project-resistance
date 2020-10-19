@@ -22,7 +22,7 @@ Animation:
   m_GameObject: {fileID: 8319437786079628646}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: e9d80ff262fbc75448d4c9dc6acc4524, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: e9d80ff262fbc75448d4c9dc6acc4524, type: 3}
   - {fileID: 7400000, guid: d12bbabd4cee30045b99f6d88c6b80fb, type: 3}
@@ -31,7 +31,7 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!95 &418557884438977644
+--- !u!95 &4248242190451859556
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -43,7 +43,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 5888edb55eb3bba4383222f3cd5dfbb5, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -60,6 +60,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 5888edb55eb3bba4383222f3cd5dfbb5, type: 3}
       propertyPath: m_Name
       value: PigOrc
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5888edb55eb3bba4383222f3cd5dfbb5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5888edb55eb3bba4383222f3cd5dfbb5, type: 3}
       propertyPath: m_LocalPosition.x

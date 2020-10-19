@@ -22,7 +22,7 @@ MonoBehaviour:
   _heal: 0
   goldPerHit: 0
   goldPerDmg: 0
-  maxNumber: 0
-  minNumber: 0
+  maxNumber: 5
+  minNumber: 1
   numberToSpawn: 0
   prefab: {fileID: 8319437786079628646, guid: 650d65327234d8f48865e6ca73bb4528, type: 3}

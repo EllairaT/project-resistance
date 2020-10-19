@@ -50,24 +50,26 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
         }
     }
 
-    public void OnPointerDown(PointerEventData eventData) { }
+    public void OnPointerDown(PointerEventData eventData)
+    {
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (transform.parent.parent.name == "Inventory")
-        {
-        }
-        else
-        {
-            description.GetComponent<Description>().card = card;
-            description.GetComponent<Description>().ShowDescription();
-            description.SetActive(true);
-        }
+        description.GetComponent<Description>().card = card;
+        description.GetComponent<Description>().ShowDescription();
+        description.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+
         description.GetComponent<Description>().card = null;
         description.SetActive(false);
+    }
+
+    private void ToggleDescription()
+    {
+
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class CardSlot : BaseMonobehaviour, IDropHandler
 {
+    //TODO get item's original parent slot
+
     public GameObject Item
     {
         get

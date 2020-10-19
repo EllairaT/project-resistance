@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class CardMaster : MonoBehaviour
 {
-
-    public GameObject CardMenu;
     public CMCamera CameraMove;
 
-    private bool isMenuActive = false;
     private bool isCursorActive = true;
 
     private void Start()
     {
-        CardMenu.SetActive(false);
         ToggleCursor();
     }
 
@@ -23,10 +19,6 @@ public class CardMaster : MonoBehaviour
         {
             ToggleCursor();
         } 
-        else if (Input.GetKeyDown(KeyCode.B))
-        {
-            ToggleMenu();
-        }
     }
 
     void ToggleCursor()
@@ -38,29 +30,10 @@ public class CardMaster : MonoBehaviour
         }
         else
         {
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
         }
 
         isCursorActive = !isCursorActive;
     }
-
-    void ToggleMenu()
-    {
-        if (isMenuActive)
-        {
-            CardMenu.SetActive(false);
-            CameraMove.canMove = true;
-        }
-        else
-        {
-            CardMenu.SetActive(true);
-            CameraMove.canMove = false;
-            isCursorActive = false;
-            ToggleCursor();
-        }
-
-        isMenuActive = !isMenuActive;
-    }
-
 }

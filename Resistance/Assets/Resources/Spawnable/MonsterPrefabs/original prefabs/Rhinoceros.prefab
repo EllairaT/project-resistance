@@ -133,7 +133,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 4300000, guid: 000c35e7f6ef2c647bddd9d78f23a690, type: 3}
   m_Bones:
@@ -1413,9 +1413,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 483298}
-  - component: {fileID: 9566128}
   - component: {fileID: 5612271865575801555}
   - component: {fileID: -6785011686058952774}
+  - component: {fileID: 7131328032394235187}
   m_Layer: 0
   m_Name: Rhinoceros
   m_TagString: Untagged
@@ -1445,25 +1445,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &9566128
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 171952}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 000c35e7f6ef2c647bddd9d78f23a690, type: 3}
-  m_Controller: {fileID: 9100000, guid: 39b29d7b299559d4388e0e383d585e62, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &5612271865575801555
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1486,7 +1467,7 @@ Animation:
   m_GameObject: {fileID: 171952}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: 09a791f12a3e3164eb8a142f2b705b2d, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: a3de2e13c00800d41b0ce515c6371891, type: 3}
   - {fileID: 7400000, guid: 97017bf854066494b9786f2fccc5439f, type: 3}
@@ -1502,6 +1483,25 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!95 &7131328032394235187
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171952}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 09a791f12a3e3164eb8a142f2b705b2d, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &174182
 GameObject:
   m_ObjectHideFlags: 0
