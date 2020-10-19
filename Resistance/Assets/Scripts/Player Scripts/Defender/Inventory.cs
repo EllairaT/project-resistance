@@ -1,30 +1,47 @@
 ﻿using RotaryHeart.Lib.SerializableDictionary;
-using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Threading;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable] public class DefaultKeyBinds : SerializableDictionaryBase<KeyCode, GameObject> { }
 
-public class Inventory : MonoBehaviour
+public class Inventory : BaseMonobehaviour
 {
     //structures
     [Header("Structure Images")]
     public DefaultKeyBinds keybinds;
-
-    private List<GameObject> currentList;
-    private GameObject itemToBuild = null;
-    private GameObject currentlyActive = null;
+    public GameObject foundationPreview;
+    public GameObject foundationSlot;
+    public GameObject materialSlot;
+    public Sprite highlight;
+    public Sprite normalBorder;
     private int currentIndex = 0;
-    private int lastIndex = 0;
 
-    public GameObject ItemToBuild { get => itemToBuild; set => itemToBuild = value; }
-    public List<GameObject> CurrentList { get => currentList; set => currentList = value; }
-    public GameObject CurrentlyActive { get => currentlyActive; set => currentlyActive = value; }
-    public int LastIndex { get => lastIndex; set => lastIndex = value; }
+    public GameObject ItemToBuild { get; set; } = null;
+    public List<GameObject> CurrentList { get; set; } = new List<GameObject>();
+    public GameObject CurrentlyActive { get; set; } = null;
+    public MaterialPurchases MatPurchases { get; set; }
+    public StructurePurchases StrucPurchases { get; set; }
+
+    private BuildSystem buildsys;
+    private GameObject preview;
+
+    private void Start()
+    {
+        buildsys = transform.root.GetComponent<BuildSystem>();
+        ShowStructureInSlot(foundationSlot, foundationPreview);
+        ShowTextureInSlot(materialSlot, buildsys.defaultMaterial);
+
+        if (StrucPurchases != null)
+        {
+
+        }
+        if (MatPurchases != null)
+        {
+
+        }
+    }
 
     public void ListenForInput()
     {
@@ -32,79 +49,117 @@ public class Inventory : MonoBehaviour
         {
             if (Input.GetKey(k))
             {
-                Debug.Log(k);
-                currentlyActive = keybinds[k];
+                CurrentlyActive = keybinds[k];
+                EnableSlot(CurrentlyActive);
                 break;
             }
         }
     }
 
-    private void Update()
+    private void EnableSlot(GameObject _s)
     {
-        if (currentList != null && currentlyActive != null)
-        {
-            lastIndex = currentList.Count - 1;
+        ResetList(); //make sure there are no objects in the currentlist
 
-            if (lastIndex < 0)
+        //highlight the slot
+        foreach (GameObject _o in keybinds.Values)
+        {
+            if (_o.Equals(_s))
             {
-                lastIndex = 0;
+                _s.GetComponent<Image>().sprite = highlight;
             }
-            //previewItem = currentList[0];
-            // Debug.Log("currently active: " + currentlyActive.transform.parent.name);
+            else
+            {
+                _o.GetComponent<Image>().sprite = normalBorder;
+            }
+        }
+
+        //add all the objects in the current list
+        if (CurrentlyActive.GetComponent<InventorySlot>().type == StructureType.MATERIAL)
+        {
+            foreach (GameObject _m in MatPurchases.Keys)
+            {
+                if (!CurrentList.Contains(_m))
+                {
+                    CurrentList.Add(_m);
+                }
+            }
+        }
+        else
+        {
+            //add all the objects with the same type as the slot into the currentlist
+            foreach (GameObject _o in StrucPurchases.Keys)
+            {
+                if (_o.GetComponent<Preview>().type.Equals(CurrentlyActive.GetComponent<InventorySlot>().type))
+                {
+                    if (!CurrentList.Contains(_o))
+                    {
+                        CurrentList.Add(_o);
+                    }
+                }
+            }
         }
     }
 
-    public void ResetAll()
+    public void ResetList()
     {
-        CurrentList = null;
-        CurrentlyActive = null;
+        CurrentList.Clear();
         currentIndex = 0;
-        lastIndex = 0;
-        //previewItem = null;
     }
 
-    private void ShowInSlot(GameObject _img, GameObject _o)
+    private void ShowStructureInSlot(GameObject _img, GameObject _o)
     {
-        _img.GetComponent<Image>().sprite = ConvertTextureToSprite.Convert(RuntimePreviewGenerator.GenerateModelPreview(_o.transform));
-       // previewItem = _o;
+        _img.transform.Find("Image").GetComponent<Image>().sprite = ConvertTextureToSprite.Convert(RuntimePreviewGenerator.GenerateModelPreview(_o.transform));
     }
 
-    public void ScrollThroughInventory(List<GameObject> _current)
+    private void ShowTextureInSlot(GameObject _img, Materials _m)
     {
-        try
+        _img.transform.Find("Image").GetComponent<Image>().sprite = ConvertTextureToSprite.Convert(_m.texture);
+    }
+
+    public void ScrollThroughInventory(GameObject _currentlyActive, List<GameObject> _currentList)
+    {
+        if (_currentList != null)
         {
+            float scroll = Input.GetAxisRaw("Mouse ScrollWheel");
 
-            // Raw will only return 1, -1 or 0
-            if (Input.GetAxisRaw("Mouse ScrollWheel") > 0 || Input.GetAxisRaw("Mouse ScrollWheel") < 0)
+            if (scroll != 0)
             {
-                // If currentindex is at the last index
-                if (currentIndex == CurrentList.Count - 1)
+                if (scroll > 0) //+1
                 {
-                    // Set back to start
+                    currentIndex++;
+                }
+                else //-1
+                {
+                    currentIndex--;
+                }
+
+                if (currentIndex == _currentList.Count)
+                {
                     currentIndex = 0;
+                }
+                if (currentIndex < 0)
+                {
+                    currentIndex = _currentList.Count - 1;
+                }
+
+
+                if (_currentlyActive.GetComponent<InventorySlot>().type == StructureType.MATERIAL)
+                {
+                    ShowTextureInSlot(_currentlyActive, _currentList[currentIndex].GetComponent<Materials>());
                 }
                 else
                 {
-                    // Increment it
-                    currentIndex++;
+                    ShowStructureInSlot(_currentlyActive, _currentList[currentIndex]);
                 }
             }
-            // Show
-            ShowInSlot(CurrentlyActive, _current[currentIndex]);
-
-        }
-        catch (System.ArgumentOutOfRangeException)
-        {
-            currentIndex = 0;
         }
     }
-}
 
-
-public static class ConvertTextureToSprite
-{
-    public static Sprite Convert(Texture2D _t)
+    public static class ConvertTextureToSprite
     {
-        return Sprite.Create(_t, new Rect(0, 0, _t.width, _t.height), Vector2.zero);
+        public static Sprite Convert(Texture2D _t)
+        {
+            return Sprite.Create(_t, new Rect(0, 0, _t.width, _t.height), Vector2.zero);
+        }
     }
 }

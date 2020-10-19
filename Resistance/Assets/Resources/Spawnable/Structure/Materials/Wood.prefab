@@ -47,3 +47,4 @@ MonoBehaviour:
   cost: 10
   hardness: 1.3
   mat: {fileID: 2100000, guid: 8e9805b54e27b6c45830797e18bed9ce, type: 2}
+  texture: {fileID: 2800000, guid: 132f1c04faea9a1459798ed5fe6e311d, type: 3}

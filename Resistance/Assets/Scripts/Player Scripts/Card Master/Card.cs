@@ -39,7 +39,7 @@ public class Card : AddOns
     public int maxNumber;
     public int minNumber;
     public int numberToSpawn;
-    public int SetNumber;
+    public GameObject prefab;
 
     void Start()
     {

@@ -27,10 +27,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 4489011509419577568, guid: 42d0d359aee2afe41a9dc19c29b9ad0a, type: 3}
   buildSystem: {fileID: 0}
+  type: 5
   legalMat: {fileID: 0}
   illegalMat: {fileID: 0}
-  hasCustomAnchor: 1
-  customAnchor: {fileID: 7185276067059221760}
   isFoundation: 0
   tagsToSnapTo:
   - SP_WALL

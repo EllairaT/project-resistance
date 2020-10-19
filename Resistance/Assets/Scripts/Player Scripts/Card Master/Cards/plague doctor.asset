@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Plague Doctor
   _icon: {fileID: 21300000, guid: fcb915265b0a8cc4dac51332801c52ee, type: 3}
-  _description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae
-    sagittis lacus. Aenean ac urna ut justo varius vestibulum eget fringilla orci.
-    Praesent erat mi, convallis et nisl dapibus, commodo scelerisque ex. '
+  _description: Summon the plague doctor and unleash the deadliest diseases known
+    to man.
   _cost: 200
   type: 2
   _health: 250
@@ -24,7 +23,7 @@ MonoBehaviour:
   _heal: 5
   goldPerHit: 0
   goldPerDmg: 0
-  maxNumber: 0
-  minNumber: 0
+  maxNumber: 10
+  minNumber: 1
   numberToSpawn: 0
-  SetNumber: 0
+  prefab: {fileID: 5608195183939552735, guid: 8610361018c956940891bb1f837347d4, type: 3}

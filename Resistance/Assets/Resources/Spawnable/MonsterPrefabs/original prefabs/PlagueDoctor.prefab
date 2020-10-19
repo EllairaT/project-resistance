@@ -22,7 +22,8 @@ Animation:
   m_GameObject: {fileID: 5608195183939552735}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 3502f742490778d479d2bf68a60e96af, type: 2}
+  m_Animation: {fileID: -203655887218126122, guid: 9484563cf2fbf7143b4f12e6a9090f2a,
+    type: 3}
   m_Animations:
   - {fileID: 7400000, guid: 6200a632544376c4597de7ea6c4e8db7, type: 2}
   - {fileID: 7400000, guid: 72c0f00105a0205458554e0124b10f2e, type: 2}
@@ -34,19 +35,25 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &2928243434512693048
-MonoBehaviour:
+--- !u!95 &-502628190577487105
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5608195183939552735}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ec51a9376bb8bf4fb7b0f59cd0d0019, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: d45e5c2a692ed15448d53b608d30088c, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5608195183939650367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57,6 +64,10 @@ PrefabInstance:
     - target: {fileID: 100064, guid: d45e5c2a692ed15448d53b608d30088c, type: 3}
       propertyPath: m_Name
       value: PlagueDoctor
+      objectReference: {fileID: 0}
+    - target: {fileID: 100064, guid: d45e5c2a692ed15448d53b608d30088c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400066, guid: d45e5c2a692ed15448d53b608d30088c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -102,7 +113,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 13700000, guid: d45e5c2a692ed15448d53b608d30088c, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: d45e5c2a692ed15448d53b608d30088c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d45e5c2a692ed15448d53b608d30088c, type: 3}
 --- !u!1 &5608195183939552735 stripped
 GameObject:

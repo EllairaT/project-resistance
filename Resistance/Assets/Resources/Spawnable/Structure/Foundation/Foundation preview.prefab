@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 411865924816708581, guid: 59fb7b1e7e2096746ba8e47fd8af37e7, type: 3}
   buildSystem: {fileID: 0}
+  type: 2
   legalMat: {fileID: 0}
   illegalMat: {fileID: 0}
   isFoundation: 1

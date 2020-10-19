@@ -14,17 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Troll
   _icon: {fileID: 21300000, guid: ae260e9ce9d970b48a12369052e3c927, type: 3}
-  _description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae
-    sagittis lacus. Aenean ac urna ut justo varius vestibulum eget fringilla orci.
-    Praesent erat mi, convallis et nisl dapibus, commodo scelerisque ex. '
+  _description: Very, very determined to get their hands on the defender's nexus.
   _cost: 150
-  type: 1
+  type: 0
   _health: 1000
   _damage: 50
   _heal: 0
   goldPerHit: 0
   goldPerDmg: 0
-  maxNumber: 0
-  minNumber: 0
+  maxNumber: 7
+  minNumber: 1
   numberToSpawn: 0
-  SetNumber: 0
+  prefab: {fileID: 632586129705069703, guid: 961d99e3e68b42c43981806b8b0461a8, type: 3}

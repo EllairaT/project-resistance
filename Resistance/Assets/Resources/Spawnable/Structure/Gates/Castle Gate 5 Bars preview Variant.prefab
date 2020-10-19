@@ -42,11 +42,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2015324785824294017, guid: 4eba51b54dc94f542b9ea8d988a359ba, type: 3}
+  buildSystem: {fileID: 0}
+  type: 3
   legalMat: {fileID: 0}
   illegalMat: {fileID: 0}
   isFoundation: 0
-  tagsSnappedTo:
-  - SP_WALL
+  tagsToSnapTo: []
 --- !u!1001 &9131636713416334037
 PrefabInstance:
   m_ObjectHideFlags: 0

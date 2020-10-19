@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CMCamera : MonoBehaviour
 {
-    public float scrollSpeed = 10f;
+    public float scrollSpeed = 30f;
     public float xRot = 0f;
     public float yRot = 90f;
 
@@ -15,37 +15,35 @@ public class CMCamera : MonoBehaviour
 
     public float mouseSens = 15f;
 
-    private bool isCursorHidden = true;
+    public bool canMove = true;
 
     void Start()
     {
         playerCam = GetComponent<Camera>();
         playerCam.fieldOfView = defaultFOV;
-
-
-        if (isCursorHidden)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
     }
 
     void Update()
     {
-        Look();
+        if (canMove)
+        {
+            Look();
 
-        if (Input.GetKey(KeyCode.Mouse0))
-        {
-            if (playerCam.fieldOfView > maxZoomIn)
+            float scroll = Input.GetAxisRaw("Mouse ScrollWheel");
+
+            if (scroll < 0 || Input.GetKey(KeyCode.Q))
             {
-                ZoomIn();
-            } 
-        }
-        else if (Input.GetKey(KeyCode.Mouse1))
-        {
-            if (playerCam.fieldOfView < maxZoomOut)
+                if (playerCam.fieldOfView > maxZoomIn)
+                {
+                    ZoomIn();
+                }
+            }
+            else if(scroll > 0 || Input.GetKey(KeyCode.E))
             {
-                ZoomOut();
+                if (playerCam.fieldOfView < maxZoomOut)
+                {
+                    ZoomOut();
+                }
             }
         }
     }
@@ -57,12 +55,12 @@ public class CMCamera : MonoBehaviour
 
         xRot -= mouseY;
         xRot = Mathf.Clamp(xRot, 0f, 40f); //look up and down
-        
+
         yRot += mouseX;
         yRot = Mathf.Clamp(yRot, 45f, 140f); //left and right
-    
+
         //rotate
-        transform.localRotation = Quaternion.Euler(xRot, yRot, 0);      
+        transform.localRotation = Quaternion.Euler(xRot, yRot, 0);
     }
 
     void ZoomIn()
@@ -73,10 +71,5 @@ public class CMCamera : MonoBehaviour
     void ZoomOut()
     {
         playerCam.fieldOfView += Time.deltaTime * scrollSpeed;
-    }
-
-    void ToggleMenu() 
-    { 
-
     }
 }
