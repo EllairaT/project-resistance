@@ -7,18 +7,28 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
 {
     public Vector3 originalPosition;
     public bool isDroppedInSlot;
-    private Transform startingParent;
-    public GameObject description;
+    public Transform startingParent;
+    public GameObject cardName;
 
     public Card card;
     //TODO check if parent is inventory
     public static GameObject itemBeingDragged; //will ensure the user will only be able to drag one item at a time
     private CanvasGroup canvasGroup;
-
+    Vector3 cardPos;
     private void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
-        description.SetActive(false);
+        cardName.SetActive(false);
+    }
+
+    private void Update()
+    {
+        cardName.transform.position = Input.mousePosition;
+        cardPos = cardName.transform.position;
+
+        cardPos.y += 50f;
+
+        cardName.transform.position = cardPos;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -52,20 +62,25 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
 
     public void OnPointerDown(PointerEventData eventData)
     {
+
+        if(eventData.clickCount == 2)
+        {
+            Debug.Log("double clicked: " + card.name);
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        description.GetComponent<Description>().card = card;
-        description.GetComponent<Description>().ShowDescription();
-        description.SetActive(true);
+        cardName.GetComponent<Description>().card = card;
+        cardName.GetComponent<Description>().ShowName();
+        cardName.SetActive(true);
+      
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-
-        description.GetComponent<Description>().card = null;
-        description.SetActive(false);
+        cardName.GetComponent<Description>().card = null;
+        cardName.SetActive(false);
     }
 
     private void ToggleDescription()

@@ -5,15 +5,13 @@ using UnityEngine;
 public class CardManager: MonoBehaviour
 {
     public List<GameObject> CardsToSpawn;
-
-    void Start()
-    {
-        
-    }
-
+    public CardSystem cs;
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            cs.MakePreview();
+        }
     }
 }

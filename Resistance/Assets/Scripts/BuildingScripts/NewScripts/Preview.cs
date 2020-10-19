@@ -16,6 +16,8 @@ public class Preview : NetworkBehaviour
 
     public bool isFoundation = false;
 
+    public StructureType type;
+
     public List<string> tagsToSnapTo = new List<string>();
  
     private void Start()

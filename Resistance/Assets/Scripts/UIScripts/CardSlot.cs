@@ -5,26 +5,24 @@ using UnityEngine.EventSystems;
 
 public class CardSlot : BaseMonobehaviour, IDropHandler
 {
-    //TODO get item's original parent slot
 
-    public GameObject Item
-    {
-        get
-        {
-            if (transform.childCount > 0)
-            {
-                return transform.GetChild(0).gameObject;
-            }
-            return null;
-        }
-    }
-    
     public void OnDrop(PointerEventData eventData)
     {
-        if(!Item)
+        if (IsSlotEmpty() == false)
         {
-            Draggable.itemBeingDragged.transform.SetParent(transform);
-            Item.GetComponent<Draggable>().isDroppedInSlot = true;
+            transform.GetChild(0).SetParent(eventData.pointerDrag.GetComponent<Draggable>().startingParent);
         }
+
+        Draggable.itemBeingDragged.transform.SetParent(transform);
+        eventData.pointerDrag.GetComponent<Draggable>().isDroppedInSlot = true;
+    }
+
+    private bool IsSlotEmpty()
+    {
+        if (transform.childCount > 0)
+        {
+            return false;
+        }
+        return true;
     }
 }

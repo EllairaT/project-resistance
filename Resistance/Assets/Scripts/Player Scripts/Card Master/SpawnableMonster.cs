@@ -6,11 +6,9 @@ public class SpawnableMonster : MonoBehaviour
 {
 
     public CardSystem cardSystem;
+    public GameObject prefab;
     public bool isPlaced;
 
-    public void Place()
-    {
-        Instantiate(gameObject, transform.position, transform.rotation);     
-    }
+    //do things
 }
 

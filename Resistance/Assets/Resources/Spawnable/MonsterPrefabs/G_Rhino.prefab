@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5480387265191428469}
   - component: {fileID: 819322112}
   - component: {fileID: -6129020019063353331}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: G_Rhino
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -58,6 +58,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57910bf7c36f6e449ac5a1fcf02cdff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardSystem: {fileID: 0}
+  isPlaced: 0
 --- !u!1001 &5480387264753724889
 PrefabInstance:
   m_ObjectHideFlags: 0
