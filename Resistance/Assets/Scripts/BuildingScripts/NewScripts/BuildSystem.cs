@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class BuildSystem : MonoBehaviour
+public class BuildSystem : NetworkBehaviour
 {
     
     public LayerMask layer;
@@ -13,55 +14,13 @@ public class BuildSystem : MonoBehaviour
     public Material illegalMaterial;
     public Materials defaultMaterial;
 
-    private GameObject previewgameObject = null;
-    private Preview previewScript = null;
+    public Preview previewScript = null;
+    public GameObject previewgameObject = null;
+    private DefenceSpawner defenceSpawner;
 
     public float stickTolerance = 1.5f;
-    private bool isBuilding = false;
-    private bool isBuildingPaused = false;
-
-
-    public Preview PreviewScript { get => previewScript; set => previewScript = value; }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R)) //rotate
-        {
-            previewgameObject.transform.Rotate(0, 90f, 0);
-        }
-
-        if (Input.GetMouseButtonDown(0) && isBuilding)//actually build the thing in the world
-        {
-            if (previewScript.IsSnapped())//is the previewGameObject currently snapped to anything? 
-            {
-                Build();//if so then stop the build and actually build it in the world
-            }
-            else
-            {
-                Debug.Log("Not Snapped");//this part isn't needed, but may be good to give your player some feedback if they can't build
-            }
-        }
-
-        if (isBuilding)
-        {
-            if (isBuildingPaused) //whenever the preview is snapped, the buildsystem is paused
-            {
-                //to resume buildsystem, we need to "un-snap" 
-                //unsnapping will occur when the mouse moves away a certain amount.
-                float mX = Input.GetAxis("Mouse X");
-                float mY = Input.GetAxis("Mouse Y");
-
-                if (Mathf.Abs(mX) >= stickTolerance || Mathf.Abs(mY) >= stickTolerance)
-                {
-                    isBuildingPaused = false;
-                }
-            }
-            else
-            {
-                MakeRay();
-            }
-        }
-    }
+    public bool isBuilding = false;
+    public bool isBuildingPaused = false;
 
     public bool IsBuilding()
     {
@@ -72,10 +31,11 @@ public class BuildSystem : MonoBehaviour
     {
         if (isBuilding)
         {
-            if (PreviewScript.IsSnapped())
+            if (previewScript.IsSnapped())
             {
-          
-                Build();
+                Debug.Log("Build2 !");
+                //RpcBuild();
+                CmdBuild();
             }
             else
             {
@@ -95,26 +55,72 @@ public class BuildSystem : MonoBehaviour
         ResetAll();
     }
 
-    private void Build()
-    {
-        PreviewScript.Place();
-        ResetAll();
-    }
+    //[Command]
+    //public void CmdBuild()
+    //{
+    //    //Debug.Log(hasAuthority + ", " + isLocalPlayer + ", " + base.hasAuthority + ", " + base.isLocalPlayer + ", " + GetComponent<NetworkIdentity>().hasAuthority + ", " + GetComponent<NetworkIdentity>().isLocalPlayer);
+
+    //    // Debug.Log("INSIDE BUILDSYSTEM, BUILD()");
+    //    Debug.Log("Build System: " + base.hasAuthority + ", " + hasAuthority + ", " + base.isLocalPlayer + ", " + isLocalPlayer);
+    //    //previewScript.CmdPlace();
+    //    CmdPlace();
+    //    ResetAll();
+    //}
 
     public void NewBuild(GameObject _go)
     {
         previewgameObject = Instantiate(_go, Vector3.zero, Quaternion.identity);
-        PreviewScript = previewgameObject.GetComponent<Preview>();
-        PreviewScript.legalMat = legalMaterial;
-        PreviewScript.illegalMat = illegalMaterial;
+        previewScript = previewgameObject.GetComponent<Preview>();
+        previewScript.buildSystem = this;
+
+        previewScript.legalMat = legalMaterial;
+        previewScript.illegalMat = illegalMaterial;
         isBuilding = true;
+       // Debug.Log("IS BUILDING IS SET TO TRUE");
+    }
+
+    //Working Method but when clients try spawn, is null preview script
+    //If i remove command, works, but other players cant seem what other players (non-server) spawn
+//    [Command]
+    //public void CmdPlace()
+    //{
+    //    Debug.Log("Attempting to Spawn");
+    //    // Instantiate(prefab, transform.position, transform.rotation);
+    //    GameObject temp = (GameObject)Instantiate(previewScript.prefab, previewScript.transform.position, previewScript.transform.rotation); //this was null
+    //    NetworkServer.Spawn(temp);
+    //    //previewScript.Destroy();
+    //    NetworkServer.Destroy(previewScript.gameObject);
+    //    //Destroy(gameObject);
+    //}
+
+    public void CmdBuild()
+    {
+        Structure temp = previewScript.prefab.GetComponent<Structure>();
+
+        //Spawn defence
+        CmdPlace(temp.index, previewScript.transform.position, previewScript.transform.rotation);
+
+        previewScript.Destroy();
+        ResetAll();
+    }
+
+    [Command]
+    public void CmdPlace(int index, Vector3 pos, Quaternion rotation)
+    {
+        if(defenceSpawner == null)
+        {
+            defenceSpawner = GameObject.FindGameObjectWithTag("DefenceSpawner").GetComponent<DefenceSpawner>();
+        }
+        GameObject temp = (GameObject)Instantiate(defenceSpawner.defencePrefabs[index], pos, rotation);
+        NetworkServer.Spawn(temp);
     }
 
     public void ResetAll()
     {
         previewgameObject = null;
-        PreviewScript = null;
+        previewScript = null;
         isBuilding = false;
+       // Debug.Log("IS BUILDIN RESET");
         isBuildingPaused = false;
     }
 
@@ -150,3 +156,61 @@ public class BuildSystem : MonoBehaviour
         }
     }
 }
+
+//public Preview PreviewScript { get => previewScript; set => previewScript = value; }
+
+//void Update()
+//{
+//if (hasAuthority)
+//{
+//    if (Input.GetKeyDown(KeyCode.R)) //rotate
+//    {
+//        previewgameObject.transform.Rotate(0, 90f, 0);
+//    }
+
+//    if (Input.GetMouseButtonDown(0) && isBuilding)//actually build the thing in the world
+//    {
+//        Debug.Log("Outside IF");
+//        if (previewScript.IsSnapped())//is the previewGameObject currently snapped to anything? 
+//        {
+//            Debug.Log("Build !");
+//            if(isServer)
+//            {
+//                Debug.Log("isServer TRUE");
+//            }
+//            else
+//            {
+//                Debug.Log("isServer FALSE");
+//            }
+//            //if so then stop the build and actually build it in the world
+//            //RpcBuild();
+//            CmdBuild();
+//        }
+//        else
+//        {
+//            Debug.Log("Not Snapped");//this part isn't needed, but may be good to give your player some feedback if they can't build
+//        }
+//    }
+
+//    if (isBuilding)
+//    {
+//        if (isBuildingPaused) //whenever the preview is snapped, the buildsystem is paused
+//        {
+//            //to resume buildsystem, we need to "un-snap" 
+//            //unsnapping will occur when the mouse moves away a certain amount.
+//            float mX = Input.GetAxis("Mouse X");
+//            float mY = Input.GetAxis("Mouse Y");
+
+//            if (Mathf.Abs(mX) >= stickTolerance || Mathf.Abs(mY) >= stickTolerance)
+//            {
+//                isBuildingPaused = false;
+//            }
+//        }
+//        else
+//        {
+//            MakeRay();
+//        }
+//    }
+
+//}
+//}

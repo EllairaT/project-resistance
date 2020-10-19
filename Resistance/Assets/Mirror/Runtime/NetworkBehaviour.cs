@@ -494,7 +494,7 @@ namespace Mirror
         [EditorBrowsable(EditorBrowsableState.Never)]
         protected void SetSyncVar<T>(T value, ref T fieldValue, ulong dirtyBit)
         {
-            if (logger.LogEnabled()) logger.Log("SetSyncVar " + GetType().Name + " bit [" + dirtyBit + "] " + fieldValue + "->" + value);
+            //if (logger.LogEnabled()) logger.Log("SetSyncVar " + GetType().Name + " bit [" + dirtyBit + "] " + fieldValue + "->" + value);
             SetDirtyBit(dirtyBit);
             fieldValue = value;
         }

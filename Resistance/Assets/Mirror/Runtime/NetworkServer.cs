@@ -255,7 +255,7 @@ namespace Mirror
         // this is used for ObjectDestroy messages.
         static void SendToObservers<T>(NetworkIdentity identity, T msg, int channelId = Channels.DefaultReliable) where T : IMessageBase
         {
-            if (logger.LogEnabled()) logger.Log("Server.SendToObservers id:" + typeof(T));
+            //if (logger.LogEnabled()) logger.Log("Server.SendToObservers id:" + typeof(T));
 
             if (identity != null && identity.observers != null)
             {
@@ -1204,7 +1204,7 @@ namespace Mirror
 
         static void DestroyObject(NetworkIdentity identity, bool destroyServerObject)
         {
-            if (logger.LogEnabled()) logger.Log("DestroyObject instance:" + identity.netId);
+            //if (logger.LogEnabled()) logger.Log("DestroyObject instance:" + identity.netId);
             NetworkIdentity.spawned.Remove(identity.netId);
 
             identity.connectionToClient?.RemoveOwnedObject(identity);

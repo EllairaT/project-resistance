@@ -7163,6 +7163,9 @@ GameObject:
   - component: {fileID: 2756534765361855941}
   - component: {fileID: 8686297936731228408}
   - component: {fileID: 3676966920429472586}
+  - component: {fileID: 7031813179791809628}
+  - component: {fileID: 7311135533740491759}
+  - component: {fileID: 5352311462748253988}
   m_Layer: 10
   m_Name: BlakePrefab
   m_TagString: Player
@@ -7348,6 +7351,91 @@ MonoBehaviour:
   gold: 0
   icon: {fileID: 21300000, guid: 9ec147b1c9222e14693a2e75d69277d4, type: 3}
   playerHUD: {fileID: 0}
+--- !u!114 &7031813179791809628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6241848269821124530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2ce29a8f669024b9e5745815e8ad2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  foundationPreview: {fileID: 411865924816708581, guid: 7bea0e9404f574d4e838021571b8a526,
+    type: 3}
+  wallPreview: {fileID: 6978302913536196828, guid: e486d59f332d65d4abeeaa73534e0203,
+    type: 3}
+  inventoryUI: {fileID: 4968830939164728256, guid: 8f493e49fba0fb74abe42b4dfca29659,
+    type: 3}
+  buildSystem: {fileID: 7311135533740491759}
+--- !u!114 &7311135533740491759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6241848269821124530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd821fefe02eeff47a8090976bc62d5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  layer:
+    serializedVersion: 2
+    m_Bits: 7479
+  playerCam: {fileID: 4268703119246312593}
+  legalMaterial: {fileID: 2100000, guid: eaa7c745d9d560f4daa228207d5c3cfb, type: 2}
+  illegalMaterial: {fileID: 2100000, guid: fe499bf3d412c7748a04cbccb7df39b4, type: 2}
+  defaultMaterial: {fileID: 5343568955038231186, guid: d5b68a530ed03c14abb0d2400adb40a8,
+    type: 3}
+  previewScript: {fileID: 0}
+  previewgameObject: {fileID: 0}
+  stickTolerance: 1.5
+  isBuilding: 0
+  isBuildingPaused: 0
+  defenceSpawner: {fileID: 0}
+--- !u!114 &5352311462748253988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6241848269821124530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872f8d75813de3243846b75da0e3025e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  damage: 10
+  range: 100
+  impactForce: 30
+  fireRate: 15
+  fpsCam: {fileID: 4268703119246312593}
+  muzzleFlash: {fileID: 438954725441796552, guid: 70e24d5c3df63a649a2efe28df4a6552,
+    type: 3}
+  impactEffect: {fileID: 0}
+  playerPrefab: {fileID: 6241848269821124530}
+  spectatorCamera: {fileID: 0}
+  ammoScript: {fileID: 4900195699409826599}
+  maxClipAmmo: 20
+  currentClipAmmo: 0
+  maxTotalAmmo: 100
+  currentTotalAmmo: 0
+  goldScript: {fileID: 6082854153506554532}
+  startingGold: 1000
+  currentGold: 0
+  healthScript: {fileID: 6628272169894382941}
+  maxHealth: 100
+  currentHealth: 100
+  buildManager: {fileID: 7031813179791809628}
 --- !u!1 &6243899113625758679
 GameObject:
   m_ObjectHideFlags: 0
@@ -7983,27 +8071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  damage: 10
-  range: 100
-  impactForce: 30
-  fireRate: 15
-  fpsCam: {fileID: 4268703119246312593}
-  muzzleFlash: {fileID: 7999935689718321722}
-  impactEffect: {fileID: 0}
   hand: {fileID: 8570827836927716034}
-  playerPrefab: {fileID: 6241848269821124530}
-  spectatorCamera: {fileID: 0}
-  ammoScript: {fileID: 4900195699409826599}
-  maxClipAmmo: 5
-  currentClipAmmo: 0
-  maxTotalAmmo: 20
-  currentTotalAmmo: 0
-  goldScript: {fileID: 6082854153506554532}
-  startingGold: 1000
-  currentGold: 0
-  healthScript: {fileID: 6628272169894382941}
-  maxHealth: 100
-  currentHealth: 0
 --- !u!1 &8391887464450481204
 GameObject:
   m_ObjectHideFlags: 0

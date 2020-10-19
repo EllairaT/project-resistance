@@ -235,7 +235,7 @@ namespace Mirror
             // Don't allow collision-destroyed second instance to continue.
             if (!InitializeSingleton()) return;
 
-            logger.Log("Thank you for using Mirror! https://mirror-networking.com");
+            //logger.Log("Thank you for using Mirror! https://mirror-networking.com");
 
             // Set the networkSceneName to prevent a scene reload
             // if client connection to server fails.
@@ -849,12 +849,12 @@ namespace Mirror
                 return;
             }
 
-            if (logger.LogEnabled()) logger.Log("ClientChangeScene newSceneName:" + newSceneName + " networkSceneName:" + networkSceneName);
+            //if (logger.LogEnabled()) logger.Log("ClientChangeScene newSceneName:" + newSceneName + " networkSceneName:" + networkSceneName);
 
             // vis2k: pause message handling while loading scene. otherwise we will process messages and then lose all
             // the state as soon as the load is finishing, causing all kinds of bugs because of missing state.
             // (client may be null after StopClient etc.)
-            if (logger.LogEnabled()) logger.Log("ClientChangeScene: pausing handlers while scene is loading to avoid data loss after scene was loaded.");
+            //if (logger.LogEnabled()) logger.Log("ClientChangeScene: pausing handlers while scene is loading to avoid data loss after scene was loaded.");
             Transport.activeTransport.enabled = false;
 
             // Let client prepare for scene change
@@ -1216,7 +1216,7 @@ namespace Mirror
 
         void OnClientConnectInternal(NetworkConnection conn, ConnectMessage message)
         {
-            logger.Log("NetworkManager.OnClientConnectInternal");
+            //logger.Log("NetworkManager.OnClientConnectInternal");
 
             if (authenticator != null)
             {
@@ -1233,7 +1233,7 @@ namespace Mirror
         // called after successful authentication
         void OnClientAuthenticated(NetworkConnection conn)
         {
-            logger.Log("NetworkManager.OnClientAuthenticated");
+            //logger.Log("NetworkManager.OnClientAuthenticated");
 
             // set connection to authenticated
             conn.isAuthenticated = true;

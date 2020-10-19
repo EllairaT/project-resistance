@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class Preview : MonoBehaviour
+public class Preview : NetworkBehaviour
 {
     public GameObject prefab;
     public BuildSystem buildSystem;
@@ -24,10 +25,25 @@ public class Preview : MonoBehaviour
         ChangeMat();
     }
 
-    public void Place()
+    //[ClientRpc]
+    //[Command]
+    //public void CmdPlace() //THIS IS False, False, False, False AND THIS DOES NOT BELONG TO the player object //// THE PREVIEW SCRIPT THAT GETS USED DOES NOT BELONG TO THE PLAYER, RATHER, IT BELONGS TO THE BUILDING
+    //{
+    //    Debug.Log("Attempting to Spawn");
+    //    Debug.Log("Preview: " + base.hasAuthority + ", " + hasAuthority + ", " + base.isLocalPlayer + ", " + isLocalPlayer);
+    //    // Instantiate(prefab, transform.position, transform.rotation);
+    //    GameObject temp = (GameObject)Instantiate(prefab, transform.position, transform.rotation);
+    //    NetworkServer.Spawn(temp, temp);
+
+    //    //NetworkServer.Destroy(gameObject);
+    //    Destroy(gameObject);
+
+    //}
+
+    public void Destroy()
     {
-        Instantiate(prefab, transform.position, transform.rotation);
         Destroy(gameObject);
+        //NetworkServer.Destroy(gameObject);
     }
 
     private void ChangeMat()

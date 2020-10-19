@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
+using Mirror;
 using UnityEngine.Rendering;
 
-public class BuildManager : MonoBehaviour
+public class BuildManager : NetworkBehaviour
 {
 
     public GameObject foundationPreview;//make sure that you include the preview of the gameobject you want to build
     public GameObject wallPreview;//make sure that you include the preview of the gameobject you want to build
     public GameObject inventoryUI;
 
-    public BuildSystem buildSystem;
+    [SerializeField] public BuildSystem buildSystem;
 
     private bool isInventoryActive = false;
     private Inventory playerInventory;
@@ -22,27 +23,7 @@ public class BuildManager : MonoBehaviour
         inventoryUI.SetActive(false);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            ToggleInventory();
-        }
-
-
-        //playerInventory.ListenForInput();
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            buildSystem.NewBuild(foundationPreview);
-        }
-        else if (Input.GetKeyDown(KeyCode.H))
-        {
-            buildSystem.NewBuild(wallPreview);
-        }
-
-    }
-
-    void ToggleInventory()
+    public void ToggleInventory()
     {
         if (isInventoryActive)
         {
@@ -55,3 +36,30 @@ public class BuildManager : MonoBehaviour
         isInventoryActive = !isInventoryActive;
     }
 }
+
+
+
+//private void Update()
+//{
+//    if(!base.hasAuthority)
+//    {
+//        return;
+//    }
+
+//    if (Input.GetKeyDown(KeyCode.B))
+//    {
+//        ToggleInventory();
+//    }
+
+
+//    //playerInventory.ListenForInput();
+//    if (Input.GetKeyDown(KeyCode.F))
+//    {
+//        buildSystem.NewBuild(foundationPreview);
+//    }
+//    else if (Input.GetKeyDown(KeyCode.H))
+//    {
+//        buildSystem.NewBuild(wallPreview);
+//    }
+
+//}

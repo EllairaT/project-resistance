@@ -134,7 +134,7 @@ namespace Mirror
                 return false;
             }
 
-            if (logger.LogEnabled()) logger.Log("ClientScene.AddPlayer() called with connection [" + readyConnection + "]");
+            //if (logger.LogEnabled()) logger.Log("ClientScene.AddPlayer() called with connection [" + readyConnection + "]");
 
             readyConnection.Send(new AddPlayerMessage());
             return true;
@@ -161,7 +161,7 @@ namespace Mirror
                 return false;
             }
 
-            if (logger.LogEnabled()) logger.Log("ClientScene.Ready() called with connection [" + conn + "]");
+            //if (logger.LogEnabled()) logger.Log("ClientScene.Ready() called with connection [" + conn + "]");
 
             if (conn != null)
             {
@@ -270,7 +270,7 @@ namespace Mirror
                 logger.LogWarning($"Adding prefab '{prefab.name}' with assetId '{prefab.assetId}' when spawnHandlers with same assetId already exists.");
             }
 
-            if (logger.LogEnabled()) logger.Log($"Registering prefab '{prefab.name}' as asset:{prefab.assetId}");
+            //if (logger.LogEnabled()) logger.Log($"Registering prefab '{prefab.name}' as asset:{prefab.assetId}");
 
             prefabs[prefab.assetId] = prefab.gameObject;
         }
@@ -773,7 +773,7 @@ namespace Mirror
                 logger.LogError("OnObjSpawn netId: " + msg.netId + " has invalid asset Id");
                 return;
             }
-            if (logger.LogEnabled()) logger.Log($"Client spawn handler instantiating netId={msg.netId} assetID={msg.assetId} sceneId={msg.sceneId} pos={msg.position}");
+            //if (logger.LogEnabled()) logger.Log($"Client spawn handler instantiating netId={msg.netId} assetID={msg.assetId} sceneId={msg.sceneId} pos={msg.position}");
 
             // was the object already spawned?
             NetworkIdentity identity = GetExistingObject(msg.netId);
@@ -805,7 +805,7 @@ namespace Mirror
                 GameObject obj = Object.Instantiate(prefab, msg.position, msg.rotation);
                 if (logger.LogEnabled())
                 {
-                    logger.Log("Client spawn handler instantiating [netId:" + msg.netId + " asset ID:" + msg.assetId + " pos:" + msg.position + " rotation: " + msg.rotation + "]");
+                    //logger.Log("Client spawn handler instantiating [netId:" + msg.netId + " asset ID:" + msg.assetId + " pos:" + msg.position + " rotation: " + msg.rotation + "]");
                 }
 
                 return obj.GetComponent<NetworkIdentity>();
@@ -890,7 +890,7 @@ namespace Mirror
 
         static void DestroyObject(uint netId)
         {
-            if (logger.LogEnabled()) logger.Log("ClientScene.OnObjDestroy netId:" + netId);
+            //if (logger.LogEnabled()) logger.Log("ClientScene.OnObjDestroy netId:" + netId);
 
             if (NetworkIdentity.spawned.TryGetValue(netId, out NetworkIdentity localObject) && localObject != null)
             {
@@ -953,7 +953,7 @@ namespace Mirror
 
         internal static void OnUpdateVarsMessage(UpdateVarsMessage msg)
         {
-            if (logger.LogEnabled()) logger.Log("ClientScene.OnUpdateVarsMessage " + msg.netId);
+            //if (logger.LogEnabled()) logger.Log("ClientScene.OnUpdateVarsMessage " + msg.netId);
 
             if (NetworkIdentity.spawned.TryGetValue(msg.netId, out NetworkIdentity localObject) && localObject != null)
             {
