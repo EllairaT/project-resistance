@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0021240762, g: 0.00083344907, b: 0.002878083, a: 1}
+  m_IndirectSpecularColor: {r: 0.0021282036, g: 0.0008354882, b: 0.0028883044, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1324,7 +1324,7 @@ PrefabInstance:
     - target: {fileID: 5035925917167233661, guid: 55d78d08b9eeaf64caeb9b0335ca37ee,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5035925917167233661, guid: 55d78d08b9eeaf64caeb9b0335ca37ee,
         type: 3}
@@ -1427,9 +1427,11 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1341116726}
-  m_RootOrder: 0
+  m_Children:
+  - {fileID: 592679551}
+  - {fileID: 1555504150}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1976,7 +1978,7 @@ PrefabInstance:
     - target: {fileID: 4751318179171732916, guid: 6836e481b9ae3e944baf583084e006dd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4751318179171732916, guid: 6836e481b9ae3e944baf583084e006dd,
         type: 3}

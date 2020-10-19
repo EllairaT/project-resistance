@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0016635528, g: 0.00067095505, b: 0.0024730377, a: 1}
+  m_IndirectSpecularColor: {r: 0.0016712553, g: 0.0006746468, b: 0.0024872082, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5256,7 +5256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -345.89984, y: 2.2841797}
+  m_AnchoredPosition: {x: -345.8998, y: 2.2841797}
   m_SizeDelta: {x: -1621.721, y: -904.9394}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1671470933
@@ -6752,7 +6752,17 @@ MonoBehaviour:
     type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
-  spawnPrefabs: []
+  spawnPrefabs:
+  - {fileID: 411865924816708581, guid: 7bea0e9404f574d4e838021571b8a526, type: 3}
+  - {fileID: 411865924816708581, guid: 59fb7b1e7e2096746ba8e47fd8af37e7, type: 3}
+  - {fileID: 6978302913536196828, guid: e486d59f332d65d4abeeaa73534e0203, type: 3}
+  - {fileID: 8357639209293913169, guid: abbcd0b3a5c231b47bdd1f72ed036010, type: 3}
+  - {fileID: 1617765394855863686, guid: 735a76c1eb6c09341aef9090e23b3244, type: 3}
+  - {fileID: 331586439989997231, guid: b810ade200584a449828d3f71dab4540, type: 3}
+  - {fileID: 2690805022914838452, guid: f2e9228b972d2d74eb9e983c2b702f10, type: 3}
+  - {fileID: 8517660160276756776, guid: e266c32258ca43e4499c8153f65a1489, type: 3}
+  - {fileID: 3905620560120032397, guid: 6e0ef545536af2840adec3f643462e75, type: 3}
+  - {fileID: 5516976953812857475, guid: 5b749c04caaf2db40acfb79510dfc9c2, type: 3}
   minPlayers: 1
   menuScene: Assets/Scenes/MainMenuScene.unity
   roomPlayerPrefab: {fileID: 6409843946461743749, guid: efeafbf3b457bed4986aa2730d5973f6,
@@ -6760,6 +6770,8 @@ MonoBehaviour:
   gamePlayerPrefab: {fileID: 5345740082254115496, guid: 3e3eccc93cabead4080ed7050cf12006,
     type: 3}
   playerSpawnSystem: {fileID: 8753286131487658313, guid: ac9b42ea4588dfd48a7efba3d5778386,
+    type: 3}
+  defenceSpawner: {fileID: 7820228394204293439, guid: 92ee6ea737d652d44a31ad3ce398484e,
     type: 3}
 --- !u!4 &2139000168
 Transform:

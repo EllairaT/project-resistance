@@ -51,35 +51,35 @@ namespace Tests
             yield return null;
         }
 
-        [UnityTest]
-        public IEnumerator Shoot() //Unit Test for shooting a bullet
-        {
-            var gameObj = new GameObject();
+        //[UnityTest]
+        //public IEnumerator Shoot() //Unit Test for shooting a bullet
+        //{
+        //    var gameObj = new GameObject();
 
-            var shoot = new GunScript();
-            shoot.ammoScript = gameObj.AddComponent<AmmoScript>();
-            shoot.healthScript = gameObj.AddComponent<HealthBarScript>();
-            shoot.goldScript = gameObj.AddComponent<GoldScript>();
+        //    var shoot = new GunScript();
+        //    shoot.ammoScript = gameObj.AddComponent<AmmoScript>();
+        //    shoot.healthScript = gameObj.AddComponent<HealthBarScript>();
+        //    shoot.goldScript = gameObj.AddComponent<GoldScript>();
 
-            Assert.AreEqual(19, shoot.TestShoot(20));
+        //    Assert.AreEqual(19, shoot.TestShoot(20));
 
-            yield return null;
-        }
+        //    yield return null;
+        //}
 
-        [UnityTest]
-        public IEnumerator EarnGold() //Unit Test for earning gold
-        {
-            var gameObj = new GameObject();
+        //[UnityTest]
+        //public IEnumerator EarnGold() //Unit Test for earning gold
+        //{
+        //    var gameObj = new GameObject();
 
-            var shoot = new GunScript();
-            shoot.ammoScript = gameObj.AddComponent<AmmoScript>();
-            shoot.healthScript = gameObj.AddComponent<HealthBarScript>();
-            shoot.goldScript = gameObj.AddComponent<GoldScript>();
+        //    var shoot = new GunScript();
+        //    shoot.ammoScript = gameObj.AddComponent<AmmoScript>();
+        //    shoot.healthScript = gameObj.AddComponent<HealthBarScript>();
+        //    shoot.goldScript = gameObj.AddComponent<GoldScript>();
 
-            Assert.AreEqual(1010, shoot.TestEarnGold(100, 10));
+        //    Assert.AreEqual(1010, shoot.TestEarnGold(100, 10));
 
-            yield return null;
-        }
+        //    yield return null;
+        //}
 
         
         //[UnityTest]

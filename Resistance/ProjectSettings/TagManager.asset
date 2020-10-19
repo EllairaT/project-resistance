@@ -17,6 +17,8 @@ TagManager:
   - South
   - West
   - SpectatorCamera
+  - Wall_SP
+  - DefenceSpawner
   layers:
   - Default
   - TransparentFX

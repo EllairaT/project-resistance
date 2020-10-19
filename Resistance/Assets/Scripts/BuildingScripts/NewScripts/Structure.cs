@@ -12,6 +12,7 @@ public class Structure : MonoBehaviour
     public float baseHealth;
     public int cost;
     public List<GameObject> snapPoints;
+    public int index;
 
     public float CalculateDamageTaken(float dmg)
     {
