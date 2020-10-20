@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardSystem: {fileID: 0}
+  prefab: {fileID: 0}
   isPlaced: 0
 --- !u!1001 &7301327233850827265
 PrefabInstance:
@@ -100,17 +101,17 @@ PrefabInstance:
     - target: {fileID: 8022762030534497280, guid: ead079d7f0618754f9e071f257c07889,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.148
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8022762030534497280, guid: ead079d7f0618754f9e071f257c07889,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.004
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8022762030534497280, guid: ead079d7f0618754f9e071f257c07889,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.648
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8022762030534497280, guid: ead079d7f0618754f9e071f257c07889,
         type: 3}

@@ -1,6 +1,7 @@
 ﻿using Mirror;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class CardSystem : MonoBehaviour
@@ -10,6 +11,7 @@ public class CardSystem : MonoBehaviour
     public SpawnableMonster spawnable;
     public int numberToSpawn = 5;
 
+    public Transform spawnPoint;
     public bool isPlacing = false;
 
     //make new gameobject to contain the spawnables
@@ -26,8 +28,12 @@ public class CardSystem : MonoBehaviour
         return isPlacing;
     }
 
-    public void MakePreview()
+    public void MakeMob()
     {
+        GameObject mob = new GameObject();
+        GameObject _o;
+        mob.name = spawnable.name + "_ " + mob.GetInstanceID().ToString();
+
         isPlacing = true;
 
         float spacing = 0f;
@@ -35,7 +41,16 @@ public class CardSystem : MonoBehaviour
         for (int i = 0; i < numberToSpawn; i++)
         {
             spacing += spawnable.transform.localScale.z + 2f;
-            Instantiate(spawnable.gameObject, new Vector3(0f,0f, spacing * numberToSpawn), Quaternion.identity);
+            
+            if(i % 2 == 0)
+            {
+                _o = Instantiate(spawnable.gameObject, new Vector3(spawnPoint.position.x, 0f, spawnPoint.localScale.z + (spacing * numberToSpawn)), Quaternion.identity);
+            }
+            else
+            {
+                _o = Instantiate(spawnable.gameObject, new Vector3(spawnPoint.position.x, 0f, spawnPoint.localScale.z - (spacing * numberToSpawn)), Quaternion.identity);
+            }
+            _o.transform.parent = mob.transform;
         }
     }
 
