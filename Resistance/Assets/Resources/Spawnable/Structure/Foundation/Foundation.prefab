@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2817807284160976668}
   m_Layer: 8
   m_Name: Foundation
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,6 +126,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  index: 0
 --- !u!114 &2817807284160976668
 MonoBehaviour:
   m_ObjectHideFlags: 0

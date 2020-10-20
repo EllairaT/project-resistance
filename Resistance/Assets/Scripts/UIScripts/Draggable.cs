@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class Draggable : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Vector3 originalPosition;
     public bool isDroppedInSlot;
     public Transform startingParent;
     public GameObject cardName;
+    public CardSlot currentCardSlot;
 
     public Card card;
-    //TODO check if parent is inventory
-    public static GameObject itemBeingDragged; //will ensure the user will only be able to drag one item at a time
+    public static GameObject itemBeingDragged; 
     private CanvasGroup canvasGroup;
     Vector3 cardPos;
+
     private void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
@@ -60,12 +61,12 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
         }
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public virtual void OnPointerClick(PointerEventData eventData)
     {
-
         if(eventData.clickCount == 2)
         {
             Debug.Log("double clicked: " + card.name);
+            currentCardSlot.PutInSlot(eventData);
         }
     }
 

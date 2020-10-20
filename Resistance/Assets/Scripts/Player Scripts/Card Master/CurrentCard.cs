@@ -1,18 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CurrentCard : MonoBehaviour
 {
-    public GameObject currentCard;
-    void Start()
-    {
-        
-    }
+    public TextMeshProUGUI cost;
+    public TextMeshProUGUI count;
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateCurrentCardDetails(Card c)
     {
-        
+        cost.SetText("g " + c.Cost);
+        count.SetText(c.minNumber.ToString());
     }
 }

@@ -11,22 +11,9 @@ public class CardSystem : MonoBehaviour
     public SpawnableMonster spawnable;
     public int numberToSpawn = 5;
 
-    public Transform spawnPoint;
-    public bool isPlacing = false;
+    public GameObject spawnPoint;
 
-    //make new gameobject to contain the spawnables
-    private void Update()
-    {
-        if (isPlacing)
-        {
-            MakeRay();
-        }
-    }
-
-    public bool IsPlacing()
-    {
-        return isPlacing;
-    }
+    public ParticleSystem spawnParticle;
 
     public void MakeMob()
     {
@@ -34,35 +21,33 @@ public class CardSystem : MonoBehaviour
         GameObject _o;
         mob.name = spawnable.name + "_ " + mob.GetInstanceID().ToString();
 
-        isPlacing = true;
-
         float spacing = 0f;
 
         for (int i = 0; i < numberToSpawn; i++)
         {
             spacing += spawnable.transform.localScale.z + 2f;
-            
-            if(i % 2 == 0)
+
+            if (i % 2 == 0)
             {
-                _o = Instantiate(spawnable.gameObject, new Vector3(spawnPoint.position.x, 0f, spawnPoint.localScale.z + (spacing * numberToSpawn)), Quaternion.identity);
+                _o = Instantiate(spawnable.gameObject, new Vector3(spawnPoint.transform.position.x, 0f, spawnPoint.transform.localScale.z + (spacing * numberToSpawn)), Quaternion.identity);
             }
             else
             {
-                _o = Instantiate(spawnable.gameObject, new Vector3(spawnPoint.position.x, 0f, spawnPoint.localScale.z - (spacing * numberToSpawn)), Quaternion.identity);
+                _o = Instantiate(spawnable.gameObject, new Vector3(spawnPoint.transform.position.x, 0f, spawnPoint.transform.localScale.z - (spacing * numberToSpawn)), Quaternion.identity);
             }
             _o.transform.parent = mob.transform;
         }
     }
 
-    public void MakeRay()
+    public void SpawnMonsters()
     {
-        Vector3 mousePos = Input.mousePosition;
-        Ray ray = CMCam.ScreenPointToRay(mousePos);
-        RaycastHit hit;
+        StartCoroutine(StartSpawnAnimation(spawnParticle));
+    }
 
-        if(Physics.Raycast(ray, out hit, 70f, layer))
-        {
-            spawnable.gameObject.transform.position = hit.point;
-        }
+    IEnumerator StartSpawnAnimation(ParticleSystem p)
+    {
+        p.Play();
+        yield return new WaitUntil(() => p.isStopped);
+        MakeMob();
     }
 }

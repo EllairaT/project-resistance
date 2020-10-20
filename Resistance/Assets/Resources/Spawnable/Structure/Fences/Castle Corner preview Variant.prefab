@@ -25,12 +25,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a2e59b53ebfe64c94f2e836e246f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   prefab: {fileID: 4631725471610163437, guid: c6542288a8984df4ea6381b018dfca77, type: 3}
   buildSystem: {fileID: 0}
-  type: 4
   legalMat: {fileID: 0}
   illegalMat: {fileID: 0}
   isFoundation: 0
+  type: 4
   tagsToSnapTo: []
 --- !u!1001 &6932371756281292563
 PrefabInstance:

@@ -246,8 +246,8 @@ Material:
     - _DecalStencilRef: 16
     - _DecalStencilWriteMask: 16
     - _DepthOffsetEnable: 0
-    - _DetailAlbedoScale: 2
-    - _DetailNormalScale: 2
+    - _DetailAlbedoScale: 0.14
+    - _DetailNormalScale: 0.74
     - _DetailSmoothnessScale: 0
     - _DiffusionProfile: 0
     - _DiffusionProfileHash: 0
@@ -279,7 +279,7 @@ Material:
     - _EmissionEnabled: 0
     - _Emissive: 0
     - _EmissiveColorMode: 1
-    - _EmissiveExposureWeight: 0.26
+    - _EmissiveExposureWeight: 0.034
     - _EmissiveIntensity: 1
     - _EmissiveIntensityUnit: 0
     - _EnableBlendModePreserveSpecularLighting: 1
@@ -312,7 +312,7 @@ Material:
     - _MaterialID: 1
     - _MaterialTilingU: 1
     - _MaterialTilingV: 1
-    - _Metallic: 0
+    - _Metallic: 1
     - _MetallicScale: 1
     - _Mode: 0
     - _NormalBlendSrc: 0
@@ -333,7 +333,7 @@ Material:
     - _SVBRDF_BRDFVariants: 0
     - _SVBRDF_HeightMapMaxMM: 0
     - _SVBRDF_SpecularLobeMapScale: 1
-    - _Smoothness: 0
+    - _Smoothness: 1
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
     - _SoftParticlesEnabled: 0

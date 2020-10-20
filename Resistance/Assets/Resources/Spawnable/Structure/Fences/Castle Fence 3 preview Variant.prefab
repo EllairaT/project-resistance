@@ -25,12 +25,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a2e59b53ebfe64c94f2e836e246f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   prefab: {fileID: 671108315022830819, guid: 537afce764c2ff9428d913047eaee6c7, type: 3}
   buildSystem: {fileID: 0}
-  type: 4
   legalMat: {fileID: 0}
   illegalMat: {fileID: 0}
   isFoundation: 0
+  type: 4
   tagsToSnapTo: []
 --- !u!1001 &628144367550896814
 PrefabInstance:
@@ -58,6 +60,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000,
         type: 0}
+    - target: {fileID: 1886117330199508, guid: c2488ed6d725f534e85017afe2ac9eb4, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4910266802231402, guid: c2488ed6d725f534e85017afe2ac9eb4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 164.16

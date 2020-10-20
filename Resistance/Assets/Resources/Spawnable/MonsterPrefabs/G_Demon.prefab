@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6676486114494354244}
   - component: {fileID: 449327618}
   - component: {fileID: -3351390004139397330}
+  - component: {fileID: 6300293737878174239}
+  - component: {fileID: 7175493894744675348}
   m_Layer: 13
   m_Name: G_Demon
   m_TagString: Untagged
@@ -61,6 +63,60 @@ MonoBehaviour:
   cardSystem: {fileID: 0}
   prefab: {fileID: 3612983658790698617}
   isPlaced: 0
+--- !u!114 &6300293737878174239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6676486114494354251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd523cf48bcd704a9db10f13c73c960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  whatIsStructure:
+    serializedVersion: 2
+    m_Bits: 16384
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 0
+  timeBetweenAttack: 0
+  sightRange: 10
+  attackRange: 10
+  anim: {fileID: 0}
+  movementClips:
+  - {fileID: 2499177954120741571, guid: dd6550ece43af764e8e9a802baa977e6, type: 3}
+  - {fileID: -3419257869308726280, guid: dd6550ece43af764e8e9a802baa977e6, type: 3}
+  attackClips:
+  - {fileID: -2639477235012919003, guid: dd6550ece43af764e8e9a802baa977e6, type: 3}
+  - {fileID: 3697035533061398696, guid: dd6550ece43af764e8e9a802baa977e6, type: 3}
+  - {fileID: 8944713881643366394, guid: dd6550ece43af764e8e9a802baa977e6, type: 3}
+--- !u!195 &7175493894744675348
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6676486114494354251}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 5.18
+  m_Speed: 15.53
+  m_Acceleration: 120
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 10
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 9.2
+  m_BaseOffset: 0.4
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &6676486114198519799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68,21 +124,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6676486114494354244}
     m_Modifications:
-    - target: {fileID: -2291353018437894345, guid: de6b1123e735e32439862c3dc89ebe7a,
-        type: 3}
-      propertyPath: m_Animation
-      value: 
-      objectReference: {fileID: 3697035533061398696, guid: dd6550ece43af764e8e9a802baa977e6,
-        type: 3}
     - target: {fileID: 6403863692788970397, guid: de6b1123e735e32439862c3dc89ebe7a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 82
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6403863692788970397, guid: de6b1123e735e32439862c3dc89ebe7a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6403863692788970397, guid: de6b1123e735e32439862c3dc89ebe7a,
         type: 3}
@@ -128,21 +178,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6403863692788970397, guid: de6b1123e735e32439862c3dc89ebe7a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 21.55251
-      objectReference: {fileID: 0}
-    - target: {fileID: 6403863692788970397, guid: de6b1123e735e32439862c3dc89ebe7a,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 21.55251
-      objectReference: {fileID: 0}
-    - target: {fileID: 6403863692788970397, guid: de6b1123e735e32439862c3dc89ebe7a,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 21.55251
       objectReference: {fileID: 0}
     - target: {fileID: 7963562340851630478, guid: de6b1123e735e32439862c3dc89ebe7a,
         type: 3}

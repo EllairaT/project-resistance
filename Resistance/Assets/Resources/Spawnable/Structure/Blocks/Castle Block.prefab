@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4476003662376901254}
   - component: {fileID: 5481386294225111824}
   - component: {fileID: -7475603260462480510}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Castle Block
   m_TagString: Building
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -100,6 +100,8 @@ MonoBehaviour:
   hardness: 0
   baseHealth: 0
   cost: 100
+  snapPoints: []
+  index: 0
 --- !u!65 &-7475603260462480510
 BoxCollider:
   m_ObjectHideFlags: 0

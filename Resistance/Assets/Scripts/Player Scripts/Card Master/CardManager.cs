@@ -11,7 +11,7 @@ public class CardManager: MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            cs.MakeMob();
+            cs.SpawnMonsters();
         }
     }
 }

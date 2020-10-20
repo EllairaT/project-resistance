@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 180491554267412434}
   - component: {fileID: 520022101016147582}
   - component: {fileID: -4553880052484082879}
+  - component: {fileID: 1808223261}
+  - component: {fileID: 1808223262}
   m_Layer: 13
   m_Name: G_Golem
   m_TagString: Untagged
@@ -61,6 +63,56 @@ MonoBehaviour:
   cardSystem: {fileID: 0}
   prefab: {fileID: 0}
   isPlaced: 0
+--- !u!195 &1808223261
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180491554267412435}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 12.1
+  m_Speed: 15.53
+  m_Acceleration: 120
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 10
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 20.3
+  m_BaseOffset: 0.4
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &1808223262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180491554267412435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd523cf48bcd704a9db10f13c73c960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainDestination: {fileID: 0}
+  target: {fileID: 0}
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  whatIsStructure:
+    serializedVersion: 2
+    m_Bits: 16384
+  walkPoint: {x: 22.81, y: 0, z: 0}
+  walkPointRange: 0
+  timeBetweenAttack: 0
+  sightRange: 30
+  attackRange: 30
+  isInSightRange: 0
+  isInAttackRange: 0
+  anim: {fileID: 587684272637066799}
 --- !u!1001 &180491555138883701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72,7 +124,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Avatar
       value: 
-      objectReference: {fileID: 9000000, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 767551095120555610, guid: 9af73ae244971cf4ea2c172d879e9b94,
+        type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5272952721456128466, guid: 9af73ae244971cf4ea2c172d879e9b94,
         type: 3}
       propertyPath: m_Name
@@ -153,6 +210,12 @@ PrefabInstance:
 --- !u!4 &9076775612034991028 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9184549694192522177, guid: 9af73ae244971cf4ea2c172d879e9b94,
+    type: 3}
+  m_PrefabInstance: {fileID: 180491555138883701}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &587684272637066799 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 767551095120555610, guid: 9af73ae244971cf4ea2c172d879e9b94,
     type: 3}
   m_PrefabInstance: {fileID: 180491555138883701}
   m_PrefabAsset: {fileID: 0}

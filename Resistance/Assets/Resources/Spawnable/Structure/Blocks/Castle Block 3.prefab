@@ -29,6 +29,8 @@ MonoBehaviour:
   hardness: 0
   baseHealth: 0
   cost: 100
+  snapPoints: []
+  index: 0
 --- !u!1001 &2731187047451900212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121,7 +123,7 @@ PrefabInstance:
         type: 0}
     - target: {fileID: 1244397139589140, guid: 7b114dc92418402488e83a8d8094db4d, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4437307419683862, guid: 7b114dc92418402488e83a8d8094db4d, type: 3}
       propertyPath: m_LocalPosition.x
