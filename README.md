@@ -26,6 +26,7 @@ rounds.
  
  ## Known Issues
  * Cards in card slots sometimes does not interact with the mouse when hovered over. Issue does not resolve even when disabling raycast target / disabling interactable on the Image and Button components of the card slot. 
+ ![](ezgif.com-gif-maker.gif)
  
 ## Authors 
 * ### Product Owner
