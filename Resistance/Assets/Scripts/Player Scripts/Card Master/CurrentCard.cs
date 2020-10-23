@@ -1,16 +1,155 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Boo.Lang;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class CurrentCard : MonoBehaviour
+public class CurrentCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    CardSystem cardSystem;
+
+    [Header("Text")]
     public TextMeshProUGUI cost;
     public TextMeshProUGUI count;
+    public TextMeshProUGUI type;
+    public TextMeshProUGUI description;
+    public TextMeshProUGUI Name;
+    public TextMeshProUGUI baseCost;
+
+    [Header("UI Elements")] 
+    public GameObject infoPanel;
+    public Button[] functionPanelButtons;
+    public CardSlot slot;
+    private Card card;
+
+    private void Awake()
+    {
+        infoPanel.SetActive(false);
+        CardSlot.changeEvent += SlotChanged;
+        cardSystem = transform.root.GetComponent<CardSystem>();
+    }
+
+    private void Start()
+    {
+        card = slot.GetComponent<CardSlot>().currentCard;
+    }
+
+    private void SlotChanged(bool b, Card c)
+    {
+        Debug.Log(b + ": " + c);
+
+        UpdateCurrentCardDetails(c);
+    }
+
+    public bool IsCurrentCardSlotEmpty()
+    {
+        if (slot.transform.childCount > 0)
+        {
+            return false;
+        }
+        return true;
+    }
 
     public void UpdateCurrentCardDetails(Card c)
     {
-        cost.SetText("g " + c.Cost);
-        count.SetText(c.minNumber.ToString());
+        card = c;
+
+        if (card != null)
+        {
+            Name.SetText(c.Name);
+            type.SetText(c.type.ToString());
+            description.SetText(c.Description);
+            baseCost.SetText(c.Cost.ToString());
+            cost.SetText(c.Cost.ToString());
+            count.SetText(c.minNumber.ToString());
+
+            cardSystem.numberToSpawn = 1;
+            cardSystem.Spawnable = card.prefab;   
+        }
+        if (IsCurrentCardSlotEmpty())
+        {
+            ResetCardStats();
+        }
+        ToggleButtons();
+    }
+
+    private void ToggleButtons()
+    {
+        if (IsCurrentCardSlotEmpty())
+        {
+            foreach (Button btn in functionPanelButtons)
+            {
+                btn.interactable = false;
+            }
+        }
+        else
+        {
+            foreach (Button btn in functionPanelButtons)
+            {
+                btn.interactable = true;
+            }
+        }
+    }
+    public void ResetCardStats()
+    {
+        cost.SetText("0");
+        baseCost.SetText("");
+        count.SetText("0");
+        type.SetText("");
+        description.SetText("");
+        Name.SetText("");
+    }
+
+    public void UpdateCardCount(Button b)
+    {
+        if (card != null)
+        {
+            int i = int.Parse(count.GetParsedText());
+
+            if (b.name == "up")
+            {
+                if (i < card.maxNumber)
+                {
+                    i++;
+                    UpdateCardCost(i);
+                }
+            }
+            else
+            {
+                if (i > card.minNumber)
+                {
+                    i--;
+                    UpdateCardCost(i);
+                }
+            }
+            count.SetText(i.ToString());
+            cardSystem.numberToSpawn = i;
+        }
+    }
+
+    public void UpdateCardCost(int cardCount)
+    {
+        if (card != null)
+        {
+            int c = card.Cost * cardCount;
+
+            cost.SetText(c.ToString());
+        }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (!slot.isSlotEmpty)
+        {
+            infoPanel.SetActive(true);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (!slot.isSlotEmpty)
+        {
+            infoPanel.SetActive(false);
+        }
     }
 }

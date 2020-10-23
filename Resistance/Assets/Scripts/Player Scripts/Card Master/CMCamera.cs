@@ -54,7 +54,7 @@ public class CMCamera : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;
 
         xRot -= mouseY;
-        xRot = Mathf.Clamp(xRot, 0f, 40f); //look up and down
+        xRot = Mathf.Clamp(xRot, 0f, 60f); //look up and down
 
         yRot += mouseX;
         yRot = Mathf.Clamp(yRot, 45f, 140f); //left and right

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TrollController
+  m_Controller: {fileID: 9100000, guid: 9af9ee2352f20c444aa33ce0ccac1fb9, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -2639477235012919003, guid: 8ba535c70bbcf7b46b0cba1188faae47,
+      type: 3}
+    m_OverrideClip: {fileID: -2516013265382948196, guid: e58e375f5ed38074480b5df1226c7bc3,
+      type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 97017bf854066494b9786f2fccc5439f, type: 3}
+    m_OverrideClip: {fileID: 989712619511347958, guid: e58e375f5ed38074480b5df1226c7bc3,
+      type: 3}
+  - m_OriginalClip: {fileID: -3419257869308726280, guid: 8ba535c70bbcf7b46b0cba1188faae47,
+      type: 3}
+    m_OverrideClip: {fileID: 2667949614841947897, guid: e58e375f5ed38074480b5df1226c7bc3,
+      type: 3}
+  - m_OriginalClip: {fileID: -6758483313513240000, guid: 8ba535c70bbcf7b46b0cba1188faae47,
+      type: 3}
+    m_OverrideClip: {fileID: -4630339522487117836, guid: e58e375f5ed38074480b5df1226c7bc3,
+      type: 3}
+  - m_OriginalClip: {fileID: -5252816984213320552, guid: 8ba535c70bbcf7b46b0cba1188faae47,
+      type: 3}
+    m_OverrideClip: {fileID: 1167355656394099732, guid: e58e375f5ed38074480b5df1226c7bc3,
+      type: 3}
+  - m_OriginalClip: {fileID: 3697035533061398696, guid: dd6550ece43af764e8e9a802baa977e6,
+      type: 3}
+    m_OverrideClip: {fileID: 5539831331247536789, guid: e58e375f5ed38074480b5df1226c7bc3,
+      type: 3}

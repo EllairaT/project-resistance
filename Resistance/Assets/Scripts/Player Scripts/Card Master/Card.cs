@@ -12,24 +12,6 @@ public class Card : AddOns
     [SerializeField] private float _damage;
     [SerializeField] private float _heal;
 
-    public float Health
-    {
-        get => _health;
-        set => _health = value;
-    }
-
-    public float Damage
-    {
-        get =>_damage; //damage dealt per second
-        set => _damage = value;
-    }
-
-    public float Heal
-    {
-        get => _heal;
-        set => _heal = value;
-    }
-
     //gold awarded to defenders when hitting the monster
     public int goldPerHit;
 
@@ -42,28 +24,9 @@ public class Card : AddOns
     public int numberSpawned;
     public GameObject prefab;
 
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-        
-    }
-
-    void Attack()
-    {
-
-    }
-
-    public void CreateMob(GameObject[] spawnpoints)
-    {
-        //for (int i = 0; i < SetNumber; i++)
-        //{
-        //    Instantiate<GameObject>(card, spawnpoints.transform.position, Quaternion.identity);
-        //}
-    }
+    public float Health { get => _health; set => _health = value; }
+    public float Damage { get => _damage; set => _damage = value; }
+    public float Heal { get => _heal; set => _heal = value; }
 
     public float CalculateDamageTaken(float d)
     {
@@ -75,12 +38,16 @@ public class Card : AddOns
             case ClassType.TANK: //tanks take 15% less damage
                 d -= 0.15f * d;
                 break;
-            case ClassType.DAMAGE: //fall through
-            default:
-                break;
         }
         return d;
     }
+
+    public void TakeDamage(float d)
+    {
+        Health -= CalculateDamageTaken(d);
+    }
+
+
 
     public int TotalCost()
     {

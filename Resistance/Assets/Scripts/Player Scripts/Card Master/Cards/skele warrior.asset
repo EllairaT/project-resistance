@@ -26,4 +26,5 @@ MonoBehaviour:
   maxNumber: 50
   minNumber: 1
   numberToSpawn: 0
-  prefab: {fileID: 8022762030534985760, guid: ead079d7f0618754f9e071f257c07889, type: 3}
+  numberSpawned: 0
+  prefab: {fileID: 7301327233217581691, guid: 547bdb692e6bbdb44941da68f92afdc7, type: 3}

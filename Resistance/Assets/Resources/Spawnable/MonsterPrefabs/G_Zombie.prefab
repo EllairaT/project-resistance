@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4099132462631773209}
-  - component: {fileID: 1723673129}
-  - component: {fileID: 5389677682592894740}
+  - component: {fileID: -7359228247141008403}
+  - component: {fileID: -8853454058567798098}
   m_Layer: 13
   m_Name: G_Zombie
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,13 +27,13 @@ Transform:
   m_GameObject: {fileID: 4099132462631773208}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 275.13, y: -209.25, z: 736.63}
-  m_LocalScale: {x: 4.656374, y: 4.656374, z: 4.656374}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5485365114217360922}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &1723673129
+--- !u!114 &-7359228247141008403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,25 +42,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 4099132462631773208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da25b49775ca9d5479b5dc95c32af5b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5bd523cf48bcd704a9db10f13c73c960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: {fileID: 11400000, guid: 0ddf6413592f5a544b185e3d5f6f5e12, type: 2}
---- !u!114 &5389677682592894740
-MonoBehaviour:
+  stats: {fileID: 0}
+  target: {fileID: 0}
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 0
+  whatIsStructure:
+    serializedVersion: 2
+    m_Bits: 0
+  anim: {fileID: 0}
+  timeBetweenAttack: 0
+  sightRange: 10
+  attackRange: 10
+--- !u!195 &-8853454058567798098
+NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4099132462631773208}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57910bf7c36f6e449ac5a1fcf02cdff8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardSystem: {fileID: 0}
-  prefab: {fileID: 0}
-  isPlaced: 0
+  m_AgentTypeID: -1372625422
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &4099132463712937230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72,7 +90,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 2ef8e6599b7f9934e8ff0d64c5325a1f, type: 2}
+      objectReference: {fileID: 22100000, guid: 81e55439f9151874b98c6110278a118e,
+        type: 2}
     - target: {fileID: -1852755528305015932, guid: 06cb2b131fe009c47a523671a8fa9ed8,
         type: 3}
       propertyPath: m_Animation
@@ -1652,7 +1671,7 @@ PrefabInstance:
     - target: {fileID: 8429865231615740692, guid: 06cb2b131fe009c47a523671a8fa9ed8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8429865231615740692, guid: 06cb2b131fe009c47a523671a8fa9ed8,
         type: 3}
@@ -1707,17 +1726,17 @@ PrefabInstance:
     - target: {fileID: 8429865231615740692, guid: 06cb2b131fe009c47a523671a8fa9ed8,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.67523426
+      value: 2.7269907
       objectReference: {fileID: 0}
     - target: {fileID: 8429865231615740692, guid: 06cb2b131fe009c47a523671a8fa9ed8,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.67523426
+      value: 2.7269907
       objectReference: {fileID: 0}
     - target: {fileID: 8429865231615740692, guid: 06cb2b131fe009c47a523671a8fa9ed8,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.67523426
+      value: 2.7269907
       objectReference: {fileID: 0}
     - target: {fileID: 8525967459382616289, guid: 06cb2b131fe009c47a523671a8fa9ed8,
         type: 3}
@@ -1964,7 +1983,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.015468178
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1852755528305015932, guid: 06cb2b131fe009c47a523671a8fa9ed8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 06cb2b131fe009c47a523671a8fa9ed8, type: 3}
 --- !u!4 &5485365114217360922 stripped
 Transform:

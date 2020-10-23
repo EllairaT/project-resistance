@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SkellyController
+  m_Controller: {fileID: 9100000, guid: 9af9ee2352f20c444aa33ce0ccac1fb9, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -2639477235012919003, guid: 8ba535c70bbcf7b46b0cba1188faae47,
+      type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: dfc15c633f0d98141920018f79a042a6, type: 3}
+  - m_OriginalClip: {fileID: -6758483313513240000, guid: 8ba535c70bbcf7b46b0cba1188faae47,
+      type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: a749f4485b342b7469956010abf2ab25, type: 3}
+  - m_OriginalClip: {fileID: -3419257869308726280, guid: 8ba535c70bbcf7b46b0cba1188faae47,
+      type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 188f1042b5ff4644389fad5df1f98d7c, type: 3}
+  - m_OriginalClip: {fileID: 3697035533061398696, guid: dd6550ece43af764e8e9a802baa977e6,
+      type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 1e768688017709245aed3bb86453c364, type: 3}
+  - m_OriginalClip: {fileID: -5252816984213320552, guid: 8ba535c70bbcf7b46b0cba1188faae47,
+      type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: a5ea117a2b123564a83a2dbd1c9ea4cf, type: 3}

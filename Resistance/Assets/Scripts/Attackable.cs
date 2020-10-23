@@ -34,8 +34,6 @@ public class Attackable : NetworkBehaviour, INetworkUsable
     [ClientRpc]
     public void RpcTakeDmg(float amount) //Calls to reduce the object's health for all players in the game
     {
-        health -= amount;
-        Debug.Log("ouch");
 
         if (isStructure)
         {
@@ -43,8 +41,11 @@ public class Attackable : NetworkBehaviour, INetworkUsable
         } 
         else if (isMonster)
         {
-            amount = GetComponent<LoadStats>().TakeDamage(amount);
+            amount = GetComponent<Card>().CalculateDamageTaken(amount);
         }
+
+        health -= amount;
+        Debug.Log("ouch");
 
         if (health <= 0f) //Is it dead? If so, it dies
         {

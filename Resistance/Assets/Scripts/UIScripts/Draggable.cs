@@ -3,18 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Draggable : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerClickHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    public Vector3 originalPosition;
+    [Header("Set Up")]
     public bool isDroppedInSlot;
     public Transform startingParent;
     public GameObject cardName;
+    public Card card;
     public CardSlot currentCardSlot;
 
-    public Card card;
-    public static GameObject itemBeingDragged; 
+    [Header("Monster Prefab")]
+    public GameObject prefab;
+
+    public static GameObject itemBeingDragged;
+
+    private Vector3 originalPosition;
     private CanvasGroup canvasGroup;
-    Vector3 cardPos;
+    private Vector3 cardPos;
+    [SerializeField] private CardStats cs;
+
+    private void Awake()
+    {
+        cs = GetComponent<CardStats>();
+        cs.card = card;
+    }
 
     private void Start()
     {
@@ -36,7 +48,6 @@ public class Draggable : MonoBehaviour, IPointerClickHandler, IBeginDragHandler,
     {
         itemBeingDragged = gameObject;
         originalPosition = transform.position;
-        startingParent = transform.parent;  //its parent is the current slot
 
         canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
@@ -63,19 +74,20 @@ public class Draggable : MonoBehaviour, IPointerClickHandler, IBeginDragHandler,
 
     public virtual void OnPointerClick(PointerEventData eventData)
     {
-        if(eventData.clickCount == 2)
+        if (eventData.clickCount == 2)
         {
-            Debug.Log("double clicked: " + card.name);
-            currentCardSlot.PutInSlot(eventData);
+            currentCardSlot.PutCardInSlot(this);
         }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        cardName.GetComponent<Description>().card = card;
-        cardName.GetComponent<Description>().ShowName();
-        cardName.SetActive(true);
-      
+        if (transform.parent.parent.name == "Inventory")
+        {
+            cardName.GetComponent<Description>().card = card;
+            cardName.GetComponent<Description>().ShowName();
+            cardName.SetActive(true);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -84,8 +96,8 @@ public class Draggable : MonoBehaviour, IPointerClickHandler, IBeginDragHandler,
         cardName.SetActive(false);
     }
 
-    private void ToggleDescription()
+    public void OnPointerDown(PointerEventData eventData)
     {
-
+        startingParent = transform.parent;
     }
 }

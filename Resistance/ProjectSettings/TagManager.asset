@@ -19,6 +19,7 @@ TagManager:
   - SpectatorCamera
   - Wall_SP
   - DefenceSpawner
+  - Monster
   layers:
   - Default
   - TransparentFX

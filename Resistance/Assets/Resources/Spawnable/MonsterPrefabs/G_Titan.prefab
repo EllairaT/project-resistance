@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7794090944757490705}
-  - component: {fileID: 194670652}
-  - component: {fileID: -187199825153380069}
+  - component: {fileID: -2039788088312833049}
+  - component: {fileID: 2293754480350154044}
   m_Layer: 13
   m_Name: G_Titan
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,13 +27,13 @@ Transform:
   m_GameObject: {fileID: 7794090944757490704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -117.5, y: 0.21, z: 44.24405}
-  m_LocalScale: {x: 2.2264, y: 2.2264, z: 2.2264}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3911454991286685106}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &194670652
+--- !u!114 &-2039788088312833049
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,25 +42,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 7794090944757490704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da25b49775ca9d5479b5dc95c32af5b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5bd523cf48bcd704a9db10f13c73c960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: {fileID: 11400000, guid: 1870e2fb05588d64c8cc436dbe72d4c0, type: 2}
---- !u!114 &-187199825153380069
-MonoBehaviour:
+  stats: {fileID: 0}
+  target: {fileID: 0}
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 0
+  whatIsStructure:
+    serializedVersion: 2
+    m_Bits: 0
+  anim: {fileID: 0}
+  timeBetweenAttack: 0
+  sightRange: 10
+  attackRange: 10
+--- !u!195 &2293754480350154044
+NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7794090944757490704}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57910bf7c36f6e449ac5a1fcf02cdff8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardSystem: {fileID: 0}
-  prefab: {fileID: 0}
-  isPlaced: 0
+  m_AgentTypeID: -1372625422
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &7794090944340775589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72,7 +90,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Avatar
       value: 
-      objectReference: {fileID: 9000000, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      objectReference: {fileID: 9000000, guid: 3e99ec06c5efc9d4089299d760d40f7c, type: 3}
     - target: {fileID: 917512477402895464, guid: 62bb48fb93a4332449a46b0ac6c7eb27,
         type: 3}
       propertyPath: m_Size.y
@@ -178,7 +196,8 @@ PrefabInstance:
       propertyPath: m_Animation
       value: 
       objectReference: {fileID: 7400000, guid: 28bf917ebafe2a548b8303d7eb6e94e4, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6868814317841845947, guid: 62bb48fb93a4332449a46b0ac6c7eb27, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 62bb48fb93a4332449a46b0ac6c7eb27, type: 3}
 --- !u!4 &3911454991286685106 stripped
 Transform:

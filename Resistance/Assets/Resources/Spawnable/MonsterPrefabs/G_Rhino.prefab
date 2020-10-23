@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5480387265191428469}
-  - component: {fileID: 819322112}
-  - component: {fileID: -6129020019063353331}
+  - component: {fileID: -2352097171310948155}
+  - component: {fileID: -6475265220982440934}
   m_Layer: 13
   m_Name: G_Rhino
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,13 +27,13 @@ Transform:
   m_GameObject: {fileID: 5480387265191428470}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -97.05, y: -0.37, z: 33.95}
-  m_LocalScale: {x: 2.7440379, y: 2.7440379, z: 2.7440379}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5480387264754168379}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &819322112
+--- !u!114 &-2352097171310948155
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,25 +42,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 5480387265191428470}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da25b49775ca9d5479b5dc95c32af5b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5bd523cf48bcd704a9db10f13c73c960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: {fileID: 11400000, guid: 29676bf46894159489e10ad179a5a4cf, type: 2}
---- !u!114 &-6129020019063353331
-MonoBehaviour:
+  stats: {fileID: 0}
+  target: {fileID: 0}
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 0
+  whatIsStructure:
+    serializedVersion: 2
+    m_Bits: 0
+  anim: {fileID: 0}
+  timeBetweenAttack: 0
+  sightRange: 10
+  attackRange: 10
+--- !u!195 &-6475265220982440934
+NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5480387265191428470}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57910bf7c36f6e449ac5a1fcf02cdff8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardSystem: {fileID: 0}
-  prefab: {fileID: 0}
-  isPlaced: 0
+  m_AgentTypeID: -1372625422
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &5480387264753724889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1354,15 +1372,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483298, guid: fdc7c645919f60047929b2f994266803, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.8614222
+      value: 2.7217717
       objectReference: {fileID: 0}
     - target: {fileID: 483298, guid: fdc7c645919f60047929b2f994266803, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.8614222
+      value: 2.7217717
       objectReference: {fileID: 0}
     - target: {fileID: 483298, guid: fdc7c645919f60047929b2f994266803, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.8614222
+      value: 2.7217717
       objectReference: {fileID: 0}
     - target: {fileID: 483920, guid: fdc7c645919f60047929b2f994266803, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1534,8 +1552,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 39b29d7b299559d4388e0e383d585e62, type: 2}
-    m_RemovedComponents: []
+      objectReference: {fileID: 22100000, guid: 4cf2e0ec47ddec240a0b411dece69f17,
+        type: 2}
+    m_RemovedComponents:
+    - {fileID: -6785011686058952774, guid: fdc7c645919f60047929b2f994266803, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fdc7c645919f60047929b2f994266803, type: 3}
 --- !u!4 &5480387264754168379 stripped
 Transform:

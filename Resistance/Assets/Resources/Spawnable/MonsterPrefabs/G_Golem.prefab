@@ -9,13 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 180491554267412434}
-  - component: {fileID: 520022101016147582}
-  - component: {fileID: -4553880052484082879}
   - component: {fileID: 1808223261}
   - component: {fileID: 1808223262}
   m_Layer: 13
   m_Name: G_Golem
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,40 +27,12 @@ Transform:
   m_GameObject: {fileID: 180491554267412435}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -123.38335, y: -15.45, z: -161.36}
-  m_LocalScale: {x: 1.8995644, y: 1.8995644, z: 1.8995644}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9076775612034991028}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &520022101016147582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 180491554267412435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da25b49775ca9d5479b5dc95c32af5b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  script: {fileID: 11400000, guid: ee77053cf549ee84ebc5e15ffbd75277, type: 2}
---- !u!114 &-4553880052484082879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 180491554267412435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57910bf7c36f6e449ac5a1fcf02cdff8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardSystem: {fileID: 0}
-  prefab: {fileID: 0}
-  isPlaced: 0
 --- !u!195 &1808223261
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -97,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd523cf48bcd704a9db10f13c73c960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainDestination: {fileID: 0}
+  stats: {fileID: 0}
   target: {fileID: 0}
   whatIsPlayer:
     serializedVersion: 2
@@ -105,14 +75,10 @@ MonoBehaviour:
   whatIsStructure:
     serializedVersion: 2
     m_Bits: 16384
-  walkPoint: {x: 22.81, y: 0, z: 0}
-  walkPointRange: 0
+  anim: {fileID: 0}
   timeBetweenAttack: 0
   sightRange: 30
   attackRange: 30
-  isInSightRange: 0
-  isInAttackRange: 0
-  anim: {fileID: 587684272637066799}
 --- !u!1001 &180491555138883701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -124,7 +90,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Avatar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9000000, guid: 8ba535c70bbcf7b46b0cba1188faae47, type: 3}
+    - target: {fileID: -343126657445587618, guid: 9af73ae244971cf4ea2c172d879e9b94,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 0c4ff5c47bfeea44b888d776cfa10992,
+        type: 2}
     - target: {fileID: 767551095120555610, guid: 9af73ae244971cf4ea2c172d879e9b94,
         type: 3}
       propertyPath: m_PlayAutomatically
@@ -210,12 +182,6 @@ PrefabInstance:
 --- !u!4 &9076775612034991028 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9184549694192522177, guid: 9af73ae244971cf4ea2c172d879e9b94,
-    type: 3}
-  m_PrefabInstance: {fileID: 180491555138883701}
-  m_PrefabAsset: {fileID: 0}
---- !u!111 &587684272637066799 stripped
-Animation:
-  m_CorrespondingSourceObject: {fileID: 767551095120555610, guid: 9af73ae244971cf4ea2c172d879e9b94,
     type: 3}
   m_PrefabInstance: {fileID: 180491555138883701}
   m_PrefabAsset: {fileID: 0}

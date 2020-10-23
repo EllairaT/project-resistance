@@ -3,57 +3,76 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
 public class CardSlot : BaseMonobehaviour, IDropHandler
 {
     public Card currentCard;
-    public CurrentCard currentCardView;
-    public bool wasDragged = false;
 
+    public delegate void ChangeEvent(bool slotState, Card c);
+    public static event ChangeEvent changeEvent;
+    public bool isSlotEmpty = true;
+
+    public bool isPlayableCardSlot;
+    public GameObject playableCardSlot;
+
+    #region DropHandler implementation
     public void OnDrop(PointerEventData eventData)
     {
-        wasDragged = true;
-        PutInSlot(eventData);
-    }
-
-    private bool IsSlotEmpty()
-    {
-        if (transform.childCount > 0)
+        if (eventData != null)
         {
-            return false;
+            if (transform.childCount > 0)
+            {
+                transform.GetChild(0).SetParent(eventData.pointerDrag.GetComponent<Draggable>().startingParent);
+            }
+
+            Draggable.itemBeingDragged.transform.SetParent(transform);
+            SetCard(eventData.pointerDrag.GetComponent<Draggable>().card);
         }
-        return true;
     }
+    #endregion
 
-    public void PutInSlot(PointerEventData eventData)
+    public bool IsSlotEmpty()
     {
-        if (IsSlotEmpty() == false)
+        if (transform.childCount == 0)
         {
-            transform.GetChild(0).SetParent(eventData.pointerDrag.GetComponent<Draggable>().startingParent);
-        }
-
-        Draggable.itemBeingDragged.transform.SetParent(this.transform);
-
-        SetItemDropState(eventData);
-        currentCard = eventData.pointerDrag.GetComponent<Draggable>().card;
-
-        if (currentCardView != null)
-        {
-            currentCardView.UpdateCurrentCardDetails(currentCard);
-        }
-        wasDragged = false;
-    }
-
-    private void SetItemDropState(PointerEventData eventData)
-    {
-        if (wasDragged)
-        {
-            eventData.pointerDrag.GetComponent<Draggable>().isDroppedInSlot = true;
+            isSlotEmpty = true;
         }
         else
         {
-            eventData.pointerPress.GetComponent<Draggable>().isDroppedInSlot = true;
+            isSlotEmpty = false;
         }
+        return isSlotEmpty;
+    }
 
-        wasDragged = false;
+    public void CheckPlayableSlot()
+    {
+        if (changeEvent != null)
+        {
+            if (isSlotEmpty && playableCardSlot != null)
+            {
+                currentCard = null;
+            }
+            changeEvent(isSlotEmpty, currentCard);
+        }
+    }
+
+    public void PutCardInSlot(Draggable d)
+    {
+        if (d != null)
+        {
+            if (transform.childCount > 0) //if there is another card in the slot
+            {
+                transform.GetChild(0).SetParent(d.startingParent);
+            }
+
+            d.transform.SetParent(transform);
+            SetCard(d.card);
+        }
+    }
+
+    private void SetCard(Card c)
+    {
+        currentCard = c;
+        CheckPlayableSlot();
     }
 }

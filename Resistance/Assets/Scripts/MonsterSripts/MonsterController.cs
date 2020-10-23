@@ -6,16 +6,12 @@ using UnityEngine.AI;
 
 public class MonsterController : MonoBehaviour
 {
-
-    NavMeshAgent agent;
+    public Card stats;
     public Transform target; //target will always be nexus
     public LayerMask whatIsPlayer, whatIsStructure;
-    public Animation anim;
+    NavMeshAgent agent;
 
-    //walk 
-    public Vector3 walkPoint;
-    bool walkPointSet;
-    public float walkPointRange;
+    public Animator anim;
 
     //attack
     public float timeBetweenAttack;
@@ -25,14 +21,12 @@ public class MonsterController : MonoBehaviour
     public float sightRange = 10f;
     public float attackRange = 10f;
 
-    private bool isInSightRange, isInAttackRange;
-   
-    public List<AnimationClip> movementClips = new List<AnimationClip>();
-    public List<AnimationClip> attackClips = new List<AnimationClip>();
+    private bool isInSightRange, isInAttackRange; 
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        anim = transform.GetChild(0).GetComponent<Animator>();
     }
 
     // Update is called once per frame

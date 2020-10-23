@@ -6,14 +6,15 @@ using UnityEngine;
 
 public class CardSystem : MonoBehaviour
 {
-    public LayerMask layer;
     public Camera CMCam;
-    public SpawnableMonster spawnable;
-    public int numberToSpawn = 5;
+    private GameObject spawnable;
+    public int numberToSpawn;
 
     public GameObject spawnPoint;
-
     public ParticleSystem spawnParticle;
+
+    public GameObject Spawnable { get => spawnable; set => spawnable = value; }
+
 
     public void MakeMob()
     {
@@ -25,29 +26,34 @@ public class CardSystem : MonoBehaviour
 
         for (int i = 0; i < numberToSpawn; i++)
         {
-            spacing += spawnable.transform.localScale.z + 2f;
+            spacing += Spawnable.transform.localScale.z + 1f;
 
             if (i % 2 == 0)
             {
-                _o = Instantiate(spawnable.gameObject, new Vector3(spawnPoint.transform.position.x, 0f, spawnPoint.transform.localScale.z + (spacing * numberToSpawn)), Quaternion.identity);
+                _o = Instantiate(Spawnable.gameObject, new Vector3(spawnPoint.transform.position.x, 0f, spawnPoint.transform.localScale.z + (spacing * numberToSpawn)), Quaternion.identity);
             }
             else
             {
-                _o = Instantiate(spawnable.gameObject, new Vector3(spawnPoint.transform.position.x, 0f, spawnPoint.transform.localScale.z - (spacing * numberToSpawn)), Quaternion.identity);
+                _o = Instantiate(Spawnable.gameObject, new Vector3(spawnPoint.transform.position.x, 0f, spawnPoint.transform.localScale.z - (spacing * numberToSpawn)), Quaternion.identity);
             }
             _o.transform.parent = mob.transform;
         }
     }
 
+
     public void SpawnMonsters()
     {
-        StartCoroutine(StartSpawnAnimation(spawnParticle));
+        if (numberToSpawn > 0)
+        {
+            MakeMob();
+            StartCoroutine(StartSpawnAnimation(spawnParticle));
+        }
     }
 
     IEnumerator StartSpawnAnimation(ParticleSystem p)
     {
         p.Play();
-        yield return new WaitUntil(() => p.isStopped);
+        yield return new WaitForSeconds(3f);
         MakeMob();
     }
 }

@@ -16579,7 +16579,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: 4300000, guid: be5995a9158bda9459c22d48acd79a3f, type: 3}
   m_Bones:
@@ -16710,7 +16710,7 @@ Transform:
   m_GameObject: {fileID: 1000013586557078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9286645, y: 0.9286645, z: 0.9286645}
   m_Children:
   - {fileID: 4000010094665428}
   - {fileID: 4000010061761376}
@@ -16740,7 +16740,7 @@ Animation:
   - {fileID: 7400000, guid: d6bace9ab356c9a46bdf8b19608544d2, type: 2}
   - {fileID: 7400000, guid: edee5610b76b3ec40a4a97d33e8bbd53, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!65 &-8480376384114284684
@@ -16754,8 +16754,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.5131683, y: 7.424301, z: 3.7978706}
+  m_Center: {x: 0.12155914, y: 3.2121506, z: 0.019731522}
 --- !u!95 &8857803173097881567
 Animator:
   serializedVersion: 3
@@ -16765,8 +16765,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000013586557078}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: be5995a9158bda9459c22d48acd79a3f, type: 3}
+  m_Controller: {fileID: 22100000, guid: 430d97f615ea1c944b9fd89f9a27ff97, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 2
   m_ApplyRootMotion: 0
@@ -17136,7 +17136,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -17189,7 +17189,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -26781,7 +26781,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 0.6509804}
+      maxColor: {r: 1, g: 0, b: 0, a: 0.6509804}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -26843,8 +26843,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1.5
-      minScalar: 1
+      scalar: 0.45
+      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -26877,7 +26877,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -26930,7 +26930,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -26983,7 +26983,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -27036,7 +27036,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -27182,7 +27182,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 0
+    type: 4
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -27269,7 +27269,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.3
+      value: 0.69
       mode: 0
       spread: 0
       speed:
@@ -27388,7 +27388,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 40
+      scalar: 50.07
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -27441,7 +27441,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 44.7
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -27550,7 +27550,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 1
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -27603,7 +27603,7 @@ ParticleSystem:
         m_RotationOrder: 4
     z:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 1
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -27659,8 +27659,8 @@ ParticleSystem:
     enabled: 1
     x:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 1
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -27712,8 +27712,8 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 1
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -27817,7 +27817,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.03529412, g: 0.03529412, b: 0.03529412, a: 0}
+        key0: {r: 1, g: 0, b: 0, a: 0}
         key1: {r: 0.08627451, g: 0.09411765, b: 0.101960786, a: 1}
         key2: {r: 0.17254902, g: 0.12941177, b: 0.6784314, a: 1}
         key3: {r: 0.0627451, g: 0.10980392, b: 0.2627451, a: 0}
@@ -31178,8 +31178,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: daf44e9c499ce524ab64bce5b3efae82, type: 2}
+  - {fileID: 2100000, guid: daf44e9c499ce524ab64bce5b3efae82, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
