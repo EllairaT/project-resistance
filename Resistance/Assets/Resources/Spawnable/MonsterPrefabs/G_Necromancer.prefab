@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd523cf48bcd704a9db10f13c73c960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 0}
+  stats: {fileID: 11400000, guid: 7162c23897693f542ae6f56e7530ff33, type: 2}
   target: {fileID: 0}
   whatIsPlayer:
     serializedVersion: 2
@@ -75,7 +75,7 @@ MonoBehaviour:
   whatIsStructure:
     serializedVersion: 2
     m_Bits: 0
-  anim: {fileID: 0}
+  anim: {fileID: 2150650176372988243}
   timeBetweenAttack: 0
   sightRange: 10
   attackRange: 10
@@ -140,6 +140,12 @@ PrefabInstance:
 --- !u!4 &7438728341457441578 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011578242470, guid: 3c9c8a8bf50e6b5439ab9db67bc82586,
+    type: 3}
+  m_PrefabInstance: {fileID: 7437019679899805324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2150650176372988243 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8857803173097881567, guid: 3c9c8a8bf50e6b5439ab9db67bc82586,
     type: 3}
   m_PrefabInstance: {fileID: 7437019679899805324}
   m_PrefabAsset: {fileID: 0}

@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("am i being called?");
         anim = GetComponent<Animator>();
     }
 

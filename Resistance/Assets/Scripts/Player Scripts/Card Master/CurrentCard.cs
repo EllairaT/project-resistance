@@ -16,11 +16,14 @@ public class CurrentCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public TextMeshProUGUI Name;
     public TextMeshProUGUI baseCost;
 
-    [Header("UI Elements")] 
+    [Header("UI Elements")]
     public GameObject infoPanel;
     public Button[] functionPanelButtons;
     public CardSlot slot;
     private Card card;
+    private CardStats stats;
+
+    public int numberOfCardsAvailable;
 
     private void Awake()
     {
@@ -29,16 +32,9 @@ public class CurrentCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         cardSystem = transform.root.GetComponent<CardSystem>();
     }
 
-    private void Start()
+    private void SlotChanged(bool b, Card c, CardStats cs)
     {
-        card = slot.GetComponent<CardSlot>().currentCard;
-    }
-
-    private void SlotChanged(bool b, Card c)
-    {
-        Debug.Log(b + ": " + c);
-
-        UpdateCurrentCardDetails(c);
+        UpdateCurrentCardDetails(c, cs);
     }
 
     public bool IsCurrentCardSlotEmpty()
@@ -50,21 +46,25 @@ public class CurrentCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         return true;
     }
 
-    public void UpdateCurrentCardDetails(Card c)
+    public void UpdateCurrentCardDetails(Card c, CardStats cs)
     {
         card = c;
+        stats = cs;
 
         if (card != null)
         {
+           
             Name.SetText(c.Name);
             type.SetText(c.type.ToString());
             description.SetText(c.Description);
             baseCost.SetText(c.Cost.ToString());
-            cost.SetText(c.Cost.ToString());
+
+            UpdateCardCost(c.minNumber);
             count.SetText(c.minNumber.ToString());
 
             cardSystem.numberToSpawn = 1;
-            cardSystem.Spawnable = card.prefab;   
+            cardSystem.Spawnable = card.prefab;
+            numberOfCardsAvailable = card.maxNumber;
         }
         if (IsCurrentCardSlotEmpty())
         {
@@ -90,6 +90,7 @@ public class CurrentCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             }
         }
     }
+
     public void ResetCardStats()
     {
         cost.SetText("0");
@@ -105,13 +106,12 @@ public class CurrentCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         if (card != null)
         {
             int i = int.Parse(count.GetParsedText());
-
             if (b.name == "up")
             {
                 if (i < card.maxNumber)
                 {
                     i++;
-                    UpdateCardCost(i);
+                    UpdateAvailableCards(-1);
                 }
             }
             else
@@ -119,22 +119,37 @@ public class CurrentCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                 if (i > card.minNumber)
                 {
                     i--;
-                    UpdateCardCost(i);
+                    UpdateAvailableCards(1);
                 }
             }
+
+            UpdateCardCost(i);
             count.SetText(i.ToString());
             cardSystem.numberToSpawn = i;
         }
     }
 
+    public void UpdateAvailableCards(int n)
+    {
+        if (numberOfCardsAvailable <= card.maxNumber && numberOfCardsAvailable >= card.minNumber)
+        {
+            if (stats != null)
+            {
+                numberOfCardsAvailable += n;
+                Debug.Log(numberOfCardsAvailable + ": " + card.maxNumber);
+                stats.UpdateNumberOfAvailable(numberOfCardsAvailable);
+              
+            }
+        }
+        //   Debug.Log(card.maxNumber - card.numberToSpawn);
+
+
+    }
+
     public void UpdateCardCost(int cardCount)
     {
-        if (card != null)
-        {
-            int c = card.Cost * cardCount;
-
-            cost.SetText(c.ToString());
-        }
+        int c = card.Cost * cardCount;
+        cost.SetText(c.ToString());
     }
 
     public void OnPointerEnter(PointerEventData eventData)

@@ -1,32 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 
 public class CardSlot : BaseMonobehaviour, IDropHandler
 {
     public Card currentCard;
+    public CardStats currentCardStats;
 
-    public delegate void ChangeEvent(bool slotState, Card c);
+    public delegate void ChangeEvent(bool slotState, Card c, CardStats cs);
     public static event ChangeEvent changeEvent;
     public bool isSlotEmpty = true;
 
+    // "playable card" refers to the card in the slot on the lefthand side of the screen.
     public bool isPlayableCardSlot;
-    public GameObject playableCardSlot;
 
     #region DropHandler implementation
     public void OnDrop(PointerEventData eventData)
     {
-        if (eventData != null)
+        if (eventData != null && eventData.pointerDrag != null)
         {
-            if (transform.childCount > 0)
-            {
-                transform.GetChild(0).SetParent(eventData.pointerDrag.GetComponent<Draggable>().startingParent);
-            }
+            CheckSlot(eventData.pointerDrag.GetComponent<Draggable>().startingParent);
+            Draggable.itemBeingDragged.transform.SetParent(transform); //set this slot as card's parent.
 
-            Draggable.itemBeingDragged.transform.SetParent(transform);
-            SetCard(eventData.pointerDrag.GetComponent<Draggable>().card);
+            SetAll(eventData.pointerDrag.GetComponent<Draggable>().card,
+                   eventData.pointerDrag.GetComponent<Draggable>().stats);
         }
     }
     #endregion
@@ -44,35 +41,56 @@ public class CardSlot : BaseMonobehaviour, IDropHandler
         return isSlotEmpty;
     }
 
+    //function to check if the playable slot is empty
     public void CheckPlayableSlot()
     {
         if (changeEvent != null)
         {
-            if (isSlotEmpty && playableCardSlot != null)
+            if (isSlotEmpty && isPlayableCardSlot)
             {
                 currentCard = null;
+                currentCardStats = null;
             }
-            changeEvent(isSlotEmpty, currentCard);
+            //trigger an event and tell the other classes subscribed to the event that something was changed
+            changeEvent(isSlotEmpty, currentCard, currentCardStats);
         }
     }
 
+    //this is called when user double clicks the card instead of dragging it
     public void PutCardInSlot(Draggable d)
     {
         if (d != null)
         {
-            if (transform.childCount > 0) //if there is another card in the slot
-            {
-                transform.GetChild(0).SetParent(d.startingParent);
-            }
-
+            CheckSlot(d.startingParent);
             d.transform.SetParent(transform);
-            SetCard(d.card);
+            SetAll(d.card, d.stats);
+        }
+    }
+
+    //check if there is another card in the slot
+    private void CheckSlot(Transform parent)
+    {
+        //if so, then set the current card's parent as that card's parent.
+        if (transform.childCount > 0)
+        {        
+            transform.GetChild(0).SetParent(parent);
         }
     }
 
     private void SetCard(Card c)
     {
         currentCard = c;
+    }
+
+    private void SetCardStats(CardStats cs)
+    {
+        currentCardStats = cs;
+    }
+
+    private void SetAll(Card c, CardStats cs)
+    {
+        SetCard(c);
+        SetCardStats(cs);
         CheckPlayableSlot();
     }
 }

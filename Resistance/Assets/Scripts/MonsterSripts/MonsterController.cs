@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-//using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class MonsterController : MonoBehaviour
 {
+    public float monsterFieldOfView = 90f;
     public Card stats;
-    public Transform target; //target will always be nexus
+    public Transform target; 
     public LayerMask whatIsPlayer, whatIsStructure;
     NavMeshAgent agent;
 
@@ -18,41 +16,73 @@ public class MonsterController : MonoBehaviour
     bool hasAttacked;
 
     //states
-    public float sightRange = 10f;
+    public float sightRange = 30f;
     public float attackRange = 10f;
 
-    private bool isInSightRange, isInAttackRange; 
+   // private , isInAttackRange;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        anim = transform.GetChild(0).GetComponent<Animator>();
+        target = MonsterManager.instance.nexus.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //true if any of these are met
-        isInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsStructure) |
-                         Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+        float distance = Vector3.Distance(target.position, transform.position);
+        Debug.DrawRay(transform.position, target.position, Color.red);
 
-        isInAttackRange = Physics.CheckSphere(transform.position, sightRange, whatIsStructure) |
-                          Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-
-        
-        if (!isInSightRange)
+        if (IsInSight())
         {
             WalkForward();
         }
+        else if(IsInSight() && distance <= sightRange)
+        {
+            StopMoving();
+        }
+
+    }
+
+    private bool IsInSight()
+    {
+        //get forward vector
+        //get direction between enemy and player
+        //get angle
+        bool isInSightRange;
+        Vector3 targetDirection = target.position - transform.position;
+        float angle = Vector3.Angle(targetDirection, transform.forward);
+
+        if(angle < monsterFieldOfView)
+        {
+            isInSightRange = true;
+        }
+        else
+        {
+            isInSightRange = false;
+        }
+
+        return isInSightRange;
     }
 
     private void WalkForward()
     {
+        anim.SetBool("isMoving", true);
         Vector3 movement = transform.right * Time.deltaTime * agent.speed;
-        anim.Play("walk");
-        agent.Move(movement);
         agent.SetDestination(target.position);
+  
         agent.updateRotation = false;
+    }
+
+    public void PlaySpawnAnim()
+    {
+        anim.SetTrigger("Spawn");
+    }
+
+    public void StopMoving()
+    {
+        anim.SetBool("isMoving", false);
+        agent.velocity = Vector3.zero;
     }
 
     private void OnDrawGizmosSelected()

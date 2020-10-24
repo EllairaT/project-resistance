@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerClickHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerClickHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerExitHandler, IPointerEnterHandler
 {
     [Header("Set Up")]
     public bool isDroppedInSlot;
@@ -11,6 +11,8 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerClickHandle
     public GameObject cardName;
     public Card card;
     public CardSlot currentCardSlot;
+    public string inventoryName = "Inventory";
+    public CardStats stats;
 
     [Header("Monster Prefab")]
     public GameObject prefab;
@@ -20,12 +22,12 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerClickHandle
     private Vector3 originalPosition;
     private CanvasGroup canvasGroup;
     private Vector3 cardPos;
-    [SerializeField] private CardStats cs;
+    private bool _over;
+
 
     private void Awake()
     {
-        cs = GetComponent<CardStats>();
-        cs.card = card;
+        stats.card = card;
     }
 
     private void Start()
@@ -36,14 +38,18 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerClickHandle
 
     private void Update()
     {
-        cardName.transform.position = Input.mousePosition;
-        cardPos = cardName.transform.position;
+        if (_over)
+        {
+            cardName.transform.position = Input.mousePosition;
+            cardPos = cardName.transform.position;
 
-        cardPos.y += 50f;
+            cardPos.y += 50f;
 
-        cardName.transform.position = cardPos;
+            cardName.transform.position = cardPos;
+        }
     }
 
+    #region OnBeginDrag implementation
     public void OnBeginDrag(PointerEventData eventData)
     {
         itemBeingDragged = gameObject;
@@ -53,12 +59,16 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerClickHandle
         canvasGroup.blocksRaycasts = false;
         isDroppedInSlot = false;
     }
+    #endregion
 
+    #region OnDrag implementation
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = Input.mousePosition;
     }
+    #endregion
 
+    #region OnEndDrag implementation
     public void OnEndDrag(PointerEventData eventData)
     {
         itemBeingDragged = null;
@@ -71,7 +81,9 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerClickHandle
             transform.position = originalPosition;
         }
     }
+    #endregion
 
+    #region OnPointerClick implementation
     public virtual void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.clickCount == 2)
@@ -79,25 +91,34 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerClickHandle
             currentCardSlot.PutCardInSlot(this);
         }
     }
+    #endregion
 
+    #region OnPointerEnter implementation
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (transform.parent.parent.name == "Inventory")
+        if (transform.parent.parent.name == inventoryName)
         {
             cardName.GetComponent<Description>().card = card;
             cardName.GetComponent<Description>().ShowName();
             cardName.SetActive(true);
         }
+        _over = true;
     }
+    #endregion
 
+    #region OnPointerExit implementation
     public void OnPointerExit(PointerEventData eventData)
     {
         cardName.GetComponent<Description>().card = null;
         cardName.SetActive(false);
+        _over = false;
     }
+    #endregion
 
+    #region OnPointerDown implementation
     public void OnPointerDown(PointerEventData eventData)
     {
         startingParent = transform.parent;
     }
+    #endregion
 }

@@ -22,7 +22,7 @@ MonoBehaviour:
   _heal: 0
   goldPerHit: 0
   goldPerDmg: 0
-  maxNumber: 5
+  maxNumber: 15
   minNumber: 1
   numberToSpawn: 0
   numberSpawned: 0

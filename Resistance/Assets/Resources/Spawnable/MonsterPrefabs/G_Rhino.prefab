@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd523cf48bcd704a9db10f13c73c960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 0}
+  stats: {fileID: 11400000, guid: 29676bf46894159489e10ad179a5a4cf, type: 2}
   target: {fileID: 0}
   whatIsPlayer:
     serializedVersion: 2
@@ -53,7 +53,7 @@ MonoBehaviour:
   whatIsStructure:
     serializedVersion: 2
     m_Bits: 0
-  anim: {fileID: 0}
+  anim: {fileID: 3384928054665847018}
   timeBetweenAttack: 0
   sightRange: 10
   attackRange: 10
@@ -65,7 +65,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5480387265191428470}
   m_Enabled: 1
-  m_AgentTypeID: -1372625422
+  m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
@@ -1560,6 +1560,12 @@ PrefabInstance:
 --- !u!4 &5480387264754168379 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 483298, guid: fdc7c645919f60047929b2f994266803,
+    type: 3}
+  m_PrefabInstance: {fileID: 5480387264753724889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3384928054665847018 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7131328032394235187, guid: fdc7c645919f60047929b2f994266803,
     type: 3}
   m_PrefabInstance: {fileID: 5480387264753724889}
   m_PrefabAsset: {fileID: 0}

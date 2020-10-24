@@ -1,18 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class CardStats : MonoBehaviour
 {
     public Card card;
-    public Text numberSpawned;
+    public TextMeshProUGUI numberOfMonstersAvailable;
     public TextMeshProUGUI cost;
 
+    public static GameObject itemBeingUpdated;
+    private void Awake()
+    {
+      // CurrentCard.changeEvent += UpdateNumberOfAvailable;
+    }
     private void Start()
     {
-        numberSpawned.text = card.numberSpawned.ToString();
+        numberOfMonstersAvailable.text = card.maxNumber.ToString();
         cost.SetText("g " + card.Cost.ToString());
     }
+
+    public void UpdateNumberOfAvailable(int i)
+    {
+        Debug.Log("did i even make it here?");
+        numberOfMonstersAvailable.SetText(i.ToString());
+    }
+
 }

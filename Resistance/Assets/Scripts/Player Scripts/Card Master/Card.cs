@@ -19,7 +19,7 @@ public class Card : AddOns
     public int goldPerDmg;
 
     public int maxNumber;
-    public int minNumber;
+    public int minNumber = 1 ;
     public int numberToSpawn;
     public int numberSpawned;
     public GameObject prefab;
@@ -41,13 +41,6 @@ public class Card : AddOns
         }
         return d;
     }
-
-    public void TakeDamage(float d)
-    {
-        Health -= CalculateDamageTaken(d);
-    }
-
-
 
     public int TotalCost()
     {
