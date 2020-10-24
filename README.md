@@ -34,7 +34,6 @@ rounds.
   * #### Ellaira Torio
 * ### Scrum Master 
   * #### Shivneel Singh
-  * #### ~~Blake O'Reilly~~ [formerly]
   
 ##### * Graphics such as logos, button images, and procedural textures are all done by Ellaira. 3D assets in the game and custom shaders are all from Unity Asset Store.
           
