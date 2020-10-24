@@ -59,6 +59,7 @@ public class CardSystem : MonoBehaviour
         if (numberToSpawn > 0)
         {
             StartCoroutine(StartSpawnAnimation(spawnParticle));
+            spawnable.GetComponent<Draggable>().card.maxNumber -= spawnable.GetComponent<Draggable>().card.numberSpawned;    
         }
     }
 

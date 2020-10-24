@@ -25,6 +25,5 @@ MonoBehaviour:
   goldPerDmg: 0
   maxNumber: 20
   minNumber: 1
-  numberToSpawn: 0
   numberSpawned: 0
   prefab: {fileID: 6676486114494354251, guid: 088488911f4e20644ab5a6643483abc1, type: 3}

@@ -19,11 +19,11 @@ public class Card : AddOns
     public int goldPerDmg;
 
     public int maxNumber;
-    public int minNumber = 1 ;
-    public int numberToSpawn;
+    public int minNumber = 1;
     public int numberSpawned;
     public GameObject prefab;
 
+    private int numberToSpawn;
     public float Health { get => _health; set => _health = value; }
     public float Damage { get => _damage; set => _damage = value; }
     public float Heal { get => _heal; set => _heal = value; }

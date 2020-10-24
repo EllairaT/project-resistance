@@ -7,21 +7,19 @@ public class CardStats : MonoBehaviour
     public TextMeshProUGUI numberOfMonstersAvailable;
     public TextMeshProUGUI cost;
 
-    public static GameObject itemBeingUpdated;
-    private void Awake()
-    {
-      // CurrentCard.changeEvent += UpdateNumberOfAvailable;
-    }
+    private int remainingAvailable;
+
     private void Start()
     {
         numberOfMonstersAvailable.text = card.maxNumber.ToString();
         cost.SetText("g " + card.Cost.ToString());
+        remainingAvailable = card.maxNumber;
     }
 
     public void UpdateNumberOfAvailable(int i)
     {
-        Debug.Log("did i even make it here?");
-        numberOfMonstersAvailable.SetText(i.ToString());
+        remainingAvailable += i;
+        Debug.Log(remainingAvailable);
+        numberOfMonstersAvailable.SetText(remainingAvailable.ToString());
     }
-
 }

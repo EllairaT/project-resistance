@@ -23,8 +23,6 @@ public class CurrentCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     private Card card;
     private CardStats stats;
 
-    public int numberOfCardsAvailable;
-
     private void Awake()
     {
         infoPanel.SetActive(false);
@@ -53,7 +51,7 @@ public class CurrentCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
         if (card != null)
         {
-           
+
             Name.SetText(c.Name);
             type.SetText(c.type.ToString());
             description.SetText(c.Description);
@@ -64,7 +62,6 @@ public class CurrentCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
             cardSystem.numberToSpawn = 1;
             cardSystem.Spawnable = card.prefab;
-            numberOfCardsAvailable = card.maxNumber;
         }
         if (IsCurrentCardSlotEmpty())
         {
@@ -124,6 +121,7 @@ public class CurrentCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             }
 
             UpdateCardCost(i);
+
             count.SetText(i.ToString());
             cardSystem.numberToSpawn = i;
         }
@@ -131,19 +129,10 @@ public class CurrentCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void UpdateAvailableCards(int n)
     {
-        if (numberOfCardsAvailable <= card.maxNumber && numberOfCardsAvailable >= card.minNumber)
+        if (stats != null)
         {
-            if (stats != null)
-            {
-                numberOfCardsAvailable += n;
-                Debug.Log(numberOfCardsAvailable + ": " + card.maxNumber);
-                stats.UpdateNumberOfAvailable(numberOfCardsAvailable);
-              
-            }
+            stats.UpdateNumberOfAvailable(n);
         }
-        //   Debug.Log(card.maxNumber - card.numberToSpawn);
-
-
     }
 
     public void UpdateCardCost(int cardCount)
