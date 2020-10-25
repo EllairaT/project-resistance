@@ -5,7 +5,6 @@ using Mirror;
 
 public class BuildSystem : NetworkBehaviour
 {
-    
     public LayerMask layer;
 
     [Header("Set Up")]
@@ -27,6 +26,17 @@ public class BuildSystem : NetworkBehaviour
         return isBuilding;
     }
 
+    private void Update()
+    {
+        if (isBuilding)
+        {
+            if (!isBuildingPaused)
+            {
+                MakeRay();
+            }
+        }
+    }
+
     public void BuildNow()
     {
         if (isBuilding)
@@ -40,6 +50,11 @@ public class BuildSystem : NetworkBehaviour
             else
             {
                 CancelBuild();
+            }
+
+            if (isBuildingPaused)
+            {
+
             }
         }
     }
@@ -69,6 +84,11 @@ public class BuildSystem : NetworkBehaviour
 
     public void NewBuild(GameObject _go)
     {
+        if (previewgameObject != null)
+        {
+            CancelBuild();
+        }
+
         previewgameObject = Instantiate(_go, Vector3.zero, Quaternion.identity);
         previewScript = previewgameObject.GetComponent<Preview>();
         previewScript.buildSystem = this;
@@ -76,12 +96,12 @@ public class BuildSystem : NetworkBehaviour
         previewScript.legalMat = legalMaterial;
         previewScript.illegalMat = illegalMaterial;
         isBuilding = true;
-       // Debug.Log("IS BUILDING IS SET TO TRUE");
+        // Debug.Log("IS BUILDING IS SET TO TRUE");
     }
 
     //Working Method but when clients try spawn, is null preview script
     //If i remove command, works, but other players cant seem what other players (non-server) spawn
-//    [Command]
+    //    [Command]
     //public void CmdPlace()
     //{
     //    Debug.Log("Attempting to Spawn");
@@ -107,7 +127,7 @@ public class BuildSystem : NetworkBehaviour
     [Command]
     public void CmdPlace(int index, Vector3 pos, Quaternion rotation)
     {
-        if(defenceSpawner == null)
+        if (defenceSpawner == null)
         {
             defenceSpawner = GameObject.FindGameObjectWithTag("DefenceSpawner").GetComponent<DefenceSpawner>();
         }
@@ -120,7 +140,7 @@ public class BuildSystem : NetworkBehaviour
         previewgameObject = null;
         previewScript = null;
         isBuilding = false;
-       // Debug.Log("IS BUILDIN RESET");
+        // Debug.Log("IS BUILDIN RESET");
         isBuildingPaused = false;
     }
 
@@ -131,7 +151,7 @@ public class BuildSystem : NetworkBehaviour
         Vector3 mousePos = Input.mousePosition;
         Ray ray = playerCam.ScreenPointToRay(mousePos);
         RaycastHit hit;
-      
+
         if (previewgameObject != null)
         {
             if (Physics.Raycast(ray, out hit, 70f, layer))
@@ -157,6 +177,7 @@ public class BuildSystem : NetworkBehaviour
     }
 }
 
+#region old implementation
 //public Preview PreviewScript { get => previewScript; set => previewScript = value; }
 
 //void Update()
@@ -214,3 +235,4 @@ public class BuildSystem : NetworkBehaviour
 
 //}
 //}
+#endregion

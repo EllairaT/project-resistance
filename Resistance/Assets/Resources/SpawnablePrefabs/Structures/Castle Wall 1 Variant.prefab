@@ -305,16 +305,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4900727511227804, guid: 4f1378d27988e7148ae48e6635728e82, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.12
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4900727511227804, guid: 4f1378d27988e7148ae48e6635728e82, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.12
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4900727511227804, guid: 4f1378d27988e7148ae48e6635728e82, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.12
+      value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 23817383766261282, guid: 4f1378d27988e7148ae48e6635728e82,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8e9805b54e27b6c45830797e18bed9ce, type: 2}
     - target: {fileID: 877476368641075934, guid: 4f1378d27988e7148ae48e6635728e82,
         type: 3}
       propertyPath: snapPoints.reorderableList.canAdd
@@ -379,6 +384,11 @@ PrefabInstance:
         type: 3}
       propertyPath: snapPoints.reorderableList.isExpanded
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 877476368641075934, guid: 4f1378d27988e7148ae48e6635728e82,
+        type: 3}
+      propertyPath: index
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5834322953004642773, guid: 4f1378d27988e7148ae48e6635728e82,
         type: 3}

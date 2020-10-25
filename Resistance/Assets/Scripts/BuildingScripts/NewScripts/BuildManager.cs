@@ -1,33 +1,39 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using UnityEngine;
+﻿using UnityEngine;
 using Mirror;
-using UnityEngine.Rendering;
 
 public class BuildManager : NetworkBehaviour
 {
-
-    public GameObject foundationPreview;//make sure that you include the preview of the gameobject you want to build
-    public GameObject wallPreview;//make sure that you include the preview of the gameobject you want to build
-    public GameObject inventoryUI;
-
+    
     [SerializeField] public BuildSystem buildSystem;
 
-    private bool isInventoryActive = false;
+    public GameObject inventoryUI;
+    private bool isInventoryActive;
     private Inventory playerInventory;
 
     private void Start()
     {
         playerInventory = inventoryUI.GetComponent<Inventory>();
         inventoryUI.SetActive(false);
+        isInventoryActive = false;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             ToggleInventory();
+        }
+
+        if (isInventoryActive)
+        {
+            playerInventory.ListenForInput();
+ 
+            playerInventory.ScrollThroughInventory();
+
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                Debug.Log("heya");
+            }
         }
     }
 
@@ -35,11 +41,12 @@ public class BuildManager : NetworkBehaviour
     {
         if (isInventoryActive)
         {
-            inventoryUI.SetActive(true);
+            inventoryUI.SetActive(false);
+            buildSystem.CancelBuild();
         }
         else
         {
-            inventoryUI.SetActive(false);
+            inventoryUI.SetActive(true);
         }
         isInventoryActive = !isInventoryActive;
     }

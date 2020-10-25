@@ -3,6 +3,7 @@ using Mirror;
 
 public class InGameScript : NetworkBehaviour
 {
+    #region variables
     //Variables
     [Header("Gun")]
     public float damage = 10f;
@@ -37,6 +38,7 @@ public class InGameScript : NetworkBehaviour
 
     [Header("Building")]
     [SerializeField] public BuildManager buildManager;
+    #endregion
 
     private void Awake()
     {
@@ -53,7 +55,7 @@ public class InGameScript : NetworkBehaviour
         ammoScript.SetTotalAmmo(currentTotalAmmo);
     }
 
-
+    #region Update method for user input
     void Update() //called every frame checking for user input
     {
         if (!base.hasAuthority)
@@ -63,11 +65,11 @@ public class InGameScript : NetworkBehaviour
     
         if (Input.GetKeyDown(KeyCode.F))
         {
-            buildManager.buildSystem.NewBuild(buildManager.foundationPreview);
+            //buildManager.buildSystem.NewBuild(buildManager.foundationPreview);
         }
         else if (Input.GetKeyDown(KeyCode.H))
         {
-            buildManager.buildSystem.NewBuild(buildManager.wallPreview);
+           // buildManager.buildSystem.NewBuild(buildManager.wallPreview);
         }
         else if (buildManager.buildSystem.isBuilding)
         {
@@ -139,6 +141,7 @@ public class InGameScript : NetworkBehaviour
         }
 
     }
+    #endregion
 
     private void Reload()
     {
@@ -164,7 +167,7 @@ public class InGameScript : NetworkBehaviour
         }
     }
 
-    //Method call to get the player to shoot a bullet
+    #region shooting implementation
     public void Shoot()
     {
         Debug.Log("pew");
@@ -193,6 +196,7 @@ public class InGameScript : NetworkBehaviour
             //Destroy(impactGO, 2f);
         }
     }
+    #endregion
 
     //Method to simply test health bar reduction
     private void TestHealthBar()

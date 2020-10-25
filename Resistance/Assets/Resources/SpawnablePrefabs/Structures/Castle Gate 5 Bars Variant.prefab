@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5982556285371979793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015324785824294017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  serverOnly: 0
+  m_AssetId: 
+  _allowChildrenBehaviours: 0
+  hasSpawned: 0
 --- !u!1001 &2013660404832935357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7,6 +24,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9163271229876342383, guid: d4895ace8ebf3e042bb1866f3a136061,
+        type: 3}
+      propertyPath: index
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1735369293756732, guid: d4895ace8ebf3e042bb1866f3a136061, type: 3}
       propertyPath: m_Name
       value: Castle Gate 5 Bars Variant
@@ -64,6 +86,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4539040782866476, guid: d4895ace8ebf3e042bb1866f3a136061, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539040782866476, guid: d4895ace8ebf3e042bb1866f3a136061, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539040782866476, guid: d4895ace8ebf3e042bb1866f3a136061, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 23723018475754636, guid: d4895ace8ebf3e042bb1866f3a136061,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8e9805b54e27b6c45830797e18bed9ce, type: 2}
     - target: {fileID: 2112017444532191690, guid: d4895ace8ebf3e042bb1866f3a136061,
         type: 3}
       propertyPath: m_TagString
@@ -121,3 +160,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4895ace8ebf3e042bb1866f3a136061, type: 3}
+--- !u!1 &2015324785824294017 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1735369293756732, guid: d4895ace8ebf3e042bb1866f3a136061,
+    type: 3}
+  m_PrefabInstance: {fileID: 2013660404832935357}
+  m_PrefabAsset: {fileID: 0}
