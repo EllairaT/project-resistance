@@ -13,6 +13,12 @@ public class CardSystem : MonoBehaviour
 
     public GameObject Spawnable { get => spawnable; set => spawnable = value; }
 
+    private void Awake()
+    {
+        spawnPoint = GameObject.FindGameObjectWithTag("WaveSpawner");
+        spawnParticle = GameObject.FindGameObjectWithTag("SpawnParticle").GetComponent<ParticleSystem>();
+    }
+
     public void MakeMob()
     {
         //make new mob object everytime this function is called. 
