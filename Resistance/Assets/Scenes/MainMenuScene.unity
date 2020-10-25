@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0016712553, g: 0.0006746468, b: 0.0024872082, a: 1}
+  m_IndirectSpecularColor: {r: 0.0016514901, g: 0.0006656768, b: 0.0024405227, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5256,7 +5256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -345.8998, y: 2.2841797}
+  m_AnchoredPosition: {x: -345.89978, y: 2.2841797}
   m_SizeDelta: {x: -1621.721, y: -904.9394}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1671470933
@@ -6772,6 +6772,8 @@ MonoBehaviour:
   playerSpawnSystem: {fileID: 8753286131487658313, guid: ac9b42ea4588dfd48a7efba3d5778386,
     type: 3}
   defenceSpawner: {fileID: 7820228394204293439, guid: 92ee6ea737d652d44a31ad3ce398484e,
+    type: 3}
+  monsterSpawnerCM: {fileID: 7724873264323746485, guid: acb2e1f9ea1dec04bb5167fb48b1a823,
     type: 3}
 --- !u!4 &2139000168
 Transform:

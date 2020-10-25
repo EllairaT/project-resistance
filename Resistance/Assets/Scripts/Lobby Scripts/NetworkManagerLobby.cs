@@ -18,6 +18,7 @@ public class NetworkManagerLobby : NetworkManager
     [SerializeField] private NetworkGamePlayerLobby gamePlayerPrefab = null;
     [SerializeField] private GameObject playerSpawnSystem = null;
     [SerializeField] private DefenceSpawner defenceSpawner = null;
+    [SerializeField] private MonsterSpawnerCM monsterSpawnerCM = null;
     // [SerializeField] private GameObject roundSystem = null;
 
     private int playerIndexes = 0;
@@ -174,6 +175,7 @@ public class NetworkManagerLobby : NetworkManager
                 NetworkServer.ReplacePlayerForConnection(conn, gameplayerInstance.gameObject, true);
             }
             var ds = Instantiate(defenceSpawner);
+            var mscm = Instantiate(monsterSpawnerCM);
         }
         base.ServerChangeScene(newSceneName);
     }
