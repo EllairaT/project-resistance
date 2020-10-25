@@ -19,6 +19,7 @@ public class MonsterController : NetworkBehaviour
     //states
     public float sightRange = 30f;
     public float attackRange = 10f;
+    public int monsterIndex;
 
    // private , isInAttackRange;
 

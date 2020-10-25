@@ -61,6 +61,7 @@ MonoBehaviour:
   timeBetweenAttack: 0
   sightRange: 10
   attackRange: 10
+  monsterIndex: 8
 --- !u!195 &1958753362140970233
 NavMeshAgent:
   m_ObjectHideFlags: 0

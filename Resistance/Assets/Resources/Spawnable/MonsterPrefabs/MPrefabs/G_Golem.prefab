@@ -69,6 +69,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd523cf48bcd704a9db10f13c73c960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   monsterFieldOfView: 90
   stats: {fileID: 11400000, guid: ee77053cf549ee84ebc5e15ffbd75277, type: 2}
   target: {fileID: 0}
@@ -82,6 +84,7 @@ MonoBehaviour:
   timeBetweenAttack: 0
   sightRange: 30
   attackRange: 10
+  monsterIndex: 1
 --- !u!114 &-4974176411777153325
 MonoBehaviour:
   m_ObjectHideFlags: 0
