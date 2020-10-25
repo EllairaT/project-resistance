@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 180491554267412434}
   - component: {fileID: 1808223261}
   - component: {fileID: 1808223262}
+  - component: {fileID: -4974176411777153325}
   m_Layer: 13
   m_Name: G_Golem
   m_TagString: Monster
@@ -68,6 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd523cf48bcd704a9db10f13c73c960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monsterFieldOfView: 90
   stats: {fileID: 11400000, guid: ee77053cf549ee84ebc5e15ffbd75277, type: 2}
   target: {fileID: 0}
   whatIsPlayer:
@@ -80,6 +82,23 @@ MonoBehaviour:
   timeBetweenAttack: 0
   sightRange: 30
   attackRange: 10
+--- !u!114 &-4974176411777153325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180491554267412435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  serverOnly: 0
+  m_AssetId: 
+  _allowChildrenBehaviours: 0
+  hasSpawned: 0
 --- !u!1 &1866551270729613787
 GameObject:
   m_ObjectHideFlags: 0

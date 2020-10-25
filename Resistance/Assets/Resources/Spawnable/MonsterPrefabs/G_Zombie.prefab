@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4099132462631773209}
   - component: {fileID: -7359228247141008403}
   - component: {fileID: -8853454058567798098}
+  - component: {fileID: 3322331877699406335}
   m_Layer: 13
   m_Name: G_Zombie
   m_TagString: Monster
@@ -45,6 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd523cf48bcd704a9db10f13c73c960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  monsterFieldOfView: 90
   stats: {fileID: 11400000, guid: 0ddf6413592f5a544b185e3d5f6f5e12, type: 2}
   target: {fileID: 0}
   whatIsPlayer:
@@ -79,6 +83,23 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &3322331877699406335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4099132462631773208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  serverOnly: 0
+  m_AssetId: 
+  _allowChildrenBehaviours: 0
+  hasSpawned: 0
 --- !u!1001 &4099132463712937230
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7794090944757490705}
   - component: {fileID: -2039788088312833049}
   - component: {fileID: 2293754480350154044}
+  - component: {fileID: -6843266331169058007}
   m_Layer: 13
   m_Name: G_Titan
   m_TagString: Monster
@@ -45,6 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd523cf48bcd704a9db10f13c73c960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  monsterFieldOfView: 90
   stats: {fileID: 11400000, guid: 1870e2fb05588d64c8cc436dbe72d4c0, type: 2}
   target: {fileID: 0}
   whatIsPlayer:
@@ -79,6 +83,23 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-6843266331169058007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7794090944757490704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  serverOnly: 0
+  m_AssetId: 
+  _allowChildrenBehaviours: 0
+  hasSpawned: 0
 --- !u!1001 &7794090944340775589
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using Mirror;
 
-public class MonsterController : MonoBehaviour
+public class MonsterController : NetworkBehaviour
 {
     public float monsterFieldOfView = 90f;
     public Card stats;
