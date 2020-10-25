@@ -43,6 +43,13 @@ public class NetworkManagerLobby : NetworkManager
         {
             ClientScene.RegisterPrefab(prefab);
         }
+
+        var monsters = Resources.LoadAll<GameObject>("Spawnable/MonsterPrefabs/MPrefabs");
+
+        foreach (var prefab in monsters)
+        {
+            ClientScene.RegisterPrefab(prefab);
+        }
     }
 
     //When client connects
