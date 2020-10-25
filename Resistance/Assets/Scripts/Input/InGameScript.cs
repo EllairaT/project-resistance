@@ -60,7 +60,7 @@ public class InGameScript : NetworkBehaviour
         {
             return;
         }
-
+    
         if (Input.GetKeyDown(KeyCode.F))
         {
             buildManager.buildSystem.NewBuild(buildManager.foundationPreview);

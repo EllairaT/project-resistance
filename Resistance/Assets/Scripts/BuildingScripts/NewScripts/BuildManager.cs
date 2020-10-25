@@ -23,6 +23,14 @@ public class BuildManager : NetworkBehaviour
         inventoryUI.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            ToggleInventory();
+        }
+    }
+
     public void ToggleInventory()
     {
         if (isInventoryActive)
