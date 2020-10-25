@@ -47,16 +47,16 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   monsterPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6676486114494354251, guid: 088488911f4e20644ab5a6643483abc1, type: 3}
+  - {fileID: 180491554267412435, guid: 0057ca167d4720949ae4a7b798450bba, type: 3}
+  - {fileID: 7437019678117807008, guid: 45465d2c97e6be349b4007dac3c991d1, type: 3}
+  - {fileID: 3512174272790554491, guid: c7e51b3b81d9dac4e9b1bec4394bc3a7, type: 3}
+  - {fileID: 6962580960991242752, guid: 0cbae00f7f98fc44f8af51c251923694, type: 3}
+  - {fileID: 5480387265191428470, guid: c41e10691a4cb7f4e87f6f1ae04d3b38, type: 3}
+  - {fileID: 7301327233217581691, guid: 547bdb692e6bbdb44941da68f92afdc7, type: 3}
+  - {fileID: 7794090944757490704, guid: 48e1c2710ecb0bd45b3285d417ed5875, type: 3}
+  - {fileID: 661661077768314446, guid: 89729f359101d0c4384852654b4b276b, type: 3}
+  - {fileID: 4099132462631773208, guid: f5a164ad309fd8f40b06ef764d1bd0fc, type: 3}
 --- !u!114 &5824860000117802521
 MonoBehaviour:
   m_ObjectHideFlags: 0
