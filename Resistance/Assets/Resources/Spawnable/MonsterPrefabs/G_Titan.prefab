@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd523cf48bcd704a9db10f13c73c960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monsterFieldOfView: 90
   stats: {fileID: 11400000, guid: 1870e2fb05588d64c8cc436dbe72d4c0, type: 2}
   target: {fileID: 0}
   whatIsPlayer:

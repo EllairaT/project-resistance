@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 180491554267412434}
   - component: {fileID: 1808223261}
   - component: {fileID: 1808223262}
+  - component: {fileID: 6053138514251130860}
   m_Layer: 13
   m_Name: G_Golem
   m_TagString: Monster
@@ -68,6 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd523cf48bcd704a9db10f13c73c960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monsterFieldOfView: 130
   stats: {fileID: 11400000, guid: ee77053cf549ee84ebc5e15ffbd75277, type: 2}
   target: {fileID: 0}
   whatIsPlayer:
@@ -80,6 +82,23 @@ MonoBehaviour:
   timeBetweenAttack: 0
   sightRange: 30
   attackRange: 10
+--- !u!114 &6053138514251130860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180491554267412435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  serverOnly: 0
+  m_AssetId: 
+  _allowChildrenBehaviours: 0
+  hasSpawned: 0
 --- !u!1 &1866551270729613787
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,6 +129,39 @@ Transform:
   m_Father: {fileID: 180491554267412434}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7328719070814774049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5452863596311654823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  serverOnly: 0
+  m_AssetId: 
+  _allowChildrenBehaviours: 1
+  hasSpawned: 0
+--- !u!114 &3917416208169543593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5452863596311654823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6f3bf89aa97405989c802ba270f815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  clientAuthority: 1
+  animator: {fileID: 8772383168650003755}
 --- !u!1001 &180491555138883701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -210,6 +262,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9af73ae244971cf4ea2c172d879e9b94, type: 3}
+--- !u!1 &5452863596311654823 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5272952721456128466, guid: 9af73ae244971cf4ea2c172d879e9b94,
+    type: 3}
+  m_PrefabInstance: {fileID: 180491555138883701}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9076775612034991028 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9184549694192522177, guid: 9af73ae244971cf4ea2c172d879e9b94,
