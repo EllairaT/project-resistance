@@ -12,6 +12,8 @@ public class PlayerSpawnSystem : NetworkBehaviour
     private static List<Transform> spawnPoints = new List<Transform>();
 
     private int nextIndex = 0;
+    private int hostPlayer = 0;
+
 
     //Add spawn point to spawn system
     public static void AddSpawnPoint(Transform transform)
@@ -38,11 +40,22 @@ public class PlayerSpawnSystem : NetworkBehaviour
             Debug.LogError($"Missing spawn point for player {nextIndex}");
             return;
         }
-        GameObject playerInstance = Instantiate(playerPrefab[character], spawnPoints[nextIndex].position, spawnPoints[nextIndex].rotation);
+
+        GameObject playerInstance;
+        if(hostPlayer == 0)
+        {
+            playerInstance = Instantiate(playerPrefab[4], playerPrefab[4].gameObject.transform.position, playerPrefab[4].gameObject.transform.rotation);
+            hostPlayer++;
+        }
+        else
+        {
+            playerInstance = Instantiate(playerPrefab[character], spawnPoints[nextIndex].position, spawnPoints[nextIndex].rotation);
+        }
 
         NetworkServer.Spawn(playerInstance, conn);
-        GameObject targetInstance = Instantiate(targetPrefab, spawnPoints[nextIndex].position, spawnPoints[nextIndex].rotation);
-        NetworkServer.Spawn(targetInstance, connectionToServer);
+
+       // GameObject targetInstance = Instantiate(targetPrefab, spawnPoints[nextIndex].position, spawnPoints[nextIndex].rotation);
+       // NetworkServer.Spawn(targetInstance, connectionToServer);
 
         nextIndex++; //next spawn point
 

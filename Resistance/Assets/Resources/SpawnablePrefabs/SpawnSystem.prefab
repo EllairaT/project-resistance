@@ -68,5 +68,6 @@ MonoBehaviour:
   - {fileID: 3329968337672487579, guid: ecee4b832f9ef1a47b891965c6d7c310, type: 3}
   - {fileID: 6795935684895619895, guid: d739c319054bdd14e9f1a86188695263, type: 3}
   - {fileID: 618165539100879342, guid: 4445f80bc3099f74d8d4bf3c6cbb56eb, type: 3}
+  - {fileID: 6033581393185497932, guid: c7ced209664a14540a459bd67eaf04ea, type: 3}
   targetPrefab: {fileID: 1169145470553702, guid: eb2885989559acf4f887034eb0a8a50e,
     type: 3}

@@ -1,12 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class CardMaster : MonoBehaviour
+public class CardMaster : NetworkBehaviour
 {
     public CMCamera CameraMove;
+    public Canvas cardMasterUI;
 
     private bool isCursorActive = true;
+
+    public override void OnStartAuthority()
+    {
+        cardMasterUI.enabled = true;
+        cardMasterUI.gameObject.SetActive(true);
+    }
 
     private void Start()
     {

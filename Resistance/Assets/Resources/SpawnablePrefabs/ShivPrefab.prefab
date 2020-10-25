@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 7199242911666783045}
   - component: {fileID: 839501257071842494}
   m_Layer: 10
-  m_Name: ShivPrefabTest
+  m_Name: ShivPrefab
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7091,27 +7091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  damage: 10
-  range: 100
-  impactForce: 30
-  fireRate: 15
-  fpsCam: {fileID: 4849555315491805204}
-  muzzleFlash: {fileID: 1384448863854357541}
-  impactEffect: {fileID: 0}
   hand: {fileID: 2952926664444009630}
-  playerPrefab: {fileID: 618165539100879342}
-  spectatorCamera: {fileID: 0}
-  ammoScript: {fileID: 8275775952172721029}
-  maxClipAmmo: 5
-  currentClipAmmo: 0
-  maxTotalAmmo: 20
-  currentTotalAmmo: 0
-  goldScript: {fileID: 7112076583997084166}
-  startingGold: 1000
-  currentGold: 0
-  healthScript: {fileID: 7864923276305767935}
-  maxHealth: 100
-  currentHealth: 0
 --- !u!1 &5748882246487544854
 GameObject:
   m_ObjectHideFlags: 0
@@ -8616,51 +8596,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e2633a3b96f1a14c88eea547995b541, type: 3}
---- !u!223 &984304025795435175 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 7451798331282887620, guid: 9e2633a3b96f1a14c88eea547995b541,
-    type: 3}
-  m_PrefabInstance: {fileID: 7692966553350900067}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8275775952172721029 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1737156025653963494, guid: 9e2633a3b96f1a14c88eea547995b541,
-    type: 3}
-  m_PrefabInstance: {fileID: 7692966553350900067}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd98f8329bb993b42be6d655f7069459, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7112076583997084166 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 608482563844217701, guid: 9e2633a3b96f1a14c88eea547995b541,
-    type: 3}
-  m_PrefabInstance: {fileID: 7692966553350900067}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0144c02d4f227ce46804af2ea2db8dad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7864923276305767935 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 569488055645836444, guid: 9e2633a3b96f1a14c88eea547995b541,
-    type: 3}
-  m_PrefabInstance: {fileID: 7692966553350900067}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 685660f5803b89e44aad8f748caba1c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &4624676004515005518 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3093073547435887917, guid: 9e2633a3b96f1a14c88eea547995b541,
+    type: 3}
+  m_PrefabInstance: {fileID: 7692966553350900067}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &984304025795435175 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 7451798331282887620, guid: 9e2633a3b96f1a14c88eea547995b541,
     type: 3}
   m_PrefabInstance: {fileID: 7692966553350900067}
   m_PrefabAsset: {fileID: 0}
