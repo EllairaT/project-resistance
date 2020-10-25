@@ -190,6 +190,11 @@ PrefabInstance:
       propertyPath: type
       value: walls
       objectReference: {fileID: 0}
+    - target: {fileID: -4456861586601304636, guid: c475041efe3f8ec468f4c34797299bb7,
+        type: 3}
+      propertyPath: index
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1158137545470618, guid: c475041efe3f8ec468f4c34797299bb7, type: 3}
       propertyPath: m_Name
       value: Castle Wall 8 Variant

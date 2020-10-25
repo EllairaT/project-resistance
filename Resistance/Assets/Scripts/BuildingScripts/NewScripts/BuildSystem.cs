@@ -4,8 +4,7 @@ using UnityEngine;
 using Mirror;
 
 public class BuildSystem : NetworkBehaviour
-{
-    
+{ 
     public LayerMask layer;
 
     [Header("Set Up")]
@@ -27,6 +26,14 @@ public class BuildSystem : NetworkBehaviour
         return isBuilding;
     }
 
+    private void Update()
+    {
+        if(isBuilding)
+        {
+            MakeRay();
+        }
+    }
+
     public void BuildNow()
     {
         if (isBuilding)
@@ -41,6 +48,12 @@ public class BuildSystem : NetworkBehaviour
             {
                 CancelBuild();
             }
+
+            if (isBuildingPaused)
+            {
+
+            }
+            MakeRay();
         }
     }
 

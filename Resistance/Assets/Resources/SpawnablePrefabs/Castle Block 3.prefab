@@ -30,7 +30,7 @@ MonoBehaviour:
   baseHealth: 0
   cost: 100
   snapPoints: []
-  index: 0
+  index: 2
 --- !u!1001 &2731187047451900212
 PrefabInstance:
   m_ObjectHideFlags: 0

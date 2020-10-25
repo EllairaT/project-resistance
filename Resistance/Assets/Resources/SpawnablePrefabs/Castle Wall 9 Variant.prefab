@@ -249,6 +249,11 @@ PrefabInstance:
       propertyPath: type
       value: walls
       objectReference: {fileID: 0}
+    - target: {fileID: 7796217066845950670, guid: c3692f208c1647c4397e79c5cbdfd869,
+        type: 3}
+      propertyPath: index
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5100959747627122956, guid: c3692f208c1647c4397e79c5cbdfd869, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c3692f208c1647c4397e79c5cbdfd869, type: 3}

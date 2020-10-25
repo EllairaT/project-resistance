@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4184585551375809989, guid: 57db304a89450eb459b16b5a42d62acf,
+        type: 3}
+      propertyPath: index
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1381576445921822, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
       propertyPath: m_Name
       value: Castle Gate 2 Bars Variant

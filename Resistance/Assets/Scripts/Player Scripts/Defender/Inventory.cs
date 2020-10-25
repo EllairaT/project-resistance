@@ -1,6 +1,6 @@
 ﻿using RotaryHeart.Lib.SerializableDictionary;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +16,6 @@ public class Inventory : BaseMonobehaviour
     public GameObject materialSlot;
     public Sprite highlight;
     public Sprite normalBorder;
-    private int currentIndex = 0;
 
     public GameObject ItemToBuild { get; set; } = null;
     public List<GameObject> CurrentList { get; set; } = new List<GameObject>();
@@ -24,14 +23,19 @@ public class Inventory : BaseMonobehaviour
     public MaterialPurchases MatPurchases { get; set; }
     public StructurePurchases StrucPurchases { get; set; }
 
-    private BuildSystem buildsys;
+    public BuildSystem buildsys;
     private GameObject preview;
+
+    private int index;
+    private int lastIndex;
 
     private void Start()
     {
-        buildsys = transform.root.GetComponent<BuildSystem>();
-        ShowStructureInSlot(foundationSlot, foundationPreview);
-        ShowTextureInSlot(materialSlot, buildsys.defaultMaterial);
+       // buildsys = transform.root.GetComponent<BuildSystem>();
+        StrucPurchases = GetComponent<PlayerPurchase>().StructurePurchase;
+        MatPurchases = GetComponent<PlayerPurchase>().MaterialPurchase;
+        //ShowStructureInSlot(foundationSlot, foundationPreview);
+        //ShowTextureInSlot(materialSlot, buildsys.defaultMaterial);
 
         if (StrucPurchases != null)
         {
@@ -86,14 +90,17 @@ public class Inventory : BaseMonobehaviour
         }
         else
         {
-            //add all the objects with the same type as the slot into the currentlist
-            foreach (GameObject _o in StrucPurchases.Keys)
+            if (StrucPurchases.Keys != null)
             {
-                if (_o.GetComponent<Preview>().type.Equals(CurrentlyActive.GetComponent<InventorySlot>().type))
+                //add all the objects with the same type as the slot into the currentlist
+                foreach (GameObject _o in StrucPurchases.Keys)
                 {
-                    if (!CurrentList.Contains(_o))
+                    if (_o.GetComponent<Preview>().type.Equals(CurrentlyActive.GetComponent<InventorySlot>().type))
                     {
-                        CurrentList.Add(_o);
+                        if (!CurrentList.Contains(_o))
+                        {
+                            CurrentList.Add(_o);
+                        }
                     }
                 }
             }
@@ -103,12 +110,13 @@ public class Inventory : BaseMonobehaviour
     public void ResetList()
     {
         CurrentList.Clear();
-        currentIndex = 0;
+        //  currentIndex = 0;
     }
 
     private void ShowStructureInSlot(GameObject _img, GameObject _o)
     {
-        _img.transform.Find("Image").GetComponent<Image>().sprite = ConvertTextureToSprite.Convert(RuntimePreviewGenerator.GenerateModelPreview(_o.transform));
+        _img.GetComponent<InventorySlot>().sprite.sprite = ConvertTextureToSprite.Convert(RuntimePreviewGenerator.GenerateModelPreview(_o.transform));
+        //_img.GetComponent<InventorySlot>.sprite = 
     }
 
     private void ShowTextureInSlot(GameObject _img, Materials _m)
@@ -116,43 +124,83 @@ public class Inventory : BaseMonobehaviour
         _img.transform.Find("Image").GetComponent<Image>().sprite = ConvertTextureToSprite.Convert(_m.texture);
     }
 
-    public void ScrollThroughInventory(GameObject _currentlyActive, List<GameObject> _currentList)
+    public void ScrollThroughInventory()
     {
-        if (_currentList != null)
+        #region commented out
+        //if (_currentList != null)
+        //{
+        //    float scroll = Input.GetAxisRaw("Mouse ScrollWheel");
+
+        //    if (scroll != 0)
+        //    {
+        //        if (scroll > 0) //+1
+        //        {
+        //            currentIndex++;
+        //        }
+        //        else //-1
+        //        {
+        //            currentIndex--;
+        //        }
+
+        //        if (currentIndex == _currentList.Count)
+        //        {
+        //            currentIndex = 0;
+        //        }
+        //        if (currentIndex < 0)
+        //        {
+        //            currentIndex = _currentList.Count - 1;
+        //        }
+
+
+        //        if (_currentlyActive.GetComponent<InventorySlot>().type == StructureType.MATERIAL)
+        //        {
+        //            ShowTextureInSlot(_currentlyActive, _currentList[currentIndex].GetComponent<Materials>());
+        //        }
+        //        else
+        //        {
+        //            ShowStructureInSlot(_currentlyActive, _currentList[currentIndex]);
+        //        }
+        //    }
+        //}
+        #endregion     
+        float scroll = Input.GetAxisRaw("Mouse ScrollWheel");
+        StartCoroutine(Scroll(scroll));
+    }
+
+    IEnumerator Scroll(float i)
+    {
+        while (i == 0)
         {
-            float scroll = Input.GetAxisRaw("Mouse ScrollWheel");
+            yield return null;
+        }
 
-            if (scroll != 0)
+        if (CurrentList != null && CurrentlyActive != null)
+        {
+            if (i != 0)
             {
-                if (scroll > 0) //+1
+                if (index > 0)
                 {
-                    currentIndex++;
-                }
-                else //-1
-                {
-                    currentIndex--;
-                }
-
-                if (currentIndex == _currentList.Count)
-                {
-                    currentIndex = 0;
-                }
-                if (currentIndex < 0)
-                {
-                    currentIndex = _currentList.Count - 1;
-                }
-
-
-                if (_currentlyActive.GetComponent<InventorySlot>().type == StructureType.MATERIAL)
-                {
-                    ShowTextureInSlot(_currentlyActive, _currentList[currentIndex].GetComponent<Materials>());
+                    index--;
                 }
                 else
                 {
-                    ShowStructureInSlot(_currentlyActive, _currentList[currentIndex]);
+                    index++;
+                }
+
+                if (index > CurrentList.Count - 1)
+                {
+                    index = 0;
+                }
+                if (index < 0)
+                {
+                    index = CurrentList.Count - 1;
                 }
             }
         }
+
+        Debug.Log(index);
+        ShowStructureInSlot(CurrentlyActive, CurrentList[index]);
+        buildsys.NewBuild(CurrentList[index]);
     }
 
     public static class ConvertTextureToSprite

@@ -51,7 +51,6 @@ public class CurrentCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
         if (card != null)
         {
-
             Name.SetText(c.Name);
             type.SetText(c.type.ToString());
             description.SetText(c.Description);

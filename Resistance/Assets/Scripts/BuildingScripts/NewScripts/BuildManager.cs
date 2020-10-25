@@ -14,20 +14,28 @@ public class BuildManager : NetworkBehaviour
 
     [SerializeField] public BuildSystem buildSystem;
 
-    private bool isInventoryActive = false;
+    private bool isInventoryActive;
     private Inventory playerInventory;
 
     private void Start()
     {
         playerInventory = inventoryUI.GetComponent<Inventory>();
         inventoryUI.SetActive(false);
+        isInventoryActive = false;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             ToggleInventory();
+        }
+
+        if (isInventoryActive)
+        {
+            playerInventory.ListenForInput();
+ 
+            playerInventory.ScrollThroughInventory();
         }
     }
 
@@ -35,11 +43,11 @@ public class BuildManager : NetworkBehaviour
     {
         if (isInventoryActive)
         {
-            inventoryUI.SetActive(true);
+            inventoryUI.SetActive(false);
         }
         else
         {
-            inventoryUI.SetActive(false);
+            inventoryUI.SetActive(true);
         }
         isInventoryActive = !isInventoryActive;
     }

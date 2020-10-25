@@ -65,4 +65,16 @@ MonoBehaviour:
   syncInterval: 0.1
   defencePrefabs:
   - {fileID: 411865924816708581, guid: 4e768d9cf3053e3458efffc5b6609cb0, type: 3}
-  - {fileID: 0}
+  - {fileID: 4698117439587122536, guid: 3937eebe3d4697641a6f2701e5a8a1d4, type: 3}
+  - {fileID: 4343632509359953346, guid: 2b407d63e23a3ce418dd06fa431678d5, type: 3}
+  - {fileID: 4489011509419577568, guid: 42d0d359aee2afe41a9dc19c29b9ad0a, type: 3}
+  - {fileID: 4631725471610163437, guid: c6542288a8984df4ea6381b018dfca77, type: 3}
+  - {fileID: 6608318215373256512, guid: 5d57c874ee88f8c42b002aab8fb5a845, type: 3}
+  - {fileID: 671108315022830819, guid: 537afce764c2ff9428d913047eaee6c7, type: 3}
+  - {fileID: 2344163916641767769, guid: ba2f01aee4de74740ac06fcf4de2720a, type: 3}
+  - {fileID: 2015324785824294017, guid: 4eba51b54dc94f542b9ea8d988a359ba, type: 3}
+  - {fileID: 2722424144629889867, guid: dd691567504cccf40b5b78e0f990565a, type: 3}
+  - {fileID: 8357639209293913169, guid: abbcd0b3a5c231b47bdd1f72ed036010, type: 3}
+  - {fileID: 331586439989997231, guid: b810ade200584a449828d3f71dab4540, type: 3}
+  - {fileID: 8517660160276756776, guid: e266c32258ca43e4499c8153f65a1489, type: 3}
+  - {fileID: 5516976953812857475, guid: 5b749c04caaf2db40acfb79510dfc9c2, type: 3}

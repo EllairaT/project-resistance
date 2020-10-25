@@ -101,7 +101,7 @@ MonoBehaviour:
   baseHealth: 0
   cost: 100
   snapPoints: []
-  index: 0
+  index: 3
 --- !u!65 &-7475603260462480510
 BoxCollider:
   m_ObjectHideFlags: 0

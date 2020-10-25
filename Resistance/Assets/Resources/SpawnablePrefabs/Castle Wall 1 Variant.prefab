@@ -380,6 +380,11 @@ PrefabInstance:
       propertyPath: snapPoints.reorderableList.isExpanded
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 877476368641075934, guid: 4f1378d27988e7148ae48e6635728e82,
+        type: 3}
+      propertyPath: index
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5834322953004642773, guid: 4f1378d27988e7148ae48e6635728e82,
         type: 3}
       propertyPath: m_Material
