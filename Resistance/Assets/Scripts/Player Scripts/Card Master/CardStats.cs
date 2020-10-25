@@ -7,7 +7,7 @@ public class CardStats : MonoBehaviour
     public TextMeshProUGUI numberOfMonstersAvailable;
     public TextMeshProUGUI cost;
 
-    private int remainingAvailable;
+    public int remainingAvailable;
 
     private void Start()
     {
