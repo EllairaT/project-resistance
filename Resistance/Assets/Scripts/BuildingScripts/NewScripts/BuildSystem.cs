@@ -111,7 +111,7 @@ public class BuildSystem : NetworkBehaviour
         {
             defenceSpawner = GameObject.FindGameObjectWithTag("DefenceSpawner").GetComponent<DefenceSpawner>();
         }
-        GameObject temp = (GameObject)Instantiate(defenceSpawner.defencePrefabs[index], pos, rotation);
+        GameObject temp = Instantiate(defenceSpawner.defencePrefabs[index], pos, rotation);
         NetworkServer.Spawn(temp);
     }
 

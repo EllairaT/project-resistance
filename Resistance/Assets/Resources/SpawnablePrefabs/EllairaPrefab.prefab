@@ -1175,6 +1175,7 @@ GameObject:
   - component: {fileID: 5930844910208741583}
   - component: {fileID: 2638752736837197047}
   - component: {fileID: 5981062063790135280}
+  - component: {fileID: 1031239690099216362}
   m_Layer: 10
   m_Name: EllairaPrefab
   m_TagString: Player
@@ -1191,7 +1192,7 @@ Transform:
   m_GameObject: {fileID: 3329968337672487579}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 1173936211839514155}
   - {fileID: 101501385058798149}
@@ -1275,7 +1276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  movementSpeed: 5
+  movementSpeed: 25
   controller: {fileID: 8523227118065102721}
   networkAnim: {fileID: 5930844910208741583}
   gravity: -9.81
@@ -1360,6 +1361,41 @@ MonoBehaviour:
   gold: 0
   icon: {fileID: 21300000, guid: dd3efe5c29fa77445b5cadccb687031b, type: 3}
   playerHUD: {fileID: 0}
+--- !u!114 &1031239690099216362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3329968337672487579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872f8d75813de3243846b75da0e3025e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  damage: 10
+  range: 100
+  impactForce: 30
+  fireRate: 15
+  fpsCam: {fileID: 7959478674278361894}
+  muzzleFlash: {fileID: 8277814950921944066}
+  impactEffect: {fileID: 0}
+  playerPrefab: {fileID: 3329968337672487579}
+  spectatorCamera: {fileID: 0}
+  ammoScript: {fileID: 7537987186069539113}
+  maxClipAmmo: 20
+  currentClipAmmo: 0
+  maxTotalAmmo: 100
+  currentTotalAmmo: 0
+  goldScript: {fileID: 8716174955292899498}
+  startingGold: 1000
+  currentGold: 0
+  healthScript: {fileID: 8602133697049573203}
+  maxHealth: 100
+  currentHealth: 100
+  buildManager: {fileID: 0}
 --- !u!1 &3388549532292136898
 GameObject:
   m_ObjectHideFlags: 0
@@ -7121,6 +7157,7 @@ GameObject:
   - component: {fileID: 7959478674278361894}
   - component: {fileID: 6670206302917799577}
   - component: {fileID: 1733782162235383653}
+  - component: {fileID: 8774737070304265561}
   m_Layer: 10
   m_Name: Camera
   m_TagString: Untagged
@@ -7136,7 +7173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6963054145377366467}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 136.61, z: 23.5}
+  m_LocalPosition: {x: 0.3, y: 132.6, z: 28.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7427536503665839818}
@@ -7179,8 +7216,8 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
+  m_HDR: 0
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -7209,6 +7246,110 @@ MonoBehaviour:
   playerBody: {fileID: 1760121679428890760}
   xRot: 0
   mouseSensitivity: 100
+--- !u!114 &8774737070304265561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6963054145377366467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 7
+  m_ObsoleteRenderingPath: 0
+  m_ObsoleteFrameSettings:
+    overrides: 0
+    enableShadow: 0
+    enableContactShadows: 0
+    enableShadowMask: 0
+    enableSSR: 0
+    enableSSAO: 0
+    enableSubsurfaceScattering: 0
+    enableTransmission: 0
+    enableAtmosphericScattering: 0
+    enableVolumetrics: 0
+    enableReprojectionForVolumetrics: 0
+    enableLightLayers: 0
+    enableExposureControl: 1
+    diffuseGlobalDimmer: 0
+    specularGlobalDimmer: 0
+    shaderLitMode: 0
+    enableDepthPrepassWithDeferredRendering: 0
+    enableTransparentPrepass: 0
+    enableMotionVectors: 0
+    enableObjectMotionVectors: 0
+    enableDecals: 0
+    enableRoughRefraction: 0
+    enableTransparentPostpass: 0
+    enableDistortion: 0
+    enablePostprocess: 0
+    enableOpaqueObjects: 0
+    enableTransparentObjects: 0
+    enableRealtimePlanarReflection: 0
+    enableMSAA: 0
+    enableAsyncCompute: 0
+    runLightListAsync: 0
+    runSSRAsync: 0
+    runSSAOAsync: 0
+    runContactShadowsAsync: 0
+    runVolumeVoxelizationAsync: 0
+    lightLoopSettings:
+      overrides: 0
+      enableDeferredTileAndCluster: 0
+      enableComputeLightEvaluation: 0
+      enableComputeLightVariants: 0
+      enableComputeMaterialVariants: 0
+      enableFptlForForwardOpaque: 0
+      enableBigTilePrepass: 0
+      isFptlEnabled: 0
+  clearColorMode: 0
+  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
+  clearDepth: 1
+  volumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  volumeAnchorOverride: {fileID: 0}
+  antialiasing: 0
+  SMAAQuality: 2
+  dithering: 0
+  stopNaNs: 0
+  taaSharpenStrength: 0.6
+  physicalParameters:
+    m_Iso: 200
+    m_ShutterSpeed: 0.005
+    m_Aperture: 16
+    m_BladeCount: 5
+    m_Curvature: {x: 2, y: 11}
+    m_BarrelClipping: 0.25
+    m_Anamorphism: 0
+  flipYMode: 0
+  fullscreenPassthrough: 0
+  allowDynamicResolution: 0
+  customRenderingSettings: 0
+  invertFaceCulling: 0
+  probeLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  hasPersistentHistory: 0
+  m_RenderingPathCustomFrameSettings:
+    bitDatas:
+      data1: 70297877217101
+      data2: 4539628425463136256
+    lodBias: 1
+    lodBiasMode: 0
+    lodBiasQualityLevel: 0
+    maximumLODLevel: 0
+    maximumLODLevelMode: 0
+    maximumLODLevelQualityLevel: 0
+    materialQuality: 0
+  renderingPathCustomFrameSettingsOverrideMask:
+    mask:
+      data1: 0
+      data2: 0
+  defaultFrameSettings: 0
 --- !u!1 &6972701728105752609
 GameObject:
   m_ObjectHideFlags: 0
@@ -7561,7 +7702,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7807053401242440816}
   m_LocalRotation: {x: 0.07637835, y: 0.65813076, z: 0.729089, w: 0.17163791}
-  m_LocalPosition: {x: 68.799995, y: -32.500008, z: -24.75}
+  m_LocalPosition: {x: 61.1, y: -22.7, z: -30.1}
   m_LocalScale: {x: 3.447969, y: 3.4479706, z: 3.4479685}
   m_Children:
   - {fileID: 130552572679835664}
@@ -7603,27 +7744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  damage: 10
-  range: 100
-  impactForce: 30
-  fireRate: 15
-  fpsCam: {fileID: 7959478674278361894}
-  muzzleFlash: {fileID: 8277814950921944066}
-  impactEffect: {fileID: 0}
   hand: {fileID: 1033754101211232235}
-  playerPrefab: {fileID: 3329968337672487579}
-  spectatorCamera: {fileID: 0}
-  ammoScript: {fileID: 7537987186069539113}
-  maxClipAmmo: 5
-  currentClipAmmo: 0
-  maxTotalAmmo: 20
-  currentTotalAmmo: 0
-  goldScript: {fileID: 8716174955292899498}
-  startingGold: 1000
-  currentGold: 0
-  healthScript: {fileID: 8602133697049573203}
-  maxHealth: 100
-  currentHealth: 0
 --- !u!1 &8037315756682869565
 GameObject:
   m_ObjectHideFlags: 0
@@ -8479,12 +8600,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e2633a3b96f1a14c88eea547995b541, type: 3}
---- !u!224 &6515335762102546146 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3093073547435887917, guid: 9e2633a3b96f1a14c88eea547995b541,
-    type: 3}
-  m_PrefabInstance: {fileID: 8108679847030006735}
-  m_PrefabAsset: {fileID: 0}
 --- !u!223 &1724256617947508747 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 7451798331282887620, guid: 9e2633a3b96f1a14c88eea547995b541,
@@ -8527,3 +8642,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 685660f5803b89e44aad8f748caba1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &6515335762102546146 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3093073547435887917, guid: 9e2633a3b96f1a14c88eea547995b541,
+    type: 3}
+  m_PrefabInstance: {fileID: 8108679847030006735}
+  m_PrefabAsset: {fileID: 0}

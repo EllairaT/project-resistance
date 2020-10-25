@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-
-public class CardSystem : MonoBehaviour
+using Mirror;
+public class CardSystem : NetworkBehaviour
 {
     public Camera CMCam; //card master camera
     private GameObject spawnable; //monster prefab
@@ -10,6 +10,7 @@ public class CardSystem : MonoBehaviour
 
     public GameObject spawnPoint; //point where monsters should spawn
     public ParticleSystem spawnParticle;
+    private MonsterSpawnerCM monsterSpawnerCM;
 
     public GameObject Spawnable { get => spawnable; set => spawnable = value; }
 
@@ -35,28 +36,44 @@ public class CardSystem : MonoBehaviour
             spacing += Spawnable.transform.localScale.z + 1f;
             Vector3 pos;
 
+            //Debug.LogError("INDEX: " + Spawnable.GetComponent<MonsterController>().monsterIndex);
+
             //spawn monsters to the left/right side of the first monster
             if (i % 2 == 0)
             {
                 pos = new Vector3(spawnPoint.transform.position.x, 0f, spawnPoint.transform.localScale.z + (spacing * numberToSpawn));
-
-                _o = Instantiate(Spawnable.gameObject);
+                //_o = Instantiate(Spawnable.gameObject);
+                CmdSpawnMonster(Spawnable.GetComponent<MonsterController>().monsterIndex, pos);
             }
             else
             {
                 pos = new Vector3(spawnPoint.transform.position.x, 0f, spawnPoint.transform.localScale.z - (spacing * numberToSpawn));
 
-                _o = Instantiate(Spawnable.gameObject);
+                //_o = Instantiate(Spawnable.gameObject);
+                CmdSpawnMonster(Spawnable.GetComponent<MonsterController>().monsterIndex, pos);
             }
 
-            Spawnable.GetComponent<MonsterController>().PlaySpawnAnim();
+            //Spawnable.GetComponent<MonsterController>().PlaySpawnAnim();
 
             //set the mob gameobject as the monster's parent. 
-            _o.transform.parent = mob.transform;
+            //_o.transform.parent = mob.transform;
 
             //navmeshagents' position must be set using Warp() prior to setting destination.
-            _o.GetComponent<NavMeshAgent>().Warp(pos);
+            //_o.GetComponent<NavMeshAgent>().Warp(pos);
         }
+    }
+
+    [Command]
+    public void CmdSpawnMonster(int index, Vector3 pos)
+    {
+        if (monsterSpawnerCM == null)
+        {
+            monsterSpawnerCM = GameObject.FindGameObjectWithTag("MonsterSpawnerCM").GetComponent<MonsterSpawnerCM>();
+        }
+        GameObject temp = Instantiate(monsterSpawnerCM.monsterPrefabs[index]);
+        NetworkServer.Spawn(temp);
+        temp.GetComponent<NavMeshAgent>().Warp(pos);
+        temp.GetComponent<MonsterController>().PlaySpawnAnim();
     }
 
     public void SpawnMonsters()

@@ -22,6 +22,7 @@ TagManager:
   - Monster
   - SpawnParticle
   - WaveSpawner
+  - MonsterSpawnerCM
   layers:
   - Default
   - TransparentFX

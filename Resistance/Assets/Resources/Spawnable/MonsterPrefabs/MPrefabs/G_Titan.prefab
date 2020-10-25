@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -2039788088312833049}
   - component: {fileID: 2293754480350154044}
   - component: {fileID: -6843266331169058007}
+  - component: {fileID: -2865295984009641980}
   m_Layer: 13
   m_Name: G_Titan
   m_TagString: Monster
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7794090944757490704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -117.5, y: 0.21, z: 44.24405}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 3911454991286685106}
   m_Father: {fileID: 0}
@@ -101,6 +102,24 @@ MonoBehaviour:
   m_AssetId: 
   _allowChildrenBehaviours: 0
   hasSpawned: 0
+--- !u!114 &-2865295984009641980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7794090944757490704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  clientAuthority: 0
+  localPositionSensitivity: 0.01
+  localRotationSensitivity: 0.01
+  localScaleSensitivity: 0.01
 --- !u!1001 &7794090944340775589
 PrefabInstance:
   m_ObjectHideFlags: 0

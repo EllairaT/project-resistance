@@ -42,15 +42,15 @@ public class PlayerSpawnSystem : NetworkBehaviour
         }
 
         GameObject playerInstance;
-        if(hostPlayer == 0)
-        {
-            playerInstance = Instantiate(playerPrefab[4], playerPrefab[4].gameObject.transform.position, playerPrefab[4].gameObject.transform.rotation);
-            hostPlayer++;
-        }
-        else
-        {
+        //if(hostPlayer == 0)
+        //{
+        //    playerInstance = Instantiate(playerPrefab[4], playerPrefab[4].gameObject.transform.position, playerPrefab[4].gameObject.transform.rotation);
+        //    hostPlayer++;
+        //}
+        //else
+        //{
             playerInstance = Instantiate(playerPrefab[character], spawnPoints[nextIndex].position, spawnPoints[nextIndex].rotation);
-        }
+        //}
 
         NetworkServer.Spawn(playerInstance, conn);
 
