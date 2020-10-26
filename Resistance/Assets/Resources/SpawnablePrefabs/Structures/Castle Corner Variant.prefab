@@ -115,12 +115,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fec6855647c97341a11ab09a2734e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: fence
+  type: 4
   hardness: 0
   baseHealth: 0
   cost: 50
   snapPoints: []
-  index: 4
+  index: 3
 --- !u!114 &67814616624946271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +231,18 @@ PrefabInstance:
     - target: {fileID: 4537425462916922, guid: 15c63195686b87647b2511505784d66f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4537425462916922, guid: 15c63195686b87647b2511505784d66f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4537425462916922, guid: 15c63195686b87647b2511505784d66f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4537425462916922, guid: 15c63195686b87647b2511505784d66f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 23490509448428290, guid: 15c63195686b87647b2511505784d66f,
         type: 3}

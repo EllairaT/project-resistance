@@ -83,6 +83,12 @@ public class PlayerMovementController : NetworkBehaviour
 
         playerVelocity.y += gravity * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            //anim.SetTrigger("Jump");
+        }
     }
 
     //Method for Unit Testing
