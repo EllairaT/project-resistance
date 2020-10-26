@@ -75,9 +75,7 @@ public class InGameScript : NetworkBehaviour
             {
                 StartCoroutine(Build());
             }
-        }
-
-     
+        }    
         else
         {
             Default();
