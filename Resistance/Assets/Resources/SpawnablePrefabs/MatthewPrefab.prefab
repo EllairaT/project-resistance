@@ -8754,6 +8754,12 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2825494371965331265, guid: beba126ef0696bd4b8d70fd388d1aa73,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e14759e8f93f4104bbc7e07c9beb30b2,
+        type: 3}
     - target: {fileID: 4099589716978444145, guid: beba126ef0696bd4b8d70fd388d1aa73,
         type: 3}
       propertyPath: keybind

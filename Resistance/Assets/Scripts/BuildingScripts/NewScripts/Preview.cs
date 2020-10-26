@@ -12,7 +12,7 @@ public class Preview : NetworkBehaviour
     [HideInInspector] public Material legalMat;
     [HideInInspector] public Material illegalMat;
 
-    private bool isSnapped = false;//only this script should change this value
+    private bool isSnapped = false;
 
     public bool isFoundation = false;
 
@@ -46,6 +46,11 @@ public class Preview : NetworkBehaviour
     {
         Destroy(gameObject);
         //NetworkServer.Destroy(gameObject);
+    }
+
+    public void SetMaterial(Material m)
+    {
+        rend.material = m;
     }
 
     private void ChangeMat()

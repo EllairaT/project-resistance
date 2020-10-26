@@ -7,6 +7,8 @@ public class CardMaster : NetworkBehaviour
 {
     public CMCamera CameraMove;
     public Canvas cardMasterUI;
+    public int gold = 1000;
+    public GoldScript gs;
 
     private bool isCursorActive = true;
 

@@ -43,7 +43,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7301327233217581691}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -103.71, y: -0.47, z: 28.89}
+  m_LocalPosition: {x: -289, y: 0, z: -859.1102}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 1709594022573555880}
@@ -64,15 +64,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  monsterFieldOfView: 90
+  monsterFieldOfView: 130
   stats: {fileID: 11400000, guid: 617bcc1b756b8b54792a69ce144d8940, type: 2}
   target: {fileID: 0}
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   whatIsStructure:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   anim: {fileID: 1709594022566571782}
   timeBetweenAttack: 0
   sightRange: 10
@@ -88,7 +88,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 20
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -163,9 +163,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  health: 50
+  health: 20
   isStructure: 0
-  isMonster: 0
+  isMonster: 1
   goldValuePerHit: 10
 --- !u!1001 &6902753797312685001
 PrefabInstance:

@@ -73,9 +73,10 @@ public class InGameScript : NetworkBehaviour
 
             if (buildManager.buildSystem.isBuilding)
             {
+            
                 StartCoroutine(Build());
             }
-        }    
+        }
         else
         {
             Default();
@@ -114,6 +115,7 @@ public class InGameScript : NetworkBehaviour
     #region build system implementation
     IEnumerator Build()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
             //Debug.Log("In Game Script: " + base.hasAuthority + ", " + hasAuthority + ", " + base.isLocalPlayer + ", " + isLocalPlayer);

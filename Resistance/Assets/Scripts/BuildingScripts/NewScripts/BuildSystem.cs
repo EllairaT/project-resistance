@@ -35,16 +35,11 @@ public class BuildSystem : NetworkBehaviour
                 //Debug.Log("Build2 !");
                 //previewScript.Place();
                 //RpcBuild();
-                CmdBuild(); //<-- use this one
+                CmdBuild();
             }
             else
             {
                 CancelBuild();
-            }
-
-            if (isBuildingPaused)
-            {
-
             }
         }
     }
@@ -58,6 +53,11 @@ public class BuildSystem : NetworkBehaviour
     {
         Destroy(previewgameObject);
         ResetAll();
+    }
+
+    public void SetMaterial(Material m)
+    {
+        previewScript.SetMaterial(m);
     }
 
     //[Command]

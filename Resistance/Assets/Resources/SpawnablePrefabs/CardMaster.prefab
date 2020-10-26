@@ -2498,6 +2498,7 @@ MonoBehaviour:
   description: {fileID: 6353652472236396989}
   Name: {fileID: 6023096884242322279}
   baseCost: {fileID: 6712749542076976996}
+  gold: {fileID: 4546458233985224920}
   infoPanel: {fileID: 5441194049499955032}
   functionPanelButtons:
   - {fileID: 4164604268592510955}
@@ -3199,7 +3200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10000
+  m_text: 1000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6219,6 +6220,8 @@ MonoBehaviour:
   syncInterval: 0.1
   CameraMove: {fileID: 257654734739773008}
   cardMasterUI: {fileID: 4125986941542568475}
+  gold: 1000
+  gs: {fileID: 6364603896179313743}
 --- !u!114 &4420701967156879591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6235,6 +6238,7 @@ MonoBehaviour:
   syncInterval: 0.1
   CMCam: {fileID: 759234152404296246}
   numberToSpawn: 0
+  goldToSpend: 0
   spawnPoint: {fileID: 9150119807031229084, guid: d2a7d1a052372bc44a7fb0fb93c6f515,
     type: 3}
   spawnParticle: {fileID: 774984155846786314, guid: 283a51e74db09934f87388bdb7775470,

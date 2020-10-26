@@ -16,6 +16,8 @@ public class CurrentCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public TextMeshProUGUI Name;
     public TextMeshProUGUI baseCost;
 
+    public TextMeshProUGUI gold;
+
     [Header("UI Elements")]
     public GameObject infoPanel;
     public Button[] functionPanelButtons;
@@ -75,15 +77,24 @@ public class CurrentCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             foreach (Button btn in functionPanelButtons)
             {
-                btn.interactable = false;
+                EnableButtons(false);
             }
         }
         else
         {
             foreach (Button btn in functionPanelButtons)
             {
-                btn.interactable = true;
+                EnableButtons(true);
             }
+        }
+
+    }
+
+    private void EnableButtons(bool b)
+    {
+        foreach (Button btn in functionPanelButtons)
+        {
+            btn.interactable = b;
         }
     }
 
@@ -138,6 +149,17 @@ public class CurrentCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         int c = card.Cost * cardCount;
         cost.SetText(c.ToString());
+
+        //check if card master has enough gold
+        if (GetComponentInParent<CardMaster>().gold < c)
+        {
+            Debug.Log("not enough gold!");
+            EnableButtons(false);
+        }
+        else
+        {
+            cardSystem.goldToSpend = c;
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)

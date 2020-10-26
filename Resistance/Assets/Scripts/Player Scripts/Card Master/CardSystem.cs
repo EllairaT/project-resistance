@@ -7,7 +7,7 @@ public class CardSystem : NetworkBehaviour
     public Camera CMCam; //card master camera
     private GameObject spawnable; //monster prefab
     public int numberToSpawn;
-
+    public int goldToSpend;
     public GameObject spawnPoint; //point where monsters should spawn
     public ParticleSystem spawnParticle;
     private MonsterSpawnerCM monsterSpawnerCM;
@@ -52,6 +52,7 @@ public class CardSystem : NetworkBehaviour
                 //_o = Instantiate(Spawnable.gameObject);
                 CmdSpawnMonster(Spawnable.GetComponent<MonsterController>().monsterIndex, pos);
             }
+            Spawnable.GetComponent<NavMeshAgent>().Warp(pos);
 
             //Spawnable.GetComponent<MonsterController>().PlaySpawnAnim();
 
@@ -81,8 +82,10 @@ public class CardSystem : NetworkBehaviour
         //check if user selected a monster. Prevents the spawn particlesystem from firing unnecessarily.
         if (numberToSpawn > 0)
         {
+            GetComponent<CardMaster>().gold -= goldToSpend;
+            GetComponent<CardMaster>().gs.SetGold(GetComponent<CardMaster>().gold);
             StartCoroutine(StartSpawnAnimation(spawnParticle));
-            spawnable.GetComponent<Draggable>().card.maxNumber = spawnable.GetComponent<Draggable>().stats.remainingAvailable;
+            Spawnable.GetComponent<Draggable>().card.maxNumber = Spawnable.GetComponent<Draggable>().stats.remainingAvailable;
         }
     }
 

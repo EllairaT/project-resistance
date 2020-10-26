@@ -142,5 +142,23 @@ namespace Tests
             Assert.AreEqual(expected, testCardMaster.gold);
             yield return null;
         }
+
+        [UnityTest]
+        public IEnumerator BuyMonsterTest()
+        {
+            yield return null;
+        }
+
+        //[UnityTest]
+        //public IEnumerator BuyMonsterTest()
+        //{
+        //    yield return null;
+        //}
+
+        //public IEnumerator SpawnMonsterTest()
+        //{
+
+        //}
     }
 }
+

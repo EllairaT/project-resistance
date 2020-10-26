@@ -51,15 +51,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  monsterFieldOfView: 90
+  monsterFieldOfView: 130
   stats: {fileID: 11400000, guid: 0ddf6413592f5a544b185e3d5f6f5e12, type: 2}
   target: {fileID: 0}
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   whatIsStructure:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   anim: {fileID: 4353747113178189040}
   timeBetweenAttack: 0
   sightRange: 10
@@ -75,7 +75,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 20
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -152,7 +152,7 @@ MonoBehaviour:
   syncInterval: 0.1
   health: 50
   isStructure: 0
-  isMonster: 0
+  isMonster: 1
   goldValuePerHit: 10
 --- !u!1001 &4099132463712937230
 PrefabInstance:
