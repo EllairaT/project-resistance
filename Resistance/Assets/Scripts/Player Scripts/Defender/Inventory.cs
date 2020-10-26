@@ -25,9 +25,7 @@ public class Inventory : BaseMonobehaviour
 
     public BuildSystem buildsys;
 
-    private int index;
-    private int lastIndex;
-
+    public int index;
     #endregion
 
     private void Start()
@@ -67,12 +65,15 @@ public class Inventory : BaseMonobehaviour
             //add all the objects with the same type as the slot into the currentlist
             foreach (GameObject _o in StrucPurchases.Keys)
             {
+                Debug.Log(_o);
                 if (_o.GetComponent<Preview>().type.Equals(CurrentlyActive.GetComponent<InventorySlot>().type))
                 {
+                    //Debug.Log(_o.GetComponent<Preview>().type.ToString());
+                    //Debug.Log(CurrentlyActive.GetComponent<InventorySlot>().type.ToString());
                     if (!CurrentList.Contains(_o))
                     {
                         CurrentList.Add(_o);
-                    }                   
+                    }
                 }
             }
         }
@@ -82,7 +83,10 @@ public class Inventory : BaseMonobehaviour
     private void EnableSlot(GameObject _s)
     {
         //make sure there are no objects in the currentlist
-        ResetList(); 
+        if (CurrentList != null)
+        {
+            ResetList();
+        }
 
         foreach (GameObject _o in keybinds.Values)
         {
@@ -96,8 +100,8 @@ public class Inventory : BaseMonobehaviour
             }
         }
 
-        //add all the objects in the current list
-        if (CurrentlyActive.GetComponent<InventorySlot>().type == StructureType.MATERIAL)
+
+        if (_s.GetComponent<InventorySlot>().type == StructureType.MATERIAL)
         {
             AddToMaterialsList();
         }
@@ -197,8 +201,6 @@ public class Inventory : BaseMonobehaviour
                 }
             }
         }
-
-        Debug.Log(index);
         ShowStructureInSlot(CurrentlyActive, CurrentList[index]);
         buildsys.NewBuild(CurrentList[index]);
     }

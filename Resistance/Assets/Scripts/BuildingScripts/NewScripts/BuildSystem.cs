@@ -26,26 +26,16 @@ public class BuildSystem : NetworkBehaviour
         return isBuilding;
     }
 
-    private void Update()
-    {
-        if (isBuilding)
-        {
-            if (!isBuildingPaused)
-            {
-                MakeRay();
-            }
-        }
-    }
-
     public void BuildNow()
     {
         if (isBuilding)
         {
             if (previewScript.IsSnapped())
             {
-                Debug.Log("Build2 !");
+                //Debug.Log("Build2 !");
+                //previewScript.Place();
                 //RpcBuild();
-                CmdBuild();
+                CmdBuild(); //<-- use this one
             }
             else
             {

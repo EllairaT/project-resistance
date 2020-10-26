@@ -6,16 +6,9 @@ TagManager:
   tags:
   - Canvas
   - Building
-  - SP_Foundation
   - SP_WALL
   - primitive
   - SP_STAIRS
-  - illegal
-  - Foundation_SP
-  - East
-  - North
-  - South
-  - West
   - SpectatorCamera
   - Wall_SP
   - DefenceSpawner
@@ -23,6 +16,7 @@ TagManager:
   - SpawnParticle
   - WaveSpawner
   - MonsterSpawnerCM
+  - SP_FOUNDATION
   layers:
   - Default
   - TransparentFX
