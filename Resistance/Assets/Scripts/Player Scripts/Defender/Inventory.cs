@@ -32,6 +32,9 @@ public class Inventory : BaseMonobehaviour
     {
         StrucPurchases = GetComponent<PlayerPurchase>().StructurePurchase;
         MatPurchases = GetComponent<PlayerPurchase>().MaterialPurchase;
+
+        ShowStructureInSlot(foundationSlot, foundationPreview);
+        ShowTextureInSlot(materialSlot, buildsys.defaultMaterial);
     }
 
     public void ListenForInput()

@@ -47,7 +47,7 @@ MonoBehaviour:
   buildSystem: {fileID: 0}
   legalMat: {fileID: 0}
   illegalMat: {fileID: 0}
-  isFoundation: 0
+  isFoundation: 1
   type: 0
   tagsToSnapTo: 00000000
 --- !u!1001 &1593530930412307018

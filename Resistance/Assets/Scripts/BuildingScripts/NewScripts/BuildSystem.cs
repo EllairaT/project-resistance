@@ -117,12 +117,15 @@ public class BuildSystem : NetworkBehaviour
     [Command]
     public void CmdPlace(int index, Vector3 pos, Quaternion rotation)
     {
-        if (defenceSpawner == null)
+        if (previewScript.IsSnapped())
         {
-            defenceSpawner = GameObject.FindGameObjectWithTag("DefenceSpawner").GetComponent<DefenceSpawner>();
+            if (defenceSpawner == null)
+            {
+                defenceSpawner = GameObject.FindGameObjectWithTag("DefenceSpawner").GetComponent<DefenceSpawner>();
+            }
+            GameObject temp = Instantiate(defenceSpawner.defencePrefabs[index], pos, rotation);
+            NetworkServer.Spawn(temp);
         }
-        GameObject temp = Instantiate(defenceSpawner.defencePrefabs[index], pos, rotation);
-        NetworkServer.Spawn(temp);
     }
 
     public void ResetAll()
@@ -144,7 +147,7 @@ public class BuildSystem : NetworkBehaviour
 
         if (previewgameObject != null)
         {
-            if (Physics.Raycast(ray, out hit, 70f, layer))
+            if (Physics.Raycast(ray, out hit, 100f, layer))
             {
                 /**some objects are unity primitive objects rather than imported from blender 
                 so for unity objects, point (0,0,0) is at the center, instead of at the bottom 
@@ -156,6 +159,7 @@ public class BuildSystem : NetworkBehaviour
                     //take the y value of the raycast and add it to half the height of the obj
                     float y = hit.point.y + (previewgameObject.transform.localScale.y / 2f);
                     Vector3 pos = new Vector3(hit.point.x, y, hit.point.z);
+                    pos.z += 5f;
                     previewgameObject.transform.position = pos;
                 }
                 else

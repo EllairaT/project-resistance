@@ -8,13 +8,13 @@ public class PlayerMovementController : NetworkBehaviour
     [SerializeField] private CharacterController controller = null;
     [SerializeField] private NetworkAnimator networkAnim;
 
-    [SerializeField] private float gravity = -9.81f;
+    public float gravity = -19f;
     [SerializeField] private Transform GroundCheck;
     [SerializeField] private float groundDistance = 5f;
     [SerializeField] private LayerMask groundMask;
     private bool isGrounded;
 
-    private float jumpHeight = 1f; //needs to be implemented
+    private float jumpHeight = 5f; //needs to be implemented
     private Vector3 playerVelocity;
     private Vector2 previousInput;
 
@@ -83,14 +83,14 @@ public class PlayerMovementController : NetworkBehaviour
 
         playerVelocity.y += gravity * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
-
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            //anim.SetTrigger("Jump");
-        }
     }
 
+    [Client]
+    private void Jump()
+    {
+        networkAnim.SetTrigger("Jump");
+        transform.position = new Vector3(transform.position.x, transform.position.y + jumpHeight, transform.position.z);
+    }
     //Method for Unit Testing
     public Vector3 CalculateMovement(float xAxis, float zAxis, float deltaTime)
     {
