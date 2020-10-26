@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0021075385, g: 0.00082517706, b: 0.0028378852, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -72,7 +72,7 @@ LightmapSettings:
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 0
-    m_BakeBackend: 1
+    m_BakeBackend: 2
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 512
@@ -237,12 +237,12 @@ PrefabInstance:
     - target: {fileID: 774984155846786312, guid: 283a51e74db09934f87388bdb7775470,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.399994
+      value: -293.31
       objectReference: {fileID: 0}
     - target: {fileID: 774984155846786312, guid: 283a51e74db09934f87388bdb7775470,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.006245
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 774984155846786312, guid: 283a51e74db09934f87388bdb7775470,
         type: 3}
@@ -1017,7 +1017,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 10348
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: -1, y: 7, z: 6, w: -8}
+  m_BoundingSphereOverride: {x: 0, y: 2.07678e-40, z: 0, w: 0.0000000083236955}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1192,7 +1192,7 @@ PrefabInstance:
     - target: {fileID: 9150119807031229072, guid: d2a7d1a052372bc44a7fb0fb93c6f515,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.71
+      value: -289
       objectReference: {fileID: 0}
     - target: {fileID: 9150119807031229072, guid: d2a7d1a052372bc44a7fb0fb93c6f515,
         type: 3}

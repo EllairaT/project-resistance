@@ -56,10 +56,10 @@ MonoBehaviour:
   target: {fileID: 0}
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   whatIsStructure:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16384
   anim: {fileID: 1848235255549296477}
   timeBetweenAttack: 0
   sightRange: 10
