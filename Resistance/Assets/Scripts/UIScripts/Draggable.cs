@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerClickHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerExitHandler, IPointerEnterHandler
 {
+    #region variables
     [Header("Set Up")]
     public bool isDroppedInSlot;
     public Transform startingParent;
@@ -23,7 +24,7 @@ public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerClickHandle
     private CanvasGroup canvasGroup;
     private Vector3 cardPos;
     private bool _over;
-
+    #endregion
 
     private void Awake()
     {

@@ -18,7 +18,7 @@ public class Preview : NetworkBehaviour
 
     public StructureType type;
 
-    public List<string> tagsToSnapTo = new List<string>();
+    public List<StructureTags> tagsToSnapTo = new List<StructureTags>();
  
     private void Start()
     {
@@ -71,7 +71,7 @@ public class Preview : NetworkBehaviour
     {
         for (int i = 0; i < tagsToSnapTo.Count; i++)
         {
-            string currentTag = tagsToSnapTo[i];
+            string currentTag = tagsToSnapTo[i].ToString();
 
             if (other.CompareTag(currentTag))
             {
@@ -90,7 +90,7 @@ public class Preview : NetworkBehaviour
     {
         for (int i = 0; i < tagsToSnapTo.Count; i++)
         {
-            string currentTag = tagsToSnapTo[i];
+            string currentTag = tagsToSnapTo[i].ToString();
 
             if (other.CompareTag(currentTag))
             {
@@ -98,6 +98,12 @@ public class Preview : NetworkBehaviour
                 ChangeMat();
             }
         }
+    }
+
+    public void Place()
+    {
+        Instantiate(prefab, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 
     public bool IsSnapped()

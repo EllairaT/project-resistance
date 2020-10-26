@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class Structure : MonoBehaviour
 {
-    public string type;
+    public StructureType type;
     public float hardness;
     public float baseHealth;
     public int cost;

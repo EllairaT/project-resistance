@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using Mirror;
+using System.Collections;
 
 public class InGameScript : NetworkBehaviour
 {
+    #region variables
     //Variables
     [Header("Gun")]
     public float damage = 10f;
@@ -37,6 +39,7 @@ public class InGameScript : NetworkBehaviour
 
     [Header("Building")]
     [SerializeField] public BuildManager buildManager;
+    #endregion
 
     private void Awake()
     {
@@ -53,118 +56,97 @@ public class InGameScript : NetworkBehaviour
         ammoScript.SetTotalAmmo(currentTotalAmmo);
     }
 
-
+    #region Update method for user input
     void Update() //called every frame checking for user input
     {
         if (!base.hasAuthority)
         {
             return;
         }
-    
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            buildManager.buildSystem.NewBuild(buildManager.foundationPreview);
-        }
-        else if (Input.GetKeyDown(KeyCode.H))
-        {
-            buildManager.buildSystem.NewBuild(buildManager.wallPreview);
-        }
-        else if (buildManager.buildSystem.isBuilding)
-        {
-            if(Input.GetMouseButtonDown(0))
-            {
-                if (isServer)
-                {
-                    Debug.Log("isServer TRUE");
-                    if(isClient)
-                    {
-                        Debug.Log("ALSO CLIENT");
-                    }
-                }
-                else
-                {
-                    Debug.Log("isServer FALSE");
-                }
-                Debug.Log("In Game Script: " + base.hasAuthority + ", " + hasAuthority + ", " + base.isLocalPlayer + ", " + isLocalPlayer);
-                buildManager.buildSystem.CmdBuild();
-            }
-            else if (Input.GetKeyDown(KeyCode.E)) //rotate
-            {
-                buildManager.buildSystem.previewgameObject.transform.Rotate(0, 90f, 0);
-            }
-            else
-            {
-                if (buildManager.buildSystem.isBuildingPaused) //whenever the preview is snapped, the buildsystem is paused
-                {
-                    //to resume buildsystem, we need to "un-snap" 
-                    //unsnapping will occur when the mouse moves away a certain amount.
-                    float mX = Input.GetAxis("Mouse X");
-                    float mY = Input.GetAxis("Mouse Y");
 
-                    if (Mathf.Abs(mX) >= buildManager.buildSystem.stickTolerance || Mathf.Abs(mY) >= buildManager.buildSystem.stickTolerance)
-                    {
-                        buildManager.buildSystem.isBuildingPaused = false;
-                    }
-                }
-                else
-                {
-                    buildManager.buildSystem.MakeRay();
-                }
+        buildManager.ListenForInput();
+
+        if (buildManager.isInventoryActive)
+        {
+            buildManager.playerInventory.ListenForInput();
+            buildManager.playerInventory.ScrollThroughInventory();
+
+            if (buildManager.buildSystem.isBuilding)
+            {
+                StartCoroutine(Build());
             }
-        }
+        }    
         else
         {
-            if (Input.GetMouseButtonDown(0) && Time.time > nextTimeToFire)
-            {
-                if (currentClipAmmo > 0)
-                {
-                    nextTimeToFire = Time.time + 1f / fireRate;
-                    Shoot();
-                    currentClipAmmo -= 1;
-                    ammoScript.SetClipAmmo(currentClipAmmo);
-                }
-                else
-                {
-                    //Debug.Log("Out of Ammo!");
-                }
-            }
-            else if (Input.GetKeyDown(KeyCode.R)) //reload
-            {
-                Reload();
-            }
-            else if (Input.GetKeyDown(KeyCode.T)) //take damage
-            {
-                TestHealthBar();
-            }
+            Default();
         }
-
     }
+    #endregion
 
-    private void Reload()
+    #region default user input implementation
+    private void Default()
     {
-        if (currentTotalAmmo > 0)
+        if (Input.GetMouseButtonDown(0) && Time.time > nextTimeToFire)
         {
-            int requiredAmmo = maxClipAmmo - currentClipAmmo;
-            if (currentTotalAmmo >= requiredAmmo)
+            if (currentClipAmmo > 0)
             {
-                currentTotalAmmo -= requiredAmmo;
-                currentClipAmmo += requiredAmmo;
+                nextTimeToFire = Time.time + 1f / fireRate;
+                Shoot();
+                currentClipAmmo -= 1;
+                ammoScript.SetClipAmmo(currentClipAmmo);
             }
             else
             {
-                currentClipAmmo += currentTotalAmmo;
-                currentTotalAmmo = 0;
+                //Debug.Log("Out of Ammo!");
             }
-            ammoScript.SetClipAmmo(currentClipAmmo);
-            ammoScript.SetTotalAmmo(currentTotalAmmo);
+        }
+        else if (Input.GetKeyDown(KeyCode.R)) //reload
+        {
+            Reload();
+        }
+        else if (Input.GetKeyDown(KeyCode.T)) //take damage
+        {
+            //TestHealthBar();
+        }
+    }
+    #endregion
+
+    #region build system implementation
+    IEnumerator Build()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            //Debug.Log("In Game Script: " + base.hasAuthority + ", " + hasAuthority + ", " + base.isLocalPlayer + ", " + isLocalPlayer);
+            buildManager.buildSystem.CmdBuild();
+        }
+        else if (Input.GetKeyDown(KeyCode.E)) //rotate
+        {
+            buildManager.buildSystem.previewgameObject.transform.Rotate(0, 90f, 0);
         }
         else
         {
-            Debug.Log("Purchase More Ammo!!");
-        }
-    }
+            if (buildManager.buildSystem.isBuildingPaused) //whenever the preview is snapped, the buildsystem is paused
+            {
+                //to resume buildsystem, we need to "un-snap" 
+                //unsnapping will occur when the mouse moves away a certain amount.
+                float mX = Input.GetAxis("Mouse X");
+                float mY = Input.GetAxis("Mouse Y");
 
-    //Method call to get the player to shoot a bullet
+                if (Mathf.Abs(mX) >= buildManager.buildSystem.stickTolerance || Mathf.Abs(mY) >= buildManager.buildSystem.stickTolerance)
+                {
+                    buildManager.buildSystem.isBuildingPaused = false;
+                }
+            }
+            else
+            {
+                buildManager.buildSystem.MakeRay();
+            }
+        }
+        yield return null;
+    }
+    #endregion
+
+    #region shooting implementation
     public void Shoot()
     {
         Debug.Log("pew");
@@ -193,6 +175,33 @@ public class InGameScript : NetworkBehaviour
         }
     }
 
+    private void Reload()
+    {
+        if (currentTotalAmmo > 0)
+        {
+            int requiredAmmo = maxClipAmmo - currentClipAmmo;
+            if (currentTotalAmmo >= requiredAmmo)
+            {
+                currentTotalAmmo -= requiredAmmo;
+                currentClipAmmo += requiredAmmo;
+            }
+            else
+            {
+                currentClipAmmo += currentTotalAmmo;
+                currentTotalAmmo = 0;
+            }
+            ammoScript.SetClipAmmo(currentClipAmmo);
+            ammoScript.SetTotalAmmo(currentTotalAmmo);
+        }
+        else
+        {
+            Debug.Log("Purchase More Ammo!!");
+        }
+    }
+    #endregion
+
+    #region test methods
+    /*
     //Method to simply test health bar reduction
     private void TestHealthBar()
     {
@@ -216,6 +225,13 @@ public class InGameScript : NetworkBehaviour
         }
     }
 
+    public int TestEarnGold(int currentGold, int goldIncrease) //Unit Test method
+    {
+        return currentGold += goldIncrease;
+    }
+    */
+    #endregion
+
     //Increase the player's gold based on the target hit's gold value
     private void EarnGold(Attackable targetHit)
     {
@@ -224,10 +240,6 @@ public class InGameScript : NetworkBehaviour
         goldScript.SetGold(currentGold);
     }
 
-    public int TestEarnGold(int currentGold, int goldIncrease) //Unit Test method
-    {
-        return currentGold += goldIncrease;
-    }
 
     //Method to call for an in-game object when they've been "shot"
     //This will call their use method, which is the "active" method when an object has been interacted with

@@ -407,6 +407,7 @@ MonoBehaviour:
   card: {fileID: 0}
   numberOfMonstersAvailable: {fileID: 6133024639407885530}
   cost: {fileID: 3847448939120499427}
+  remainingAvailable: 0
 --- !u!1 &227641198462416432
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,6 +1850,7 @@ MonoBehaviour:
   card: {fileID: 0}
   numberOfMonstersAvailable: {fileID: 4819439951125676618}
   cost: {fileID: 4225051572893751942}
+  remainingAvailable: 0
 --- !u!1 &2635117040418953772
 GameObject:
   m_ObjectHideFlags: 0
@@ -4044,6 +4046,7 @@ MonoBehaviour:
   card: {fileID: 0}
   numberOfMonstersAvailable: {fileID: 5362225740206941489}
   cost: {fileID: 4243080497212208022}
+  remainingAvailable: 0
 --- !u!1 &4072416517207359696
 GameObject:
   m_ObjectHideFlags: 0
@@ -4836,6 +4839,7 @@ MonoBehaviour:
   card: {fileID: 0}
   numberOfMonstersAvailable: {fileID: 2397371825249327581}
   cost: {fileID: 6511394068271287924}
+  remainingAvailable: 0
 --- !u!1 &4375221492860883779
 GameObject:
   m_ObjectHideFlags: 0
@@ -5714,6 +5718,7 @@ MonoBehaviour:
   card: {fileID: 0}
   numberOfMonstersAvailable: {fileID: 5788389712823598296}
   cost: {fileID: 3266321377701077015}
+  remainingAvailable: 0
 --- !u!1 &5662899307596172527
 GameObject:
   m_ObjectHideFlags: 0
@@ -6225,6 +6230,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8ab567303615f45b5e138bccd43995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   CMCam: {fileID: 759234152404296246}
   numberToSpawn: 0
   spawnPoint: {fileID: 9150119807031229084, guid: d2a7d1a052372bc44a7fb0fb93c6f515,
@@ -6650,6 +6657,7 @@ MonoBehaviour:
   card: {fileID: 0}
   numberOfMonstersAvailable: {fileID: 951356362378294680}
   cost: {fileID: 8822390201071330975}
+  remainingAvailable: 0
 --- !u!1 &6299548375044371519
 GameObject:
   m_ObjectHideFlags: 0
@@ -7104,7 +7112,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 5941
+    m_Bits: 22325
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -7647,6 +7655,7 @@ MonoBehaviour:
   card: {fileID: 0}
   numberOfMonstersAvailable: {fileID: 6654950169536703054}
   cost: {fileID: 1892139107740366479}
+  remainingAvailable: 0
 --- !u!1 &6469721782664743274
 GameObject:
   m_ObjectHideFlags: 0
@@ -9819,6 +9828,7 @@ MonoBehaviour:
   card: {fileID: 0}
   numberOfMonstersAvailable: {fileID: 6504891087717849451}
   cost: {fileID: 4389356309858643293}
+  remainingAvailable: 0
 --- !u!1 &7656171319250847928
 GameObject:
   m_ObjectHideFlags: 0
@@ -10605,6 +10615,7 @@ MonoBehaviour:
   card: {fileID: 0}
   numberOfMonstersAvailable: {fileID: 1713480749128723618}
   cost: {fileID: 8944620920441463009}
+  remainingAvailable: 0
 --- !u!1 &8311288957705223765
 GameObject:
   m_ObjectHideFlags: 0
@@ -11085,6 +11096,7 @@ MonoBehaviour:
   card: {fileID: 0}
   numberOfMonstersAvailable: {fileID: 2681461429566640977}
   cost: {fileID: 3567513702617392026}
+  remainingAvailable: 0
 --- !u!1 &8664685075153902851
 GameObject:
   m_ObjectHideFlags: 0
