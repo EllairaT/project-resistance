@@ -7498,7 +7498,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   damage: 10
-  range: 100
+  range: 400
   impactForce: 30
   fireRate: 15
   fpsCam: {fileID: 3328296283691788470}

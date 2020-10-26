@@ -6,7 +6,7 @@ public class InGameScript : NetworkBehaviour
     //Variables
     [Header("Gun")]
     public float damage = 10f;
-    public float range = 100f;
+    public float range = 400f;
     public float impactForce = 30f;
     public float fireRate = 15f;
     private float nextTimeToFire = 0f;
@@ -174,9 +174,8 @@ public class InGameScript : NetworkBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            //Debug.Log("Target Hit: " + hit.transform.name);
-
-            Attackable target = hit.transform.GetComponent<Attackable>();
+            Debug.Log(hit.transform.name);
+            Attackable target = hit.transform.gameObject.GetComponentInParent<Attackable>();
 
             if (target != null)
             {

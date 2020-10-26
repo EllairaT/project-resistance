@@ -34,15 +34,14 @@ public class Attackable : NetworkBehaviour, INetworkUsable
     [ClientRpc]
     public void RpcTakeDmg(float amount) //Calls to reduce the object's health for all players in the game
     {
-
-        if (isStructure)
-        {
-            amount = GetComponent<PlaceableStructure>().stats.CalculateDamageTaken(amount);
-        } 
-        else if (isMonster)
-        {
-            amount = GetComponent<Card>().CalculateDamageTaken(amount);
-        }
+        //if (isStructure)
+        //{
+        //    amount = GetComponent<PlaceableStructure>().stats.CalculateDamageTaken(amount);
+        //} 
+        //else if (isMonster)
+        //{
+        //    amount = GetComponent<Card>().CalculateDamageTaken(amount);
+        //}
 
         health -= amount;
         Debug.Log("ouch");

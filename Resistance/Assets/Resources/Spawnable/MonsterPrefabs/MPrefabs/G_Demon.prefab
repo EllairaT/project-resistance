@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7175493894744675348}
   - component: {fileID: 6810255523536511255}
   - component: {fileID: 5188772024126407978}
+  - component: {fileID: 7365245712846614339}
+  - component: {fileID: 4737091684941242935}
   m_Layer: 13
   m_Name: G_Demon
   m_TagString: Monster
@@ -120,6 +122,38 @@ MonoBehaviour:
   localPositionSensitivity: 0.01
   localRotationSensitivity: 0.01
   localScaleSensitivity: 0.01
+--- !u!114 &7365245712846614339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6676486114494354251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f24a44cb7056647a7c911851ef7202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+--- !u!114 &4737091684941242935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6676486114494354251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4584c492bd93143b1ceabbf5aff80f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  health: 50
+  isStructure: 0
+  isMonster: 0
+  goldValuePerHit: 10
 --- !u!1001 &6676486114198519799
 PrefabInstance:
   m_ObjectHideFlags: 0
