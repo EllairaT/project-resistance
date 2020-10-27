@@ -15,6 +15,7 @@ public class BuildManager : NetworkBehaviour
         //playerInventory = inventoryUI.GetComponent<Inventory>();
         inventoryUI.SetActive(false);
         isInventoryActive = false;
+        playerInventory.SetUp();
     }
 
     public void ListenForInput()

@@ -1,6 +1,7 @@
 ﻿using RotaryHeart.Lib.SerializableDictionary;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,16 +12,13 @@ public class Inventory : BaseMonobehaviour
     #region variables
     [Header("Structure Images")]
     public DefaultKeyBinds keybinds;
-    public GameObject foundationPreview;
-    public GameObject foundationSlot;
-    public GameObject materialSlot;
     public Sprite highlight;
     public Sprite normalBorder;
+    public TextMeshProUGUI matInfo;
 
-    public GameObject ItemToBuild { get; set; } = null;
     public List<GameObject> CurrentList { get; set; } = new List<GameObject>();
+
     public GameObject CurrentlyActive { get; set; } = null;
-    public MaterialPurchases MatPurchases { get; set; }
     public StructurePurchases StrucPurchases { get; set; }
 
     public BuildSystem buildsys;
@@ -28,13 +26,9 @@ public class Inventory : BaseMonobehaviour
     public int index;
     #endregion
 
-    private void Start()
+    public void SetUp()
     {
         StrucPurchases = GetComponent<PlayerPurchase>().StructurePurchase;
-        MatPurchases = GetComponent<PlayerPurchase>().MaterialPurchase;
-
-        ShowStructureInSlot(foundationSlot, foundationPreview);
-        ShowTextureInSlot(materialSlot, buildsys.defaultMaterial);
     }
 
     public void ListenForInput()
@@ -50,33 +44,34 @@ public class Inventory : BaseMonobehaviour
         }
     }
 
-    private void AddToMaterialsList()
+    public GameObject GetObjectFromKey()
     {
-        foreach (GameObject _m in MatPurchases.Keys)
+        foreach (KeyCode k in keybinds.Keys)
         {
-            if (!CurrentList.Contains(_m))
+            if (Input.GetKey(k))
             {
-                CurrentList.Add(_m);
+                return keybinds[k];
             }
+          //  break;
         }
+        return null;
+    }
+    private void SetMaterial(Material m)
+    {
+        buildsys.SetMaterial(m);
     }
 
     private void AddToStructuresList()
     {
-        if (StrucPurchases.Keys != null)
+
+        //add all the objects with the same type as the slot into the currentlist
+        foreach (GameObject _o in StrucPurchases.Keys)
         {
-            //add all the objects with the same type as the slot into the currentlist
-            foreach (GameObject _o in StrucPurchases.Keys)
+            if (_o.GetComponent<Preview>().type.Equals(CurrentlyActive.GetComponent<InventorySlot>().type))
             {
-                Debug.Log(_o);
-                if (_o.GetComponent<Preview>().type.Equals(CurrentlyActive.GetComponent<InventorySlot>().type))
+                if (!CurrentList.Contains(_o))
                 {
-                    //Debug.Log(_o.GetComponent<Preview>().type.ToString());
-                    //Debug.Log(CurrentlyActive.GetComponent<InventorySlot>().type.ToString());
-                    if (!CurrentList.Contains(_o))
-                    {
-                        CurrentList.Add(_o);
-                    }
+                    CurrentList.Add(_o);
                 }
             }
         }
@@ -85,31 +80,30 @@ public class Inventory : BaseMonobehaviour
     #region highlight the slot
     private void EnableSlot(GameObject _s)
     {
-        //make sure there are no objects in the currentlist
-        if (CurrentList != null)
-        {
-            ResetList();
-        }
+        //if (CurrentList != null)
+        //{
+        //}
 
-        foreach (GameObject _o in keybinds.Values)
+        if (_s.GetComponent<Materials>() != null)
         {
-            if (_o.Equals(_s))
-            {
-                _s.GetComponent<Image>().sprite = highlight;
-            }
-            else
-            {
-                _o.GetComponent<Image>().sprite = normalBorder;
-            }
-        }
-
-
-        if (_s.GetComponent<InventorySlot>().type == StructureType.MATERIAL)
-        {
-            AddToMaterialsList();
+            Debug.Log("materials!");
+            SetMaterial(_s.GetComponent<Materials>().mat);
+            matInfo.SetText("Structure material set to: " + _s.GetComponent<Materials>());
         }
         else
         {
+            foreach (GameObject _o in keybinds.Values)
+            {
+                if (_o.Equals(_s))
+                {
+                    _s.GetComponent<InventorySlot>().sprite.sprite = highlight;
+                }
+                else
+                {
+                    _o.GetComponent<InventorySlot>().sprite.sprite = normalBorder;
+                }
+            }
+            Debug.Log("add to structure list");
             AddToStructuresList();
         }
     }
@@ -123,12 +117,7 @@ public class Inventory : BaseMonobehaviour
 
     private void ShowStructureInSlot(GameObject _img, GameObject _o)
     {
-        _img.GetComponent<InventorySlot>().sprite.sprite = ConvertTextureToSprite.Convert(RuntimePreviewGenerator.GenerateModelPreview(_o.transform));
-    }
-
-    private void ShowTextureInSlot(GameObject _img, Materials _m)
-    {
-        _img.GetComponent<InventorySlot>().sprite.sprite = ConvertTextureToSprite.Convert(_m.texture);
+        _img.GetComponent<Image>().sprite = ConvertTextureToSprite.Convert(RuntimePreviewGenerator.GenerateModelPreview(_o.transform));
     }
 
     public void ScrollThroughInventory()
@@ -170,18 +159,17 @@ public class Inventory : BaseMonobehaviour
         //    }
         //}
         #endregion     
-        float scroll = Input.GetAxisRaw("Mouse ScrollWheel");
-        StartCoroutine(Scroll(scroll));
+        StartCoroutine(Scroll(Input.GetAxisRaw("Mouse ScrollWheel")));
     }
 
-    IEnumerator Scroll(float i)
+    public IEnumerator Scroll(float i)
     {
         while (i == 0)
         {
             yield return null;
         }
 
-        if (CurrentList != null && CurrentlyActive != null)
+        if ((CurrentList != null) && (CurrentlyActive != null))
         {
             if (i != 0)
             {

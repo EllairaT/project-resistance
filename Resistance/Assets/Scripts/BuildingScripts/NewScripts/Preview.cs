@@ -50,7 +50,7 @@ public class Preview : NetworkBehaviour
 
     public void SetMaterial(Material m)
     {
-        rend.material = m;
+        prefab.GetComponent<Renderer>().material = m;
     }
 
     private void ChangeMat()

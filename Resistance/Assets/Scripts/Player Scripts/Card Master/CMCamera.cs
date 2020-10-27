@@ -38,7 +38,7 @@ public class CMCamera : MonoBehaviour
                     ZoomIn();
                 }
             }
-            else if(scroll > 0 || Input.GetKey(KeyCode.E))
+            else if (scroll > 0 || Input.GetKey(KeyCode.E))
             {
                 if (playerCam.fieldOfView < maxZoomOut)
                 {
@@ -71,5 +71,12 @@ public class CMCamera : MonoBehaviour
     void ZoomOut()
     {
         playerCam.fieldOfView += Time.deltaTime * scrollSpeed;
+    }
+
+    public float TestLookX(float axis, float mouseSensitibity, float deltaTime)
+    {
+        float xRot = 0f;
+        float mouseY = axis * mouseSensitibity * deltaTime;
+        return xRot -= mouseY;
     }
 }

@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 8590552490073731652}
   m_Layer: 11
   m_Name: south_f
-  m_TagString: SP_STAIRS
+  m_TagString: SP_FOUNDATION
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 8590552490085879897}
   m_Layer: 11
   m_Name: west_f
-  m_TagString: SP_STAIRS
+  m_TagString: SP_FOUNDATION
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 8590552490294167270}
   m_Layer: 11
   m_Name: west_w
-  m_TagString: SP_STAIRS
+  m_TagString: SP_WALL
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 8590552491131894208}
   m_Layer: 11
   m_Name: east_f
-  m_TagString: SP_STAIRS
+  m_TagString: SP_FOUNDATION
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 8590552491433722487}
   m_Layer: 11
   m_Name: north_f
-  m_TagString: SP_STAIRS
+  m_TagString: SP_FOUNDATION
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 8590552491725546297}
   m_Layer: 11
   m_Name: east_w
-  m_TagString: SP_STAIRS
+  m_TagString: SP_WALL
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

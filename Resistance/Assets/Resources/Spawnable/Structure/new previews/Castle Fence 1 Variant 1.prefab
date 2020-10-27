@@ -1,5 +1,87 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6608318215373256512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6610651734141028540}
+  - component: {fileID: 6614463921024307422}
+  - component: {fileID: 6622504081852230058}
+  - component: {fileID: 822434680210978108}
+  - component: {fileID: 6046234762010673778}
+  - component: {fileID: 8702662089350753726}
+  m_Layer: 9
+  m_Name: Castle Fence 1 Variant 1
+  m_TagString: Building
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &6610651734141028540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6608318215373256512}
+  m_LocalRotation: {x: 0.0000018099951, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 163.8448, y: 0.49994716, z: 4.024935}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &6614463921024307422
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6608318215373256512}
+  m_Mesh: {fileID: 4300000, guid: 699d27c71c7e4214480217a5abaa54d6, type: 3}
+--- !u!23 &6622504081852230058
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6608318215373256512}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: eaa7c745d9d560f4daa228207d5c3cfb, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 3
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!54 &822434680210978108
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -50,97 +132,3 @@ MonoBehaviour:
   isFoundation: 1
   type: 4
   tagsToSnapTo: 00000000
---- !u!1001 &6607637182835367786
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1826725851850794, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
-      propertyPath: m_Name
-      value: Castle Fence 1 Variant 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1826725851850794, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000,
-        type: 0}
-    - target: {fileID: 1826725851850794, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1826725851850794, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 4164642768902102, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 163.8448
-      objectReference: {fileID: 0}
-    - target: {fileID: 4164642768902102, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.49994716
-      objectReference: {fileID: 0}
-    - target: {fileID: 4164642768902102, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 4.024935
-      objectReference: {fileID: 0}
-    - target: {fileID: 4164642768902102, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.0000018099951
-      objectReference: {fileID: 0}
-    - target: {fileID: 4164642768902102, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4164642768902102, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4164642768902102, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4164642768902102, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4164642768902102, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4164642768902102, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4164642768902102, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4164642768902102, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4164642768902102, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4164642768902102, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 23880695528093376, guid: b8f2515a736a50a4fa6215218da1e524,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: eaa7c745d9d560f4daa228207d5c3cfb, type: 2}
-    m_RemovedComponents:
-    - {fileID: -2295724309665610625, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: b8f2515a736a50a4fa6215218da1e524, type: 3}
---- !u!1 &6608318215373256512 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1826725851850794, guid: b8f2515a736a50a4fa6215218da1e524,
-    type: 3}
-  m_PrefabInstance: {fileID: 6607637182835367786}
-  m_PrefabAsset: {fileID: 0}

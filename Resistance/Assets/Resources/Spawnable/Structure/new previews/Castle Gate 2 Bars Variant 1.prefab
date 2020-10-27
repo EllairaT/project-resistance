@@ -1,5 +1,87 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2344163916641767769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2342465127015515909}
+  - component: {fileID: 2376651865908762787}
+  - component: {fileID: 2368641851498960391}
+  - component: {fileID: 3774105447702889579}
+  - component: {fileID: 3712803652766614361}
+  - component: {fileID: -9219003737361547276}
+  m_Layer: 9
+  m_Name: Castle Gate 2 Bars Variant 1
+  m_TagString: Building
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &2342465127015515909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2344163916641767769}
+  m_LocalRotation: {x: 0.0000018099951, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 158.24, y: 1.255, z: -22.478071}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2376651865908762787
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2344163916641767769}
+  m_Mesh: {fileID: 4300000, guid: 70b6f9b8830ee4842b8417b31d717b01, type: 3}
+--- !u!23 &2368641851498960391
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2344163916641767769}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: eaa7c745d9d560f4daa228207d5c3cfb, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 4
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!54 &3774105447702889579
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -50,102 +132,3 @@ MonoBehaviour:
   isFoundation: 1
   type: 3
   tagsToSnapTo: 00000000
---- !u!1001 &2345473947521424199
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -4184585551375809989, guid: 57db304a89450eb459b16b5a42d62acf,
-        type: 3}
-      propertyPath: index
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1381576445921822, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
-      propertyPath: m_Name
-      value: Castle Gate 2 Bars Variant 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1381576445921822, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000,
-        type: 0}
-    - target: {fileID: 1381576445921822, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1381576445921822, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 4177867654208578, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 158.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 4177867654208578, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.255
-      objectReference: {fileID: 0}
-    - target: {fileID: 4177867654208578, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -22.478071
-      objectReference: {fileID: 0}
-    - target: {fileID: 4177867654208578, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.0000018099951
-      objectReference: {fileID: 0}
-    - target: {fileID: 4177867654208578, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4177867654208578, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4177867654208578, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4177867654208578, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4177867654208578, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4177867654208578, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4177867654208578, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4177867654208578, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4177867654208578, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4177867654208578, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 23598912577899840, guid: 57db304a89450eb459b16b5a42d62acf,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: eaa7c745d9d560f4daa228207d5c3cfb, type: 2}
-    m_RemovedComponents:
-    - {fileID: -4184585551375809989, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 57db304a89450eb459b16b5a42d62acf, type: 3}
---- !u!1 &2344163916641767769 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1381576445921822, guid: 57db304a89450eb459b16b5a42d62acf,
-    type: 3}
-  m_PrefabInstance: {fileID: 2345473947521424199}
-  m_PrefabAsset: {fileID: 0}

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CurrentCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    CardSystem cardSystem;
+    public CardSystem cardSystem;
 
     [Header("Text")]
     public TextMeshProUGUI cost;
@@ -22,7 +22,7 @@ public class CurrentCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public GameObject infoPanel;
     public Button[] functionPanelButtons;
     public CardSlot slot;
-    private Card card;
+    public Card card;
     private CardStats stats;
 
     private void Awake()
@@ -160,6 +160,12 @@ public class CurrentCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             cardSystem.goldToSpend = c;
         }
+    }
+
+    public void TestCardCost(CardSystem cs, int cardcount)
+    {
+        int c = card.Cost * cardcount;
+        cs.goldToSpend = c;
     }
 
     public void OnPointerEnter(PointerEventData eventData)

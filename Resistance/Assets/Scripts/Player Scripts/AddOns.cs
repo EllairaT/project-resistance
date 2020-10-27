@@ -14,17 +14,8 @@ public class AddOns : ScriptableObject
 
     public string Name => _name;
     public Sprite Icon => _icon;
-    public int Cost => _cost;
+
     public string Description => _description;
 
-    void Update()
-    {
-        
-    }
-
-    public void Print()
-    {
-  
-
-    }
+    public int Cost { get => _cost; set => _cost = value; }
 }

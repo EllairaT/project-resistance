@@ -39,6 +39,9 @@ public class InGameScript : NetworkBehaviour
 
     [Header("Building")]
     [SerializeField] public BuildManager buildManager;
+
+    private GameObject key;
+    
     #endregion
 
     private void Awake()
@@ -68,13 +71,46 @@ public class InGameScript : NetworkBehaviour
 
         if (buildManager.isInventoryActive)
         {
-            buildManager.playerInventory.ListenForInput();
-            buildManager.playerInventory.ScrollThroughInventory();
-
-            if (buildManager.buildSystem.isBuilding)
-            {
+            key = buildManager.playerInventory.GetObjectFromKey();
+            StructureType type = key.GetComponent<Preview>().type;
             
-                StartCoroutine(Build());
+            if(type == StructureType.MATERIAL)
+            {
+                buildManager.buildSystem.SetMaterial(key.GetComponent<Materials>().mat);
+            }
+            else
+            {
+                buildManager.buildSystem.NewBuild(key.GetComponent<Preview>().gameObject);
+            }
+
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                //Debug.Log("In Game Script: " + base.hasAuthority + ", " + hasAuthority + ", " + base.isLocalPlayer + ", " + isLocalPlayer);
+                buildManager.buildSystem.CmdBuild();
+            }
+            else if (Input.GetKeyDown(KeyCode.E)) //rotate
+            {
+                buildManager.buildSystem.previewgameObject.transform.Rotate(0, 90f, 0);
+            }
+            else
+            {
+                if (buildManager.buildSystem.isBuildingPaused) //whenever the preview is snapped, the buildsystem is paused
+                {
+                    //to resume buildsystem, we need to "un-snap" 
+                    //unsnapping will occur when the mouse moves away a certain amount.
+                    float mX = Input.GetAxis("Mouse X");
+                    float mY = Input.GetAxis("Mouse Y");
+
+                    if (Mathf.Abs(mX) >= buildManager.buildSystem.stickTolerance || Mathf.Abs(mY) >= buildManager.buildSystem.stickTolerance)
+                    {
+                        buildManager.buildSystem.isBuildingPaused = false;
+                    }
+                }
+                else
+                {
+                    buildManager.buildSystem.MakeRay();
+                }
             }
         }
         else
@@ -112,39 +148,11 @@ public class InGameScript : NetworkBehaviour
     }
     #endregion
 
+   
     #region build system implementation
-    IEnumerator Build()
+    private void Build()
     {
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            //Debug.Log("In Game Script: " + base.hasAuthority + ", " + hasAuthority + ", " + base.isLocalPlayer + ", " + isLocalPlayer);
-            buildManager.buildSystem.CmdBuild();
-        }
-        else if (Input.GetKeyDown(KeyCode.E)) //rotate
-        {
-            buildManager.buildSystem.previewgameObject.transform.Rotate(0, 90f, 0);
-        }
-        else
-        {
-            if (buildManager.buildSystem.isBuildingPaused) //whenever the preview is snapped, the buildsystem is paused
-            {
-                //to resume buildsystem, we need to "un-snap" 
-                //unsnapping will occur when the mouse moves away a certain amount.
-                float mX = Input.GetAxis("Mouse X");
-                float mY = Input.GetAxis("Mouse Y");
-
-                if (Mathf.Abs(mX) >= buildManager.buildSystem.stickTolerance || Mathf.Abs(mY) >= buildManager.buildSystem.stickTolerance)
-                {
-                    buildManager.buildSystem.isBuildingPaused = false;
-                }
-            }
-            else
-            {
-                buildManager.buildSystem.MakeRay();
-            }
-        }
-        yield return null;
+        
     }
     #endregion
 
@@ -203,12 +211,12 @@ public class InGameScript : NetworkBehaviour
     #endregion
 
     #region test methods
-    /*
+
     //Method to simply test health bar reduction
-    private void TestHealthBar()
+    public void TestHealthBar()
     {
         currentHealth -= 10;
-        healthScript.SetHealth(currentHealth);
+        //  healthScript.SetHealth(currentHealth);
 
         if (currentHealth <= 0)
         {
@@ -223,7 +231,7 @@ public class InGameScript : NetworkBehaviour
             }
             spectatorCamera.gameObject.SetActive(true);
             spectatorCamera.SetActive(true);
-            NetworkServer.Destroy(playerPrefab);
+            //    NetworkServer.Destroy(playerPrefab);
         }
     }
 
@@ -231,7 +239,7 @@ public class InGameScript : NetworkBehaviour
     {
         return currentGold += goldIncrease;
     }
-    */
+
     #endregion
 
     //Increase the player's gold based on the target hit's gold value

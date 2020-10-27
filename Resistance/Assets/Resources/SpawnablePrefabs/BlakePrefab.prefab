@@ -7248,7 +7248,7 @@ CharacterController:
   m_Height: 176
   m_Radius: 28.6
   m_SlopeLimit: 45
-  m_StepOffset: 1.5
+  m_StepOffset: 5.19
   m_SkinWidth: 0.01
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 82.6, z: 0}
@@ -8652,6 +8652,11 @@ PrefabInstance:
       propertyPath: buildsys
       value: 
       objectReference: {fileID: 7311135533740491759}
+    - target: {fileID: 1646007737231877310, guid: beba126ef0696bd4b8d70fd388d1aa73,
+        type: 3}
+      propertyPath: matInfo
+      value: 
+      objectReference: {fileID: 4552024040204335101}
     - target: {fileID: 2573448751697255452, guid: beba126ef0696bd4b8d70fd388d1aa73,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -9292,5 +9297,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0cd98ef7c6e9a54289343614724dd53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4552024040204335101 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8301691141568622300, guid: beba126ef0696bd4b8d70fd388d1aa73,
+    type: 3}
+  m_PrefabInstance: {fileID: 5483556566388873505}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -57,7 +57,10 @@ public class BuildSystem : NetworkBehaviour
 
     public void SetMaterial(Material m)
     {
-        previewScript.SetMaterial(m);
+        if (previewScript != null)
+        {
+            previewScript.SetMaterial(m);
+        }
     }
 
     //[Command]

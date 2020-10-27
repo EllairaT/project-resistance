@@ -100,4 +100,9 @@ public class CardSystem : NetworkBehaviour
             MakeMob();
         }
     }
+
+    public int testBuy(int gold)
+    {
+        return gold -= goldToSpend;
+    }
 }
